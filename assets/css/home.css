@@ -83,28 +83,16 @@
   font-size: 16px;
 }
 
-.input-va-button-tim-kiem .button{
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  margin-left: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
+.input-va-button-tim-kiem i {
   background-color: #C1C2E7;
-}
-
-.input-va-button-tim-kiem .button:active{
-  background-color: #2D5AD3;
-}
-
-.input-va-button-tim-kiem .button i{
+  padding: 10px;
   font-size: 20px;
   color: #4072E2;
+  border-radius: 20px;
 }
 
-.input-va-button-tim-kiem .button i:active{
+.input-va-button-tim-kiem i:active {
+  background-color: #2D5AD3;
   color: white;
 }
 
