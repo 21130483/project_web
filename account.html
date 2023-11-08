@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+
+        </div>
+
+        <div id="main-content">
+            <!-- <div>
+                <div class="container">
+                    <nav>
+                        <ol class="Breadcrumbs">
+                            <li class="Breadcrumbs-item">
+                                <a href="#">
+                                    <span>Pharmacity</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="Breadcrumbs-item">
+                                <a href="#">
+                                    <span>Trang cá nhân</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="Breadcrumbs-item common-bre">
+                                <a href="#">
+                                    <span>Chỉnh sửa thông tin cá nhân</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div> -->
+
+            <div class="Desktop-account">
+                <div class="container">
+                    <div class="Desktop-box">
+                        <div class="Desktop-anpha">
+                            <div class="AccountMenu">
+                                <div class="Account-head" style="background: rgb(170, 124, 13);">
+                                    <div class="AvtAndName">
+                                        <i class="imgAvtName fa-regular fa-user"></i>
+                                        <div class="fullName">Khach Hang</div>
+                                    </div>
+
+                                </div>
+                                <div class="Account-box">
+                                    <ul>
+                                        <div class="history" href="/account/orders">
+                                            <li class="list">
+                                                <i class="icon-common fa-solid fa-clock-rotate-left"></i>
+                                                <h3 class="AccountMenu-menu-label">Lịch sử đơn hàng</h3>
+                                            </li>
+                                        </div>
+
+                                        <div class="voucher" href="/account/coupon">
+                                            <li class="list">
+                                                <i class=" icon-common fa-solid fa-ticket-simple"></i>
+                                                <h3 class="AccountMenu-menu-label">Mã giảm giá</h3>
+
+                                            </li>
+                                        </div>
+
+                                        <div class="desgin" href="/account">
+                                            <li class="list">
+                                                <i class=" icon-common fa-solid fa-user-pen"></i>
+                                                <h3 class="AccountMenu-menu-label">Chỉnh sửa thông tin cá nhân</h3>
+
+                                            </li>
+                                        </div>
+
+                                        <div class="addresser" href="/account/address">
+                                            <li class="list">
+                                                <i class="icon-common fa-solid fa-location-dot"></i>
+                                                <h3 class="AccountMenu-menu-label">Sổ địa chỉ nhận hàng</h3>
+
+                                            </li>
+                                        </div>
+
+                                        <!-- <a href="/account/prescriptions">
+                                            <li class="list">
+                                                <i class="icon-common fa-solid fa-hospital"></i>
+                                                <h3 class="AccountMenu-menu-label">Toa thuốc của tôi</h3>
+                                            </li>
+                                        </a> -->
+
+                                    </ul>
+                                    <div class="AccountMenu_support">
+                                        <div class="container">
+                                            <div class="AccountMenu_liveChat cursor-point">
+                                                <i class="icon-common fa-solid fa-user-doctor"></i>
+                                                <b>1800 6821</b>
+                                                <p>Tư vấn đặt hàng</p>
+                                            </div>
+                                        </div><button style="border: 4px #ccc solid;
+                                        padding: 12px;
+                                        border-radius: 38px;">Đăng xuất</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="one" class="Desktop_omega" style="padding: 24px; width: 100%;">
+                            <div class="CommonHeaderMobile_fixed-header common-header-profile">
+                                <div class="CommonHeaderMobile_common-header">
+                                    <div class="container d-flex justify-content-between align-items-center">
+                                        <div class="CommonHeaderMobile_left-content">
+                                            <h1>Lịch sử đơn hàng</h1>
+                                        </div>
+                                        <div class="CommonHeaderMobile_group-cart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ListOrder_list-order">
+                                <div class="ListOrder_order-body">
+                                    <div class="ListOrderTab_list-order-tab">
+                                        <div class="ListOrderTab_tab">
+                                            <div class="ListOrderTab_tab-item"><button
+                                                    class="ListOrderTab_tab-name ListOrderTab_tab-title-active">Chờ xác
+                                                    nhận</button></div>
+                                            <div class="ListOrderTab_tab-item"><button
+                                                    class="ListOrderTab_tab-name">Đang
+                                                    đóng gói</button></div>
+                                            <div class="ListOrderTab_tab-item"><button
+                                                    class="ListOrderTab_tab-name">Đang giao
+                                                    hàng</button></div>
+                                            <div class="ListOrderTab_tab-item"><button
+                                                    class="ListOrderTab_tab-name">Nhận
+                                                    hàng thành công</button></div>
+                                            <div class="ListOrderTab_tab-item"><button class="ListOrderTab_tab-name">Đã
+                                                    hủy</button></div>
+                                        </div>
+
+                                        <div class="ListOrderTab_tab-content">
+                                            <div class="EmptyResult_empty-result">
+                                                <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
+                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="two" class="Desktop_omega" style="padding: 24px; width: 100%; display: none;">
+                            <div class="CommonHeaderMobile_fixed-header common-header-profile">
+                                <div class="CommonHeaderMobile_common-header">
+                                    <div class="container d-flex justify-content-between align-items-center">
+                                        <div class="CommonHeaderMobile_left-content">
+                                            <h1>Mã giảm giá</h1>
+                                        </div>
+                                        <div class="CommonHeaderMobile_group-cart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ListOrder_list-order">
+                                <div class="ListOrder_order-body">
+                                    <div class="ListOrderTab_list-order-tab">
+                                        <div class="ListOrderTab_tab">
+                                            <div class="ListOrderTab_tab-item"><button
+                                                    class="ListOrderTab_tab-name ListOrderTab_tab-title-active"
+                                                    fdprocessedid="8p2mfr">Có thể dùng</button></div>
+                                            <div class="ListOrderTab_tab-item"><button class="ListOrderTab_tab-name"
+                                                    fdprocessedid="at26kl">Đã sử
+                                                    dụng</button></div>
+                                            <div class="ListOrderTab_tab-item"><button class="ListOrderTab_tab-name"
+                                                    fdprocessedid="s6bmv">Đã hết
+                                                    hạn</button></div>
+
+                                        </div>
+
+                                        <div class="ListOrderTab_tab-content">
+                                            <div class="EmptyResult_empty-result">
+                                                <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
+                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="three" class="Desktop-omega" style="padding: 24px; display: none;">
+                            <div class="CommonHeaderMobile_fixed-header common-header-profile">
+                                <div class="CommonHeaderMobile_common-header">
+                                    <div class="container d-flex justify-content-between align-items-center">
+                                        <div class="CommonHeaderMobile_left-content">
+                                            <h1>Chỉnh sửa thông tin cá nhân</h1>
+                                        </div>
+                                        <div class="CommonHeaderMobile_group-cart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Desktop_big-box">
+                                <div class="AccountDetails_profile">
+                                    <div class="AccountDetails_info">
+                                        <div class="AccountDetails_avatar">
+                                            <div class="AccountDetails_photo-upload" style="display: grid;">
+                                                <input type="file" accept=".png, .jpeg, .jpg" id="photoInput"
+                                                    style="display: none;">
+                                                <img id="onImg" src="./assets/img/avt.png" alt="Ảnh đã chọn">
+
+                                                <button onclick="choosePhoto()">Bấm để cập nhật ảnh mới</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="AccountDetails_detail">
+                                        <form action="#" class="AccountDetails_form">
+                                            <div>
+                                                <div class="InputTextField_input-text-field">
+                                                    <label>Họ và tên<span>*</span></label>
+                                                    <div class="InputTextField_input-group">
+                                                        <input name="full_name" maxlength="150" type="text"
+                                                            placeholder="Vui lòng nhập họ và tên" autocomplete="on"
+                                                            class="" value="Khach hang">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="AccountDetails_gender"><label>Giới tính</label>
+                                                <div class="d-flex">
+
+                                                    <div>Nam</div><input type="radio" name="gender" value="1"
+                                                        style="margin-left: -48px;">
+
+
+                                                    <div style="margin-left: 48px;">Nữ</div> <input type="radio"
+                                                        name="gender" value="2" style="margin-left: -48px;">
+
+
+                                                    <div style="margin-left: 48px;">Khác</div><input type="radio"
+                                                        name="gender" value="3" style="margin-left: -48px;">
+
+                                                </div>
+                                            </div>
+                                            <div class="DateField_date-field AccountDetails_birthday">
+                                                <label>Ngày tháng năm sinh <span>*</span></label>
+                                                <input type="date" style="    width: 124px;
+                                                height: 40px;
+                                                font-size: 16px;
+                                                border-radius: 16px;
+                                                margin-top: 8px;
+                                                padding-left: 8px;">
+
+                                            </div>
+                                            <div class="InputTextField_input-text-field"><label>Số điện
+                                                    thoại</label>
+                                                <div class="InputTextField_input-group">
+                                                    <input name="phone_number" type="text" class="" value=""
+                                                        placeholder="Vui lòng nhập số điện thoại">
+                                                </div>
+                                            </div>
+                                            <div class="AccountDetails_email">
+                                                <div class="InputTextField_input-text-field">
+                                                    <label>Email<span>*</span></label>
+                                                    <div class="InputTextField_input-group"><input name="email"
+                                                            maxlength="255" type="text" autocomplete="on" class=""
+                                                            value=""></div>
+                                                </div>
+                                            </div><a><span class="AccountDetails_btn-change-pass">Thiết lập mật
+                                                    khẩu </span></a>
+                                            <button
+                                                class="Button_button Button_button__primary Button_button__disabled AccountDetails_submit"
+                                                type="submit">Lưu</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="four" class="Desktop_omega" style="padding: 24px; display: none; width: 100%;">
+                            <div class="CommonHeaderMobile_fixed-header common-header-profile">
+                                <div class="CommonHeaderMobile_common-header">
+                                    <div class="container d-flex justify-content-between align-items-center">
+                                        <div class="CommonHeaderMobile_left-content">
+                                            <h1>Sổ địa chỉ nhận hàng</h1>
+                                        </div>
+                                        <div class="CommonHeaderMobile_group-cart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ListOrder_list-order">
+                                <div class="ListOrder_order-body">
+                                    <div class="ListOrderTab_list-order-tab">
+
+
+                                        <div class="ListOrderTab_tab-content">
+                                            <div class="EmptyResult_empty-result" style="display: grid;">
+                                                <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
+                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                </div>
+                                                <button class="btn-add-address"
+                                                    style="width: 400px; height: 50px; background-color: blue; color: #fff; border-radius: 32px; margin-top: 16px;">
+                                                    Thêm địa chỉ nhận hàng</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-address" style="display: none;">
+            <div class="main-address">
+                <div class="address-box">
+                    <h2>Thêm địa chỉ</h2>
+                    <form>
+                        <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>Họ và tên</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="number" name="" required="">
+                            <label>Số điện thoại</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>Địa chỉ</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="email" name="" required="">
+                            <label>Email</label>
+                        </div>
+                        <a href="#">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lưu
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+<script>
+    // JavaScript code để xử lý tải lên avatar và xem trước hình ảnh
+    const avatarInput = document.getElementById('avatarInput');
+    const avatarPreview = document.getElementById('avatarPreview');
+
+    avatarInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            avatarPreview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+</script>
+
+<!-- <script>
+    function choosePhoto() {
+      // Lấy tham chiếu đến phần tử input file
+      var photoInput = document.getElementById("photoInput");
+  
+      // Gọi phương thức click trên input file
+      photoInput.click();
+  
+      // Xử lý sự kiện khi người dùng chọn file
+      photoInput.addEventListener("change", function() {
+        var selectedPhoto = photoInput.files[0];
+        console.log("Đã chọn file ảnh:", selectedPhoto);
+        // Thực hiện các hành động khác với file ảnh đã chọn
+      });
+    }
+  </script> -->
+
+<script>
+    function choosePhoto() {
+        var photoInput = document.getElementById("photoInput");
+        var figureImg = document.getElementById("onImg");
+
+        photoInput.click();
+
+        photoInput.addEventListener("change", function () {
+            var selectedPhoto = photoInput.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                figureImg.setAttribute("src", e.target.result);
+            };
+            reader.readAsDataURL(selectedPhoto);
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        // order click
+        $(".history").click(function () {
+            $("#one").show();
+            $("#two").hide();
+            $("#three").hide();
+            $("#four").hide();
+        });
+
+
+        $(".voucher").click(function () {
+            $("#two").show();
+            $("#one").hide();
+            $("#three").hide();
+            $("#four").hide();
+        });
+
+        $(".desgin").click(function () {
+            $("#three").show();
+            $("#one").hide();
+            $("#two").hide();
+            $("#four").hide();
+        });
+
+
+        $(".addresser").click(function () {
+            $("#one").hide();
+            $("#two").hide();
+            $("#three").hide();
+            $("#four").show();
+        });
+
+        // end order click
+
+        // address add
+
+        $(".btn-add-address").click(function () {
+            $("#add-address").show();
+        });
+
+        // end add address
+
+    });
+
+
+
+
+</script>
+
+</html>
