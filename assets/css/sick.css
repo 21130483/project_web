@@ -13,6 +13,8 @@ html {
 .contentSick {
     font-size: 18px;
     padding: 8px;
+    border-bottom: 1px #ccc solid;
+    color: #1250DC;
 }
 
 .btn-sick {
@@ -119,6 +121,7 @@ html {
 
 .Sick-text-sick .sick-text-main .sick-text-content1 {
     width: 50%;
+    padding-right: 40px;
 }
 
 .Sick-text-sick .sick-text-main .sick-text-content2 {
