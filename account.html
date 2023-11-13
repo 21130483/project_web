@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <link rel="stylesheet" href="./assets/css/account.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -59,14 +60,14 @@
                                 </div>
                                 <div class="Account-box">
                                     <ul>
-                                        <div class="history" href="/account/orders">
+                                        <div class="history">
                                             <li class="list">
                                                 <i class="icon-common fa-solid fa-clock-rotate-left"></i>
                                                 <h3 class="AccountMenu-menu-label">Lịch sử đơn hàng</h3>
                                             </li>
                                         </div>
 
-                                        <div class="voucher" href="/account/coupon">
+                                        <div class="voucher" >
                                             <li class="list">
                                                 <i class=" icon-common fa-solid fa-ticket-simple"></i>
                                                 <h3 class="AccountMenu-menu-label">Mã giảm giá</h3>
@@ -74,7 +75,7 @@
                                             </li>
                                         </div>
 
-                                        <div class="desgin" href="/account">
+                                        <div class="desgin" >
                                             <li class="list">
                                                 <i class=" icon-common fa-solid fa-user-pen"></i>
                                                 <h3 class="AccountMenu-menu-label">Chỉnh sửa thông tin cá nhân</h3>
@@ -82,7 +83,7 @@
                                             </li>
                                         </div>
 
-                                        <div class="addresser" href="/account/address">
+                                        <div class="addresser" >
                                             <li class="list">
                                                 <i class="icon-common fa-solid fa-location-dot"></i>
                                                 <h3 class="AccountMenu-menu-label">Sổ địa chỉ nhận hàng</h3>
@@ -90,16 +91,16 @@
                                             </li>
                                         </div>
 
-                                        <!-- <a href="/account/prescriptions">
+                                        <div class="favourite" >
                                             <li class="list">
-                                                <i class="icon-common fa-solid fa-hospital"></i>
-                                                <h3 class="AccountMenu-menu-label">Toa thuốc của tôi</h3>
+                                                <i class="icon-common fa-solid fa-heart"></i>
+                                                <h3 class="AccountMenu-menu-label">Sản phẩm yêu thích</h3>
                                             </li>
-                                        </a> -->
+                                        </div>
 
                                     </ul>
                                     <div class="AccountMenu_support">
-                                        <div class="container">
+                                        <div class="list">
                                             <div class="AccountMenu_liveChat cursor-point">
                                                 <i class="icon-common fa-solid fa-user-doctor"></i>
                                                 <b>1800 6821</b>
@@ -185,7 +186,7 @@
                                         <div class="ListOrderTab_tab-content">
                                             <div class="EmptyResult_empty-result">
                                                 <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
-                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                    <p>Bạn chưa có mã giảm giá nào</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -301,13 +302,137 @@
                                         <div class="ListOrderTab_tab-content">
                                             <div class="EmptyResult_empty-result" style="display: grid;">
                                                 <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
-                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                    <p>Bạn chưa thêm địa chỉ</p>
                                                 </div>
                                                 <button class="btn-add-address"
                                                     style="width: 400px; height: 50px; background-color: blue; color: #fff; border-radius: 32px; margin-top: 16px;">
                                                     Thêm địa chỉ nhận hàng</button>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="five" class="Desktop_omega" style="padding: 24px; display: none; width: 100%;">
+                            <div class="CommonHeaderMobile_fixed-header common-header-profile">
+                                <div class="CommonHeaderMobile_common-header">
+                                    <div class="container d-flex justify-content-between align-items-center">
+                                        <div class="CommonHeaderMobile_left-content">
+                                            <h1>Sản phẩm yêu thích</h1>
+                                        </div>
+                                        <div class="CommonHeaderMobile_group-cart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ListOrder_list-order">
+                                <div class="ListOrder_order-body">
+                                    <div class="ListOrderTab_list-order-tab">
+
+                                        <div class="cac-san-pham">
+                                            <ul>
+                                              <li class="san-pham ">
+                                                <div class="link-san-pham">
+                                                  <div class="img-san-pham">
+                                                    248 x 248
+                                                  </div>
+                                
+                                                  <div class="noi-dung-san-pham">
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="ten-san-pham">
+                                                      Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
+                                                    </div>
+                                
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="gia-san-pham">
+                                                      10.000 đ/Hộp
+                                                      <i class="icon-love-product fa-solid fa-heart" ></i>
+                                                    </div>
+                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->                               
+                                                    <button class="them-san-pham">
+                                                      <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
+                                                    </button>
+
+                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
+                                                    <button class="buy-now-product them-san-pham">
+                                                        <a class="a-none-fff" href="#">Mua ngay</a>
+                                                      </button>
+                                
+                                                  </div>
+                                                </div>
+                                              </li>
+
+                                              <li class="san-pham">
+                                                <div class="link-san-pham">
+                                                  <div class="img-san-pham">
+                                                    248 x 248
+                                                  </div>
+                                
+                                                  <div class="noi-dung-san-pham">
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="ten-san-pham">
+                                                      Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
+                                                    </div>
+                                
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="gia-san-pham">
+                                                      10.000 đ/Hộp
+                                                      <i class="icon-love-product fa-solid fa-heart" ></i>
+                                                    </div>
+                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->                               
+                                                    <button class="them-san-pham">
+                                                      <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
+                                                    </button>
+
+                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
+                                                    <button class="buy-now-product them-san-pham">
+                                                        <a class="a-none-fff" href="#">Mua ngay</a>
+                                                      </button>
+                                
+                                                  </div>
+                                                </div>
+                                              </li>
+
+                                              <li class="san-pham">
+                                                <div class="link-san-pham">
+                                                  <div class="img-san-pham">
+                                                    248 x 248
+                                                  </div>
+                                
+                                                  <div class="noi-dung-san-pham">
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="ten-san-pham">
+                                                      Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
+                                                    </div>
+                                
+                                                    <div class="khoang-trong"></div>
+                                
+                                                    <div class="gia-san-pham">
+                                                      10.000 đ/Hộp
+                                                      <i class="icon-love-product fa-solid fa-heart" ></i>
+                                                    </div>
+                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->                               
+                                                    <button class="them-san-pham">
+                                                      <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
+                                                    </button>
+
+                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
+                                                    <button class="buy-now-product them-san-pham">
+                                                        <a class="a-none-fff" href="#">Mua ngay</a>
+                                                      </button>
+                                
+                                                  </div>
+                                                </div>
+                                              </li>
+
+
+                                            </ul>  
+                                         </div>
                                     </div>
                                 </div>
                             </div>
@@ -417,6 +542,7 @@
             $("#two").hide();
             $("#three").hide();
             $("#four").hide();
+            $("#five").hide();
         });
 
 
@@ -425,6 +551,7 @@
             $("#one").hide();
             $("#three").hide();
             $("#four").hide();
+            $("#five").hide();
         });
 
         $(".desgin").click(function () {
@@ -432,6 +559,7 @@
             $("#one").hide();
             $("#two").hide();
             $("#four").hide();
+            $("#five").hide();
         });
 
 
@@ -440,17 +568,59 @@
             $("#two").hide();
             $("#three").hide();
             $("#four").show();
+            $("#five").hide();
         });
+
+
+        $(".favourite").click(function(){
+            $("#one").hide();
+            $("#two").hide();
+            $("#three").hide();
+            $("#four").hide();
+            $("#five").show();
+        })
 
         // end order click
 
         // address add
 
-        $(".btn-add-address").click(function () {
-            $("#add-address").show();
-        });
+        $(".btn-add-address").click(function (e) {
+        e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi
+        $("#add-address").toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#add-address').length) {
+          $("#add-address").hide();
+        }
+      });
+
+      $("#add-address").click(function (e) {
+        e.stopPropagation(); 
+      });
 
         // end add address
+
+
+        // btn-order-item
+
+        $(".ListOrderTab_tab-item").click(function () {
+            $(".ListOrderTab_tab-item").removeClass("btn-click-bottom-blue");
+            $(this).addClass("btn-click-bottom-blue");
+        });
+
+        // end btn-order-item
+
+
+        // love product
+
+        $(".icon-love-product").click(function () {
+            // $(".icon-love-product").removeClass("color-love-click");
+            // $(this).addClass("color-love-click");
+            $(this).closest('.san-pham').hide();
+        });
+
+        // end love product
 
     });
 

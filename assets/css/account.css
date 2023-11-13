@@ -24,6 +24,23 @@ html {
 
 }
 
+.icon-love-product {
+    color: #ee111c;
+    font-size: 24px;
+    padding-left: 70px;
+}
+
+.icon-love-product:hover::after {
+    content: "Ẩn sản phẩm"; 
+    font-size: 12px;
+    position: absolute;
+    color: #000;
+    top: 375px;
+    left: 170px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
 .cursor-point {
     cursor: pointer;
 }
@@ -89,10 +106,15 @@ html {
     padding: 4px 6px;
 }
 
-.react-date-picker__button svg {
-    display: inherit;
+
+.btn-click-bottom-blue {
+    border-bottom: 1px solid blue !important;
+    color: blue !important;
 }
 
+/* .color-love-click {
+    color: #ccc;
+} */
 
 
 /*  */
@@ -206,92 +228,6 @@ html {
 }
 
 
-/* .Progress {
-    display: flex;
-    align-items: center;
-}
-
-.Progress .Progress-pro {
-    flex: 1 1;
-    height: 8px;
-    border-radius: 20px;
-    background-color: #fff;
-    position: relative;
-}
-
-.Progress .Progress-pro .Progress-percent {
-    position: absolute;
-    height: 100%;
-    border-radius: 20px;
-    left: 0;
-}
-
-.CardMember-description {
-    font-size: .75rem;
-    margin-top: 8px;
-}
-
-.UpgradeExpenses {
-    height: auto!important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.QuestionTooltip {
-    position: relative;
-    height: 24px;
-}
-
-.QuestionTooltip .QuestionTooltip-icon {
-    cursor: pointer;
-    position: absolute;
-    left: 219px;
-    top: -16px;
-}
-
-.UpgradeExpenses svg {
-    padding-left: 5px;
-}
-
-.UpgradeExpenses .Up {
-    right: -147px!important;
-    color: #000!important;
-    color: initial!important;
-    font-size: .875rem;
-}
-
-.QuestionTooltip .QuestionTooltip-box {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: -150px;
-    padding: 16px;
-    background: #f2f6fe;
-    box-shadow: 0 0 16px rgba(0,0,0,.2);
-    border-radius: 12px;
-    border: 1px solid #0f62f9;
-    min-width: 275px;
-    transition: all .5s;
-    transform: translateY(25px);
-    z-index: 10;
-} */
-
-/* .UpgradeExpenses .Upgrade-tooltip {
-    font-weight: 700;
-    margin-bottom: 14px;
-}
-
-.CardMember-footer {
-    border-bottom-left-radius: 0.75rem;
-    border-bottom-right-radius: 0.75rem;
-    padding: 7px 16px;
-    font-size: .875rem;
-}
-
-.CardMember-footer .AccountMenu-rewarPointIcon {
-    display: flex;
-} */
 
 .Account-box {
     background-color: #fff;
@@ -335,10 +271,6 @@ html {
     margin-right: auto;
 }
 
-/* .Account-box ul li button {
-    line-height: 0;
-    background: none;
-} */
 
 .AccountMenu_support {
     text-align: center;
@@ -368,13 +300,6 @@ html {
     padding-left: 36px;
 }
 
-
-
-/* .AccountMenu_support>div div svg {
-    position: absolute;
-    left: 0;
-    top: calc(50% - 24px / 2);
-} */
 
 .AccountMenu_support>div div b {
     font-size: 17px;
@@ -434,17 +359,6 @@ html {
     color: #112950;
 }
 
-/* .CommonHeaderMobile_fixed-header-mobile-wrapper__9H2nW .CommonHeaderMobile_common-header-mobile__WPYuo .CommonHeaderMobile_left-content__tD7mq h1, .CommonHeaderMobile_fixed-header-mobile-wrapper__9H2nW .CommonHeaderMobile_common-header-mobile__WPYuo .CommonHeaderMobile_left-content__tD7mq span {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    margin: 0;
-}
-
-.Desktop_big__tVnHI .Desktop_big-box__1za1L {
-    position: relative;
-} */
-
 .AccountDetails_profile {
     display: flex;
     justify-content: space-between;
@@ -459,17 +373,6 @@ html {
     margin-bottom: 16px;
 }
 
-/* .AccountDetails_avatar__EU49H figure {
-    width: 120px;
-    height: 120px;
-    background-color: #f2f6fe;
-    border-radius: 50%;
-    margin: 0 auto!important;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .AccountDetails_avatar button {
     font-size: 15px;
@@ -480,11 +383,6 @@ html {
     background: none;
     margin-top: 20px!important;
 }
-
-/* .Desktop-account figure {
-    padding: 0;
-    margin: 0;
-} */
 
 .AccountDetails_detail {
     width: 415px;
@@ -801,6 +699,7 @@ svg:not(:root) {
     background-color: transparent;
     border: 0;
 }
+
 
 .ListOrderTab_list-order-tab .ListOrderTab_tab-content {
     display: block;

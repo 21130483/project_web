@@ -1,19 +1,26 @@
 *{
   padding: 0;
   margin: 0;
-  font-size: 12px;
   font-family: Tahoma,Arial,sans-serif;
-  text-align: center;
 
+}
+
+.buy-now-product {
+
+}
+
+.a-none-fff {
+  text-decoration: none;
+  color: #fff;
 }
 
 /* ******* id ******** */
 
 /* ******* class ******** */
-.page{
+/* .page{
   display: block;
   justify-content: center;
-}
+} */
 
 .header{
   /*width: 1536px;*/
@@ -28,9 +35,9 @@
 
 }
 
-.container{
+/* .container{
   width: 1216px;
-}
+} */
 
 .icon-input-info-cart{
   width: 100%;
@@ -221,7 +228,7 @@
   padding: 32px 0;
 }
 
-.noi-dung .container{
+.noi-dung>.container{
   height: auto;
 }
 
@@ -328,7 +335,7 @@
   background-color: white;
 }
 
-.second-home .container{
+.second-home>.container{
   display: flex;
   flex-direction: column;
 
@@ -388,7 +395,7 @@
   background-color: white;
 }
 
-.top-san-pham-tin-dung .container{
+.top-san-pham-tin-dung>.container{
   display: flex;
   flex-direction: column;
 }
@@ -433,7 +440,7 @@
 
 .san-pham .link-san-pham{
   width: 248px;
-  height: 494px;
+  height: 536px;
   display: block;
   text-decoration: none;
   color: black;
@@ -485,6 +492,7 @@
   border-radius: 12px;
   padding: 1px 6px;
   margin: 5px 0;
+  height: 44px;
 }
 
 .khau-trang-chinh-hang-dat-tc{
@@ -510,7 +518,7 @@
   border-top: 12px solid #3E72D9;
 }
 
-.footer .container{
+.footer>.container{
   display: inline-flex;
   flex-direction: row;
   border-bottom: 1px solid #b2bac6;

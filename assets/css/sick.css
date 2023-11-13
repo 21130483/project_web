@@ -10,6 +10,10 @@ html {
 
 /* common */
 
+.color-sick-item {
+    background-color: #e4e4fb;
+}
+
 .contentSick {
     font-size: 18px;
     padding: 8px;
@@ -88,6 +92,7 @@ html {
 .sick-body-item .sick-item {
     display: flex;
     padding-top: 14px;
+    border-radius: 20px 0 0;
 }
 
 .sick-body-item .sick-item:hover {
