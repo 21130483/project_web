@@ -272,7 +272,7 @@
                                                             maxlength="255" type="text" autocomplete="on" class=""
                                                             value=""></div>
                                                 </div>
-                                            </div><a><span class="AccountDetails_btn-change-pass">Thiết lập mật
+                                            </div><a><span class="btn-add-password AccountDetails_btn-change-pass">Thiết lập mật
                                                     khẩu </span></a>
                                             <button
                                                 class="Button_button Button_button__primary Button_button__disabled AccountDetails_submit"
@@ -441,7 +441,7 @@
                 </div>
             </div>
         </div>
-
+<!-- Thêm địa chỉ  -->
         <div id="add-address" style="display: none;">
             <div class="main-address">
                 <div class="address-box">
@@ -463,6 +463,38 @@
                             <input type="email" name="" required="">
                             <label>Email</label>
                         </div>
+                        <a href="#">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lưu
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thêm mật khẩu -->
+
+        <div id="add-password" style="display: none;">
+            <div class="main-address">
+                <div class="address-box">
+                    <h2>Thiết lập mật khẩu</h2>
+                    <form>
+                        <div class="user-box">
+                            <input type="password" name="" required="">
+                            <label>Mật khẩu cũ</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="" required="">
+                            <label>Mật khẩu mới</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="" required="">
+                            <label>Nhập lại mật khẩu mới</label>
+                        </div>
+                        
                         <a href="#">
                             <span></span>
                             <span></span>
@@ -600,6 +632,25 @@
       });
 
         // end add address
+
+        // password add
+
+        $(".btn-add-password").click(function (e) {
+        e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi
+        $("#add-password").toggle();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#add-password').length) {
+          $("#add-password").hide();
+        }
+      });
+
+      $("#add-password").click(function (e) {
+        e.stopPropagation(); 
+      });
+
+        // and add password
 
 
         // btn-order-item

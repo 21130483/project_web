@@ -41,6 +41,7 @@ html {
 
 }
 
+
 .cursor-point {
     cursor: pointer;
 }
@@ -108,8 +109,8 @@ html {
 
 
 .btn-click-bottom-blue {
-    border-bottom: 1px solid blue !important;
-    color: blue !important;
+    background-color: rgb(85, 85, 250);
+    border-radius: 16px;
 }
 
 /* .color-love-click {
@@ -391,7 +392,7 @@ html {
 
 
 .InputTextField_input-text-field label {
-    font-size: .75rem;
+    font-size: 20px;
     line-height: 18px;
 }
 
@@ -420,11 +421,11 @@ html {
 }
 
 .AccountDetails_gender {
-    margin-top: 1rem;
+    margin-top: 32px;
 }
 
 .AccountDetails_form>div>label {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 18px;
     display: inline-block;
@@ -496,16 +497,10 @@ html {
 }
 
 .DateField_date-field:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 32px;
     display: grid;
 }
 
-.AccountDetails_form>div>label {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    display: inline-block;
-}
 
 .DateField_date-field label {
     font-size: .75rem;
@@ -552,20 +547,9 @@ svg:not(:root) {
 }
 
 .InputTextField_input-text-field:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 32px;
 }
 
-.AccountDetails_form>div>label {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    display: inline-block;
-}
-
-.InputTextField_input-text-field label {
-    font-size: .75rem;
-    line-height: 18px;
-}
 
 .InputTextField_input-text-field .InputTextField_input-group {
     position: relative;
@@ -588,7 +572,7 @@ svg:not(:root) {
 
 .AccountDetails_form .AccountDetails_email {
     position: relative;
-    margin-top: 1rem;
+    margin-top: 32px;
 }
 
 .InputTextField_input-text-field label span {
@@ -698,6 +682,7 @@ svg:not(:root) {
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    padding-right: 28px;
 }
 
 
@@ -769,6 +754,7 @@ svg:not(:root) {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
+
   
   .address-box h2 {
     margin: 0 0 30px;
