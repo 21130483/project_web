@@ -5,14 +5,14 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1100px;
+.container-content {
+    width: 90%;
     padding: 20px;
-    margin-left: 10%;
+    margin-left: 3%;
 }
 
 .slider-content {
-    background: #679210;
+    background: #0056b3;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -28,26 +28,32 @@ body {
 h1 {
     font-size: 36px;
     color: #fff;
+    line-height: 1.6;
 }
 
 h2 {
     font-size: 28px;
-    color: #679210;
+    color: #0056b3;
+    line-height: 1.6;
 }
 
 h4 {
     font-size: 24px;
     color: #000;
     margin-top: 20px;
+    line-height: 1.6;
 }
 
 p {
     font-size: 18px;
     color: #333;
+    line-height: 1.6;
 }
 
 strong {
+    font-size: 20px ;
     font-weight: bold;
+    line-height: 1.6;
 }
 img {
     width: 90%;
