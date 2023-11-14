@@ -30,7 +30,21 @@ html {
     padding-left: 70px;
 }
 
-.icon-love-product:hover::after {
+.icon-nolove-product {
+    color: #ccc;
+    font-size: 24px;
+    padding-left: 70px;
+}
+
+.red-color {
+    color: red;
+}
+
+.ccc-color {
+    color: #ccc;
+}
+
+/* .icon-love-product:hover::after {
     content: "Ẩn sản phẩm"; 
     font-size: 12px;
     position: absolute;
@@ -38,8 +52,9 @@ html {
     top: 375px;
     left: 170px;
     font-family: Arial, Helvetica, sans-serif;
+} */
 
-}
+
 
 
 .cursor-point {
