@@ -1029,7 +1029,10 @@ svg:not(:root) {
 	font-size: 18px;
 	padding: 20px 15px;
 }
-.list-voucher .coupon a.open-code {
+.list-voucher .coupon a.open-code1,
+.list-voucher .coupon a.open-code2,
+.list-voucher .coupon a.open-code3,
+.list-voucher .coupon a.open-code4 {
 	color: #16a085;
 }
 .list-voucher .coupon .code {
