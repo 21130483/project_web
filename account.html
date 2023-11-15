@@ -406,12 +406,12 @@
                                               </div>
 
                                               <!-- Nếu hủy đơn hàng -->
-                                              <div class="Cancel-result cac-san-pham">
+                                              <div class="cac-san-pham">
                                                 
-                                                    <!-- <ul>
-                                                    </ul> -->
-                                                
+                                                    <ul class="Cancel-result">
 
+                                                    </ul>
+                                                
                                               </div>
 
                                         </div>
@@ -448,11 +448,139 @@
                                         </div>
 
                                         <div class="ListOrderTab_tab-content">
-                                            <div class="EmptyResult_empty-result">
+                                          <!-- Nếu chưa có mã giảm giá -->
+                                            <div class="EmptyResult_empty-result" style="display: none;">
                                                 <div><img src="./assets/img/giphy2.gif" alt="empty-cart">
                                                     <p>Bạn chưa có mã giảm giá nào</p>
                                                 </div>
                                             </div>
+
+                                            <!-- Nếu có mã giảm giá -->
+
+                                            <section id="voucher">
+                                              <div class="container">
+                                              <div class="row-voucher">
+                                                    <div class="pd-right-28">
+                                                      <div class="list-voucher">
+                                                        <div class="brand">
+                                                            <h2>mango</h2>
+                                                        </div>
+                                                        <div class="discount alizarin">30%
+                                                            <div class="type">off</div>
+                                                        </div>
+                                                        <div class="descr">
+                                                            <strong>Mei mucius gloriatur reprimique mollis*.</strong> 
+                                                            Ad sonet perfecto antiopam mei, denique molestie ne has. 
+                                                        </div>
+                                                        <div class="ends">
+                                                            <small>* Conditions and restrictions apply.</small>
+                                                        </div>
+                                                        <div class="coupon midnight-blue">
+                                                            <a data-toggle="collapse" href="#code-1" class="open-code">Get a code</a>
+                                                            <div id="code-1" class="collapse code" style="display: none;">LV5MAY14</div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="pd-right-28">
+                                                      <div  class="list-voucher">
+                                                        <div class="brand">
+                                                            <h2>lacoste</h2>
+                                                        </div>
+                                                        <div class="discount emerald">
+                                                            50%
+                                                            <div class="type">
+                                                                off
+                                                            </div>
+                                                        </div>
+                                                        <div class="descr">
+                                                            <strong>
+                                                                Ea per iuvaret ocurreret*. 
+                                                            </strong> 
+                                                            sit ea detraxit menandri mediocritatem, in mel dicant mentitum. 
+                                                        </div>
+                                                        <div class="ends">
+                                                            <small>
+                                                               * Conditions and restrictions apply.
+                                                            </small>
+                                                        </div>
+                                                        <div class="coupon midnight-blue">
+                                                            <a data-toggle="collapse" href="#code-2" class="open-code">Get a code</a>
+                                                            <div id="code-2" class="collapse in code">
+                                                                MNO123ST
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="pd-right-28">
+                                                      <div  class="list-voucher">
+                                                        <div class="brand">
+                                                            <h2>
+                                                                converse
+                                                            </h2>
+                                                        </div>
+                                                        <div class="discount peter-river">
+                                                        15%
+                                                            <div class="type">
+                                                                off
+                                                            </div>
+                                                        </div>
+                                                        <div class="descr">
+                                                            <strong>
+                                                                 Solet consul tractatos ei pro*. 
+                                                            </strong> 
+                                                            Ei mei quot invidunt explicari, placerat percipitur intellegam.
+                                                        </div>
+                                                        <div class="ends">
+                                                            <small>
+                                                               * Conditions and restrictions apply.
+                                                            </small>
+                                                        </div>
+                                                        <div class="coupon midnight-blue">
+                                                            <a data-toggle="collapse" href="#code-3" class="open-code">Get a code</a>
+                                                            <div id="code-3" class="collapse code">
+                                                                OLV4SY3R
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="pd-right-28">
+                                                      <div  class="list-voucher">
+                                                        <div class="brand">
+                                                            <h2>
+                                                                adidas
+                                                            </h2>
+                                                        </div>
+                                                        <div class="discount amethyst">
+                                                            25%
+                                                            <div class="type">
+                                                                off
+                                                            </div>
+                                                        </div>
+                                                        <div class="descr">
+                                                            <strong>
+                                                                Cu aliquip persius alterum duo*. 
+                                                            </strong> 
+                                                            Possit equidem disputando usu et, sea invidunt scriptorem in. 
+                                                        </div>
+                                                        <div class="ends">
+                                                            <small>
+                                                               * Conditions and restrictions apply.
+                                                            </small>
+                                                        </div>
+                                                        <div class="coupon midnight-blue">
+                                                            <a data-toggle="collapse" href="#code-4" class="open-code">Get a code</a>
+                                                            <div id="code-4" class="collapse code">
+                                                                ZUY4OPLQ
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                              </div>
+                                            </section>
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -996,9 +1124,18 @@
             // $(this).closest('.san-pham').hide();
             var closestSanpham = $(this).closest('.san-pham');
                 closestSanpham.appendTo('.Cancel-result');  
+                $(this).hide();
         });
 
         // end hủy đơn hàng
+
+        // Voucher ------------------------
+
+        $(".open-code").click(function() {
+                $("#code-1").toggle();
+            });
+
+        // end voucher
 
 
     });
