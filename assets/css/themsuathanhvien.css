@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.noi-dung{
+    padding:20px 30px;
+}
+
+.them-sua-thanh-vien{
+    height: auto;
+}
+
+.them-sua-thanh-vien .thong-tin-thanh-vien{
+    width: 100%;
+    padding-bottom: 20px ;
+}
+
+.them-sua-thanh-vien .thong-tin-thanh-vien p{
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.them-sua-thanh-vien .dien-thong-tin{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dien-thong-tin .box{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.dien-thong-tin .box input{
+    width: 50%;
+    height: 30px;
+    margin: 3px 0 10px;
+    font-size: 15px;
+    padding: 3px 5px;
+}
+
+.dien-thong-tin .box select{
+    width: 51.85%;
+    height: 39px;
+    margin: 3px 0 10px;
+    font-size: 15px;
+    padding: 3px 5px;
+}
+
+.dien-thong-tin .box option{
+    font-size: 15px;
+}
+
+.them-sua-thanh-vien .hinh-anh{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.them-sua-thanh-vien .hinh-anh input{
+    height: 30px;
+    font-size: 15px;
+    padding: 3px 5px;   
+}
+
+.them-sua-thanh-vien .chi-tiet{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.them-sua-thanh-vien .chi-tiet textarea{
+    padding: 5px;
+    height: 200px;
+    font-size: 15px;
+}
+
+.them-sua-thanh-vien .button-capnhat-huy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.them-sua-thanh-vien .button-capnhat-huy a{
+    text-decoration: none;
+    color: black;
+}
+
+.them-sua-thanh-vien .button-capnhat-huy .them{
+    background-color: red;
+    width: 150px;
+    font-weight: bolder;
+    font-size: 15px;
+    height: 40px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.them-sua-thanh-vien .button-capnhat-huy .huy{
+    background-color: blue;
+    width: 80px;
+    font-weight: bolder;
+    font-size: 15px;
+    height: 40px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
