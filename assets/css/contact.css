@@ -25,7 +25,7 @@ body {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #0f63f5;
+    background-color: #3F85EA;
     color: #fff;
     padding: 5px;
     border-radius: 5px;
@@ -36,7 +36,7 @@ body {
     position: fixed;
     bottom: 200px;
     right: 70px;
-    background-color: #0f63f57d;
+    background-color: #3F85EA;
     padding: 38px;
     border-radius: 84px 84px 0;
     height: 300px;
