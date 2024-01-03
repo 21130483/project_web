@@ -1,5 +1,7 @@
 
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nhà Thuốc</title>
 
-    <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/account.css">
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

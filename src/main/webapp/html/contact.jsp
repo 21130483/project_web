@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+>>>>>>> 21130440-NguyenThanhLuu
 <!DOCTYPE html>
 <html lang="en">
 
