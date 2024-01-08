@@ -1,3 +1,4 @@
+<%@ page import="model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -29,7 +30,7 @@
     <div class="container">
         <div class="icon-input-info-cart">
             <div class="logo-shop">
-                <a href="" class="background-logo-shop">
+                <a href="index.jsp" class="background-logo-shop">
                     <img src="../image/header/LogoPharmacity.png">
                 </a>
             </div>
@@ -48,7 +49,7 @@
 
                 <div class="cart">
                     <div class="button">
-                        <a href="assets/html/cart.html" class="link-button">
+                        <a href="cart.jsp" class="link-button">
                             <div class="icon">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
@@ -62,9 +63,17 @@
                         <div class="icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <a href="assets/html/login.html" class="link-button">
+                        <% User user = (User) session.getAttribute("user");%>
+                        <% if (user != null) {%>
+                        <a href="account.jsp" class="link-button">
+                            <span class="span-text"><%=user.getFullName()%></span>
+                        </a>
+                        <% } else {%>
+                        <a href="login.jsp" class="link-button">
                             <span class="span-text">Đăng nhập</span>
                         </a>
+                        <% }%>
+
                     </div>
                 </div>
             </div>
