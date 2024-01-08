@@ -1,9 +1,12 @@
 package database;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
+import model.User;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class JDBIConnector {
 
@@ -32,8 +35,28 @@ public class JDBIConnector {
 
     }
 
-    public static Jdbi me(){
+    public static Jdbi getConnect(){
         if(jdbi==null) connect();
         return jdbi;
+    }
+
+
+
+    public static void main(String[] args) {
+        System.out.println("chay ra");
+        List<User> users = null;
+        getConnect();
+        System.out.println(jdbi);
+
+
+        try {
+            users = jdbi.withHandle(handle ->
+                    handle.createQuery("select * from users").mapToBean(User.class).collect(Collectors.toList())
+            );
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println(users);
     }
 }
