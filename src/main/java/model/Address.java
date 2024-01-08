@@ -1,13 +1,13 @@
 package model;
 
-public class address {
+public class Address {
     private int userID;
     private String city;
     private String district;
     private String ward;
     private String detail;
 
-    public address() {
+    public Address() {
     }
 
     public int getUserID() {

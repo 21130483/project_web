@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class user {
+public class User {
     private int userID;
     private String email;
     private int phoneNumbers;
@@ -13,7 +13,7 @@ public class user {
     private String role;
     private String access;
 
-    public user() {
+    public User() {
     }
 
     public int getUserID() {
@@ -86,5 +86,21 @@ public class user {
 
     public void setAccess(String access) {
         this.access = access;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID=" + userID +
+                ", email='" + email + '\'' +
+                ", phoneNumbers=" + phoneNumbers +
+                ", fullName='" + fullName + '\'' +
+                ", password='" + password + '\'' +
+                ", dob=" + dob +
+                ", gender='" + gender + '\'' +
+                ", role='" + role + '\'' +
+                ", access='" + access + '\'' +
+                '}';
     }
 }
