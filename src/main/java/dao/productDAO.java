@@ -21,8 +21,16 @@ public class ProductDAO {
         return result;
     }
 
+
+
+    public static List<Product> getBestFaceMask(int limit) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE category = ? ORDER BY orderedNumbers DESC LIMIT ?").bind(0,"Khẩu trang y tế").bind(1,limit).mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
+
     public static void main(String[] args) {
-        List<Product> list = getBestSelling(5);
+        List<Product> list = getBestFaceMask(5);
         for (Product product : list){
             System.out.println(product);
         }
