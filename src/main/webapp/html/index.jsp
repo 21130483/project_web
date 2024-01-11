@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="model.Product" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -208,24 +210,31 @@
 
                 <div class="cac-san-pham">
                     <ul>
+                        <%
+                            List<Product> productsBestSelling = (List) request.getAttribute("getBestSelling");
+                        %>
+
+                        <%
+                            for (Product p : productsBestSelling) {
+                        %>
                         <li class="san-pham">
-                            <a href="assets/html/product.html" class="link-san-pham">
+                            <a href="product.jsp" class="link-san-pham">
                                 <div class="img-san-pham">
                                     <!-- 248 x 248 -->
-                                    <img src="../image/index/máy%20massage.png" alt="">
+                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
                                     <div class="khoang-trong"></div>
 
                                     <div class="ten-san-pham">
-                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
+                                        <%=p.getName()%>
                                     </div>
 
                                     <div class="khoang-trong"></div>
 
                                     <div class="gia-san-pham">
-                                        10.000 đ/Hộp
+                                        <%=p.getPrice()%>
                                     </div>
 
                                     <button class="them-san-pham">
@@ -236,117 +245,151 @@
                             </a>
                         </li>
 
-                        <li class="san-pham">
-                            <a href="assets/html/product.html" class="link-san-pham">
-                                <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/index/máy%20massage.png" alt="">
-                                </div>
+                        <%
+                            }
+                            ;
+                        %>
 
-                                <div class="noi-dung-san-pham">
-                                    <div class="khoang-trong"></div>
 
-                                    <div class="ten-san-pham">
-                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
-                                    </div>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-                                    <div class="khoang-trong"></div>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                    <div class="gia-san-pham">
-                                        10.000 đ/Hộp
-                                    </div>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                </div>
-                            </a>
-                        </li>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-                        <li class="san-pham">
-                            <a href="assets/html/product.html" class="link-san-pham">
-                                <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/index/máy%20massage.png" alt="">
-                                </div>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-                                <div class="noi-dung-san-pham">
-                                    <div class="khoang-trong"></div>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-                                    <div class="ten-san-pham">
-                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
-                                    </div>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-                                    <div class="khoang-trong"></div>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                    <div class="gia-san-pham">
-                                        10.000 đ/Hộp
-                                    </div>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                </div>
-                            </a>
-                        </li>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-                        <li class="san-pham">
-                            <a href="assets/html/product.html" class="link-san-pham">
-                                <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/index/máy%20massage.png" alt="">
-                                </div>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-                                <div class="noi-dung-san-pham">
-                                    <div class="khoang-trong"></div>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-                                    <div class="ten-san-pham">
-                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
-                                    </div>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-                                    <div class="khoang-trong"></div>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                    <div class="gia-san-pham">
-                                        10.000 đ/Hộp
-                                    </div>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                </div>
-                            </a>
-                        </li>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-                        <li class="san-pham">
-                            <a href="assets/html/product.html" class="link-san-pham">
-                                <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/index/máy%20massage.png" alt="">
-                                </div>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-                                <div class="noi-dung-san-pham">
-                                    <div class="khoang-trong"></div>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-                                    <div class="ten-san-pham">
-                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
-                                    </div>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-                                    <div class="khoang-trong"></div>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                    <div class="gia-san-pham">
-                                        10.000 đ/Hộp
-                                    </div>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-                                </div>
-                            </a>
-                        </li>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
+
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
+
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
+
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
+
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
+
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
+
+                        <%--                                    <div class="khoang-trong"></div>--%>
+
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
+
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
+
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
                     </ul>
 
                 </div>

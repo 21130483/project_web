@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class product {
+public class Product {
     private int productID;
     private String name;
     private String category;
@@ -15,7 +15,7 @@ public class product {
     private int orderedNumber;
     private Date dateAdded;
 
-    public product() {
+    public Product() {
     }
 
     public int getProductID() {
@@ -104,5 +104,23 @@ public class product {
 
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productID=" + productID +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", trademark='" + trademark + '\'' +
+                ", origin='" + origin + '\'' +
+                ", content='" + content + '\'' +
+                ", price=" + price +
+                ", sale=" + sale +
+                ", quantity=" + quantity +
+                ", orderedNumber=" + orderedNumber +
+                ", dateAdded=" + dateAdded +
+                '}';
     }
 }
