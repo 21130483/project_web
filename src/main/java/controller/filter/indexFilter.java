@@ -15,7 +15,14 @@ public class indexFilter extends HttpFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         getShowBestSelling(req,res);
         getShowBestFaceMask(req,res);
+        getShowNewProduct(req,res);
         chain.doFilter(req, res);
+    }
+
+    private void getShowNewProduct(ServletRequest req, ServletResponse res) {
+        ProductDAO dao = new ProductDAO();
+        List<Product> products = dao.getNewProduct(5);
+        req.setAttribute("getNewProduct", products);
     }
 
     private void getShowBestFaceMask(ServletRequest req, ServletResponse res) {

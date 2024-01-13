@@ -4,16 +4,17 @@ import java.util.Date;
 
 public class Product {
     private int productID;
-    private String name;
-    private String category;
-    private String trademark;
-    private String origin;
-    private String content;
+
+    private int categoryID;
+    private int originID;
     private int price;
     private int sale;
     private int quantity;
     private int orderedNumber;
     private Date dateAdded;
+    private String name;
+    private String trademark;
+    private String content;
 
     public Product() {
     }
@@ -34,13 +35,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public String getTrademark() {
         return trademark;
@@ -50,12 +44,20 @@ public class Product {
         this.trademark = trademark;
     }
 
-    public String getOrigin() {
-        return origin;
+    public int getCategoryID() {
+        return categoryID;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    public int getOriginID() {
+        return originID;
+    }
+
+    public void setOriginID(int originID) {
+        this.originID = originID;
     }
 
     public String getContent() {
@@ -68,6 +70,23 @@ public class Product {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getPriceHaveDots() {
+        String result = "";
+        String priceString = String.valueOf(price);
+        int dots = priceString.length() - 1 / 3;
+        int remainder = priceString.length() % 3;
+        for (int i = 0; i < priceString.length(); i++) {
+            if (i % 3 == remainder && i != 0) {
+
+                result += ".";
+            }
+            result += priceString.charAt(i);
+
+        }
+        result += " Đồng";
+        return result;
     }
 
     public void setPrice(int price) {
@@ -111,16 +130,17 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "productID=" + productID +
-                ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", trademark='" + trademark + '\'' +
-                ", origin='" + origin + '\'' +
-                ", content='" + content + '\'' +
+                ", categoryID=" + categoryID +
+                ", originID=" + originID +
                 ", price=" + price +
                 ", sale=" + sale +
                 ", quantity=" + quantity +
                 ", orderedNumber=" + orderedNumber +
                 ", dateAdded=" + dateAdded +
+                ", name='" + name + '\'' +
+                ", trademark='" + trademark + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
+
 }

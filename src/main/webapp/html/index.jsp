@@ -227,14 +227,14 @@
                                 <div class="noi-dung-san-pham">
                                     <div class="khoang-trong"></div>
 
-                                    <div class="ten-san-pham">
+                                    <div class="ten-san-pham" style="max-height: 50px; max-width: 224px;overflow: hidden; text-overflow: ellipsis">
                                         <%=p.getName()%>
                                     </div>
 
                                     <div class="khoang-trong"></div>
 
                                     <div class="gia-san-pham">
-                                        <%=p.getPrice()%>
+                                        <%=p.getPriceHaveDots()%>
                                     </div>
 
                                     <button class="them-san-pham">
@@ -246,7 +246,8 @@
                         </li>
 
                         <%
-                            };
+                            }
+                            ;
                         %>
 
 
@@ -424,14 +425,14 @@
                                 <div class="noi-dung-san-pham">
                                     <div class="khoang-trong"></div>
 
-                                    <div class="ten-san-pham">
+                                    <div class="ten-san-pham" style="max-height: 50px; max-width: 224px;overflow: hidden; text-overflow: ellipsis">
                                         <%=p.getName()%>
                                     </div>
 
                                     <div class="khoang-trong"></div>
 
                                     <div class="gia-san-pham">
-                                        <%=p.getPrice()%>
+                                        <%=p.getPriceHaveDots()%>
                                     </div>
 
                                     <button class="them-san-pham">
@@ -443,150 +444,150 @@
                         </li>
 
                         <%
-                            };
+                            }
+                            ;
                         %>
 
 
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-<%--                        <li class="san-pham">--%>
-<%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
-<%--                                <div class="img-san-pham">--%>
-<%--                                    <!-- 248 x 248 -->--%>
-<%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
-<%--                                </div>--%>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                <div class="noi-dung-san-pham">--%>
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="ten-san-pham">--%>
-<%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
-<%--                                    </div>--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="gia-san-pham">--%>
-<%--                                        10.000 đ/Hộp--%>
-<%--                                    </div>--%>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-<%--                                    <button class="them-san-pham">--%>
-<%--                                        Thêm vào giỏ hàng--%>
-<%--                                    </button>--%>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-<%--                                </div>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-<%--                        <li class="san-pham">--%>
-<%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
-<%--                                <div class="img-san-pham">--%>
-<%--                                    <!-- 248 x 248 -->--%>
-<%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
-<%--                                </div>--%>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                <div class="noi-dung-san-pham">--%>
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="ten-san-pham">--%>
-<%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
-<%--                                    </div>--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="gia-san-pham">--%>
-<%--                                        10.000 đ/Hộp--%>
-<%--                                    </div>--%>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-<%--                                    <button class="them-san-pham">--%>
-<%--                                        Thêm vào giỏ hàng--%>
-<%--                                    </button>--%>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-<%--                                </div>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-<%--                        <li class="san-pham">--%>
-<%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
-<%--                                <div class="img-san-pham">--%>
-<%--                                    <!-- 248 x 248 -->--%>
-<%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
-<%--                                </div>--%>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                <div class="noi-dung-san-pham">--%>
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="ten-san-pham">--%>
-<%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
-<%--                                    </div>--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="gia-san-pham">--%>
-<%--                                        10.000 đ/Hộp--%>
-<%--                                    </div>--%>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-<%--                                    <button class="them-san-pham">--%>
-<%--                                        Thêm vào giỏ hàng--%>
-<%--                                    </button>--%>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-<%--                                </div>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-<%--                        <li class="san-pham">--%>
-<%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
-<%--                                <div class="img-san-pham">--%>
-<%--                                    <!-- 248 x 248 -->--%>
-<%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
-<%--                                </div>--%>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                <div class="noi-dung-san-pham">--%>
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="ten-san-pham">--%>
-<%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
-<%--                                    </div>--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="gia-san-pham">--%>
-<%--                                        10.000 đ/Hộp--%>
-<%--                                    </div>--%>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-<%--                                    <button class="them-san-pham">--%>
-<%--                                        Thêm vào giỏ hàng--%>
-<%--                                    </button>--%>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
 
-<%--                                </div>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
+                        <%--                        <li class="san-pham">--%>
+                        <%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
+                        <%--                                <div class="img-san-pham">--%>
+                        <%--                                    <!-- 248 x 248 -->--%>
+                        <%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
+                        <%--                                </div>--%>
 
-<%--                        <li class="san-pham">--%>
-<%--                            <a href="assets/html/product.html" class="link-san-pham">--%>
-<%--                                <div class="img-san-pham">--%>
-<%--                                    <!-- 248 x 248 -->--%>
-<%--                                    <img src="../image/index/máy%20massage.png" alt="">--%>
-<%--                                </div>--%>
+                        <%--                                <div class="noi-dung-san-pham">--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                <div class="noi-dung-san-pham">--%>
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="ten-san-pham">--%>
+                        <%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="ten-san-pham">--%>
-<%--                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)--%>
-<%--                                    </div>--%>
+                        <%--                                    <div class="khoang-trong"></div>--%>
 
-<%--                                    <div class="khoang-trong"></div>--%>
+                        <%--                                    <div class="gia-san-pham">--%>
+                        <%--                                        10.000 đ/Hộp--%>
+                        <%--                                    </div>--%>
 
-<%--                                    <div class="gia-san-pham">--%>
-<%--                                        10.000 đ/Hộp--%>
-<%--                                    </div>--%>
+                        <%--                                    <button class="them-san-pham">--%>
+                        <%--                                        Thêm vào giỏ hàng--%>
+                        <%--                                    </button>--%>
 
-<%--                                    <button class="them-san-pham">--%>
-<%--                                        Thêm vào giỏ hàng--%>
-<%--                                    </button>--%>
-
-<%--                                </div>--%>
-<%--                            </a>--%>
-<%--                        </li>--%>
+                        <%--                                </div>--%>
+                        <%--                            </a>--%>
+                        <%--                        </li>--%>
                     </ul>
 
                 </div>
@@ -597,18 +598,18 @@
         <div class="dung-cu-so-cuu top-san-pham-tin-dung">
             <div class="container">
                 <div class="title-top-sp-td">
-                    <span>Dụng cụ sơ cứu</span>
+                    <span>Sản phẩm mới nhất</span>
                     <a href="" class="xem-them">Xem thêm</a>
                 </div>
 
                 <div class="cac-san-pham">
                     <ul>
                         <%
-                            List<Product> productsBestFaceMask2 = (List) request.getAttribute("getBestFaceMask");
+                            List<Product> newProduct = (List) request.getAttribute("getNewProduct");
                         %>
 
                         <%
-                            for (Product p : productsBestFaceMask2) {
+                            for (Product p : newProduct) {
                         %>
                         <li class="san-pham">
                             <a href="product.jsp" class="link-san-pham">
@@ -620,14 +621,15 @@
                                 <div class="noi-dung-san-pham">
                                     <div class="khoang-trong"></div>
 
-                                    <div class="ten-san-pham">
+                                    <div class="ten-san-pham"
+                                         style="max-height: 50px; max-width: 224px;overflow: hidden; text-overflow: ellipsis">
                                         <%=p.getName()%>
                                     </div>
 
                                     <div class="khoang-trong"></div>
 
                                     <div class="gia-san-pham">
-                                        <%=p.getPrice()%>
+                                        <%=p.getPriceHaveDots()%>
                                     </div>
 
                                     <button class="them-san-pham">
@@ -639,7 +641,8 @@
                         </li>
 
                         <%
-                            };
+                            }
+                            ;
                         %>
 
 <%--                        <li class="san-pham">--%>

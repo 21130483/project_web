@@ -91,7 +91,7 @@
             <li><a href="assets/html/cacsanpham.html" class="category-menu">Khẩu trang</a></li>
             <li><a href="assets/html/sick.html" class="category-menu">Bệnh</a></li>
             <li><a href="" class="category-menu">Góc sức khỏe</a></li>
-            <li><a href="" class="category-menu">Hệ thống nhà dụng cụ y tế</a></li>
+            <li><a href="introduce.jsp" class="category-menu">Giới thiệu</a></li>
         </ul>
     </div>
 </div>
