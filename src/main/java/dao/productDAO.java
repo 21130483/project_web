@@ -25,13 +25,20 @@ public class ProductDAO {
 
     public static List<Product> getBestFaceMask(int limit) {
         List<Product> result = new ArrayList<>();
-        result = handle.select("SELECT * FROM products WHERE category = ? ORDER BY orderedNumbers DESC LIMIT ?").bind(0,"Khẩu trang y tế").bind(1,limit).mapToBean(Product.class).collect(Collectors.toList());
+        result = handle.select("SELECT * FROM products WHERE categoryID = ? ORDER BY orderedNumbers DESC LIMIT ?").bind(0,1).bind(1,limit).mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
+
+
+    public static List<Product> getNewProduct(int limit) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products ORDER BY dateAdded DESC LIMIT ?").bind(0,limit).mapToBean(Product.class).collect(Collectors.toList());
         return result;
     }
 
     public static void main(String[] args) {
-        List<Product> list = getBestFaceMask(5);
-        for (Product product : list){
+        List<Product> products = getNewProduct(5);
+        for (Product product : products){
             System.out.println(product);
         }
     }
