@@ -20,20 +20,20 @@ public class indexFilter extends HttpFilter implements Filter {
     }
 
     private void getShowNewProduct(ServletRequest req, ServletResponse res) {
-        ProductDAO dao = new ProductDAO();
-        List<Product> products = dao.getNewProduct(5);
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> products = productDAO.getNewProduct(5);
         req.setAttribute("getNewProduct", products);
     }
 
     private void getShowBestFaceMask(ServletRequest req, ServletResponse res) {
-        ProductDAO dao = new ProductDAO();
-        List<Product> products = dao.getBestFaceMask(5);
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> products = productDAO.getBestFaceMask(5);
         req.setAttribute("getBestFaceMask", products);
     }
 
     private void getShowBestSelling(ServletRequest req, ServletResponse res) {
-        ProductDAO dao = new ProductDAO();
-        List<Product> products = dao.getBestSelling(5);
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> products = productDAO.getBestSelling(5);
         req.setAttribute("getBestSelling", products);
 
     }

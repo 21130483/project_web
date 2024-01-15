@@ -9,49 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56f10953-b632-4a42-9e80-dd0220892b1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/filter/indexFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/1/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/1/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/1/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/1/3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/10/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/10/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/10/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/2/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/2/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/2/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/3/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/3/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/3/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/3/3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/4/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/4/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/4/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/4/3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/5/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/5/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/5/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/6/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/6/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/6/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/7/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/7/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/7/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/8/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/8/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/8/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/9/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/9/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/9/2.webp" afterDir="false" />
+    <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/productDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/indexFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/filter/indexFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/products.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +27,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
-        <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -78,82 +41,31 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2ZCcdCzb8rbcmZaEo2yLWr1TS0x" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2azQObeLZevS24GRZj7SqYunIT2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JDBIConnector.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Product.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProductDAO.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.81.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/phuoc/OneDrive/Máy tính/github/person/project_web&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProductDAO.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 9.0.81.executor": "Run",
+    "Tomcat Server.header.jsp.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\resources" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\java\database" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\image" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\image\index" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\html" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="model" />
-      <recent name="database" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
-    <configuration name="JDBIConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="database.JDBIConnector" />
-      <module name="Lab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Product" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.Product" />
-      <module name="Lab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
@@ -163,19 +75,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="project_web" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="project_web" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,7 +89,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="9fbdba5f-4b60-46ed-9618-3601a5ab590b" />
+        <option name="BASE_DIRECTORY_NAME" value="57c02994-d08f-4156-bb52-a5fd9049fa41" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -198,7 +97,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57620" />
+        <option name="DEBUG_PORT" value="59253" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -268,85 +167,28 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Product" />
       <item itemvalue="Application.ProductDAO" />
-      <item itemvalue="Application.JDBIConnector" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProductDAO" />
-        <item itemvalue="Application.Product" />
-        <item itemvalue="Application.JDBIConnector" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="56f10953-b632-4a42-9e80-dd0220892b1a" name="Changes" comment="" />
-      <created>1701929586843</created>
+      <changelist id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="" />
+      <created>1705318896414</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701929586843</updated>
-      <workItem from="1701929587868" duration="4674000" />
-      <workItem from="1701938413361" duration="6000" />
-      <workItem from="1701942017026" duration="360000" />
-      <workItem from="1701942519295" duration="2368000" />
-      <workItem from="1702005797748" duration="2000" />
-      <workItem from="1702022108731" duration="2554000" />
-      <workItem from="1702281914549" duration="48000" />
-      <workItem from="1702282014224" duration="10000" />
-      <workItem from="1702366799523" duration="45000" />
-      <workItem from="1702368067358" duration="363000" />
-      <workItem from="1702970684808" duration="559000" />
-      <workItem from="1702974726395" duration="3710000" />
-      <workItem from="1702986163359" duration="393000" />
-      <workItem from="1702989295154" duration="969000" />
-      <workItem from="1703060914043" duration="4213000" />
-      <workItem from="1703729371200" duration="435000" />
-      <workItem from="1703729868686" duration="547000" />
-      <workItem from="1703831398937" duration="47000" />
-      <workItem from="1704443949475" duration="2000" />
-      <workItem from="1704444080639" duration="8000" />
-      <workItem from="1704444105060" duration="83000" />
-      <workItem from="1704445658523" duration="15000" />
-      <workItem from="1704445694339" duration="6000" />
-      <workItem from="1704446173976" duration="153000" />
-      <workItem from="1704447653285" duration="210000" />
-      <workItem from="1704701414473" duration="1924000" />
-      <workItem from="1704706630562" duration="6735000" />
-      <workItem from="1704787322504" duration="406000" />
-      <workItem from="1704966162882" duration="786000" />
-      <workItem from="1704974679580" duration="361000" />
-      <workItem from="1704975131302" duration="161000" />
-      <workItem from="1704976216939" duration="62000" />
-      <workItem from="1704984016420" duration="1256000" />
-      <workItem from="1705048590579" duration="1523000" />
-      <workItem from="1705062960865" duration="551000" />
-      <workItem from="1705145745257" duration="3027000" />
-      <workItem from="1705148786094" duration="1095000" />
-      <workItem from="1705149899535" duration="4000" />
-      <workItem from="1705149954958" duration="46000" />
+      <updated>1705318896414</updated>
+      <workItem from="1705318897456" duration="2542000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.jdbi.v3.core.ConnectionException" package="org.jdbi.v3.core" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

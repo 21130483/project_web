@@ -36,8 +36,14 @@ public class ProductDAO {
         return result;
     }
 
+    public static List<Product> getFindProducts(String textFindProduct) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE name LIKE ? ").bind(0, "%"+textFindProduct+"%").mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
+
     public static void main(String[] args) {
-        List<Product> products = getNewProduct(5);
+        List<Product> products = getFindProducts("Khẩu trang");
         for (Product product : products){
             System.out.println(product);
         }
