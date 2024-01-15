@@ -36,14 +36,18 @@
             </div>
 
 
-            <div class="thanh-tim-san-pham">
+            <form action="findProduct" method="post">
+                <div class="thanh-tim-san-pham">
                         <span class="input-va-button-tim-kiem">
-                            <input class="input" type="text"
-                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..."required>
+                            <input class="input" type="text" name="textFindProduct"
+                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..." required>
 
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <button type="submit" style="border: none; background: transparent"><i class="fa-solid fa-magnifying-glass"></i></button>
+
                         </span>
-            </div>
+                </div>
+            </form>
+
 
             <div class="info-cart">
 
