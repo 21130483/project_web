@@ -35,10 +35,11 @@
                 </a>
             </div>
 
+
             <div class="thanh-tim-san-pham">
                         <span class="input-va-button-tim-kiem">
                             <input class="input" type="text"
-                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng...">
+                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..."required>
 
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
