@@ -39,6 +39,7 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(5, 'Bông y tế'),
 	(6, 'Nhiệt kế'),
 	(7, 'Máy, que thử đường huyết'),
+	(8, 'Kim các loại'),
 	(999, 'loại');
 
 
@@ -58,6 +59,7 @@ INSERT INTO `origin` (`originID`, `name`) VALUES
 	(4, 'Hoa Kỳ'),
 	(5, 'Hàn Quốc'),
 	(6, 'Đài Loan'),
+	(7, 'Đức'),
 	(999, 'quốc gia');
 
 
@@ -99,6 +101,13 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(14, 7, 4, 999, '2023-02-17', 27000, 1000, 90, 'Máy đo đường huyết On Call Ez II ACON thiết kế gọn nhẹ, thao tác sử dụng đơn giản', 'ACON', 'Máy đo đường huyết On Call EZ II với công nghệ đo ứng dụng cảm ứng sinh học tiên tiến, cho kết quả chính xác đến 99%. Máy được thiết kế gọn nhẹ, thao tác sử dụng đơn giản, thuận lợi cho bệnh nhân tự đo đường huyết của mình ở mọi lúc, mọi nơi.'),
 	(15, 7, 6, 999, '2023-02-17', 27000, 1000, 90, 'Que thử đường huyết FaCare FC-M168 (TD-4216) kiểm tra nồng độ đường huyết trong máu (25 cái)', 'TAIDOC', 'm phân phối dành cho thị trườ'),
 
+	(26, 8, 2, 999, '2023-02-17', 27000, 1000, 90, 'Kim Lancet lấy máu BL-28 (100 cái)', 'PROMISEMED HANGZHOU MEDITECH CO.,LTD', 'Kim lấy máu Lancet Carefine BL-28G được dùng cho máy đo đường huyết thương hiệu Easy Max, Nipro Premier Alpha. Kim được lắp vào bút lấy máu để chích lấy máu, giúp kiểm tra nhanh các chỉ số cụ thể.'),
+	(27, 8, 4, 999, '2023-02-17', 27000, 1000, 90, 'Kim lấy máu MediUSA MM3300 dùng cho máy đo đường huyết (25 cái)', 'MEDIUSA', 'Kim lấy máu MediUSA MM3300 cho máy đo đường huyết là sản phẩm lấy mẫu máu thử hỗ trợ dùng cho máy đo đường huyết. Sản phẩm đã qua tiệt trùng và chỉ sử dụng 1 kim 1 lần nên rất an toàn.'),
+	(28, 8, 7, 999, '2023-02-17', 27000, 1000, 90, 'Kim tiêm tiểu đường B.Braun Omnican 1ml/100 I.U màu cam dùng cho người tiểu đường (100 cái x 1ml)', 'BRAUN', 'Kim tiêm tiểu đường B.Braun Omnican dùng cho người tiểu đường với chất liệu dùng trong y tế đảm bảo an toàn cho bệnh. Đặc biệt, các ống tiêm được đóng gói trong bao riêng biệt đảm bảo vô trùng khi sử dụng.'),
+	(29, 8, 1, 999, '2023-02-17', 27000, 1000, 90, 'Bơm tiêm sử dụng một lần Vinahankook 3ml/cc được khử trùng bằng khí E.O (25g - 100 cái)', 'VINAHANKOOK', 'Bơm tiêm 3ml Vinahankook được khử trùng bằng khí E.O. Vinahankook sản xuất theo công nghệ Hàn Quốc đảm bảo vô trùng, không gây độc, không gây sốt.'),
+	(30, 8, 1, 999, '2023-02-17', 27000, 1000, 90, 'Đầu kim Vinahankook sử dụng một lần dùng để tiêm chích, lấy máu, pha thuốc (100 cái x 18g)', 'VINAHANKOOK', 'Đầu kim 18 Vinahankook sử dụng một lần, thích hợp dùng để tiêm chích, lấy máu, pha thuốc. Sản phẩm an toàn, vô trùng tuyệt đối.'),
+
+	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
 	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');
 
 

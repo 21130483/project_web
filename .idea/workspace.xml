@@ -10,31 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/11/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/11/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/11/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/12/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/12/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/12/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/13/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/13/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/13/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/14/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/14/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/14/2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/14/3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/15/0.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/15/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/product/15/2.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/indexFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/filter/indexFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 9.0.81.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.header.jsp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;21130483-NguyenHuuPhuoc&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -97,6 +73,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/La/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Lab:war">
@@ -106,7 +83,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="57c02994-d08f-4156-bb52-a5fd9049fa41" />
+        <option name="BASE_DIRECTORY_NAME" value="0f650be3-30ea-4235-b785-a0c1299ac88c" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -114,7 +91,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59253" />
+        <option name="DEBUG_PORT" value="49978" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -203,6 +180,8 @@
       <updated>1705318896414</updated>
       <workItem from="1705318897456" duration="2542000" />
       <workItem from="1705323699447" duration="5000" />
+      <workItem from="1705394444234" duration="201000" />
+      <workItem from="1705394658488" duration="13000" />
     </task>
     <servers />
   </component>
