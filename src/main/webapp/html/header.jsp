@@ -35,14 +35,19 @@
                 </a>
             </div>
 
-            <div class="thanh-tim-san-pham">
-                        <span class="input-va-button-tim-kiem">
-                            <input class="input" type="text"
-                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng...">
 
-                            <i class="fa-solid fa-magnifying-glass"></i>
+            <form action="findProduct" method="post">
+                <div class="thanh-tim-san-pham">
+                        <span class="input-va-button-tim-kiem">
+                            <input class="input" type="text" name="textFindProduct"
+                                   placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..." required>
+
+                            <button type="submit" style="border: none; background: transparent"><i class="fa-solid fa-magnifying-glass"></i></button>
+
                         </span>
-            </div>
+                </div>
+            </form>
+
 
             <div class="info-cart">
 
@@ -91,7 +96,7 @@
             <li><a href="assets/html/cacsanpham.html" class="category-menu">Khẩu trang</a></li>
             <li><a href="assets/html/sick.html" class="category-menu">Bệnh</a></li>
             <li><a href="" class="category-menu">Góc sức khỏe</a></li>
-            <li><a href="" class="category-menu">Hệ thống nhà dụng cụ y tế</a></li>
+            <li><a href="introduce.jsp" class="category-menu">Giới thiệu</a></li>
         </ul>
     </div>
 </div>

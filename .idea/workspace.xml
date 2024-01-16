@@ -9,17 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56f10953-b632-4a42-9e80-dd0220892b1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
+    <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/userDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DBProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/JDBIConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/JDBIConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +20,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
-        <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -49,56 +37,34 @@
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2ZCcdCzb8rbcmZaEo2yLWr1TS0x" />
+  <component name="ProjectId" id="2azQObeLZevS24GRZj7SqYunIT2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JDBIConnector.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.81.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/phuoc/OneDrive/Máy tính/github/main/project_web",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ProductDAO.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.81.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.header.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;21130483-NguyenHuuPhuoc&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\resources" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\java\database" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\image" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\image\index" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp\html" />
-      <recent name="C:\Users\phuoc\OneDrive\Máy tính\project_web\src\main\webapp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="model" />
-      <recent name="database" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
-    <configuration name="JDBIConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="database.JDBIConnector" />
+    <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,20 +72,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="project_web" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="project_web" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/La/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Lab:war">
@@ -129,7 +83,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e43133ed-3a02-4498-bf4d-afc941851545" />
+        <option name="BASE_DIRECTORY_NAME" value="0f650be3-30ea-4235-b785-a0c1299ac88c" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -137,7 +91,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50500" />
+        <option name="DEBUG_PORT" value="49978" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -206,66 +160,32 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ProductDAO" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JDBIConnector" />
+        <item itemvalue="Application.ProductDAO" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="56f10953-b632-4a42-9e80-dd0220892b1a" name="Changes" comment="" />
-      <created>1701929586843</created>
+      <changelist id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="" />
+      <created>1705318896414</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701929586843</updated>
-      <workItem from="1701929587868" duration="4674000" />
-      <workItem from="1701938413361" duration="6000" />
-      <workItem from="1701942017026" duration="360000" />
-      <workItem from="1701942519295" duration="2368000" />
-      <workItem from="1702005797748" duration="2000" />
-      <workItem from="1702022108731" duration="2554000" />
-      <workItem from="1702281914549" duration="48000" />
-      <workItem from="1702282014224" duration="10000" />
-      <workItem from="1702366799523" duration="45000" />
-      <workItem from="1702368067358" duration="363000" />
-      <workItem from="1702970684808" duration="559000" />
-      <workItem from="1702974726395" duration="3710000" />
-      <workItem from="1702986163359" duration="393000" />
-      <workItem from="1702989295154" duration="969000" />
-      <workItem from="1703060914043" duration="4213000" />
-      <workItem from="1703729371200" duration="435000" />
-      <workItem from="1703729868686" duration="547000" />
-      <workItem from="1703831398937" duration="47000" />
-      <workItem from="1704443949475" duration="2000" />
-      <workItem from="1704444080639" duration="8000" />
-      <workItem from="1704444105060" duration="83000" />
-      <workItem from="1704445658523" duration="15000" />
-      <workItem from="1704445694339" duration="6000" />
-      <workItem from="1704446173976" duration="153000" />
-      <workItem from="1704447653285" duration="210000" />
-      <workItem from="1704701414473" duration="1924000" />
-      <workItem from="1704706630562" duration="6735000" />
+      <updated>1705318896414</updated>
+      <workItem from="1705318897456" duration="2542000" />
+      <workItem from="1705323699447" duration="5000" />
+      <workItem from="1705394444234" duration="201000" />
+      <workItem from="1705394658488" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.jdbi.v3.core.ConnectionException" package="org.jdbi.v3.core" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
