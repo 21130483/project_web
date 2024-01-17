@@ -42,6 +42,7 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(8, 'Kim các loại'),
 	(9, 'Dụng cụ xét nghiệm'),
 	(10, 'Găng tay'),
+	(11, 'Máy đo SpO2'),
 	(999, 'loại');
 
 
@@ -64,6 +65,7 @@ INSERT INTO `origin` (`originID`, `name`) VALUES
 	(7, 'Đức'),
 	(8, 'Nhật bản'),
 	(9, 'Thái Lan'),
+	(10, 'Ấn Độ'),
 	(999, 'quốc gia');
 
 
@@ -111,15 +113,22 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(19, 9, 2, 999, '2023-02-17', 2200000 , 1000, 100, 'Dụng cụ xét nghiệm nhanh COVID-19 Flowflex Test Kit (Hộp 25 bộ kit)', 'Flowflex', 'Flowflex SARS-CoV-2 Antigen Rapid Test giúp phát hiện nhanh kháng nguyên SARS-CoV-2 trong mẫu ngoáy dịch tỵ hầu của người nghi ngờ mắc COVID-19 trong vòng 7 ngày đầu tiên kể từ khi xuất hiện triệu chứng, sản phẩm cũng có thể xét nghiệm các mẫu bệnh phẩm của người không có triệu chứng. Sản phẩm dễ sử dụng, độ chính xác cao, có kết quả chỉ sau 15 - 30 phút và đã được Bộ Y tế cấp phép nhập khẩu theo giấy phép số 5895/BYT-TB-CT.'),
 	(20, 10, 9, 999, '2023-02-17', 30000 , 1000, 90, 'Găng tay y tế có bột SH Gloves size M (Hộp 100 chiếc)', 'SRI TRANG GLOVE PUBLIC COMPANY LTD', 'Găng tay y tế có bột SH Gloves được làm từ cao su tự nhiên, chưa được tiệt trùng, có chứa tạp chất và sử dụng 1 lần. Sản phẩm có độ đàn hồi vượt trội so với găng cao su tổng hợp, đặc biệt bột trong găng giúp thao tác đeo và tháo găng dễ dàng hơn đồng thời mang lại cảm giác cầm nắm chính xác. Găng tay SH Gloves được sử dụng rộng rãi trong các hoạt động y tế.'),
 
-
 	(26, 8, 2, 999, '2023-02-17', 27000, 1000, 90, 'Kim Lancet lấy máu BL-28 (100 cái)', 'PROMISEMED HANGZHOU MEDITECH CO.,LTD', 'Kim lấy máu Lancet Carefine BL-28G được dùng cho máy đo đường huyết thương hiệu Easy Max, Nipro Premier Alpha. Kim được lắp vào bút lấy máu để chích lấy máu, giúp kiểm tra nhanh các chỉ số cụ thể.'),
 	(27, 8, 4, 999, '2023-02-17', 27000, 1000, 90, 'Kim lấy máu MediUSA MM3300 dùng cho máy đo đường huyết (25 cái)', 'MEDIUSA', 'Kim lấy máu MediUSA MM3300 cho máy đo đường huyết là sản phẩm lấy mẫu máu thử hỗ trợ dùng cho máy đo đường huyết. Sản phẩm đã qua tiệt trùng và chỉ sử dụng 1 kim 1 lần nên rất an toàn.'),
 	(28, 8, 7, 999, '2023-02-17', 27000, 1000, 90, 'Kim tiêm tiểu đường B.Braun Omnican 1ml/100 I.U màu cam dùng cho người tiểu đường (100 cái x 1ml)', 'BRAUN', 'Kim tiêm tiểu đường B.Braun Omnican dùng cho người tiểu đường với chất liệu dùng trong y tế đảm bảo an toàn cho bệnh. Đặc biệt, các ống tiêm được đóng gói trong bao riêng biệt đảm bảo vô trùng khi sử dụng.'),
 	(29, 8, 1, 999, '2023-02-17', 27000, 1000, 90, 'Bơm tiêm sử dụng một lần Vinahankook 3ml/cc được khử trùng bằng khí E.O (25g - 100 cái)', 'VINAHANKOOK', 'Bơm tiêm 3ml Vinahankook được khử trùng bằng khí E.O. Vinahankook sản xuất theo công nghệ Hàn Quốc đảm bảo vô trùng, không gây độc, không gây sốt.'),
 	(30, 8, 1, 999, '2023-02-17', 27000, 1000, 90, 'Đầu kim Vinahankook sử dụng một lần dùng để tiêm chích, lấy máu, pha thuốc (100 cái x 18g)', 'VINAHANKOOK', 'Đầu kim 18 Vinahankook sử dụng một lần, thích hợp dùng để tiêm chích, lấy máu, pha thuốc. Sản phẩm an toàn, vô trùng tuyệt đối.'),
 
+
+
+	(41, 11, 2, 999, '2023-02-17', 490000, 1000, 90, 'Máy đo nồng độ oxy trong máu Jumper JPD 500E Led thiết kế nhỏ gọn và sử dụng dễ dàng', 'SHENZHEN JUMPER MEDICAL EQUIPTMENT CO.,LTD', 'Máy đo nồng độ oxy trong máu SpO2 Jumper JPD 500E Led là thiết bị dùng để đo sự bão hòa oxy trong mạch máu và nhịp tim. Thiết bị giúp phát hiện hiện tượng thiếu oxy trong máu và nhịp tim bất thường để có cách xử lý nhanh chóng, kịp thời bằng phương pháp cảm biến quang học thông qua đầu ngón tay với độ chính xác cao, dễ thao tác. Sản phẩm có thiết kế nhỏ gọn và sử dụng dễ dàng, phù hợp với mọi đối tượng.'),
+	(42, 11, 3, 999, '2023-02-17', 690000, 1000, 90, 'Máy đo nồng độ oxy trong máu Microlife Oxy 200 hỗ trợ đo nhanh chóng và chính xác', 'MICROLIFE', 'Microlife Oxy 200 - Máy Đo Nồng Độ Oxy Trong Máu là một thiết bị y tế cải tiến với các tính năng không xâm lấn và liên tục để phát hiện nồng độ oxy trong máu (SPO2), nhịp tim (PR) của cả người lớn và bệnh nhi. Mang tính di động nên sản phẩm có thể đo các giá trị SPO2 và PR một cách nhanh chóng, chính xác.'),
+	(43, 11, 2, 999, '2023-02-17', 399000, 1000, 90, 'Máy đo nồng độ oxy trong máu SpO2 Metech - PC - 60A hỗ trợ đo nhanh chóng và chính xác', 'SHENZHEN CREATIVE INDUSTRY CO.,LTD', 'Máy đo nồng độ Oxy trong máu SpO2 Metech - PC - 60A được dùng để đo nồng độ bảo hòa oxy trong máu và nhịp tim, dạng kẹp ngón tay, có thể theo dõi nồng độ bảo hòa oxy trong máu (SPO2), nhịp tim (PR) thông qua ngón tay của bệnh nhân.'),
+	(44, 11, 10, 999, '2023-02-17', 690000, 1000, 90, 'Máy đo nồng độ oxy trong máu (SPO2) Pulse Fingertip Oximeter A4 Oromi hỗ trợ đo nhanh chóng và chính xác', 'FT DIGITAL TECHNOLOGY CO.,LTD', 'Máy Đo Nhịp Tim Và Nồng Độ Oxy Trong Máu (SpO2) Fingertip Pulse Oximeter Oromi A4 là một thiết bị y tế cải tiến với các tính năng không xâm lấn và liên tục để phát hiện nồng độ oxy trong máu (SPO2) và nhịp đập của tim (PR). Mang tính di động nên sản phẩm có thể đo các giá trị SPO2 và PR một cách nhanh chóng và chính xác.'),
+	(45, 3, 8, 999, '2023-02-17', 1030000, 1000, 90, 'Máy đo huyết áp bắp tay tự động AND UA-651 hỗ trợ đo huyết áp và nhịp tim', 'A&D ELECTRONICS(SHENZEN) CO.,LTD', 'Máy Đo Huyết Áp Bắp Tay Tự Động And Ua-651 được sản xuất theo tiêu chuẩn Nhật Bản với các tính năng nổi bật như: Cảnh báo Nhịp tim không đều, cảnh báo huyết áp cao theo WHO, bộ nhớ lưu trữ đến 30 kết quả đo và hiển thị kết quả trung bình giữa các lần đo.'),
+
 	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
-	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');
+	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
 
 
 
