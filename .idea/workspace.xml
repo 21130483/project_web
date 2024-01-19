@@ -10,13 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/account.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/sick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adminFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/VoucherDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
+=======
 
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
@@ -29,6 +37,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" afterDir="false" />
 
+>>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +47,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
+        <option value="JavaScript File" />
+=======
+>>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
         <option value="Class" />
       </list>
     </option>
@@ -224,8 +237,12 @@
       <workItem from="1705661255718" duration="8000" />
       <workItem from="1705661268846" duration="167000" />
       <workItem from="1705661437988" duration="53000" />
+<<<<<<< HEAD
+      <workItem from="1705661505409" duration="10955000" />
+=======
       <workItem from="1705661505409" duration="7559000" />
 
+>>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
     </task>
     <servers />
   </component>

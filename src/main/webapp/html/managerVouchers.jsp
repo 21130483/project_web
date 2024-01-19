@@ -19,15 +19,15 @@
         </div>
         <ul>
             <li class="button-muc-luc">
-                <a href="quanlysanpham.html">
-                    <div class="a">
+                <a href="admin?page=product">
+                    <div class="a" style="background-color: #007bff;">
                         Quản lý sản phẩm
                     </div>
                 </a>
             </li>
 
             <li class="button-muc-luc">
-                <a href="quanlythanhvien.html">
+                <a href="admin?page=user">
                     <div class="a">
                         Quản lý thành viên
                     </div>
@@ -35,15 +35,15 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="quanlyhoadon.html">
+                <a href="admin?page=bill">
                     <div class="a">
                         Quản lý hóa đơn
                     </div>
                 </a>
             </li>
 
-            <li class="button-muc-luc" style="background-color: #007bff;">
-                <a href="quanlyvoucher.html">
+            <li class="button-muc-luc">
+                <a href="admin?page=voucher">
                     <div class="a">
                         Quản lý phiếu giảm giá
                     </div>
@@ -51,7 +51,7 @@
             </li>
 
             <li class="button-muc-luc" style="margin-top: 50px;">
-                <a href="../../index.html">
+                <a href="index.jsp">
                     <div class="a">
                         Quay về trang chủ
                     </div>

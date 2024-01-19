@@ -48,7 +48,12 @@ public class CartController extends HttpServlet {
 //        for(Product p : cart.getCart().keySet()){
 //            System.out.println(p.getProductID()+" : "+cart.getCart().get(p));
 //        }
-        req.getRequestDispatcher(page+".jsp").forward(req,resp);
+        if (page.equals("products")){
+            req.getRequestDispatcher("findProduct").forward(req,resp);
+        }else {
+            req.getRequestDispatcher(page+".jsp").forward(req,resp);
+        }
+
 
     }
 }

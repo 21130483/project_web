@@ -10,6 +10,12 @@ import java.util.stream.Collectors;
 public class UserDAO {
     public static final Jdbi connect = JDBIConnector.getConnect();
 
+
+    public List<User> getAllUsers(){
+        List<User> users = connect.withHandle(handle ->
+                handle.createQuery("select * from users").mapToBean(User.class).collect(Collectors.toList()));
+        return users;
+    }
     public User checkLogin(String email, String pass) {
         List<User> users = null;
         users = connect.withHandle(handle ->
