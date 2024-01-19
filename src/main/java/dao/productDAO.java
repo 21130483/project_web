@@ -15,6 +15,11 @@ public class ProductDAO {
     public ProductDAO() {
     }
 
+
+    public static Product getProductById(int id){
+        Product result = handle.select("SELECT * FROM products WHERE productID = ?").bind(0,id).mapToBean(Product.class).findOne().orElse(null);
+        return result;
+    }
     public static List<Product> getBestSelling(int limit) {
         List<Product> result = new ArrayList<>();
         result = handle.select("SELECT * FROM products ORDER BY orderedNumbers DESC LIMIT ?").bind(0,limit).mapToBean(Product.class).collect(Collectors.toList());
@@ -48,4 +53,6 @@ public class ProductDAO {
             System.out.println(product);
         }
     }
+
+
 }
