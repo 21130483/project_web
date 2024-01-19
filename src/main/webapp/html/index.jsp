@@ -239,6 +239,7 @@
                                     </div>
 
                                     <form action="cart?id=<%=p.getProductID()%>&active=add&page=index" method="post"
+
                                           style="width: 100%; height: 100%">
                                         <button type="submit" class="them-san-pham">
                                             Thêm vào giỏ hàng
