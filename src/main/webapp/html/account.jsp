@@ -123,6 +123,16 @@
                                                 </li>
                                             </div>
 
+                                            <a href="admin?page=product" style="text-decoration: none;color: #112950">
+                                                <div class="favourite">
+                                                    <li class="list">
+                                                        <i class="icon-common fa-solid fa-wrench"></i>
+                                                        <h3 class="AccountMenu-menu-label">Quản lý trang web</h3>
+                                                    </li>
+                                                </div>
+                                            </a>
+
+
                                         </ul>
                                         <div class="AccountMenu_support">
                                             <div class="list">
