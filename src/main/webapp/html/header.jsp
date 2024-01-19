@@ -65,10 +65,10 @@
                                     %>
 
                                     <%
-                                        if (cart.getCart().size() != 0) {
+                                        if (cart.sizeCart() != 0) {
                                     %>
                                     <p id="sizeCart" style="position: absolute; top: -10px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px;">
-                                        9
+                                        <%=cart.sizeCart()%>
                                     </p>
                                     <%
                                         }
