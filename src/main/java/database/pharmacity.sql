@@ -35,7 +35,7 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(1, 'Khẩu trang y tế'),
 	(2, 'Máy massage'),
 	(3, 'Máy đo huyết áp'),
-	(4, 'Băng y tế'),
+	(4, 'Băng - Gạc y tế'),
 	(5, 'Bông y tế'),
 	(6, 'Nhiệt kế'),
 	(7, 'Máy, que thử đường huyết'),
@@ -67,6 +67,7 @@ INSERT INTO `origin` (`originID`, `name`) VALUES
 	(8, 'Nhật bản'),
 	(9, 'Thái Lan'),
 	(10, 'Ấn Độ'),
+	(11, 'Pháp'),
 	(999, 'quốc gia');
 
 
@@ -154,7 +155,20 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 
 =======
 >>>>>>> c20a5b5965319c5de4ba9b21808a931198135b09
-	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
+	
+  (91, 4, 1, 999, '2023-02-17', 30000, 1000, 90, 'Băng thun y tế 2 móc Bảo Thạch (0.075m x 3m) ', 'Bảo Thạch ', 'Băng thun y tế 2 móc Bảo Thạch được làm từ sợi polyester và cao su thiên nhiên cùng độ co dãn cao, từ 180% đến 200% so với kích thước ban đầu, dùng để nén ép, cầm máu, cố định khớp, giữ vật liệu cầm máu tại chỗ không bị xê dịch.'),
+  (92, 4, 9, 999, '2023-02-17', 45000, 1000, 90, 'Gạc Urgo Optiskin (10cm x 7cm) hộp 50 miếng', 'Urgo Healthcare Products', 'Gạc Urgo Optiskin (10cm x 7cm) sử dụng để bao phủ lên tất cả các vết thương ngoài da (vết khâu, vết trầy xước), hoặc các loại dụng cụ (que dò, ống dẫn...). Do Optiskin cho phép bệnh nhân có thể tắm rửa, vệ sinh nên băng đặc biệt phù hợp cho các liệu pháp tắm ngâm hay nói chung nhanh chóng bắt đầu lại các hoạt động sau phẫu thuật.'),
+  (93, 4, 9, 999, '2023-02-17', 15000, 1000, 90, 'Gạc lưới UrgoTul AG/Sliver hộp 16 miếng (10cm x 12cm)', 'Urgo Healthcare Products', 'Bạc có hoạt tính kháng khuẩn phổ rộng bao gồm các vi khuẩn gram âm và gram dương và một số loại nấm. Đặc biệt nó có tác dụng đối với tụ cầu (Staphylococcus aureus), tụ cầu kháng Methicilline (MRSA), liên cầu (Streptococcus pyogens) và trực khuẩn mủ xanh là những vi khuẩn gây ra hầu hết các nhiễm khuẩn vết thương. Trên in vitro cho thấy băng này có hoạt tính kháng khuẩn trong 7 ngày. Hoạt tính kháng khuẩn của băng cũng góp phần làm giảm mùi khó chịu của vết thương.'),
+  (94, 4, 9, 999, '2023-02-17', 20000, 1000, 90, 'Gạc Urgo Optiskin hộp 50 miếng (5.3 x 8cm)', 'Urgo Healthcare Products', 'Gạc Urgo Optiskin (5.3 x 8cm) sử dụng để bao phủ lên tất cả các vết thương ngoài da (vết khâu: vết trầy xước), hoặc các loại dụng cụ (que dò, ống dẫn...). Do Optiskin cho phép bệnh nhân có thể tắm rửa vệ sinh nên băng đặc biệt phù hợp cho các liệu pháp tắm ngâm hay nói chung nhanh chóng bắt đầu lại các hoạt động sau phẫu thuật.'),
+  (95, 4, 1, 999, '2023-02-17', 20000, 1000, 90, 'Băng rốn Đông FA 3 con nai cho bé hộp 3 miếng', 'Công ty TNHH Trang Thiết Bị Y Tế Đông Pha', 'Bảo vệ vùng rốn và giữ ấm cho bé và đắp các vết thương.'),
+  (96, 4, 1, 999, '2023-02-17', 49000, 1000, 90, 'Gạc rơ lưỡi thảo dược Ích Nhi hộp 30 gói', 'Dược mỹ phẩm Quang Xanh', 'Vệ sinh hàng ngày làm sạch nướu, lưỡi, răng miệng cho trẻ từ sơ sinh trở lên.Giúp phòng ngừa những vấn đề về răng miệng (nấm miệng, tưa lưỡi, viêm nướu,...), giúp nướu khỏe trong thời kỳ trẻ mọc răng, giúp ngừa sâu răng.'),
+  (97, 4, 11, 999, '2023-02-17', 40000, 1000, 90, 'Gạc Urgo Compresses Stériles Non Tissées hộp 10 miếng (10cm x 10cm)', 'Urgo Healthcare Products', 'Gạc Urgo Compresses Stériles Non Tissées (10cm x 10cm) được chỉ định để băng bó, làm sạch vết thương.'),
+  (98, 4, 11, 999, '2023-02-17', 30000, 1000, 90, 'Gạc lưới UrgoTul Ag/Silver hộp 10 miếng (5cm x 5cm)', 'Urgo Healthcare Products', 'UrgoTul Ag/Silver được dùng tại chỗ cho các vết thương có nguy cơ hoặc dấu hiệu nhiễm khuẩn tại chỗ: các vết thương mãn tính (các vết loét ở chân, các vết loét do tỳ đè) và các vết thương cấp tính (các vết bỏng có độ sâu vừa phải, các vết mài mòn da, các vết thương do chấn thương, các vết thương do phẫu thuật...).'),
+  (99, 4, 1, 999, '2023-02-17', 18000, 1000, 90, 'Băng cuộn y tế Bảo Thạch túi 5 cuộn (0.09m x 2m)', 'Bảo Thạch', 'Băng cuộn y tế Bảo Thạch được làm từ 100% sợi cotton, gạc trắng và sạch. Khả năng thấm hút của bông gòn y tế Bảo Thạch cao và nhanh. Mịn màng, mềm mại, không gây kích ứng da.'),
+  (100, 4, 1, 999, '2023-02-17', 12000, 1000, 90, 'Gạc y tế Bảo Thạch túi 10 miếng (5cm x 6.5cm x 12 lớp)', 'Bảo Thạch', 'Gạc phẫu thuật được sử dụng rộng rãi trong phòng mổ của bệnh viện. Thích hợp cho các vết thương lớn, khả năng thấm hút nhanh máu và dịch tiết từ vết thương. Được sử dụng cho các vết rạch, vết cắt dài trong quá trình phẫu thuật.'),
+  
+  
+  (998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
 	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
 
 
