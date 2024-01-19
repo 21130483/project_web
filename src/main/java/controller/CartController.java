@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("html/cart")
+@WebServlet("/html/cart")
 public class CartController extends HttpServlet {
     private static Cart cart;
 
