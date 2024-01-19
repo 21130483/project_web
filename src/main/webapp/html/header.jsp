@@ -1,4 +1,5 @@
 <%@ page import="model.User" %>
+<%@ page import="model.Cart" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -42,7 +43,8 @@
                             <input class="input" type="text" name="textFindProduct"
                                    placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..." required>
 
-                            <button type="submit" style="border: none; background: transparent"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button type="submit" style="border: none; background: transparent"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
 
                         </span>
                 </div>
@@ -56,7 +58,23 @@
                     <div class="button">
                         <a href="cart.jsp" class="link-button">
                             <div class="icon">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping" style="position: relative; display: inline-block;">
+                                    <%
+                                        Cart cart = session.getAttribute("cart")!=null? (Cart) session.getAttribute("cart") :new Cart();
+//                                        System.out.println(cart.getCart().size());
+                                    %>
+
+                                    <%
+                                        if (cart.getCart().size() != 0) {
+                                    %>
+                                    <p id="sizeCart" style="position: absolute; top: -10px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px;">
+                                        9
+                                    </p>
+                                    <%
+                                        }
+                                    %>
+
+                                </i>
                             </div>
                             <span class="span-text">Giỏ hàng</span>
                         </a>
