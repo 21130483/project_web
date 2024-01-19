@@ -9,6 +9,8 @@ public class Cart {
     public Cart() {
     }
 
+
+
     public int sizeCart() {
         return cart.size();
     }
@@ -23,7 +25,7 @@ public class Cart {
 
     public static void addProduct(Product product) {
         if (cart.containsKey(product)) {
-            cart.put(product, cart.get(product));
+            cart.put(product, cart.get(product)+1);
         } else {
             cart.put(product, 1);
         }
