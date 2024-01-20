@@ -20,7 +20,7 @@
         <ul>
             <li class="button-muc-luc">
                 <a href="admin?page=product">
-                    <div class="a" style="background-color: #007bff;">
+                    <div class="a">
                         Quản lý sản phẩm
                     </div>
                 </a>
@@ -43,8 +43,8 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="admin?page=voucher">
-                    <div class="a">
+                <a href="admin?page=voucher" >
+                    <div class="a" style="background-color: #007bff;">
                         Quản lý phiếu giảm giá
                     </div>
                 </a>

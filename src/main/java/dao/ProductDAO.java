@@ -2,8 +2,8 @@ package dao;
 
 import database.JDBIConnector;
 import model.Product;
+import model.User;
 import org.jdbi.v3.core.Handle;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -54,10 +54,12 @@ public class ProductDAO {
     }
 
     public static void main(String[] args) {
-        List<Product> products = getAllProduct();
-        for (Product product : products) {
-            System.out.println(product);
-        }
+//        List<Product> products = getAllProduct();
+//        for (Product product : products) {
+//            System.out.println(product);
+//        }
+
+
     }
 
 

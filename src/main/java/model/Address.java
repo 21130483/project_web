@@ -1,6 +1,8 @@
 package model;
 
 public class Address {
+
+    private int addressID;
     private int userID;
     private String city;
     private String district;
@@ -8,6 +10,15 @@ public class Address {
     private String detail;
 
     public Address() {
+    }
+
+
+    public int getAddressID() {
+        return addressID;
+    }
+
+    public void setAddressID(int addressID) {
+        this.addressID = addressID;
     }
 
     public int getUserID() {
@@ -48,5 +59,17 @@ public class Address {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressID=" + addressID +
+                ", userID=" + userID +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", ward='" + ward + '\'' +
+                ", detail='" + detail + '\'' +
+                '}';
     }
 }
