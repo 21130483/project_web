@@ -88,7 +88,7 @@
                         </div>
                         <% User user = (User) session.getAttribute("user");%>
                         <% if (user != null) {%>
-                        <a href="account.jsp" class="link-button">
+                        <a href="account" class="link-button">
                             <span class="span-text"><%=user.getFullName()%></span>
                         </a>
                         <% } else {%>

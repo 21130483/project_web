@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phoneNumbers` varchar(20) NOT NULL,
   `fullName` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `dateOfBirth` date NOT NULL,
+  `dob` date NOT NULL,
   `gender` varchar(20) NOT NULL,
   `role` varchar(20) NOT NULL,
   `access` varchar(20) NOT NULL,
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dateOfBirth`, `gender`, `role`, `access`) VALUES
-	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'admin', 'hoạt động'),
-	(2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'admin', 'hoạt động');
+INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dob`, `gender`, `role`, `access`) VALUES
+	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'true', 'true'),
+	(2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'true', 'true');
 
 
 
@@ -147,11 +147,6 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(39, 3, 2, 999, '2023-02-17', 120000, 1000, 90, 'Máy đo huyết áp Kachi MK167', 'Kachi', 'Máy đo huyết áp Kachi MK167 với công nghệ hiện đại tự động hoàn toàn và độ chính xác cao, đặc biệt có giọng nói hướng dẫn, giúp đo huyết áp tại nhà đơn giản và nhanh chóng, phù hợp để kiểm soát và theo dõi hiệu quả điều trị cao huyết áp.'),
 	(40, 3, 2, 999, '2023-02-17', 199000, 1000, 90, 'Máy đo huyết áp cổ tay điện tử CK-W132', 'Kachi', 'Máy đo huyết áp cổ tay điện tử CK-W132 sử dụng để đo huyết áp, nhịp tim ở người lớn. Máy hoạt động dựa trên phương pháp dao động của đo huyết áp. Máy được thiết kế nhỏ gọn, dây đeo tay gắn liền với thân máy và kèm màn hình LCD rất tiện lợi.'),
 
-	(41, 13, 2, 999, '2023-02-17', 490000, 1000, 90, 'Máy đo nồng độ oxy trong máu Jumper JPD 500E Led thiết kế nhỏ gọn và sử dụng dễ dàng', 'SHENZHEN JUMPER MEDICAL EQUIPTMENT CO.,LTD', 'Máy đo nồng độ oxy trong máu SpO2 Jumper JPD 500E Led là thiết bị dùng để đo sự bão hòa oxy trong mạch máu và nhịp tim. Thiết bị giúp phát hiện hiện tượng thiếu oxy trong máu và nhịp tim bất thường để có cách xử lý nhanh chóng, kịp thời bằng phương pháp cảm biến quang học thông qua đầu ngón tay với độ chính xác cao, dễ thao tác. Sản phẩm có thiết kế nhỏ gọn và sử dụng dễ dàng, phù hợp với mọi đối tượng.'),
-	(42, 13, 3, 999, '2023-02-17', 690000, 1000, 90, 'Máy đo nồng độ oxy trong máu Microlife Oxy 200 hỗ trợ đo nhanh chóng và chính xác', 'MICROLIFE', 'Microlife Oxy 200 - Máy Đo Nồng Độ Oxy Trong Máu là một thiết bị y tế cải tiến với các tính năng không xâm lấn và liên tục để phát hiện nồng độ oxy trong máu (SPO2), nhịp tim (PR) của cả người lớn và bệnh nhi. Mang tính di động nên sản phẩm có thể đo các giá trị SPO2 và PR một cách nhanh chóng, chính xác.'),
-	(43, 13, 2, 999, '2023-02-17', 399000, 1000, 90, 'Máy đo nồng độ oxy trong máu SpO2 Metech - PC - 60A hỗ trợ đo nhanh chóng và chính xác', 'SHENZHEN CREATIVE INDUSTRY CO.,LTD', 'Máy đo nồng độ Oxy trong máu SpO2 Metech - PC - 60A được dùng để đo nồng độ bảo hòa oxy trong máu và nhịp tim, dạng kẹp ngón tay, có thể theo dõi nồng độ bảo hòa oxy trong máu (SPO2), nhịp tim (PR) thông qua ngón tay của bệnh nhân.'),
-	(44, 13, 10, 999, '2023-02-17', 690000, 1000, 90, 'Máy đo nồng độ oxy trong máu (SPO2) Pulse Fingertip Oximeter A4 Oromi hỗ trợ đo nhanh chóng và chính xác', 'FT DIGITAL TECHNOLOGY CO.,LTD', 'Máy Đo Nhịp Tim Và Nồng Độ Oxy Trong Máu (SpO2) Fingertip Pulse Oximeter Oromi A4 là một thiết bị y tế cải tiến với các tính năng không xâm lấn và liên tục để phát hiện nồng độ oxy trong máu (SPO2) và nhịp đập của tim (PR). Mang tính di động nên sản phẩm có thể đo các giá trị SPO2 và PR một cách nhanh chóng và chính xác.'),
-
 	(41, 11, 2, 999, '2023-02-17', 490000, 1000, 90, 'Máy đo nồng độ oxy trong máu Jumper JPD 500E Led thiết kế nhỏ gọn và sử dụng dễ dàng', 'SHENZHEN JUMPER MEDICAL EQUIPTMENT CO.,LTD', 'Máy đo nồng độ oxy trong máu SpO2 Jumper JPD 500E Led là thiết bị dùng để đo sự bão hòa oxy trong mạch máu và nhịp tim. Thiết bị giúp phát hiện hiện tượng thiếu oxy trong máu và nhịp tim bất thường để có cách xử lý nhanh chóng, kịp thời bằng phương pháp cảm biến quang học thông qua đầu ngón tay với độ chính xác cao, dễ thao tác. Sản phẩm có thiết kế nhỏ gọn và sử dụng dễ dàng, phù hợp với mọi đối tượng.'),
 	(42, 11, 3, 999, '2023-02-17', 690000, 1000, 90, 'Máy đo nồng độ oxy trong máu Microlife Oxy 200 hỗ trợ đo nhanh chóng và chính xác', 'MICROLIFE', 'Microlife Oxy 200 - Máy Đo Nồng Độ Oxy Trong Máu là một thiết bị y tế cải tiến với các tính năng không xâm lấn và liên tục để phát hiện nồng độ oxy trong máu (SPO2), nhịp tim (PR) của cả người lớn và bệnh nhi. Mang tính di động nên sản phẩm có thể đo các giá trị SPO2 và PR một cách nhanh chóng, chính xác.'),
 	(43, 11, 2, 999, '2023-02-17', 399000, 1000, 90, 'Máy đo nồng độ oxy trong máu SpO2 Metech - PC - 60A hỗ trợ đo nhanh chóng và chính xác', 'SHENZHEN CREATIVE INDUSTRY CO.,LTD', 'Máy đo nồng độ Oxy trong máu SpO2 Metech - PC - 60A được dùng để đo nồng độ bảo hòa oxy trong máu và nhịp tim, dạng kẹp ngón tay, có thể theo dõi nồng độ bảo hòa oxy trong máu (SPO2), nhịp tim (PR) thông qua ngón tay của bệnh nhân.'),
@@ -190,7 +185,6 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 
 
 
-
 CREATE TABLE IF NOT EXISTS `wishes` (
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
@@ -226,15 +220,16 @@ CREATE TABLE IF NOT EXISTS `purchases` (
 
 
 CREATE TABLE IF NOT EXISTS `address` (
+  `addressID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `city` varchar(50) NOT NULL,
   `district` varchar(50) NOT NULL,
   `ward` varchar(50) NOT NULL,
   `detail` varchar(100) NOT NULL,
-  PRIMARY KEY (`userID`),
+  PRIMARY KEY (`addressID`,`userID`),
   KEY `userID` (`userID`),
   CONSTRAINT `address_fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
@@ -264,7 +259,3 @@ CREATE TABLE IF NOT EXISTS `verify` (
   KEY `userID` (`userID`), 
   CONSTRAINT `verify_fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-
-

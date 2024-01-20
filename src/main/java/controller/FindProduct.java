@@ -40,6 +40,7 @@ public class FindProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         textFindProducts = req.getParameter("textFindProduct") == null ? "" : (String) req.getParameter("textFindProduct");
+        System.out.println(textFindProducts);
         ProductDAO productDAO = new ProductDAO();
         List<Product> products = productDAO.getFindProducts(textFindProducts);
         for (Product p : products) {

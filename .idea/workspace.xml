@@ -10,34 +10,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/adminFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/VoucherDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UserEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/filter/UTF8EncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AddressDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/voucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Voucher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/vouchers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Vouchers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/wishes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Wishes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
-=======
-
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" afterDir="false" />
-
->>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< HEAD
         <option value="JavaScript File" />
-=======
->>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -73,10 +71,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AddressDAO.executor": "Run",
     "Application.ProductDAO.executor": "Run",
+    "Application.UserDAO.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -91,7 +90,6 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-
   }
 }]]></component>
   <component name="RecentsManager">
@@ -101,6 +99,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
+    <configuration name="AddressDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.AddressDAO" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
@@ -114,8 +125,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Lab:war">
@@ -125,9 +148,7 @@
         </artifact>
       </deployment>
       <server-settings>
-
         <option name="BASE_DIRECTORY_NAME" value="b849bba1-92d6-4265-afcd-2b76bdd5c2db" />
-
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -135,9 +156,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-
         <option name="DEBUG_PORT" value="50683" />
-
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -207,11 +226,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AddressDAO" />
+      <item itemvalue="Application.UserDAO" />
       <item itemvalue="Application.ProductDAO" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AddressDAO" />
+        <item itemvalue="Application.UserDAO" />
         <item itemvalue="Application.ProductDAO" />
       </list>
     </recent_temporary>
@@ -233,20 +256,37 @@
       <workItem from="1705655663090" duration="453000" />
       <workItem from="1705658956507" duration="635000" />
       <workItem from="1705659879996" duration="233000" />
-
       <workItem from="1705661255718" duration="8000" />
       <workItem from="1705661268846" duration="167000" />
       <workItem from="1705661437988" duration="53000" />
-<<<<<<< HEAD
       <workItem from="1705661505409" duration="10955000" />
-=======
       <workItem from="1705661505409" duration="7559000" />
-
->>>>>>> 60cb65a965fd11ab20835ee1e953442df1ba280f
+      <workItem from="1705719107342" duration="15720000" />
+      <workItem from="1705744848813" duration="4710000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
+          <line>45</line>
+          <properties class="dao.UserDAO" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

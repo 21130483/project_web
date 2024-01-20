@@ -27,6 +27,7 @@ public class CartController extends HttpServlet {
         int productID = Integer.parseInt(req.getParameter("id"));
         String active = req.getParameter("active");
         String page = req.getParameter("page");
+
         ProductDAO productDAO = new ProductDAO();
         Product product = productDAO.getProductById(productID);
         switch (active){
