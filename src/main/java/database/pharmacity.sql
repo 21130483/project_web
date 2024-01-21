@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dateOfBirth`, `gender`, `role`, `access`) VALUES
 	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'admin', 'hoạt động'),
 	(2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'admin', 'hoạt động');
-
+sys_config
 
 
 
@@ -45,7 +45,10 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 <<<<<<< HEAD
 	(11, 'Máy xông mũi họng'),
 	(12, 'Máy xông khí'),
+<<<<<<< HEAD
 	(14, 'Đèn Y Khoa'),
+=======
+>>>>>>> cdeae43deb4064b8b913b4fec8630b5850ac29a1
 =======
 	(11, 'Máy đo SpO2'),
 >>>>>>> main
@@ -165,6 +168,7 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(48, 3, 1, 999, '2023-02-17', 234000, 1000, 90, 'Máy đo huyết áp bắp tay bluetooth Omron HEM-7143T1 (Hộp 1 cái)', 'Omron', 'Máy đo huyết áp cổ tay điện tử Omron HEM-7143T1 sử dụng để đo huyết áp, nhịp tim ở người lớn. Máy hoạt động dựa trên phương pháp dao động của đo huyết áp. Máy được thiết kế nhỏ gọn, dây đeo tay gắn liền với thân máy và kèm màn hình LCD rất tiện lợi.'),
 	(49, 3, 3, 999, '2023-02-17', 765000, 1000, 90, 'Máy đo huyết áp bắp tay tự động Microlife BP 3NZ1-1P, hỗ trợ tầm soát nhịp tim', 'Microlife', 'Máy đo huyết áp bắp tay tự động Microlife BP 3NZ1-1P là thiết bị đo huyết áp thế hệ mới của Microlife được tích hợp công nghệ đo PAD, AFIB và MAM giúp đưa ra kết quả chính xác và tin cậy, cảnh báo sớm về chứng tăng huyết áp và rung nhĩ, hai nguyên nhân chính dẫn đến đột quỵ não.'),
 	(50, 3, 3, 999, '2023-02-17', 100000, 1000, 90, 'Máy đo huyết áp điện tử cổ tay tự động Microlife W3 Comfort, hỗ trợ tầm soát nhịp tim', 'Microlife', 'Máy đo huyết áp bắp tay MICROLIFE W3 Comfort là sản phẩm thế hệ mới của thương hiệu Microlife đến từ Thụy Sĩ. Máy đo huyết áp hoàn toàn tự động với thiết kế siêu mỏng nhẹ, được trang bị công nghệ IMT độc đáo, cải tiến cách đo huyết áp truyền thống, mang lại trải nghiệm đo huyết áp thoải mái, dễ chịu, cùng kết quả nhanh chóng và chính xác.'),
+<<<<<<< HEAD
 	
 	(51, 7, 3, 999, '2023-02-17', 800000, 1000, 90, 'Máy đo đường huyết Medismart Sapphire Plus', 'MediSmart', 'Máy đo đường huyết Medismart Sapphire Plus là thiết bị chăm sóc sức cao cấp đến từ Thụy Sĩ, được sản xuất theo công nghệ tiên tiến bậc nhất, mang đến người dùng kết quả đo đường huyết tin cậy đến 99%.'),
 	(52, 14, 1, 999, '2023-02-17', 950000, 1000, 90, 'Đèn Hồng Ngoại TNE Chân Cao 1,7m', 'TNE', 'Tia hồng ngoại là bức xạ điện từ có bước sóng dài hơn ánh sáng mà mắt thường có thể nhìn thấy. Hồng ngoại là bức xạ có nhiệt lượng cao nên còn gọi là bức xạ nhiệt, do đó tác dụng của hồng ngoại chử yếu là tác dụng nhiệt. Ở những vùng chịu tác động nhiệt của hồng ngoại sẽ dãn mạch đỏ da nên có tác dụng giảm đau, chống viêm mạn tính, làm mềm cơ.'),
@@ -172,6 +176,8 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(54, 14, 1, 999, '2023-02-17', 600000, 1000, 90, 'Đèn Hồng Ngoại MEDILAMP 250', 'MEDILAMP', 'Đèn hồng ngoại tập trung những tia sáng điện từ hồng ngoại rọi vào cơ thể gây ra các phản ứng lý, hóa nhằm điều trị các bệnh lý: Đau, sưng, phù nề, bầm, tím, khớp, Gout, chứng căng thẳng, mệt mỏi...'),
 	(55, 12, 4, 999, '2023-02-17', 850000, 1000, 90, 'Máy khí dung mũi họng Compmist - USA', 'Compmist', 'Máy xông mũi họng Compmist USA là sản phẩm máy xông khí dung mũi họng phổ thông nên rất phù hợp với quy mô gia đình. Tốc độ có thể điều chỉnh nhanh chậm phù hợp cho mọi đối tượng. Máy Xông Mũi Họng Compmist USA thuộc dòng máy nén khí không nóng, dễ sử dụng và đảm bảo vệ sinh. Máy phù hợp với mọi đối tượng sử dụng từ trẻ sơ sinh, trẻ nhỏ và người lớn tuổi.'),
 
+=======
+>>>>>>> cdeae43deb4064b8b913b4fec8630b5850ac29a1
 	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
 	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
 >>>>>>> main
