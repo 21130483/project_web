@@ -1,1 +1,0 @@
-user: thông tin người dùng

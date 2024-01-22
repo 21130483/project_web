@@ -10,15 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PurchasesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/buyProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/filter/purchasesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/paymentFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BillDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/addToCart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/cart.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +67,7 @@
     "Application.AddressDAO.executor": "Run",
     "Application.Product.executor": "Run",
     "Application.ProductDAO.executor": "Run",
+    "Application.PurchasesDAO.executor": "Run",
     "Application.User.executor": "Run",
     "Application.UserDAO.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -121,12 +132,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.User" />
+    <configuration name="PurchasesDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.PurchasesDAO" />
       <module name="Lab" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,12 +145,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.User" />
       <module name="Lab" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -235,20 +246,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.PurchasesDAO" />
       <item itemvalue="Application.Product" />
       <item itemvalue="Application.User" />
       <item itemvalue="Application.AddressDAO" />
-      <item itemvalue="Application.UserDAO" />
       <item itemvalue="Application.ProductDAO" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProductDAO" />
+        <item itemvalue="Application.PurchasesDAO" />
         <item itemvalue="Application.Product" />
         <item itemvalue="Application.User" />
         <item itemvalue="Application.AddressDAO" />
-        <item itemvalue="Application.UserDAO" />
-        <item itemvalue="Application.ProductDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +289,8 @@
       <workItem from="1705744848813" duration="4710000" />
       <workItem from="1705750085053" duration="5958000" />
       <workItem from="1705840608597" duration="172000" />
-      <workItem from="1705893591244" duration="9705000" />
+      <workItem from="1705893591244" duration="17192000" />
+      <workItem from="1705914741048" duration="8417000" />
     </task>
     <servers />
   </component>
@@ -299,7 +311,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/model/Product.java</url>
-          <line>169</line>
+          <line>203</line>
           <properties class="model.Product" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

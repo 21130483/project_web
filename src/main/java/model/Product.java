@@ -90,6 +90,40 @@ public class Product {
         result += " Đồng";
         return result;
     }
+    public String getSaleHaveDots() {
+        String result = "";
+        String priceString = String.valueOf(sale);
+        int dots = priceString.length() - 1 / 3;
+        int remainder = priceString.length() % 3;
+        for (int i = 0; i < priceString.length(); i++) {
+            if (i % 3 == remainder && i != 0) {
+
+                result += ".";
+            }
+            result += priceString.charAt(i);
+
+        }
+        result += " Đồng";
+        return result;
+    }
+
+    public String getRealPriceHaveDots() {
+        String result = "";
+        int realPrice = price + sale;
+        String priceString = String.valueOf(realPrice);
+        int dots = priceString.length() - 1 / 3;
+        int remainder = priceString.length() % 3;
+        for (int i = 0; i < priceString.length(); i++) {
+            if (i % 3 == remainder && i != 0) {
+
+                result += ".";
+            }
+            result += priceString.charAt(i);
+
+        }
+        result += " Đồng";
+        return result;
+    }
 
     public void setPrice(int price) {
         this.price = price;
