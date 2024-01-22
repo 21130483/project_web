@@ -1,10 +1,10 @@
 package model;
 
-public class wishes {
+public class Wishes {
     private int userID;
     private int productID;
 
-    public wishes() {
+    public Wishes() {
     }
 
     public int getUserID() {

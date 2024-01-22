@@ -15,14 +15,17 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+        HttpSession session = req.getSession();
+        session.invalidate();
+        resp.sendRedirect("login.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email")==null?"":(String) req.getParameter("email");
         String pass = req.getParameter("pass")==null?"":(String) req.getParameter("pass");
-        User user = new UserDAO().checkLogin(email,pass);
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.checkLogin(email,pass);
         if (user != null){
             HttpSession session =req.getSession();
             session.setAttribute("user",user);

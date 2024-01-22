@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class voucher {
+public class Voucher {
     private int voucherID;
     private String name;
     private String type;
@@ -10,7 +10,7 @@ public class voucher {
     private Date expiredDate;
     private int condition;
 
-    public voucher() {
+    public Voucher() {
     }
 
     public int getVoucherID() {

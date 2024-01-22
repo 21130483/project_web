@@ -2,12 +2,12 @@ package model;
 
 import java.sql.Time;
 
-public class verify {
+public class Verify {
     private int userID;
     private int code;
     private Time expiredTime;
 
-    public verify() {
+    public Verify() {
     }
 
     public int getUserID() {
