@@ -24,14 +24,14 @@
                 </a>
             </div>
             <div class="form-group">
-<<<<<<< HEAD
+
                 <input type="email" name="email" class="form-style" placeholder="Email hoặc tên đăng nhập"
                        id="email">
                 <i class="input-icon fa-regular fa-envelope"></i>
             </div>
             <div class="form-group">
                 <input type="password" name="pass" class="form-style" placeholder="Mật khẩu" id="pass">
-=======
+
                 <input type="email" name="email" value="phuoc@gmail.com" class="form-style placeholder="Email hoặc tên đăng nhập"
                        id="logemail"
                        autocomplete="off">
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <input type="password" name="pass" class="form-style" value="123" placeholder="Mật khẩu" id="logpass"
                        autocomplete="off">
->>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
+
                 <i class="input-icon fa-solid fa-unlock-keyhole"></i>
             </div>
             <div class="forgot">

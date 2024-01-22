@@ -2,12 +2,11 @@ package dao;
 
 import database.JDBIConnector;
 import model.User;
-<<<<<<< HEAD
+
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.Handle;
 import Services.Connect;
 
-=======
 import org.jdbi.v3.core.Handle;
 import java.util.ArrayList;
 >>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
@@ -23,11 +22,21 @@ import java.util.Calendar;
 
 
 public class UserDAO {
-<<<<<<< HEAD
+
     public static final Jdbi connect = JDBIConnector.getConnect();
-=======
->>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
+
+
     private static Handle handle = JDBIConnector.getConnect().open();
+
+=======
+import org.jdbi.v3.core.Handle;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class UserDAO {
+    private static Handle handle = JDBIConnector.getConnect().open();
+
 
     public UserDAO() {
     }
@@ -64,7 +73,7 @@ public class UserDAO {
         return null;
     }
 
-<<<<<<< HEAD
+
     public boolean checkEmailExist(String email) {
         Connection connection = null;
         boolean checkEmail = false;
@@ -370,7 +379,7 @@ public class UserDAO {
         return check;
     }
 
-=======
+
     public static void main(String[] args) {
 //        User user = checkLogin("phuoc@gmail.com","123");
         User user = getUserById(1);
@@ -382,5 +391,5 @@ public class UserDAO {
 
 
 
->>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
+
 }
