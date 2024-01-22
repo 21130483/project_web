@@ -28,17 +28,30 @@
 
 <div class="page">
     <jsp:include page="header.jsp"></jsp:include>
+    <%
+        Cart cart = (Cart) session.getAttribute("cart");
+    %>
 
 
     <div class="noi-dung">
         <div class="container">
+
             <div class="san-pham-mua-va-bang-gia">
                 <div class="san-pham-mua">
                     <div class="chon-all-cost-quantity-unit">
                         <div class="chon-all">
                             <div class="input-text">
                                 <div class="box-input">
-                                    <input type="checkbox" class="input" id="checkbox-all">
+
+                                        <input type="checkbox" class="input" id="checkedAll" data-hrf="index.jsp"
+                                            <%
+                                            if (cart!=null && cart.cartEqualChecked()){
+                                        %>
+                                               checked
+                                            <%
+                                            }
+                                        %>
+                                        >
                                 </div>
 
                                 <div style="display: flex; align-items: center; font-size: 20px;">Chọn tất cả</div>
@@ -54,7 +67,6 @@
                         </div>
 
 
-
                         <div class="khoang-trong">
 
                         </div>
@@ -63,9 +75,6 @@
 
                     <ul class="cac-san-pham-muon-mua">
 
-                        <%
-                            Cart cart = (Cart) session.getAttribute("cart");
-                        %>
 
                         <%
                             if (cart != null && cart.sizeCart() != 0) {
@@ -75,7 +84,16 @@
                         <li class="san-pham-muon-mua">
                             <div class="input-img-ten-san-pham">
                                 <div class="box-input">
-                                    <input type="checkbox" class="input checkbox-product">
+                                    <input type="checkbox" class="input checked" data-href="buy-product?active=normal&id=<%=p.getProductID()%>"
+                                           value="<%=p.getProductID()%>"
+                                        <%
+                                            if (cart.getProductChecked().contains(p.getProductID())){
+                                            %>
+                                           checked
+                                        <%
+                                            }
+                                            %>
+                                    >
                                 </div>
 
                                 <div class="img-san-pham">
@@ -90,19 +108,22 @@
                             </div>
 
                             <div class="cost">
-                                <p class="sale">925.000đ</p>
-                                <p class="origin">1.200.000đ</p>
+                                <p class="sale"><%=p.getPriceHaveDots()%>
+                                </p>
+                                <p class="origin"><%=p.getRealPriceHaveDots()%>
+                                </p>
                             </div>
 
                             <div class="quantity">
                                 <div class="down-up-quantity">
+
                                     <form action="cart?id=<%=p.getProductID()%>&active=remove&page=cart&clearAll=false"
                                           method="post">
                                         <button class="down"><i class="fa-solid fa-minus"></i></button>
                                     </form>
 
-
                                     <input type="text" class="quantity" value="<%=cart.getCart().get(p)%>">
+
 
                                     <form action="cart?id=<%=p.getProductID()%>&active=add&page=cart" method="post">
                                         <button class="up"><i class="fa-solid fa-plus"></i></button>
@@ -168,132 +189,6 @@
 
                         <%--                        </li>--%>
 
-                        <%--                        <li class="san-pham-muon-mua">--%>
-                        <%--                            <div class="input-img-ten-san-pham">--%>
-                        <%--                                <div class="box-input">--%>
-                        <%--                                    <input type="checkbox" class="input">--%>
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="img-san-pham">--%>
-
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="ten-san-pham">--%>
-                        <%--                                    <a href="">Bột Diếp Cá nguyên chất Datino bổ sung chất dinh dưỡng có lợi cho sức--%>
-                        <%--                                        khỏe từ diếp cá (15--%>
-                        <%--                                        gói x 3g)</a>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="cost">--%>
-                        <%--                                <p class="sale">925.000đ</p>--%>
-                        <%--                                <p class="origin">1.200.000đ</p>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="quantity">--%>
-                        <%--                                <div class="down-up-quantity">--%>
-                        <%--                                    <button class="down"><i class="fa-solid fa-minus"></i></button>--%>
-
-                        <%--                                    <input type="text" class="quantity" value="1">--%>
-
-                        <%--                                    <button class="up"><i class="fa-solid fa-plus"></i></button>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="unit">--%>
-                        <%--                                Hộp--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="delete">--%>
-                        <%--                                <button><i class="fa-solid fa-trash-can"></i></button>--%>
-                        <%--                            </div>--%>
-
-                        <%--                        </li>--%>
-
-                        <%--                        <li class="san-pham-muon-mua">--%>
-                        <%--                            <div class="input-img-ten-san-pham">--%>
-                        <%--                                <div class="box-input">--%>
-                        <%--                                    <input type="checkbox" class="input">--%>
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="img-san-pham">--%>
-
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="ten-san-pham">--%>
-                        <%--                                    <a href="">Bột Diếp Cá nguyên chất Datino bổ sung chất dinh dưỡng có lợi cho sức--%>
-                        <%--                                        khỏe từ diếp cá (15--%>
-                        <%--                                        gói x 3g)</a>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="cost">--%>
-                        <%--                                <p class="sale">925.000đ</p>--%>
-                        <%--                                <p class="origin">1.200.000đ</p>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="quantity">--%>
-                        <%--                                <div class="down-up-quantity">--%>
-                        <%--                                    <button class="down"><i class="fa-solid fa-minus"></i></button>--%>
-
-                        <%--                                    <input type="text" class="quantity" value="1">--%>
-
-                        <%--                                    <button class="up"><i class="fa-solid fa-plus"></i></button>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="unit">--%>
-                        <%--                                Hộp--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="delete">--%>
-                        <%--                                <button><i class="fa-solid fa-trash-can"></i></button>--%>
-                        <%--                            </div>--%>
-
-                        <%--                        </li>--%>
-
-                        <%--                        <li class="san-pham-muon-mua">--%>
-                        <%--                            <div class="input-img-ten-san-pham">--%>
-                        <%--                                <div class="box-input">--%>
-                        <%--                                    <input type="checkbox" class="input">--%>
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="img-san-pham">--%>
-
-                        <%--                                </div>--%>
-
-                        <%--                                <div class="ten-san-pham">--%>
-                        <%--                                    <a href="">Bột Diếp Cá nguyên chất Datino bổ sung chất dinh dưỡng có lợi cho sức--%>
-                        <%--                                        khỏe từ diếp cá (15--%>
-                        <%--                                        gói x 3g)</a>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="cost">--%>
-                        <%--                                <p class="sale">925.000đ</p>--%>
-                        <%--                                <p class="origin">1.200.000đ</p>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="quantity">--%>
-                        <%--                                <div class="down-up-quantity">--%>
-                        <%--                                    <button class="down"><i class="fa-solid fa-minus"></i></button>--%>
-
-                        <%--                                    <input type="text" class="quantity" value="1">--%>
-
-                        <%--                                    <button class="up"><i class="fa-solid fa-plus"></i></button>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="unit">--%>
-                        <%--                                Hộp--%>
-                        <%--                            </div>--%>
-
-                        <%--                            <div class="delete">--%>
-                        <%--                                <button><i class="fa-solid fa-trash-can"></i></button>--%>
-                        <%--                            </div>--%>
-
-                        <%--                        </li>--%>
-
 
                     </ul>
                 </div>
@@ -301,30 +196,37 @@
                 <div class="bang-gia">
                     <div class="title">
                         <p>Tổng tiền</p>
-                        <p>3.257.000đ</p>
+                        <p><%=cart.getTotalRealPricesHaveDots()%>
+                        </p>
                     </div>
 
                     <div class="title">
                         <p>Giảm giá trực tiếp</p>
-                        <p>46.000đ</p>
+                        <p><%=cart.getTotalSalesHaveDots()%>
+                        </p>
                     </div>
 
                     <div class="title">
                         <p>Giảm giá voucher</p>
-                        <p>0đ</p>
+                        <p>0 Đồng</p>
                     </div>
 
                     <div class="title">
                         <p>Tiết kiệm được</p>
-                        <p>46.000đ</p>
+                        <p><%=cart.getTotalSalesHaveDots()%>
+                        </p>
                     </div>
 
                     <div class="tam-tinh">
                         <p class="title">Tạm tính</p>
-                        <p class="cost">3.211.000đ</p>
+                        <p class="cost"><%=cart.getTotalPricesHaveDots()%>
+                        </p>
                     </div>
 
-                    <button class="mua-hang">Mua hàng</button>
+                    <a href="payment">
+                        <button class="mua-hang">Mua hàng</button>
+                    </a>
+
 
                     <div class="dieu-khoan">
                         Bằng việc tiến hành đặt mua hàng, bạn đồng ý với
@@ -335,13 +237,49 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
+    <a class="checkedlink" href="index.jsp"></a>
+
 
     <jsp:include page="footer.jsp"></jsp:include>
     <script src="../js/cart.js"></script>
+    <script>
+        var checkboxes = document.querySelectorAll('.checked');
+
+        // Thêm sự kiện change cho tất cả các ô kiểm
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                // Kiểm tra trạng thái checked của checkbox
+                var redirectHref = checkbox.getAttribute('data-href');
+                if (checkbox.checked) {
+                    // alert('Checkbox is checked!');
+                    window.location.href = redirectHref;
+                } else {
+                    // alert('Checkbox is unchecked!');
+                    window.location.href = redirectHref;
+                }
+            });
+        });
+
+
+        var myCheckbox = document.getElementById('checkedAll');
+        myCheckbox.addEventListener('change', function() {
+            // Kiểm tra trạng thái checked của checkbox
+            if (myCheckbox.checked) {
+                // alert('Checkbox is checked!');
+                window.location.href = "buy-product?active=all";
+            } else {
+                // alert('Checkbox is unchecked!');
+                window.location.href = "buy-product?active=all";
+            }
+        });
+
+    </script>
+
 </div>
 </body>
 

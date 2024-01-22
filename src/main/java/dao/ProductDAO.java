@@ -4,6 +4,7 @@ import database.JDBIConnector;
 import model.Product;
 import model.User;
 import org.jdbi.v3.core.Handle;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,11 +54,25 @@ public class ProductDAO {
         return result;
     }
 
+    public static List<Product> getRelateProduct(Product product, int limit) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE categoryID = ? and productID != ? LIMIT ?").bind(0, product.getCategoryID()).bind(1, product.getProductID()).bind(2, limit).mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
+
+    public static boolean updateProduct(int prodcutID, String nameColumn, String value){
+        boolean check = handle.execute("UPDATE products SET " + nameColumn + "=? WHERE productID = ?", value,prodcutID) > 0;
+        return check;
+    }
+
     public static void main(String[] args) {
-//        List<Product> products = getAllProduct();
+//        List<Product> products = getRelateProduct();
 //        for (Product product : products) {
 //            System.out.println(product);
 //        }
+//        System.out.println(updateProduct(1,"quantity","500"));
+
+
 
 
     }
