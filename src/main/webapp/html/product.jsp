@@ -1,3 +1,6 @@
+<%@ page import="model.Product" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -14,24 +17,42 @@
 <div class="page">
     <jsp:include page="header.jsp"></jsp:include>
 
+    <%
+        Product product = (Product) request.getAttribute("productDetail");
+    %>
+
     <div class="product-container">
         <div class="product-info">
             <div class="col-9">
                 <div class="left-slide">
                     <div class="product-left">
                         <div class="product-left-big-images">
-                            <img id="bigImage" src="../image/product/may-tao-oxi1.jpg" alt="">
+                            <img id="bigImage" src="../image/product/<%=product.getProductID()%>/0.webp" alt="">
                         </div>
                         <div class="product-left-small-images" onclick="changeBigImage(event)">
-                            <img src="../image/product/may-tao-oxi1.jpg" alt="">
-                            <img src="../image/product/may-tao-oxi2.jpg" alt="">
-                            <img src="../image/product/may-tao-oxi3.jpg" alt="">
-                            <img src="../image/product/may-oxi.jpg" alt="">
-                            <img src="../image/product/may-tao-oxi3.jpg" alt="">
+                            <%--                            <img src="../image/product/may-tao-oxi1.jpg" alt="">--%>
+                            <%--                            <img src="../image/product/may-tao-oxi2.jpg" alt="">--%>
+                            <%--                            <img src="../image/product/may-tao-oxi3.jpg" alt="">--%>
+                            <%--                            <img src="../image/product/may-oxi.jpg" alt="">--%>
+                            <%--                            <img src="../image/product/may-tao-oxi3.jpg" alt="">--%>
+
+                            <%
+
+                                int numberImg = (int) request.getAttribute("numberImg");
+                                System.out.println(numberImg);
+                                for (int i = 0; i < numberImg; i++) {
+                            %>
+
+                            <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
+                            <%
+                                }
+                            %>
                         </div>
                     </div>
                     <div class="product-details">
-                        <h1 class="product-title">Máy tạo oxy xách tay 5 lít Dynmed POC5</h1>
+                        <%--                        <h1 class="product-title">Máy tạo oxy xách tay 5 lít Dynmed POC5</h1>--%>
+                        <h1 class="product-title"><%=product.getName()%>
+                        </h1>
                         <div class="product-description">
                             <span class="title">Mã sản phẩm:</span>
                             <span class="info">
@@ -94,7 +115,8 @@
 
                         <div class="sale-box">
                             <div class="sale-title bg-primary-green">
-                                <i class="fa-solid fa-gift" style="font-size: 25px;"></i> Khuyến mãi đặc biệt !!!</div>
+                                <i class="fa-solid fa-gift" style="font-size: 25px;"></i> Khuyến mãi đặc biệt !!!
+                            </div>
                         </div>
                         <div class="sale-detail border-s-r-5">
                             <div class="d-flex align-items-center">
@@ -122,14 +144,16 @@
                             <p>
                                 <strong>Máy tạo oxy xách tay 5L Dynmed POC5</strong>
                                 cung cấp oxy ổn định mỗi phút theo sự thay đổi liên tục của nhịp thở,
-                                mang đến hiệu quả trị liệu tối ưu đối với bệnh nhân mắc các bệnh về đường hô hấp, người lớn tuổi và
+                                mang đến hiệu quả trị liệu tối ưu đối với bệnh nhân mắc các bệnh về đường hô hấp, người
+                                lớn tuổi và
                                 những người được chỉ định cần tiếp nhận oxy bổ sung.
                             </p>
                             <p class="images-info">
                                 <img src="../image/product/may-oxi.jpg" alt="">
                             </p>
                             <p class="name-images-info">Máy tạo oxy xách tay 5 lít Dynmed POC5</p>
-                            <p>Người dùng có thể tùy chỉnh <strong>3 chế độ</strong> sử dụng gồm chế độ xung, chế độ tần số không đổi
+                            <p>Người dùng có thể tùy chỉnh <strong>3 chế độ</strong> sử dụng gồm chế độ xung, chế độ tần
+                                số không đổi
                                 và chế độ cao nguyên dùng được ở cả độ cao đến 6000m.
                                 Với nồng độ oxy tinh khiết luôn đạt 93% ± 3% và lưu lượng dòng chảy lên đến 5L/phút,
                                 người dùng có thể an tâm trị liệu hiệu quả khi sử dụng
@@ -251,14 +275,16 @@
                     <div class="box-t">
                         <h4 class="title-text">Chính sách cửa hàng</h4>
                         <div class="d-flex align-items-center mt-3">
-                            <img src="../image/product/freeship.png" width="40" height="40" alt="Hình ảnh" class="blue-filter">
+                            <img src="../image/product/freeship.png" width="40" height="40" alt="Hình ảnh"
+                                 class="blue-filter">
                             <div class="text-group">
                                 <h6>Miễn phí vận chuyển</h6>
                                 <span>Trong nội thành Hồ Chí Minh.</span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mt-3">
-                            <img src="../image/product/freeship.png" width="40" height="40" alt="Hình ảnh" class="blue-filter">
+                            <img src="../image/product/freeship.png" width="40" height="40" alt="Hình ảnh"
+                                 class="blue-filter">
                             <div class="text-group">
                                 <h6>Miễn phí vận chuyển</h6>
                                 <span>Trên toàn quốc cho đơn hàng từ 1.500.000₫.</span>
@@ -302,6 +328,7 @@
             bigImage.src = event.target.src;
         }
     }
+
     // Lấy danh sách các small images
     var smallImages = document.querySelectorAll('.product-left-small-images img');
     var bigImage = document.querySelector('.product-left-big-images img');
@@ -324,6 +351,7 @@
             quantityInput.value = currentQuantity - 1;
         }
     }
+
     // Hàm tăng số lượng
     function increaseQuantity() {
         var quantityInput = document.getElementById("quantity");

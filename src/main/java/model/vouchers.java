@@ -1,11 +1,11 @@
 package model;
 
-public class vouchers {
+public class Vouchers {
     private int userID;
     private int voucherID;
     private int quantity;
 
-    public vouchers() {
+    public Vouchers() {
     }
 
     public int getUserID() {

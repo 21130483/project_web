@@ -1,6 +1,9 @@
 package model;
 
-import java.util.Date;
+
+import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class User {
     private int userID;
@@ -10,8 +13,8 @@ public class User {
     private String password;
     private Date dob;
     private String gender;
-    private String role;
-    private String access;
+    private boolean role;
+    private boolean access;
 
     public User() {
     }
@@ -60,6 +63,14 @@ public class User {
         return dob;
     }
 
+    public String getDobString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = sdf.format(dob);
+        return formattedDate;
+
+
+    }
+
     public void setDob(Date dob) {
         this.dob = dob;
     }
@@ -72,21 +83,23 @@ public class User {
         this.gender = gender;
     }
 
-    public String getRole() {
+    public boolean getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(boolean role) {
         this.role = role;
     }
 
-    public String getAccess() {
+    public boolean getAccess() {
         return access;
     }
 
-    public void setAccess(String access) {
+    public void setAccess(boolean access) {
         this.access = access;
     }
+
+
 
 
     @Override
@@ -103,4 +116,9 @@ public class User {
                 ", access='" + access + '\'' +
                 '}';
     }
+
+    public static void main(String[] args) {
+
+    }
+
 }

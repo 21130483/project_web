@@ -10,19 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AccountDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/IInfoDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/JDBIConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/TableUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/AccountRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/AccountStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AddressDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/GenericDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/IAddressDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/IUserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="JavaScript File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -57,28 +54,60 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AddressDAO.executor": "Run",
+    "Application.Product.executor": "Run",
     "Application.ProductDAO.executor": "Run",
+    "Application.User.executor": "Run",
+    "Application.UserDAO.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 9.0.81.executor": "Run",
     "Tomcat Server.header.jsp.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "21130440-NguyenThanhLuu",
+    "git-widget-placeholder": "21130483-NguyenHuuPhuoc",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/phuoc/OneDrive/Máy tính/github/person/project_web",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="IAddressDao" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\css" />
+      <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProductDAO">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
+    <configuration name="AddressDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.AddressDAO" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Product" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.Product" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
@@ -92,8 +121,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tomcatProject" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="20">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/La/" />
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.User" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Lab:war">
@@ -103,7 +157,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0f650be3-30ea-4235-b785-a0c1299ac88c" />
+        <option name="BASE_DIRECTORY_NAME" value="b849bba1-92d6-4265-afcd-2b76bdd5c2db" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -111,7 +165,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49978" />
+        <option name="DEBUG_PORT" value="50683" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -181,11 +235,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Product" />
+      <item itemvalue="Application.User" />
+      <item itemvalue="Application.AddressDAO" />
+      <item itemvalue="Application.UserDAO" />
       <item itemvalue="Application.ProductDAO" />
-      <item itemvalue="Tomcat Server.tomcatProject" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Product" />
+        <item itemvalue="Application.User" />
+        <item itemvalue="Application.AddressDAO" />
+        <item itemvalue="Application.UserDAO" />
         <item itemvalue="Application.ProductDAO" />
       </list>
     </recent_temporary>
@@ -202,12 +264,54 @@
       <workItem from="1705323699447" duration="5000" />
       <workItem from="1705394444234" duration="201000" />
       <workItem from="1705394658488" duration="13000" />
-      <workItem from="1705655047604" duration="906000" />
-      <workItem from="1705898194482" duration="3830000" />
+      <workItem from="1705655118647" duration="396000" />
+      <workItem from="1705655541694" duration="72000" />
+      <workItem from="1705655663090" duration="453000" />
+      <workItem from="1705658956507" duration="635000" />
+      <workItem from="1705659879996" duration="233000" />
+      <workItem from="1705661255718" duration="8000" />
+      <workItem from="1705661268846" duration="167000" />
+      <workItem from="1705661437988" duration="53000" />
+      <workItem from="1705661505409" duration="10955000" />
+      <workItem from="1705661505409" duration="7559000" />
+      <workItem from="1705719107342" duration="15720000" />
+      <workItem from="1705744848813" duration="4710000" />
+      <workItem from="1705750085053" duration="5958000" />
+      <workItem from="1705840608597" duration="172000" />
+      <workItem from="1705893591244" duration="9705000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
+          <line>45</line>
+          <properties class="dao.UserDAO">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/model/Product.java</url>
+          <line>169</line>
+          <properties class="model.Product" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
