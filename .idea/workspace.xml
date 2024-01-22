@@ -10,12 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AddressDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GenericDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IAddressDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AccountDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/IInfoDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/JDBIConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/TableUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/AccountRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/AccountStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AddressDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/GenericDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/IAddressDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/IUserDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +203,7 @@
       <workItem from="1705394444234" duration="201000" />
       <workItem from="1705394658488" duration="13000" />
       <workItem from="1705655047604" duration="906000" />
-      <workItem from="1705898194482" duration="1722000" />
+      <workItem from="1705898194482" duration="3830000" />
     </task>
     <servers />
   </component>
