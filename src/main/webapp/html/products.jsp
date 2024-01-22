@@ -32,6 +32,13 @@
 
     <div class="noi-dung">
         <div class="bang-sap-xep">
+            <div class="container" style="display: flex; margin-bottom: 0;padding-bottom: 0;">
+                <p style="font-size: 18px;">Kết quả tiềm kiếm cho từ khóa
+                    "<%=
+                        request.getAttribute("textFindProducts")
+                    %>"
+                </p>
+            </div>
             <div class="container">
                 <div class="sap-xep-theo">
                     Sắp xếp theo
@@ -99,10 +106,10 @@
                                 for (Product p : getFindProducts) {
                         %>
                         <li class="san-pham">
-                            <a href="product.jsp" class="link-san-pham">
+                            <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt=""
-                                         style="max-width: 100%; max-height: 100%; height: auto; width: auto;">
+                                    <!-- 248 x 248 -->
+                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
@@ -119,9 +126,13 @@
                                         <%=p.getPriceHaveDots()%>
                                     </div>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                                    <form action="cart?id=<%=p.getProductID()%>&active=add&page=products" method="post"
+                                          style="width: 100%; height: 100%">
+                                        <button type="submit" class="them-san-pham">
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                    </form>
+
 
                                 </div>
                             </a>

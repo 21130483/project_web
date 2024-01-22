@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -18,23 +20,23 @@
         </div>
         <ul>
             <li class="button-muc-luc">
-                <a href="quanlysanpham.html">
-                    <div class="a" >
+                <a href="admin?page=product">
+                    <div class="a">
                         Quản lý sản phẩm
                     </div>
                 </a>
             </li>
 
-            <li class="button-muc-luc" style="background-color: #007bff;">
-                <a href="quanlythanhvien.html">
-                    <div class="a">
+            <li class="button-muc-luc">
+                <a href="admin?page=user" >
+                    <div class="a" style="background-color: #007bff;">
                         Quản lý thành viên
                     </div>
                 </a>
             </li>
 
             <li class="button-muc-luc">
-                <a href="quanlyhoadon.html">
+                <a href="admin?page=bill">
                     <div class="a">
                         Quản lý hóa đơn
                     </div>
@@ -42,7 +44,7 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="quanlyvoucher.html">
+                <a href="admin?page=voucher">
                     <div class="a">
                         Quản lý phiếu giảm giá
                     </div>
@@ -50,7 +52,7 @@
             </li>
 
             <li class="button-muc-luc" style="margin-top: 50px;">
-                <a href="../../index.html">
+                <a href="index.jsp">
                     <div class="a">
                         Quay về trang chủ
                     </div>
@@ -64,7 +66,7 @@
             <p>Quản lý thành viên</p>
         </div>
 
-        <div  class="danh-sach-block">
+        <div class="danh-sach-block">
             <a href="">
                 <div class="a">
                     Danh sách Block
@@ -90,13 +92,21 @@
             </div>
 
             <ul>
+                <%
+                    List<User> users = (List) request.getAttribute("getAllProducts");
+                %>
+
+                <%
+                    for (User u : users) {
+                %>
+
                 <li class="box-thanh-vien">
                     <div class="thanh-vien">
-                        <p>123</p>
-                        <p>abc@gmail.com</p>
-                        <p>Nguyễn Hữu Phước</p>
-                        <p>0123456789</p>
-                        <p>ABC</p>
+                        <p><%=u.getUserID()%></p>
+                        <p><%=u.getEmail()%></p>
+                        <p><%=u.getFullName()%></p>
+                        <p><%=u.getPhoneNumbers()%></p>
+                        <p><%=u.getRole()%></p>
                         <div class="sua-block">
                             <button class="sua">Sửa</button>
                             <button class="block">Block</button>
@@ -104,26 +114,15 @@
                     </div>
 
                 </li>
+                <%
+                    }
+                %>
 
-                <li class="box-thanh-vien">
-                    <div class="thanh-vien">
-                        <p>123</p>
-                        <p>abc@gmail.com</p>
-                        <p>Nguyễn Hữu Phước</p>
-                        <p>0123456789</p>
-                        <p>ABC</p>
-                        <div class="sua-block">
-                            <button class="sua">Sửa</button>
-                            <button class="block">Block</button>
-                        </div>
-                    </div>
 
-                </li>
 
 
 
             </ul>
-
 
 
         </div>
