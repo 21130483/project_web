@@ -45,7 +45,11 @@
             <div class="container" style="display: flex; margin-bottom: 0;padding-bottom: 0;">
                 <p style="font-size: 18px;">Kết quả tiềm kiếm cho từ khóa
                     "<%=
+<<<<<<< HEAD
                     request.getAttribute("textFindProducts")
+=======
+                        request.getAttribute("textFindProducts")
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
                     %>"
                 </p>
             </div>

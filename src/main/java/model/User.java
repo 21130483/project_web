@@ -1,7 +1,10 @@
 package model;
 
 
+<<<<<<< HEAD
 import java.io.File;
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 

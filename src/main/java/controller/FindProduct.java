@@ -16,6 +16,7 @@ public class FindProduct extends HttpServlet {
     List<Product> list = new ArrayList<>();
     private static String textFindProducts;
 
+<<<<<<< HEAD
     private int currentPage;
 
     private int numberPages;
@@ -25,6 +26,12 @@ public class FindProduct extends HttpServlet {
     //    1 là những sản phẩm mới nhất
     //    2 là những sản phẩm bán chạy
     int detail = 0;
+=======
+    //    0 là những sản phẩm liên quan
+    //    1 là những sản phẩm mới nhất
+    //    2 là những sản phẩm bán chạy
+    int sortedBy = 0;
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 
     //    0 là ko sắp xếp theo giá
     //    1 là giá từ cao đến thấp
@@ -32,8 +39,13 @@ public class FindProduct extends HttpServlet {
     int priceBy = 0;
 
     boolean betweenTo = false;
+<<<<<<< HEAD
     int from = 0;
     int to = 0;
+=======
+    double from = 0;
+    double to = 0;
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -87,6 +99,7 @@ public class FindProduct extends HttpServlet {
         textFindProducts = req.getParameter("textFindProduct") == null ? "" : (String) req.getParameter("textFindProduct");
         System.out.println(textFindProducts);
         ProductDAO productDAO = new ProductDAO();
+<<<<<<< HEAD
         list = productDAO.getFindProducts(textFindProducts);
         priceBy = 0;
         countNumberPages();
@@ -99,6 +112,15 @@ public class FindProduct extends HttpServlet {
         req.setAttribute("getDetail", detail);
         req.setAttribute("getFrom", from);
         req.setAttribute("getTo", to);
+=======
+        List<Product> products = productDAO.getFindProducts(textFindProducts);
+        for (Product p : products) {
+            System.out.println(p);
+        }
+        req.setAttribute("textFindProducts", textFindProducts);
+        req.setAttribute("getFindProducts", products);
+
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
         req.getRequestDispatcher("products.jsp").forward(req, resp);
     }
 

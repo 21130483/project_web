@@ -1,8 +1,16 @@
 package dao;
 
+<<<<<<< HEAD
 
+=======
+import database.JDBIConnector;
+import model.User;
+import org.jdbi.v3.core.Handle;
+import java.util.ArrayList;
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 import java.util.List;
 
+<<<<<<< HEAD
 import javax.inject.Inject;
 
 import Model.Address;
@@ -26,6 +34,42 @@ public class UserDAO extends AbtractDAO<User> implements IUserDAO {
         if(user!=null) {
             List<Address> address = addressDAO.findAddressesById(user.getId());
             user.setAddresses(address);
+=======
+public class UserDAO {
+    private static Handle handle = JDBIConnector.getConnect().open();
+
+    public UserDAO() {
+    }
+
+    public static User getUserById(int id) {
+        User result = handle.select("SELECT * FROM users WHERE userID = ?").bind(0, id).mapToBean(User.class).findOne().orElse(null);
+        return result;
+    }
+
+    public boolean updateUser(int userID, String nameColumn, String value) {
+        boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
+        return check;
+    }
+
+    public static List<User> getAllUsers() {
+        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
+        ;
+        return users;
+    }
+
+    public static User checkLogin(String email, String pass) {
+
+//        List<User> users = null;
+        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
+        for (User user : users) {
+            if (user.getEmail().equals(email)) {
+                if (user.getPassword().equals(pass)) {
+                    return user;
+                } else {
+                    break;
+                }
+            }
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
         }
         return user;
     }
@@ -75,6 +119,7 @@ public class UserDAO extends AbtractDAO<User> implements IUserDAO {
         return null;
     }
 
+<<<<<<< HEAD
     @Override
     public int save(String sql, Object... objects) {
         return 0;
@@ -84,6 +129,19 @@ public class UserDAO extends AbtractDAO<User> implements IUserDAO {
     public boolean update(String sql, Object... objects) {
         return false;
     }
+=======
+    public static void main(String[] args) {
+//        User user = checkLogin("phuoc@gmail.com","123");
+        User user = getUserById(1);
+        System.out.println(user);
+//        List<User> users = getAllUsers();
+//        for (User user : users) {
+//            System.out.println(user);
+    }
+
+
+
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 }
 
 //import database.JDBIConnector;

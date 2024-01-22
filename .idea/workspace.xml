@@ -10,7 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UserEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/filter/UTF8EncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AddressDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddressController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
@@ -19,6 +27,28 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/adminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/voucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Voucher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/vouchers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Vouchers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/wishes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Wishes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" afterDir="false" />
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +85,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AddressDAO.executor": "Run",
+<<<<<<< HEAD
     "Application.Product.executor": "Run",
     "Application.ProductDAO.executor": "Run",
     "Application.User.executor": "Run",
+=======
+    "Application.ProductDAO.executor": "Run",
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
     "Application.UserDAO.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -95,6 +129,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="Product" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.Product" />
       <module name="Lab" />
@@ -108,6 +143,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
     <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
@@ -121,6 +158,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.User" />
       <module name="Lab" />
@@ -134,6 +172,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
     <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
       <module name="Lab" />
@@ -235,8 +275,11 @@
       </method>
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="Application.Product" />
       <item itemvalue="Application.User" />
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
       <item itemvalue="Application.AddressDAO" />
       <item itemvalue="Application.UserDAO" />
       <item itemvalue="Application.ProductDAO" />
@@ -244,8 +287,11 @@
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.Product" />
         <item itemvalue="Application.User" />
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
         <item itemvalue="Application.AddressDAO" />
         <item itemvalue="Application.UserDAO" />
         <item itemvalue="Application.ProductDAO" />
@@ -276,9 +322,12 @@
       <workItem from="1705661505409" duration="7559000" />
       <workItem from="1705719107342" duration="15720000" />
       <workItem from="1705744848813" duration="4710000" />
+<<<<<<< HEAD
       <workItem from="1705750085053" duration="5958000" />
       <workItem from="1705840608597" duration="172000" />
       <workItem from="1705893591244" duration="9705000" />
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
     </task>
     <servers />
   </component>
@@ -291,12 +340,17 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
           <line>45</line>
+<<<<<<< HEAD
           <properties class="dao.UserDAO">
+=======
+          <properties class="dao.UserDAO" method="main">
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+<<<<<<< HEAD
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/model/Product.java</url>
           <line>169</line>
@@ -306,6 +360,8 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+=======
+>>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
           <line>9</line>
