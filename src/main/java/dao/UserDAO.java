@@ -2,10 +2,15 @@ package dao;
 
 import database.JDBIConnector;
 import model.User;
+<<<<<<< HEAD
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.Handle;
 import Services.Connect;
 
+=======
+import org.jdbi.v3.core.Handle;
+import java.util.ArrayList;
+>>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,23 +23,48 @@ import java.util.Calendar;
 
 
 public class UserDAO {
+<<<<<<< HEAD
     public static final Jdbi connect = JDBIConnector.getConnect();
+=======
+>>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
     private static Handle handle = JDBIConnector.getConnect().open();
 
-    public User checkLogin(String email, String pass) {
-        List<User> users = null;
-        users = connect.withHandle(handle ->
-                handle.createQuery("select * from users").mapToBean(User.class).collect(Collectors.toList()));
+    public UserDAO() {
+    }
+
+    public static User getUserById(int id) {
+        User result = handle.select("SELECT * FROM users WHERE userID = ?").bind(0, id).mapToBean(User.class).findOne().orElse(null);
+        return result;
+    }
+
+    public boolean updateUser(int userID, String nameColumn, String value) {
+        boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
+        return check;
+    }
+
+    public static List<User> getAllUsers() {
+        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
+        ;
+        return users;
+    }
+
+    public static User checkLogin(String email, String pass) {
+
+//        List<User> users = null;
+        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
         for (User user : users) {
             if (user.getEmail().equals(email)) {
                 if (user.getPassword().equals(pass)) {
                     return user;
+                } else {
+                    break;
                 }
             }
         }
         return null;
     }
 
+<<<<<<< HEAD
     public boolean checkEmailExist(String email) {
         Connection connection = null;
         boolean checkEmail = false;
@@ -340,4 +370,17 @@ public class UserDAO {
         return check;
     }
 
+=======
+    public static void main(String[] args) {
+//        User user = checkLogin("phuoc@gmail.com","123");
+        User user = getUserById(1);
+        System.out.println(user);
+//        List<User> users = getAllUsers();
+//        for (User user : users) {
+//            System.out.println(user);
+    }
+
+
+
+>>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
 }
