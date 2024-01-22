@@ -1047,7 +1047,7 @@
             <div class="main-address">
                 <div class="address-box">
                     <h2>Thêm địa chỉ</h2>
-                    <form action="address?active=add" method="post">
+                    <form action="address-controller?active=add" method="post">
                         <div class="user-box">
                             <input id="fullName-address" type="text" name="city" required="">
                             <label for="fullName-address">Tỉnh</label>

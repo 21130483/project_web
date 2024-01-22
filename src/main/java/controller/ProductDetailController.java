@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 
 @WebServlet("/html/product-detail")
@@ -17,7 +18,10 @@ public class ProductDetailController extends HttpServlet {
         int productID = Integer.parseInt(req.getParameter("id"));
         ProductDAO productDAO = new ProductDAO();
         Product product = productDAO.getProductById(productID);
+        String path = req.getServletContext().getRealPath("");;
+        int numberImg = product.numberImg(path+"image/product/"+product.getProductID());
         req.setAttribute("productDetail",product);
+        req.setAttribute("numberImg",numberImg);
         req.getRequestDispatcher("product.jsp").forward(req, resp);
     }
 

@@ -1,5 +1,6 @@
 package model;
 
+import java.io.File;
 import java.util.Date;
 import java.util.Objects;
 
@@ -126,6 +127,15 @@ public class Product {
         this.dateAdded = dateAdded;
     }
 
+    public int numberImg(String path) {
+        File fileImg = new File(path);
+        if (fileImg.exists()) {
+
+            return fileImg.list().length;
+        } else {
+            return 0;
+        }
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -155,6 +165,10 @@ public class Product {
                 ", trademark='" + trademark + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }
