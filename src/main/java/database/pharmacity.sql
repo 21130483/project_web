@@ -245,20 +245,22 @@ CREATE TABLE IF NOT EXISTS `wishes` (
 
 
 CREATE TABLE IF NOT EXISTS `purchases` (
+  `purchaseID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `orderDate` date NOT NULL,
-  `receivedDate` date NOT NULL,
-  `starNumber` int(11) NOT NULL,
-  `comment` varchar(100) NOT NULL,
-  `dateRated` date NOT NULL,
-  PRIMARY KEY (`userID`,`productID`),
+  `status` int NOT NULL,
+  `receivedDate` date,
+  `starNumber` int(11),
+  `comment` varchar(100),
+  `dateRated` date,
+  PRIMARY KEY (`purchaseID`,`userID`,`productID`),
   KEY `userID` (`userID`),
   KEY `productID` (`productID`),  
   CONSTRAINT `purchases_fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`),
   CONSTRAINT `purchases_fk_productID` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=INNODB AUTO_INCREMENT=1  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 

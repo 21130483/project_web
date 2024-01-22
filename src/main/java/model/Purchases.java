@@ -3,6 +3,7 @@ package model;
 import java.util.Date;
 
 public class Purchases {
+    private int purchaseID;
     private int userID;
     private int productID;
     private int quantity;

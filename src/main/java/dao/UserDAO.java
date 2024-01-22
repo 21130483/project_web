@@ -24,8 +24,7 @@ public class UserDAO {
     }
 
     public static List<User> getAllUsers() {
-        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
-        ;
+        List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());;
         return users;
     }
 

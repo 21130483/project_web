@@ -23,7 +23,7 @@ public class UTF8EncodingFilter implements Filter {
 //        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-//        response.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
 
         // Continue with the filter chain
         chain.doFilter(request, response);
