@@ -18,14 +18,13 @@ public class PurchasesDAO {
         return check;
     }
 
-    public static boolean updatePurchase(int prodcutID, int userID, String nameColumn, String value){
-        boolean check = handle.execute("UPDATE purchases SET " + nameColumn + "=? WHERE userID =? AND productID = ?", value, userID,prodcutID) > 0;
+    public static boolean updatePurchase(int purchaseID, String nameColumn, String value){
+        boolean check = handle.execute("UPDATE purchases SET " + nameColumn + "=? WHERE purchaseID = ?", value, purchaseID) > 0;
         return check;
     }
 
     public static void main(String[] args) {
-//        addPurchase(1,1,2);
-//        updatePurchase(1,1,"status","2");
+
     }
 
 }

@@ -72,7 +72,7 @@
             </div>
 
             <div class="them-san-pham">
-                <a href="addEditProduct.jsp">
+                <a href="add-edit-delete?active=add">
                     <div class="a">
                         Thêm sản phẩm
                     </div>
@@ -104,17 +104,26 @@
                     %>
                     <li class="box-san-pham">
                         <div class="san-pham">
-                            <p><%=p.getProductID()%></p>
+                            <p><%=p.getProductID()%>
+                            </p>
                             <p style="overflow: hidden; text-overflow: ellipsis;  white-space: nowrap;">
                                 <%=p.getName()%>
                             </p>
-                            <p><%=p.getCategoryID()%></p>
-                            <p><%=p.getDateAdded()%></p>
-                            <p><%=p.getOriginID()%></p>
+                            <p><%=p.getCategoryID()%>
+                            </p>
+                            <p><%=p.getDateAdded()%>
+                            </p>
+                            <p><%=p.getOriginID()%>
+                            </p>
                             <!-- <p>11/1/2023</p> -->
                             <div class="sua-xoa">
-                                <button class="sua">Sửa</button>
-                                <button class="xoa">Xóa</button>
+                                <a href="add-edit-delete?active=edit&id=<%=p.getProductID()%>">
+                                    <button class="sua">Sửa</button>
+                                </a>
+                                <a href="add-edit-delete?active=delete&id=<%=p.getProductID()%>">
+                                    <button class="xoa">Xóa</button>
+                                </a>
+
                             </div>
                         </div>
 
@@ -126,21 +135,21 @@
                     %>
 
 
-<%--                    <li class="box-san-pham">--%>
-<%--                        <div class="san-pham">--%>
-<%--                            <p>123</p>--%>
-<%--                            <p>Khẩu trang trắng</p>--%>
-<%--                            <p>Khẩu trang</p>--%>
-<%--                            <p>ABC</p>--%>
-<%--                            <p>Việt Nam</p>--%>
-<%--                            <!-- <p>11/1/2023</p> -->--%>
-<%--                            <div class="sua-xoa">--%>
-<%--                                <button class="sua">Sửa</button>--%>
-<%--                                <button class="xoa">Xóa</button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                    <%--                    <li class="box-san-pham">--%>
+                    <%--                        <div class="san-pham">--%>
+                    <%--                            <p>123</p>--%>
+                    <%--                            <p>Khẩu trang trắng</p>--%>
+                    <%--                            <p>Khẩu trang</p>--%>
+                    <%--                            <p>ABC</p>--%>
+                    <%--                            <p>Việt Nam</p>--%>
+                    <%--                            <!-- <p>11/1/2023</p> -->--%>
+                    <%--                            <div class="sua-xoa">--%>
+                    <%--                                <button class="sua">Sửa</button>--%>
+                    <%--                                <button class="xoa">Xóa</button>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
 
-<%--                    </li>--%>
+                    <%--                    </li>--%>
 
 
                 </ul>

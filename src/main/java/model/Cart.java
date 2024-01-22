@@ -1,9 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Cart {
     private static Map<Product, Integer> cart = new HashMap<>();
@@ -191,11 +188,19 @@ public class Cart {
     }
 
     public void deletedProdcutBuyFromCart() {
-        for (Product p : cart.keySet()) {
+//        for (Product p : cart.keySet()) {
+//            if (productChecked.contains(p.getProductID())) {
+//                cart.remove(p);
+//            }
+//        }
+        Iterator<Product> iterator = cart.keySet().iterator();
+        while (iterator.hasNext()) {
+            Product p = iterator.next();
             if (productChecked.contains(p.getProductID())) {
-                cart.remove(p);
+                iterator.remove();
             }
         }
+        productChecked.clear();
     }
 
 }

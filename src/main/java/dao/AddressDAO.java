@@ -11,6 +11,9 @@ import java.util.stream.Collectors;
 public class AddressDAO {
     private static Handle handle = JDBIConnector.getConnect().open();
 
+    public AddressDAO() {
+    }
+
     public static Address getAddressById(int id) {
         Address result = handle.select("SELECT * FROM address WHERE addressID = ?").bind(0, id).mapToBean(Address.class).findOne().orElse(null);
         return result;
