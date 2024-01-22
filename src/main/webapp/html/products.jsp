@@ -29,13 +29,23 @@
 <div class="page">
     <jsp:include page="header.jsp"></jsp:include>
 
+    <%
+        List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
+        int currentPage = (int) request.getAttribute("getcurrentPage");
+        int numberPages = (int) request.getAttribute("getnumberPages");
+        int priceBy = (int) request.getAttribute("getpriceBy");
+        int detail = (int) request.getAttribute("getDetail");
+        int from = (int) request.getAttribute("getFrom");
+        int to = (int) request.getAttribute("getTo");
+    %>
+
 
     <div class="noi-dung">
         <div class="bang-sap-xep">
             <div class="container" style="display: flex; margin-bottom: 0;padding-bottom: 0;">
                 <p style="font-size: 18px;">Kết quả tiềm kiếm cho từ khóa
                     "<%=
-                        request.getAttribute("textFindProducts")
+                    request.getAttribute("textFindProducts")
                     %>"
                 </p>
             </div>
@@ -46,47 +56,137 @@
 
                 <div class="che-do">
                     <div class="lien-quan">
-                        <button>Liên quan</button>
+                        <a href="findProduct?active=detail&detail=0">
+                            <button
+                                    <%
+                                        if (detail == 0) {
+
+                                    %>
+                                    style="background-color: #3F85EA"
+                                    <%
+                                        }
+                                    %>
+                            >Liên quan
+                            </button>
+                        </a>
+
                     </div>
 
                     <div class="moi-nhat">
-                        <button>Mới nhất</button>
+                        <a href="findProduct?active=detail&detail=1">
+                            <button
+                                    <%
+                                        if (detail == 1) {
+
+                                    %>
+                                    style="background-color: #3F85EA"
+                                    <%
+                                        }
+                                    %>
+                            >Mới nhất
+                            </button>
+                        </a>
+
                     </div>
 
                     <div class="ban-chay">
-                        <button>Bán chạy</button>
+                        <a href="findProduct?active=detail&detail=2">
+                            <button
+                                    <%
+                                        if (detail == 2) {
+
+                                    %>
+                                    style="background-color: #3F85EA"
+                                    <%
+                                        }
+                                    %>
+                            >Bán chạy
+                            </button>
+                        </a>
+
                     </div>
                 </div>
 
                 <div class="gia">
-                    <button class="button-gia">
-                        <span>Giá</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+
+                    <a href="findProduct?active=price" style="text-decoration: none">
+                        <button class="button-gia" style="justify-content: center">
+                            <%
+                                if (priceBy == 0) {
+                            %>
+                            <span>Giá mặc định</span>
+                            <%
+                            } else if (priceBy == 1) {
+                            %>
+                            <span>Giá từ thấp đến cao</span>
+                            <%
+                            } else {
+                            %>
+                            <span>Giá từ cao đến thấp</span>
+                            <%
+                                }
+                            %>
+                        </button>
+
+
+                    </a>
+
                 </div>
 
-                <div class="khoang-gia">
-                    <div class="title">
-                        Khoảng giá
-                    </div>
+                <form action="findProduct" method="get">
+                    <div class="khoang-gia">
+                        <div class="title">
+                            Khoảng giá
+                        </div>
 
 
-                    <div class="from">
-                        <input type="number">
-                    </div>
+                        <div class="from">
+                            <input name="from" type="number" value="<%=from%>"
+                            <%--                                   oninput="validateInput(event)"--%>
+                            >
+                            <script>
+                                function validateInput(event) {
+                                    // Lấy giá trị nhập vào từ sự kiện
+                                    var inputValue = event.target.value;
 
-                    <div class="between">
-                        <i class="fa-solid fa-minus"></i>
-                    </div>
+                                    // Loại bỏ các ký tự không phải số từ giá trị nhập vào
+                                    var numericValue = inputValue.replace(/[^0-9]/g, '');
 
-                    <div class="to">
-                        <input type="number">
-                    </div>
+                                    // Cập nhật giá trị của trường input
+                                    event.target.value = numericValue;
+                                }
+                            </script>
+                        </div>
 
-                    <div class="ap-dung">
-                        <button>Áp dụng</button>
+                        <div class="between">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+
+                        <div class="to">
+                            <input name="to" type="number" value="<%=to%>"
+                            <%--                                   oninput="validateInput(event)"--%>
+                            >
+                            <script>
+                                function validateInput(event) {
+                                    // Lấy giá trị nhập vào từ sự kiện
+                                    var inputValue = event.target.value;
+
+                                    // Loại bỏ các ký tự không phải số từ giá trị nhập vào
+                                    var numericValue = inputValue.replace(/[^0-9]/g, '');
+
+                                    // Cập nhật giá trị của trường input
+                                    event.target.value = numericValue;
+                                }
+                            </script>
+                        </div>
+
+                        <div class="ap-dung">
+
+                            <button type="submit">Áp dụng</button>
+                            <input type="text" name="active" value="between" style="display: none">
+                        </div>
                     </div>
-                </div>
+                </form>
 
 
             </div>
@@ -97,13 +197,18 @@
                 <div class="cac-san-pham">
                     <ul>
 
-                        <%
-                            List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
-                        %>
 
                         <%
-                            if (getFindProducts != null) {
-                                for (Product p : getFindProducts) {
+                            if
+                            (getFindProducts != null) {
+                                for
+                                (int i = 0 + ((currentPage - 1) * 20); i < 20 * currentPage; i++) {
+
+                                    if (getFindProducts.size() <= i) {
+                                        break;
+                                    } else {
+                                        Product p = getFindProducts.get(i);
+
                         %>
                         <li class="san-pham">
                             <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
@@ -138,6 +243,7 @@
                             </a>
                         </li>
                         <%
+                                    }
                                 }
                             }
                         %>
@@ -148,21 +254,44 @@
 
                 <div class="so-trang-san-pham">
                     <ul>
+                        <%
+                            if (currentPage != 1) {
+                        %>
                         <li>
-                            <button><i class="fa-solid fa-angle-left"></i></button>
-                            </i>
+                            <a href="findProduct?active=page&page=<%=currentPage-1%>">
+                                <button><i class="fa-solid fa-angle-left"></i></button>
+                            </a>
                         </li>
 
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">...</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">5</a></li>
+                        <%
+                            }
+                        %>
 
+                        <%
+                            for (int i = 1; i <= numberPages; i++) {
+                        %>
                         <li>
-                            <button><i class="fa-solid fa-angle-right"></i></button>
-                            </i>
+                            <a href="findProduct?active=page&page=<%=i%>"><%=i%>
+                            </a>
                         </li>
+                        <%
+                            }
+                        %>
+
+
+                        <%
+                            if (currentPage != numberPages) {
+                        %>
+                        <li>
+                            <a href="findProduct?active=page&page=<%=currentPage+1%>">
+                                <button><i class="fa-solid fa-angle-right"></i></button>
+                            </a>
+                        </li>
+
+                        <%
+                            }
+                        %>
+
                     </ul>
                 </div>
 

@@ -1,6 +1,7 @@
 package model;
 
 
+import java.io.File;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -97,6 +98,8 @@ public class User {
     public void setAccess(boolean access) {
         this.access = access;
     }
+
+
 
 
     @Override
