@@ -1,8 +1,8 @@
 package dao;
 
-import java.util.List;
+import model.User;
 
-import Model.User;
+import java.util.List;
 
 public interface IUserDAO extends GenericDAO<User> {
     User findUserByEmail(String email);

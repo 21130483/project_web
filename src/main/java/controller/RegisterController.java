@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import DAO.UserDAO;
+import dao.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "RegisterServlet", value = "/register")
-public class RegisterServlet extends HttpServlet {
+public class RegisterController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,15 +29,15 @@ public class RegisterServlet extends HttpServlet {
             req.setAttribute("invalidateConfimPassword","Mật khẩu không khớp");
             req.getRequestDispatcher("register.jsp").forward(req,resp);
         }
-        if (!Validator.validateEmail(email)) {
-            error = "Email không đúng định dạng";
-        }
-        if(userDAO.checkEmailExist(email)){
-            req.setAttribute("invalidateEmail","Email đã được đăng kí");
-            req.getRequestDispatcher("register.jsp").forward(req,resp);
-        }
-        if(userDAO.resgisterWithEmail(email,username,password)){
-            resp.sendRedirect("login.jsp");
-        }
+//        if (!Validator.validateEmail(email)) {
+//            error = "Email không đúng định dạng";
+//        }
+//        if(userDAO.checkEmailExist(email)){
+//            req.setAttribute("invalidateEmail","Email đã được đăng kí");
+//            req.getRequestDispatcher("register.jsp").forward(req,resp);
+//        }
+//        if(userDAO.resgisterWithEmail(email,username,password)){
+//            resp.sendRedirect("login.jsp");
+//        }
     }
 }

@@ -12,11 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-<<<<<<< HEAD
 @WebServlet("/html/address-controller")
-=======
-@WebServlet("/html/address")
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 public class AddressController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

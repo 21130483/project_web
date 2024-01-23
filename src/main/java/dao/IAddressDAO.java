@@ -1,8 +1,8 @@
 package dao;
 
-import java.util.List;
+import model.Address;
 
-import Model.Address;
+import java.util.List;
 
 
 public interface IAddressDAO {

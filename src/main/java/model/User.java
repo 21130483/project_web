@@ -1,10 +1,6 @@
 package model;
 
 
-<<<<<<< HEAD
-import java.io.File;
-=======
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -20,6 +16,16 @@ public class User {
     private boolean access;
 
     public User() {
+    }
+
+    public User(int userID, String email, int phoneNumbers, String fullName, String password, Date dob, String gender) {
+        this.userID = userID;
+        this.email = email;
+        this.phoneNumbers = phoneNumbers;
+        this.fullName = fullName;
+        this.password = password;
+        this.dob = dob;
+        this.gender = gender;
     }
 
     public int getUserID() {

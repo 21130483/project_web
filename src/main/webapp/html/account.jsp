@@ -19,11 +19,11 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"--%>
+<%--          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">--%>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"--%>
+<%--            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"--%>
+<%--            crossorigin="anonymous"></script>--%>
 </head>
 
 <body>
@@ -32,6 +32,43 @@
 <div class="page">
     <%
         User user = (User) session.getAttribute("user");
+    %>
+    <%@ page import="model.Account"%>
+    <%@ page import="model.Order"%>
+    <%@ page import="java.util.List"%>
+    <%
+        Account acInfo = (Account) request.getSession().getAttribute("accountInfo");
+        String status = request.getParameter("status");
+        String field = request.getParameter("field");
+        Object ordersObject = request.getSession().getAttribute("orders");
+        List<Order> orders = null;
+        if(ordersObject != null){
+            orders = (List<Order>) ordersObject;
+        }
+        if(field == null)
+            field = "";
+        String note = "";
+        if (status != null) {
+            switch (status) {
+                case "success" :
+                    note = "Cập nhật thông tin thành công";
+                    break;
+                case "failed" :
+                    note = "Cập nhật thông tin không thành công";
+                    break;
+                case "failed-0" :
+                    note = "Lỗi thông tin nhập vào";
+                    break;
+                case "failed-1" :
+                    note = "Thông tin không khớp";
+                    break;
+                default :
+                    note = "Có lỗi";
+                    break;
+            }
+        } else {
+            note = "";
+        }
     %>
 
 
@@ -776,7 +813,7 @@
                             </div>
                             <div class="Desktop_big-box">
                                 <div class="AccountDetails_profile">
-                                    <form action="user-edit?active=info" method="post">
+                                    <form action="user-edit?userId=<%=user.getUserID()%>" method="post">
                                         <div class="AccountDetails_info">
                                             <div class="AccountDetails_avatar">
                                                 <div class="AccountDetails_photo-upload" style="display: grid;">
@@ -1047,11 +1084,7 @@
             <div class="main-address">
                 <div class="address-box">
                     <h2>Thêm địa chỉ</h2>
-<<<<<<< HEAD
                     <form action="address-controller?active=add" method="post">
-=======
-                    <form action="address?active=add" method="post">
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
                         <div class="user-box">
                             <input id="fullName-address" type="text" name="city" required="">
                             <label for="fullName-address">Tỉnh</label>

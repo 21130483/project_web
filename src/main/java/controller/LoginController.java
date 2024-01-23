@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import DAO.UserDAO;
+import dao.UserDAO;
 import nhom28.User;
 
 import javax.servlet.ServletException;
@@ -21,16 +21,16 @@ public class LoginController extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         UserDAO userDAO = new UserDAO();
-        User user =userDAO.getUserByEmailAndPass(email, password);
-        if(user != null){
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user);
-            session.setMaxInactiveInterval(10 * 60);
-            resp.sendRedirect("index");
-        }
-        else{
-            req.setAttribute("err", "Email hoặc mật khẩu không đúng");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
-        }
+//        User user =userDAO.getUserByEmailAndPass(email, password);
+//        if(user != null){
+//            HttpSession session = req.getSession();
+//            session.setAttribute("user", user);
+//            session.setMaxInactiveInterval(10 * 60);
+//            resp.sendRedirect("index");
+//        }
+//        else{
+//            req.setAttribute("err", "Email hoặc mật khẩu không đúng");
+//            req.getRequestDispatcher("login.jsp").forward(req, resp);
+//        }
     }
 }
