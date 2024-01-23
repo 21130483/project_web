@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/html/login")
+@WebServlet(name = "Login", value = "/login")
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,6 +31,7 @@ public class Login extends HttpServlet {
             session.setAttribute("user",user);
             resp.sendRedirect("index.jsp");
         }else {
+            req.setAttribute("err", "Email hoặc mật khẩu không đúng");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }

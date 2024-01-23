@@ -11,25 +11,31 @@
   <title>Register</title>
 </head>
 <body>
+  <%
+    String invalidateEmail = (String) request.getAttribute("invalidateEmail") == null ? "" : (String) request.getAttribute("invalidateEmail");
+    String invalidatePassword = (String) request.getAttribute("invalidatePassword") == null ? "" : (String) request.getAttribute("invalidatePassword");
+    String invalidateConfimPassword = (String) request.getAttribute("invalidateConfimPassword") == null ? "" : (String) request.getAttribute("invalidateConfimPassword");
+    String error = request.getAttribute("error") == null ? "" : (String) request.getAttribute("error");
+  %>
 <div class = "section">
   <div class="form-container">
     <div class="form">
       <h2 class="form-title"><span>Đăng ký</span></h2>
     </div>
     <div class="form-group">
-      <input type="user-name" name="full-name" class="form-style" placeholder="Họ và tên" id="fullname" autocomplete="off">
+      <input type="name" name="fullname" class="form-style" placeholder="Họ và tên" id="fullname">
       <i class="input-icon fa-regular fa-user"></i>
     </div>
     <div class="form-group">
-      <input type="email" name="regemail" class="form-style" placeholder="Email" id="regemail" autocomplete="off">
+      <input type="email" name="email" class="form-style" placeholder="Email" id="email">
       <i class="input-icon fa-regular fa-envelope"></i>
     </div>
     <div class="form-group">
-      <input type="password" name="regpass" class="form-style" placeholder="Mật khẩu" id="regpass" autocomplete="off">
+      <input type="password" name="pass" class="form-style" placeholder="Mật khẩu" id="pass" >
       <i class="input-icon fa-solid fa-unlock-keyhole"></i>
     </div>
     <div class="form-group">
-      <input type="password" name="regpass" class="form-style" placeholder="Nhập lại mật khẩu" id="regpass" autocomplete="off">
+      <input type="password" name="pass" class="form-style" placeholder="Nhập lại mật khẩu" id="pass">
       <i class="input-icon fa-solid fa-unlock-keyhole"></i>
     </div>
     <button class="btn">ĐĂNG KÝ</button>
