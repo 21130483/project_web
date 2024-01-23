@@ -87,7 +87,7 @@ public class Cart {
         int result = 0;
         for (Product product : cart.keySet()) {
             if (productChecked.contains(product.getProductID())) {
-                result += product.getPrice();
+                result += product.getPrice()*cart.get(product);
             }
 
         }
@@ -132,7 +132,7 @@ public class Cart {
         int result = 0;
         for (Product product : cart.keySet()) {
             if (productChecked.contains(product.getProductID())) {
-                result += product.getSale();
+                result += product.getSale()*cart.get(product);
             }
         }
         return result;

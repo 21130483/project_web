@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page import="model.Category" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -31,6 +32,8 @@
 
     <%
         List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
+        int categoryID = (int) request.getAttribute("getCategoryID");
+        List<Category> categories = (List) request.getAttribute("getCategories");
         int currentPage = (int) request.getAttribute("getcurrentPage");
         int numberPages = (int) request.getAttribute("getnumberPages");
         int priceBy = (int) request.getAttribute("getpriceBy");
@@ -42,12 +45,51 @@
 
     <div class="noi-dung">
         <div class="bang-sap-xep">
-            <div class="container" style="display: flex; margin-bottom: 0;padding-bottom: 0;">
+            <div class="container"
+                 style="display: flex; margin-bottom: 0;padding-bottom: 0;justify-content: space-between">
                 <p style="font-size: 18px;">Kết quả tiềm kiếm cho từ khóa
                     "<%=
                     request.getAttribute("textFindProducts")
                     %>"
                 </p>
+
+                <form action="findProduct" method="get">
+                    <input value="category" name="active" style="display: none">
+                    <select name="categoryID" style="font-size: 17px">
+                        <option value="0" style="font-size: 17px"
+                                <%
+                                    if (categoryID == 0) {
+                                %>
+                                selected
+                                <%
+                                    }
+                                %>
+                        >Mặc định
+                        </option>
+                        <%
+                            for (Category c : categories) {
+                        %>
+                        <option value="<%=c.getCategoryID()%>" style="font-size: 17px"
+                                <%
+                                    if (c.getCategoryID() == categoryID) {
+                                %>
+                                selected
+                                <%
+                                    }
+                                %>
+                        >
+                            <%=c.getName()%>
+                        </option>
+                        <%
+                            }
+                        %>
+                    </select>
+
+                    <button type="submit"
+                            style="width: 100px;height: 27px; font-size: 16px;border: none;background-color: #305BD4;color: white;border-radius: 10px;">
+                        Áp dụng
+                    </button>
+                </form>
             </div>
             <div class="container">
                 <div class="sap-xep-theo">

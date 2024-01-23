@@ -37,7 +37,7 @@ public class CartController extends HttpServlet {
         if (page.equals("products")) {
             page = "findProduct";
         } else if (page.equals("product")) {
-            page += "-detail?id=" + productID;
+            page = "product-detail?id=" + productID;
         } else {
             page += ".jsp";
         }

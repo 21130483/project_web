@@ -95,8 +95,10 @@ public class AddEditDeleteProduct extends HttpServlet {
             }
         } else if (active.equals("add")){
             productDAO.addProduct(id,name,trademark,content,categoryID,originID,quantity,price,sale);
-            System.out.println("add");
+
         }
+        System.out.println("add");
         req.getRequestDispatcher("admin?page=product").forward(req, resp);
     }
+
 }

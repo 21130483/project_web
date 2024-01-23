@@ -49,7 +49,7 @@
                             <a href="">
                                 <div class="box">
                                     <!-- <span>1302 x 300</span> -->
-                                    <img src="../image/index/thiet-bi-yte.jpg" alt="">
+                                    <img src="../image/index/trang2.jpg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -58,7 +58,7 @@
                             <a href="">
                                 <div class="box">
                                     <!-- <span>1302 x 300</span> -->
-                                    <img src="../image/index/thiet-bi-yte.jpg" alt="">
+                                    <img src="../image/index/trang3.png" alt="">
                                 </div>
                             </a>
                         </div>
@@ -128,7 +128,7 @@
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/khẩutrang.jpg" style="max-width:100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Khẩu trang</span>
                         </a>
@@ -137,7 +137,7 @@
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/nhiệt%20kế.jpg" style="max-width: 100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Nhiệt kế</span>
                         </a>
@@ -146,16 +146,16 @@
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/máy%20massage%20y%20tế.jpg" style="max-width:100%;max-height: 120%;height: auto;width: auto;">
                             </div>
-                            <span>Máy đo đường huyết</span>
+                            <span>Máy massage</span>
                         </a>
                     </div>
 
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/băng%20y%20tế.webp" style="max-width:130%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Băng y tế</span>
                         </a>
@@ -164,36 +164,36 @@
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/dụng%20cụ%20xét%20nghiệm.jpg" style="max-width:160%;max-height: 100%;height: auto;width: auto;">
                             </div>
-                            <span>Nước xịt khuẩn</span>
+                            <span>dụng cụ xét nghiệm</span>
                         </a>
                     </div>
 
                     <div class="box">
                         <a href="assets/html/cacsanpham.html" class="button">
                             <div class="circle">
+                                <img src="../image/index/găng%20tay%20y%20tế.jpg" style="max-width:100%;max-height: 100%;height: auto;width: auto;">
+                            </div>
+                            <span>Găng tay y tế</span>
+                        </a>
+                    </div>
 
+                    <div class="box">
+                        <a href="assets/html/cacsanpham.html" class="button">
+                            <div class="circle">
+                                <img src="../image/index/máy%20đo%20huyết%20áp.webp" style="max-width:150%;max-height: 100%;height: auto;width: auto;">
+                            </div>
+                            <span>Máy đo huyết áp</span>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="assets/html/cacsanpham.html" class="button">
+                            <div class="circle">
+                                <img src="../image/index/Bông%20y%20tế.jpg" style="max-width:100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Bông y tế</span>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
-                            <div class="circle">
-
-                            </div>
-                            <span>Dụng cụ vệ sinh mũi</span>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
-                            <div class="circle">
-
-                            </div>
-                            <span>Máy massage</span>
                         </a>
                     </div>
                 </div>
