@@ -1,6 +1,8 @@
 package controller;
 
+import dao.CategoryDAO;
 import dao.ProductDAO;
+import model.Category;
 import model.Product;
 
 import javax.servlet.ServletException;
@@ -14,7 +16,9 @@ import java.util.*;
 @WebServlet("/html/findProduct")
 public class FindProduct extends HttpServlet {
     List<Product> list = new ArrayList<>();
-    private static String textFindProducts;
+    private static String textFindProducts = "";
+
+    private int categoryID = 0;
 
     private int currentPage;
 
@@ -35,11 +39,12 @@ public class FindProduct extends HttpServlet {
     int from = 0;
     int to = 0;
 
+    CategoryDAO categoryDAO = new CategoryDAO();
+    List<Category> categories = categoryDAO.getAllCategory();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String active = req.getParameter("active");
-
-        System.out.println("active " + active);
         switch (active) {
             case "price":
                 if (priceBy == 2) {
@@ -63,6 +68,19 @@ public class FindProduct extends HttpServlet {
                 sortBetween();
                 currentPage = 1;
                 break;
+            case "category":
+                System.out.println("active " + active);
+                categoryID = Integer.parseInt(req.getParameter("categoryID"));
+                ProductDAO productDAO = new ProductDAO();
+                if (categoryID != 0) {
+                    list = productDAO.getFindProductsCategory(textFindProducts, categoryID);
+                } else {
+                    list = productDAO.getFindProducts(textFindProducts);
+                }
+
+                countNumberPages();
+                currentPage = 1;
+                break;
             case "page":
                 currentPage = Integer.parseInt(req.getParameter("page"));
                 break;
@@ -72,6 +90,8 @@ public class FindProduct extends HttpServlet {
 
 
         req.setAttribute("textFindProducts", textFindProducts);
+        req.setAttribute("getCategoryID", categoryID);
+        req.setAttribute("getCategories", categories);
         req.setAttribute("getFindProducts", list);
         req.setAttribute("getnumberPages", numberPages);
         req.setAttribute("getcurrentPage", currentPage);
@@ -88,10 +108,13 @@ public class FindProduct extends HttpServlet {
         System.out.println(textFindProducts);
         ProductDAO productDAO = new ProductDAO();
         list = productDAO.getFindProducts(textFindProducts);
+        categoryID = 0;
         priceBy = 0;
         countNumberPages();
         currentPage = 1;
         req.setAttribute("textFindProducts", textFindProducts);
+        req.setAttribute("getCategoryID", categoryID);
+        req.setAttribute("getCategories", categories);
         req.setAttribute("getFindProducts", list);
         req.setAttribute("getnumberPages", numberPages);
         req.setAttribute("getcurrentPage", currentPage);

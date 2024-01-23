@@ -21,6 +21,7 @@ public class AdminFilter extends HttpServlet {
             String page = req.getParameter("page");
             switch (page) {
                 case "product":
+//                    int statusProduct = Integer.parseInt(req.getParameter("status"));
                     ProductDAO productDAO = new ProductDAO();
                     List<Product> products = productDAO.getAllProduct();
                     req.setAttribute("getAllProducts", products);
@@ -28,6 +29,7 @@ public class AdminFilter extends HttpServlet {
                     break;
 
                 case "user":
+//                    int statusUser = Integer.parseInt(req.getParameter("status"));
                     UserDAO userDAO = new UserDAO();
                     List<User> users = userDAO.getAllUsers();
                     req.setAttribute("getAllProducts", users);
@@ -46,7 +48,42 @@ public class AdminFilter extends HttpServlet {
         } else {
             resp.sendRedirect("index.jsp");
         }
+    }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user != null && user.getRole()) {
+            String page = req.getParameter("page");
+            switch (page) {
+                case "product":
+//                    int statusProduct = Integer.parseInt(req.getParameter("status"));
+                    ProductDAO productDAO = new ProductDAO();
+                    List<Product> products = productDAO.getAllProduct();
+                    req.setAttribute("getAllProducts", products);
+                    page = "managerProducts.jsp";
+                    break;
 
+                case "user":
+//                    int statusUser = Integer.parseInt(req.getParameter("status"));
+                    UserDAO userDAO = new UserDAO();
+                    List<User> users = userDAO.getAllUsers();
+                    req.setAttribute("getAllProducts", users);
+                    page = "managerUsers.jsp";
+                    break;
+                case "bill":
+                    page = "managerBills.jsp";
+                    break;
+                case "voucher":
+                    page = "managerVouchers.jsp";
+                    break;
+                default:
+                    System.out.println("sai cau lenh");
+            }
+            req.getRequestDispatcher(page).forward(req, resp);
+        } else {
+            resp.sendRedirect("index.jsp");
+        }
     }
 }

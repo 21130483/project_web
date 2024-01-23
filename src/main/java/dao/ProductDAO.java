@@ -29,6 +29,7 @@ public class ProductDAO {
         return result;
     }
 
+
     public static List<Product> getBestSelling(int limit) {
         List<Product> result = new ArrayList<>();
         result = handle.select("SELECT * FROM products ORDER BY orderedNumbers DESC LIMIT ?").bind(0, limit).mapToBean(Product.class).collect(Collectors.toList());
@@ -55,6 +56,17 @@ public class ProductDAO {
         return result;
     }
 
+    public static List<Product> getProductsCategory(int categoryID) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE categoryID = ? ").bind(0,categoryID).mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
+
+    public static List<Product> getFindProductsCategory(String textFindProduct,int categoryID) {
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE categoryID = ? AND name LIKE ? ").bind(0,categoryID).bind(1, "%" + textFindProduct + "%").mapToBean(Product.class).collect(Collectors.toList());
+        return result;
+    }
     public static List<Product> getRelateProduct(Product product, int limit) {
         List<Product> result = new ArrayList<>();
         result = handle.select("SELECT * FROM products WHERE categoryID = ? and productID != ? LIMIT ?").bind(0, product.getCategoryID()).bind(1, product.getProductID()).bind(2, limit).mapToBean(Product.class).collect(Collectors.toList());
@@ -84,10 +96,10 @@ public class ProductDAO {
     }
 
     public static void main(String[] args) {
-//        List<Product> products = getRelateProduct();
-//        for (Product product : products) {
-//            System.out.println(product);
-//        }
+        List<Product> products = getFindProductsCategory("a",1);
+        for (Product product : products) {
+            System.out.println(product);
+        }
 //        System.out.println(updateProduct(1,"quantity","500"));
 
 
