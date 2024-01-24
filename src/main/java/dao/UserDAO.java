@@ -7,34 +7,21 @@ import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.Handle;
 import Services.Connect;
 
-import org.jdbi.v3.core.Handle;
 import java.util.ArrayList;
->>>>>>> 966248019360b2fe3e769fce410ef50b04ca6136
 import java.util.List;
 import java.util.stream.Collectors;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
 public class UserDAO {
 
-    public static final Jdbi connect = JDBIConnector.getConnect();
+//    public static final Jdbi connect = JDBIConnector.getConnect();
 
 
-    private static Handle handle = JDBIConnector.getConnect().open();
-
-=======
-import org.jdbi.v3.core.Handle;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-public class UserDAO {
     private static Handle handle = JDBIConnector.getConnect().open();
 
 
@@ -93,6 +80,7 @@ public class UserDAO {
         }
         return checkEmail;
     }
+
     public boolean resgisterWithEmail(String email, String name, String pass) {
         Connection connection = null;
         if (checkEmailExist(email)) {
@@ -130,13 +118,13 @@ public class UserDAO {
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            }
-            finally {
+            } finally {
                 Connect.closeConnection(connection);
             }
         }
 
     }
+
     public User getUserByEmailAndPass(String email, String pass) {
         Connection connection = null;
         try {
@@ -152,8 +140,8 @@ public class UserDAO {
                 user.setEmail(resultSet.getString(2));
                 user.setFullName(resultSet.getString(3));
 //                user.setPasword(resultSet.getString(4));
-                user.setAccess(resultSet.getString(5));
-                user.setRole(resultSet.getString(6));
+                user.setAccess(Boolean.parseBoolean(resultSet.getString(5)));
+                user.setRole(Boolean.parseBoolean(resultSet.getString(6)));
                 user.setDob(resultSet.getDate(7));
 
 //                System.out.println(user);
@@ -166,143 +154,142 @@ public class UserDAO {
         }
         return null;
     }
-    public ArrayList<User> getAllUsers(){
-        Connection connection= null;
-        ArrayList<User> listUser = new ArrayList<>();
-        ArrayList<User> res = new ArrayList<User>();
-        try{
-            connection = Connect.getConnection();
-            String getAllUser = "select userID, email,name, password, access, role, dob from user";
-            PreparedStatement preparedStatementGetUser= connection.prepareStatement(getAllUser);
-            ResultSet resultSetGetUser = preparedStatementGetUser.executeQuery();
-            while (resultSetGetUser.next()) {
-                User user = new User();
-                user.setUserID(resultSetGetUser.getInt("userID"));
-                user.setEmail(resultSetGetUser.getString("email"));
-                user.setFullName(resultSetGetUser.getString("name"));
-                user.setPassword(resultSetGetUser.getString("password"));
 
-                user.setAccess(resultSetGetUser.getString("access"));
-                user.setRole(resultSetGetUser.getString("role"));
-                user.setDob(resultSetGetUser.getDate("dob"));
-                listUser.add(user);
-            }
-            for (User user : listUser) {
-                if (!"admin".equals(user.getRole())) {
-                    res.add(user);
-                }
-            }
+//    public ArrayList<User> getAllUsers() {
+//        Connection connection = null;
+//        ArrayList<User> listUser = new ArrayList<>();
+//        ArrayList<User> res = new ArrayList<User>();
+//        try {
+//            connection = Connect.getConnection();
+//            String getAllUser = "select userID, email,name, password, access, role, dob from user";
+//            PreparedStatement preparedStatementGetUser = connection.prepareStatement(getAllUser);
+//            ResultSet resultSetGetUser = preparedStatementGetUser.executeQuery();
+//            while (resultSetGetUser.next()) {
+//                User user = new User();
+//                user.setUserID(resultSetGetUser.getInt("userID"));
+//                user.setEmail(resultSetGetUser.getString("email"));
+//                user.setFullName(resultSetGetUser.getString("name"));
+//                user.setPassword(resultSetGetUser.getString("password"));
+//
+//                user.setAccess(resultSetGetUser.getString("access"));
+//                user.setRole(resultSetGetUser.getString("role"));
+//                user.setDob(resultSetGetUser.getDate("dob"));
+//                listUser.add(user);
+//            }
+//            for (User user : listUser) {
+//                if (!"admin".equals(user.getRole())) {
+//                    res.add(user);
+//                }
+//            }
+//
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        } finally {
+//            Connect.closeConnection(connection);
+//        }
+//        return res;
+//    }
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        finally {
-            Connect.closeConnection(connection);
-        }
-        return res;
-    }
-    public  String getUsernameById(int userID){
+    public String getUsernameById(int userID) {
         Connection connection = null;
         String username = "";
-        try{
+        try {
             connection = Connect.getConnection();
             String sql = "select name from user where userID= ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, userID);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 username = resultSet.getString("name");
-                return  username;
+                return username;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
         return username;
     }
-    public boolean verifyEmail(String email){
+
+    public boolean verifyEmail(String email) {
         Connection connection = null;
-        try{
+        try {
             connection = Connect.getConnection();
             String sql = "update user SET isVerifyEmail = ? where email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, "true");
             preparedStatement.setString(2, email);
             int check = preparedStatement.executeUpdate();
-            if(check > 0 ){
-                return  true;
-            }
-            else{
-                return  false;
+            if (check > 0) {
+                return true;
+            } else {
+                return false;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
     }
-    public boolean updatePasswordByEmail(String email, String pass){
+
+    public boolean updatePasswordByEmail(String email, String pass) {
         Connection connection = null;
-        try{
+        try {
             connection = Connect.getConnection();
             String sql = "UPDATE user set password = ? where email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, pass);
             preparedStatement.setString(2, email);
             int check = preparedStatement.executeUpdate();
-            if(check > 0){
-                return  true;
-            }
-            else {
-                return  false;
+            if (check > 0) {
+                return true;
+            } else {
+                return false;
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
     }
-    public User getUserById(int id){
-        Connection connect = null;
-        User user = new User();
-        try {
-            connect = Connect.getConnection();
-            String sql = "SELECT userID,email,name,access,role,dob from user WHERE userID =?";
-            PreparedStatement preparedStatement = connect.prepareStatement(sql);
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user.setUserID(resultSet.getInt("userID"));
-                user.setEmail(resultSet.getString("email"));
-                user.setFullName(resultSet.getString("name"));
+//    public User getUserById(int id){
+//        Connection connect = null;
+//        User user = new User();
+//        try {
+//            connect = Connect.getConnection();
+//            String sql = "SELECT userID,email,name,access,role,dob from user WHERE userID =?";
+//            PreparedStatement preparedStatement = connect.prepareStatement(sql);
+//            preparedStatement.setInt(1, id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            if (resultSet.next()) {
+//                user.setUserID(resultSet.getInt("userID"));
+//                user.setEmail(resultSet.getString("email"));
+//                user.setFullName(resultSet.getString("name"));
+//
+//                user.setAccess(resultSet.getString("access"));
+//                user.setRole(resultSet.getString("role"));
+//                user.setDob(resultSet.getDate("dob"));
+//                return  user;
+//            }
+//        }catch (SQLException e){
+//            throw new RuntimeException(e);
+//        }
+//        finally {
+//            Connect.closeConnection(connect);
+//        }
+//        return  user;
 
-                user.setAccess(resultSet.getString("access"));
-                user.setRole(resultSet.getString("role"));
-                user.setDob(resultSet.getDate("dob"));
-                return  user;
-            }
-        }catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-        finally {
-            Connect.closeConnection(connect);
-        }
-        return  user;
-    }
-    public ArrayList<User> getUserByName(String name){
-        Connection connection= null;
+
+    public ArrayList<User> getUserByName(String name) {
+        Connection connection = null;
         ArrayList<User> listUser = new ArrayList<>();
         ArrayList<User> res = new ArrayList<User>();
-        try{
+        try {
             connection = Connect.getConnection();
             String getAllUser = "select userID, email,name, access, role, dob from user where  name like ?";
-            PreparedStatement preparedStatementGetUser= connection.prepareStatement(getAllUser);
-            preparedStatementGetUser.setString(1,"%" + name+"%");
+            PreparedStatement preparedStatementGetUser = connection.prepareStatement(getAllUser);
+            preparedStatementGetUser.setString(1, "%" + name + "%");
             ResultSet resultSetGetUser = preparedStatementGetUser.executeQuery();
             while (resultSetGetUser.next()) {
                 User user = new User();
@@ -310,8 +297,8 @@ public class UserDAO {
                 user.setEmail(resultSetGetUser.getString("email"));
                 user.setFullName(resultSetGetUser.getString("name"));
 
-                user.setAccess(resultSetGetUser.getString("access"));
-                user.setRole(resultSetGetUser.getString("role"));
+                user.setAccess(Boolean.parseBoolean(resultSetGetUser.getString("access")));
+                user.setRole(Boolean.parseBoolean(resultSetGetUser.getString("role")));
                 user.setDob(resultSetGetUser.getDate("dob"));
                 listUser.add(user);
             }
@@ -323,72 +310,75 @@ public class UserDAO {
 
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
         return res;
     }
-    public int getCount(){
+
+
+    public int getCount() {
         Connection connection = null;
-        try{
+        try {
             connection = Connect.getConnection();
             String sql = "select count(userID) as total from user ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet res = preparedStatement.executeQuery();
-            if(res.next()){
+            if (res.next()) {
                 return res.getInt("total");
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
-        return  0;
+        return 0;
     }
-    public int getCountThisMonth(){
+
+    public int getCountThisMonth() {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
         int currentMonth = calendar.get(Calendar.MONTH) + 1;
 
         Connection connection = null;
-        try{
+        try {
             connection = Connect.getConnection();
             String sql = "select count(userID) as total from user where year(dob) = ? and month(dob) = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1,currentYear);
-            preparedStatement.setInt(2,currentMonth);
+            preparedStatement.setInt(1, currentYear);
+            preparedStatement.setInt(2, currentMonth);
             ResultSet res = preparedStatement.executeQuery();
-            if(res.next()){
+            if (res.next()) {
                 return res.getInt("total");
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             Connect.closeConnection(connection);
         }
-        return  0;
+        return 0;
     }
-    public boolean updateUser(int userID, String nameColumn, String value) {
-        boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
-        return check;
-    }
+
+//    public boolean updateUser(int userID, String nameColumn, String value) {
+//        boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
+//        return check;
+//    }
 
 
     public static void main(String[] args) {
 //        User user = checkLogin("phuoc@gmail.com","123");
-        User user = getUserById(1);
-        System.out.println(user);
-//        List<User> users = getAllUsers();
-//        for (User user : users) {
-//            System.out.println(user);
+//        User user = getUserById(1);
+//        System.out.println(user);
+        List<User> users = getAllUsers();
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 
-
-
-
 }
+
+
+
+

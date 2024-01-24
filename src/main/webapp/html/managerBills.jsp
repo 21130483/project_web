@@ -1,3 +1,7 @@
+<%@ page import="java.util.List" %>
+<%@ page import="model.Purchases" %>
+<%@ page import="model.User" %>
+<%@ page import="dao.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -23,7 +27,7 @@
         <ul>
             <li class="button-muc-luc">
                 <a href="admin?page=product">
-                    <div class="a" >
+                    <div class="a">
                         Quản lý sản phẩm
                     </div>
                 </a>
@@ -38,7 +42,7 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="admin?page=bill" >
+                <a href="admin?page=bill">
                     <div class="a" style="background-color: #007bff;">
                         Quản lý hóa đơn
                     </div>
@@ -46,7 +50,7 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="admin?page=voucher" >
+                <a href="admin?page=voucher">
                     <div class="a">
                         Quản lý phiếu giảm giá
                     </div>
@@ -83,14 +87,29 @@
                 </div>
 
                 <ul>
+                    <%
+                        List<Purchases> purchases = (List) request.getAttribute("getAllPurchases");
+                        UserDAO userDAO = new UserDAO();
+                        if (purchases != null) {
+                            for (Purchases p : purchases) {
+                                User user = userDAO.getUserById(p.getUserID());
+
+                    %>
+
                     <li class="box-san-pham">
                         <div class="san-pham">
-                            <p>123</p>
-                            <p>123</p>
-                            <p>Nguyễn Hữu Phước</p>
-                            <p>10.000.000</p>
+                            <p><%=p.getPurchaseID()%>
+                            </p>
+                            <p><%=p.getUserID()%>
+                            </p>
+                            <p><%=user.getFullName()%>
+                            </p>
+                            <p><%=p.getPrice()%>
+                            </p>
                             <div class="center">
-                                <span class="cho-xac-nhan">Chờ xác nhận</span>
+                                <span class="cho-xac-nhan">
+                                    <%=p.getStatusString()%>
+                                </span>
                             </div>
 
                             <!-- <p>11/1/2023</p> -->
@@ -100,38 +119,41 @@
                         </div>
 
                     </li>
+                    <%
+                            }
+                        }
+                    %>
+<%--                    <li class="box-san-pham">--%>
+<%--                        <div class="san-pham">--%>
+<%--                            <p>123</p>--%>
+<%--                            <p>123</p>--%>
+<%--                            <p>Nguyễn Thanh Lưu</p>--%>
+<%--                            <p>10.000.000</p>--%>
+<%--                            <div class="center">--%>
+<%--                                <span class="dang-giao">Đang giao</span>--%>
+<%--                            </div>--%>
+<%--                            <!-- <p>11/1/2023</p> -->--%>
+<%--                            <div class="box-button">--%>
+<%--                                <button>Chi tiết</button>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
 
-                    <li class="box-san-pham">
-                        <div class="san-pham">
-                            <p>123</p>
-                            <p>123</p>
-                            <p>Nguyễn Thanh Lưu</p>
-                            <p>10.000.000</p>
-                            <div class="center">
-                                <span class="dang-giao">Đang giao</span>
-                            </div>
-                            <!-- <p>11/1/2023</p> -->
-                            <div class="box-button">
-                                <button>Chi tiết</button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="box-san-pham">
-                        <div class="san-pham">
-                            <p>123</p>
-                            <p>123</p>
-                            <p>Hồng Phúc Long</p>
-                            <p>10.000.000</p>
-                            <div class="center">
-                                <span class="hoan-thanh">Hoàn thành</span>
-                            </div>
-                            <!-- <p>11/1/2023</p> -->
-                            <div class="box-button">
-                                <button>Chi tiết</button>
-                            </div>
-                        </div>
-                    </li>
+<%--                    <li class="box-san-pham">--%>
+<%--                        <div class="san-pham">--%>
+<%--                            <p>123</p>--%>
+<%--                            <p>123</p>--%>
+<%--                            <p>Hồng Phúc Long</p>--%>
+<%--                            <p>10.000.000</p>--%>
+<%--                            <div class="center">--%>
+<%--                                <span class="hoan-thanh">Hoàn thành</span>--%>
+<%--                            </div>--%>
+<%--                            <!-- <p>11/1/2023</p> -->--%>
+<%--                            <div class="box-button">--%>
+<%--                                <button>Chi tiết</button>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
 
 
                 </ul>

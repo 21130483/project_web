@@ -82,7 +82,7 @@
 
             <div class="hinh-anh">
                 Hình ảnh
-                <input name="images" type="file" accept="image/*" formenctype="multipart/form-data" multiple>
+                <input name="images" type="file" accept="image/*" formenctype="multipart/form-data" multiple enctype="multipart/form-data">
             </div>
 
             <div class="chi-tiet">

@@ -1,5 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page import="model.Category" %>
+<%@ page import="model.Origin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -97,6 +99,8 @@
 
                     <%
                         List<Product> list = (List) request.getAttribute("getAllProducts");
+                        List<Category> categories= (List) request.getAttribute("getAllCategory");
+                        List<Origin> origins = (List) request.getAttribute("getAllOrigin");
                     %>
 
                     <%
@@ -113,7 +117,8 @@
                             </p>
                             <p><%=p.getDateAdded()%>
                             </p>
-                            <p><%=p.getOriginID()%>
+                            <p>
+
                             </p>
                             <!-- <p>11/1/2023</p> -->
                             <div class="sua-xoa">

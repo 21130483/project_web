@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
 <%@ page import="model.Category" %>
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -255,8 +256,12 @@
                         <li class="san-pham">
                             <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
+                                    <%
+                                        File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + p.getProductID());
+                                        File[] files = fileImg.listFiles();
+                                        String name = files[0].getName();
+                                    %>
+                                    <img src="../image/product/<%=p.getProductID()%>/<%=name%>" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">

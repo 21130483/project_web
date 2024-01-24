@@ -17,10 +17,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dateOfBirth`, `gender`, `role`, `access`) VALUES
-	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'admin', 'hoạt động'),
-	(2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'admin', 'hoạt động');
-
 
 INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dob`, `gender`, `role`, `access`) VALUES
 	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'true', 'true'),
@@ -32,14 +28,13 @@ INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, 
 CREATE TABLE IF NOT EXISTS `category` (
   `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-
   PRIMARY KEY (`categoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(1, 'Khẩu trang y tế'),
 	(2, 'Máy massage'),
-	(3, 'Máy đo huyết áp'),
+	(3, 'Máy đo huyết áp'),	
 	(4, 'Băng - Gạc y tế'),
 	(5, 'Bông y tế'),
 	(6, 'Nhiệt kế'),
@@ -47,16 +42,12 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(8, 'Kim các loại'),
 	(9, 'Dụng cụ xét nghiệm'),
 	(10, 'Găng tay'),
-	(11, 'Máy đo SpO2'),
-  (17,'Test covid')
 	(11, 'Máy xông mũi họng'),
 	(12, 'Máy xông khí'),
-	(14, 'Đèn Y Khoa'),
-	(13, 'Máy đo SpO2'),
-	(14, 'Máy xông mũi họng'),
-	(15, 'Máy xông khí'),
-	(16, 'Máy đo SpO2'),
-	(999, 'loại');
+	(13, 'Đèn Y Khoa'),
+	(14, 'Máy đo SpO2'),
+	(15,'Test covid');
+--	(999, 'loại');
 
 
 
@@ -64,7 +55,6 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `origin` (
   `originID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-
   PRIMARY KEY (`originID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -79,8 +69,8 @@ INSERT INTO `origin` (`originID`, `name`) VALUES
 	(8, 'Nhật bản'),
 	(9, 'Thái Lan'),
 	(10, 'Ấn Độ'),
-	(11, 'Pháp'),
-	(999, 'quốc gia');
+	(11, 'Pháp');
+--	(999, 'quốc gia');
 
 
 
@@ -181,8 +171,6 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(79, 12, 6, 999, '2023-02-17', 87000, 1000, 90, 'Kit test nhanh Covid-19 Rapid Test Ag 2019-nCoV túi 20 bộ', 'ProGnosis Biotech S.A.', 'Kit test nhanh Covid-19 Rapid Test Ag 2019-nCoV là một sản phẩm kiểm tra nhanh chẩn đoán bệnh Covid-19 bằng phương pháp xét nghiệm kháng nguyên. Sản phẩm này được sản xuất bởi công ty ProGnosis Biotech, Hy Lạp và sử dụng cho các mẫu bệnh phẩm từ mũi, có độ nhạy và độ đặc hiệu cao.'),
 	(80, 12, 1, 999, '2023-02-17', 78000, 1000, 90, 'Kit test nhanh Covid-19 TrueLine AG Rapid Test hộp 25 bộ', 'Trueline', 'Kit test nhanh Covid-19 TrueLine AG Rapid Test là một trong những thiết bị, dụng cụ y tế giúp kiểm tra nhanh chẩn đoán bệnh Covid-19 bằng phương pháp xét nghiệm kháng nguyên. Sản phẩm này có thể giúp phát hiện sớm vi-rút SARS-CoV-2 đối với các mẫu bệnh phẩm từ mũi.'),
 
-
-
 	
   (91, 4, 1, 999, '2023-02-17', 30000, 1000, 90, 'Băng thun y tế 2 móc Bảo Thạch (0.075m x 3m) ', 'Bảo Thạch ', 'Băng thun y tế 2 móc Bảo Thạch được làm từ sợi polyester và cao su thiên nhiên cùng độ co dãn cao, từ 180% đến 200% so với kích thước ban đầu, dùng để nén ép, cầm máu, cố định khớp, giữ vật liệu cầm máu tại chỗ không bị xê dịch.'),
   (92, 4, 9, 999, '2023-02-17', 45000, 1000, 90, 'Gạc Urgo Optiskin (10cm x 7cm) hộp 50 miếng', 'Urgo Healthcare Products', 'Gạc Urgo Optiskin (10cm x 7cm) sử dụng để bao phủ lên tất cả các vết thương ngoài da (vết khâu, vết trầy xước), hoặc các loại dụng cụ (que dò, ống dẫn...). Do Optiskin cho phép bệnh nhân có thể tắm rửa, vệ sinh nên băng đặc biệt phù hợp cho các liệu pháp tắm ngâm hay nói chung nhanh chóng bắt đầu lại các hoạt động sau phẫu thuật.'),
@@ -193,23 +181,11 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
   (97, 4, 11, 999, '2023-02-17', 40000, 1000, 90, 'Gạc Urgo Compresses Stériles Non Tissées hộp 10 miếng (10cm x 10cm)', 'Urgo Healthcare Products', 'Gạc Urgo Compresses Stériles Non Tissées (10cm x 10cm) được chỉ định để băng bó, làm sạch vết thương.'),
   (98, 4, 11, 999, '2023-02-17', 30000, 1000, 90, 'Gạc lưới UrgoTul Ag/Silver hộp 10 miếng (5cm x 5cm)', 'Urgo Healthcare Products', 'UrgoTul Ag/Silver được dùng tại chỗ cho các vết thương có nguy cơ hoặc dấu hiệu nhiễm khuẩn tại chỗ: các vết thương mãn tính (các vết loét ở chân, các vết loét do tỳ đè) và các vết thương cấp tính (các vết bỏng có độ sâu vừa phải, các vết mài mòn da, các vết thương do chấn thương, các vết thương do phẫu thuật...).'),
   (99, 4, 1, 999, '2023-02-17', 18000, 1000, 90, 'Băng cuộn y tế Bảo Thạch túi 5 cuộn (0.09m x 2m)', 'Bảo Thạch', 'Băng cuộn y tế Bảo Thạch được làm từ 100% sợi cotton, gạc trắng và sạch. Khả năng thấm hút của bông gòn y tế Bảo Thạch cao và nhanh. Mịn màng, mềm mại, không gây kích ứng da.'),
-  (100, 4, 1, 999, '2023-02-17', 12000, 1000, 90, 'Gạc y tế Bảo Thạch túi 10 miếng (5cm x 6.5cm x 12 lớp)', 'Bảo Thạch', 'Gạc phẫu thuật được sử dụng rộng rãi trong phòng mổ của bệnh viện. Thích hợp cho các vết thương lớn, khả năng thấm hút nhanh máu và dịch tiết từ vết thương. Được sử dụng cho các vết rạch, vết cắt dài trong quá trình phẫu thuật.'),
+  (100, 4, 1, 999, '2023-02-17', 12000, 1000, 90, 'Gạc y tế Bảo Thạch túi 10 miếng (5cm x 6.5cm x 12 lớp)', 'Bảo Thạch', 'Gạc phẫu thuật được sử dụng rộng rãi trong phòng mổ của bệnh viện. Thích hợp cho các vết thương lớn, khả năng thấm hút nhanh máu và dịch tiết từ vết thương. Được sử dụng cho các vết rạch, vết cắt dài trong quá trình phẫu thuật.');
   
-  
-  (998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
 
-
-	
-	(51, 7, 3, 999, '2023-02-17', 800000, 1000, 90, 'Máy đo đường huyết Medismart Sapphire Plus', 'MediSmart', 'Máy đo đường huyết Medismart Sapphire Plus là thiết bị chăm sóc sức cao cấp đến từ Thụy Sĩ, được sản xuất theo công nghệ tiên tiến bậc nhất, mang đến người dùng kết quả đo đường huyết tin cậy đến 99%.'),
-	(52, 14, 1, 999, '2023-02-17', 950000, 1000, 90, 'Đèn Hồng Ngoại TNE Chân Cao 1,7m', 'TNE', 'Tia hồng ngoại là bức xạ điện từ có bước sóng dài hơn ánh sáng mà mắt thường có thể nhìn thấy. Hồng ngoại là bức xạ có nhiệt lượng cao nên còn gọi là bức xạ nhiệt, do đó tác dụng của hồng ngoại chử yếu là tác dụng nhiệt. Ở những vùng chịu tác động nhiệt của hồng ngoại sẽ dãn mạch đỏ da nên có tác dụng giảm đau, chống viêm mạn tính, làm mềm cơ.'),
-	(53, 14, 7, 999, '2023-02-17', 2550000, 1000, 90, 'ĐÈN HỒNG NGOẠI BEURER IL50 - 300 W', 'BEURER', 'Đèn hồng ngoại trị liệu Beurer IL50 - 300W có thân đèn được làm bằng nhựa cao cấp đạt tiêu chuẩn Châu Âu, có hẹn giờ trị liệu rất tiện dụng cho người sử dụng, thay đổi cường độ phát tia hồng ngoại theo nhu cầu của người sử dụng. Đèn hồng ngoại trị liệu Beurer IL50 - 300W có công suất lớn giúp giảm thời gian điều trị bệnh nhân giảm ngắn được đáng kể, tăng khả năng trị liệu.'),
-	(54, 14, 1, 999, '2023-02-17', 600000, 1000, 90, 'Đèn Hồng Ngoại MEDILAMP 250', 'MEDILAMP', 'Đèn hồng ngoại tập trung những tia sáng điện từ hồng ngoại rọi vào cơ thể gây ra các phản ứng lý, hóa nhằm điều trị các bệnh lý: Đau, sưng, phù nề, bầm, tím, khớp, Gout, chứng căng thẳng, mệt mỏi...'),
-	(55, 12, 4, 999, '2023-02-17', 850000, 1000, 90, 'Máy khí dung mũi họng Compmist - USA', 'Compmist', 'Máy xông mũi họng Compmist USA là sản phẩm máy xông khí dung mũi họng phổ thông nên rất phù hợp với quy mô gia đình. Tốc độ có thể điều chỉnh nhanh chậm phù hợp cho mọi đối tượng. Máy Xông Mũi Họng Compmist USA thuộc dòng máy nén khí không nóng, dễ sử dụng và đảm bảo vệ sinh. Máy phù hợp với mọi đối tượng sử dụng từ trẻ sơ sinh, trẻ nhỏ và người lớn tuổi.'),
-
-
-
-	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
-	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
+--	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
+--	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
 
 
 
@@ -253,6 +229,7 @@ CREATE TABLE IF NOT EXISTS `purchases` (
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   `orderDate` date NOT NULL,
   `status` int NOT NULL,
   `receivedDate` date,
@@ -308,4 +285,4 @@ CREATE TABLE IF NOT EXISTS `verify` (
   PRIMARY KEY (`userID`),
   KEY `userID` (`userID`), 
   CONSTRAINT `verify_fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=UTF8MB4_UNICODE_CI;

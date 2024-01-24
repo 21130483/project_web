@@ -28,7 +28,12 @@
                 <div class="left-slide">
                     <div class="product-left">
                         <div class="product-left-big-images">
-                            <img id="bigImage" src="../image/product/<%=product.getProductID()%>/0.webp" alt="">
+                            <%
+                                File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + productm.getProductID());
+                                File[] files = fileImg.listFiles();
+                                String name = files[0].getName();
+                            %>
+                            <img src="../image/product/<%=product.getProductID()%>/<%=name%>" alt="">
                         </div>
                         <div class="product-left-small-images" onclick="changeBigImage(event)">
                             <%--                            <img src="../image/product/may-tao-oxi1.jpg" alt="">--%>
@@ -43,7 +48,12 @@
                                 for (int i = 0; i < numberImg; i++) {
                             %>
 
-                            <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
+                            <%
+                                File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + p.getProductID());
+                                File[] files = fileImg.listFiles();
+                                String name = files[0].getName();
+                            %>
+                            <img src="../image/product/<%=product.getProductID()%>/<%=name%>" alt="">
                             <%
                                 }
                             %>
@@ -104,14 +114,14 @@
                         <form action="cart?id=<%=product.getProductID()%>&active=add&page=product" method="post">
 
 
-<%--                            <div class="quantity mt-3">--%>
-<%--                                <span class="description fw-bold">Số lượng: </span>--%>
-<%--                                <div class="quantity-form">--%>
-<%--                                    <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>--%>
-<%--                                    <input name="quantity" class="input-quanlity" type="text" value="1" id="quantity">--%>
-<%--                                    <button class="btn plus-btn" onclick="increaseQuantity()">+</button>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
+                            <%--                            <div class="quantity mt-3">--%>
+                            <%--                                <span class="description fw-bold">Số lượng: </span>--%>
+                            <%--                                <div class="quantity-form">--%>
+                            <%--                                    <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>--%>
+                            <%--                                    <input name="quantity" class="input-quanlity" type="text" value="1" id="quantity">--%>
+                            <%--                                    <button class="btn plus-btn" onclick="increaseQuantity()">+</button>--%>
+                            <%--                                </div>--%>
+                            <%--                            </div>--%>
                             <button type="submit" class="add-to-cart-btn  mt-3">
                                 <div class="col-2">
                                     <i class="fas fa-shopping-cart cart-icon"></i>
@@ -201,8 +211,12 @@
                                 %>
                                 <div class="card radius-green">
                                     <div style="width: 250px;height: 250px">
-                                        <img class="card-img-top"
-                                             src="../image/product/<%=related.getProductID()%>/0.webp" alt=""
+                                        <%
+                                            File fileImgRelated = new File(request.getServletContext().getRealPath("") + "/image/product/" + related.getProductID());
+                                            File[] filesRelated = fileImgRelated.listFiles();
+                                            String nameRelated = filesRelated[0].getName();
+                                        %>
+                                        <img src="../image/product/<%=related.getProductID()%>/<%=nameRelated%>" alt=""
                                              style="max-width: 100%;max-height: 100%;width: auto;">
                                     </div>
 
