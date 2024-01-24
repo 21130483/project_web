@@ -11,15 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +63,7 @@
     &quot;git-widget-placeholder&quot;: &quot;21130483-NguyenHuuPhuoc&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/phuoc/OneDrive/Máy tính/github/person/project_web&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/phuoc/OneDrive/Máy tính/github/main/project_web&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -152,6 +144,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Lab/html/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Lab:war">
@@ -287,11 +280,30 @@
       <workItem from="1705956246863" duration="10133000" />
       <workItem from="1705970202607" duration="272000" />
       <workItem from="1705971643721" duration="8957000" />
+      <workItem from="1705984666987" duration="255000" />
+      <workItem from="1705985266290" duration="1139000" />
+      <workItem from="1705989988189" duration="338000" />
+      <workItem from="1705990462616" duration="183000" />
+      <workItem from="1705991618002" duration="701000" />
+      <workItem from="1705992528781" duration="2040000" />
+      <workItem from="1706001925661" duration="101000" />
+      <workItem from="1706090117514" duration="65000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
