@@ -24,9 +24,6 @@ public class UserEdit extends HttpServlet {
         UserDAO userDAO = new UserDAO();
         String userId = req.getParameter("userId");
         User user = userDAO.getUserById(Integer.parseInt(userId));
-        String active = req.getParameter("active");
-//        switch (active) {
-//            case "info":
                 String fullName = req.getParameter("full_name");
                 String gender = req.getParameter("gender");
                 String dobString = req.getParameter("date");
@@ -35,44 +32,9 @@ public class UserEdit extends HttpServlet {
                 user.setFullName(fullName);
                 user.setGender(gender);
                 user.setDob(Date.valueOf(dobString));
+                user.setPhoneNumbers(Integer.parseInt(phone));
                 user.setEmail(email);
                 userDAO.updateUser1(user);
-//                if (!user.getFullName().equals(fullName)) {
-//                    userDAO.updateUser(user.getUserID(), "fullName", fullName);
-//                }
-//                if (!user.getGender().equals(gender)) {
-//                    userDAO.updateUser(user.getUserID(), "gender", gender);
-//                }
-//
-//                if (!user.getDobString().equals(dobString)) {
-//                    userDAO.updateUser(user.getUserID(), "dob", dobString);
-//                }
-//
-//                if (user.getPhoneNumbers() != Integer.parseInt(phone)) {
-//                    userDAO.updateUser(user.getUserID(), "phoneNumbers", phone);
-//                }
-//                if (email.contains("@") && !user.getEmail().equals(email)) {
-//                    userDAO.updateUser(user.getUserID(), "email", email);
-//                }
-//
-                System.out.println("cap nhat thanh cong");
-//                break;
-//
-//            case "pass":
-//                System.out.println("thay doi pass");
-//                String oldpass = req.getParameter("oldpass");
-//                String newpass1 = req.getParameter("newpass1");
-//                String newpass2 = req.getParameter("newpass2");
-//
-//                if (user.getPassword().equals(oldpass) && newpass1.equals(newpass2)) {
-//                    userDAO.updateUser(user.getUserID(), "password", newpass1);
-//                }
-//
-//
-//                break;
-//            default:
-//                System.out.println("sai cau lenh");
-//        }
         req.getSession().setAttribute("user", user);
         req.getRequestDispatcher("account.jsp").forward(req, resp);
     }

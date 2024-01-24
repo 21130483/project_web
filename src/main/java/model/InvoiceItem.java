@@ -14,6 +14,5 @@ public class InvoiceItem {
     private int invoiceId;
     private int productId;
     private int quantity;
-    private double price;
 
 }

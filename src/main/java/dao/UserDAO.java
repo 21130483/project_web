@@ -117,6 +117,7 @@ import model.User;
 import org.jdbi.v3.core.Jdbi;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class UserDAO {
@@ -145,29 +146,40 @@ public class UserDAO {
 
     public boolean updateUser(int userID, String nameColumn, String value) {
         boolean check = connect.inTransaction(handle -> {
-            return handle.createUpdate("UPDATE users SET " + nameColumn + "=? WHERE userID =?").bind(0,nameColumn)
-                    .bind(1,userID).execute() > 0;
+            return handle.createUpdate("UPDATE users SET " + nameColumn + "=? WHERE userID =?").bind(0, nameColumn)
+                    .bind(1, userID).execute() > 0;
         });
         return check;
     }
+
     public boolean updateUser1(User user) {
         boolean check = connect.inTransaction(handle -> {
             return handle.createUpdate("UPDATE users SET fullName = ? , gender = ?, phoneNumbers = ?, dob = ?, email = ? WHERE userID = ?")
-                    .bind(0,user.getFullName())
-                    .bind(1,user.getGender())
-                    .bind(2,user.getPhoneNumbers())
-                    .bind(3,user.getDob())
-                    .bind(4,user.getEmail())
-                    .bind(5,user.getUserID())
+                    .bind(0, user.getFullName())
+                    .bind(1, user.getGender())
+                    .bind(2, user.getPhoneNumbers())
+                    .bind(3, user.getDob())
+                    .bind(4, user.getEmail())
+                    .bind(5, user.getUserID())
                     .execute() > 0;
         });
         return check;
     }
-    public User getUserById(int id) {
-        User result = connect.withHandle(handle -> {
-            return handle.createQuery("SELECT * FROM users WHERE userID = ?").bind(0, id).mapToBean(User.class).findOne().orElse(null);
-        });
 
-        return result;
+    public User getUserById(int id) {
+        Optional<User> result = connect.withHandle(handle -> {
+            return handle.createQuery("SELECT * FROM users WHERE userID = ?")
+                    .bind(0, id).mapToBean(User.class).list().stream().findFirst();
+        });
+        return result.orElse(null);
+    }
+
+    public boolean updatePassword(User user, String newpass1) {
+        boolean check = connect.inTransaction(handle -> {
+            return handle.createUpdate("UPDATE users SET password = ? WHERE userID = ?")
+                    .bind(0, newpass1)
+                    .bind(1, user.getUserID()).execute() > 0;
+        });
+        return check;
     }
 }

@@ -23,13 +23,13 @@
                 </a>
             </div>
             <div class="form-group">
-                <input type="email" name="email" value="phuoc@gmail.com" class="form-style placeholder="Email hoặc tên đăng nhập"
+                <input type="email" name="email" value="" class="form-style" placeholder="Email hoặc tên đăng nhập"
                        id="logemail"
                        autocomplete="off">
                 <i class="input-icon fa-regular fa-envelope"></i>
             </div>
             <div class="form-group">
-                <input type="password" name="pass" class="form-style" value="123" placeholder="Mật khẩu" id="logpass"
+                <input type="password" name="pass" class="form-style" value="" placeholder="Mật khẩu" id="logpass"
                        autocomplete="off">
                 <i class="input-icon fa-solid fa-unlock-keyhole"></i>
             </div>
