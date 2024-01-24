@@ -11,30 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/sick.jsp" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
->>>>>>> 379b0cd586ce6bededdf66d90573850c7f4d734e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +77,13 @@
       <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\css" />
       <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\js" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
     <configuration name="CategoryDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -304,12 +288,10 @@
       <workItem from="1705956246863" duration="10133000" />
       <workItem from="1705970202607" duration="272000" />
       <workItem from="1705971643721" duration="8957000" />
-<<<<<<< HEAD
       <workItem from="1705990648638" duration="10076000" />
       <workItem from="1706000957144" duration="1300000" />
       <workItem from="1706090104610" duration="10000" />
       <workItem from="1706091493931" duration="56000" />
-=======
       <workItem from="1705984666987" duration="255000" />
       <workItem from="1705985266290" duration="1139000" />
       <workItem from="1705989988189" duration="338000" />
@@ -318,7 +300,6 @@
       <workItem from="1705992528781" duration="2040000" />
       <workItem from="1706001925661" duration="101000" />
       <workItem from="1706090117514" duration="65000" />
->>>>>>> 379b0cd586ce6bededdf66d90573850c7f4d734e
     </task>
     <servers />
   </component>
@@ -335,8 +316,6 @@
         </entry>
       </map>
     </option>
-<<<<<<< HEAD
-=======
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -366,6 +345,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
->>>>>>> 379b0cd586ce6bededdf66d90573850c7f4d734e
   </component>
 </project>

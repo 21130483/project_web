@@ -19,7 +19,7 @@ import java.util.Calendar;
 
 public class UserDAO {
 
-//    public static final Jdbi connect = JDBIConnector.getConnect();
+    public static final Jdbi connect = JDBIConnector.getConnect();
 
 
     private static Handle handle = JDBIConnector.getConnect().open();
