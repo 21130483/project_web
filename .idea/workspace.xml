@@ -12,6 +12,10 @@
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/paymentFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/paymentFilter.java" afterDir="false" />
@@ -21,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
