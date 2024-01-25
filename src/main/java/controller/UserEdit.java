@@ -1,5 +1,6 @@
 package controller;
 
+import dao.PurchasesDAO;
 import dao.UserDAO;
 import model.User;
 import util.HttpUtil;
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 
 @WebServlet("/html/user-edit")
 public class UserEdit extends HttpServlet {
+    PurchasesDAO purchasesDAO = new PurchasesDAO();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        HttpSession session = req.getSession();
@@ -35,6 +37,7 @@ public class UserEdit extends HttpServlet {
                 user.setPhoneNumbers(Integer.parseInt(phone));
                 user.setEmail(email);
                 userDAO.updateUser1(user);
+        req.setAttribute("listOrderItem", purchasesDAO.getAllPurchases(user.getUserID()));
         req.getSession().setAttribute("user", user);
         req.getRequestDispatcher("account.jsp").forward(req, resp);
     }

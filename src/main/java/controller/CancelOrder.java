@@ -16,11 +16,8 @@ public class CancelOrder extends HttpServlet {
     OrderDAO orderDAO = new OrderDAO();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserDAO userDAO = new UserDAO();
-        String userId = req.getParameter("userId");
-        User user = userDAO.getUserById(Integer.parseInt(userId));
-        String orderId = req.getParameter("orderId");
+        String orderId = req.getParameter("purchaseID");
         boolean result = orderDAO.cancel(Integer.parseInt(orderId));
-        req.getRequestDispatcher("account.jsp").forward(req, resp);
+        resp.getWriter().write("Hủy đơn thành công !");
     }
 }

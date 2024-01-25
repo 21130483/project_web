@@ -42,10 +42,17 @@ public class PurchasesDAO {
         return check;
     }
 
-    public static List<Purchases> getAllPurchases() {
+    public List<Purchases> getAllPurchases() {
         List<Purchases> result = new ArrayList<>();
         result = handle.select("SELECT * FROM purchases").mapToBean(Purchases.class).collect(Collectors.toList());
         return result;
+    }
+    public List<Purchases> getAllPurchases(int userId) {
+        String sql = "SELECT pu.*, p.name FROM purchases pu JOIN products p ON pu.productID = p.productID WHERE userID = ?";
+        return handle.select(sql)
+                    .bind(0, userId)
+                    .mapToBean(Purchases.class)
+                    .list();
     }
 
     public static void main(String[] args) {

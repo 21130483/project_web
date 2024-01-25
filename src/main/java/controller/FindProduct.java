@@ -24,12 +24,6 @@ public class FindProduct extends HttpServlet {
 
     private int numberPages;
 
-
-    private int currentPage;
-
-    private int numberPages;
-
-
     //    0 là những sản phẩm liên quan
     //    1 là những sản phẩm mới nhất
     //    2 là những sản phẩm bán chạy
@@ -37,7 +31,6 @@ public class FindProduct extends HttpServlet {
     //    0 là những sản phẩm liên quan
     //    1 là những sản phẩm mới nhất
     //    2 là những sản phẩm bán chạy
-    int detail = 0;
 
     //    0 là ko sắp xếp theo giá
     //    1 là giá từ cao đến thấp

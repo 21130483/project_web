@@ -32,40 +32,40 @@
 
 
 <div class="page">
-        <%
+    <%
         User user = (User) session.getAttribute("user");
     %>
     <%@ page import="model.Account" %>
     <%@ page import="model.Order" %>
     <%@ page import="java.util.List" %>
     <%@ page import="model.Product" %>
-        <%
+    <%
         Account acInfo = (Account) request.getSession().getAttribute("accountInfo");
         String status = request.getParameter("status");
         String field = request.getParameter("field");
         Object ordersObject = request.getSession().getAttribute("orders");
         List<Order> orders = null;
-        if(ordersObject != null){
+        if (ordersObject != null) {
             orders = (List<Order>) ordersObject;
         }
-        if(field == null)
+        if (field == null)
             field = "";
         String note = "";
         if (status != null) {
             switch (status) {
-                case "success" :
+                case "success":
                     note = "Cập nhật thông tin thành công";
                     break;
-                case "failed" :
+                case "failed":
                     note = "Cập nhật thông tin không thành công";
                     break;
-                case "failed-0" :
+                case "failed-0":
                     note = "Lỗi thông tin nhập vào";
                     break;
-                case "failed-1" :
+                case "failed-1":
                     note = "Thông tin không khớp";
                     break;
-                default :
+                default:
                     note = "Có lỗi";
                     break;
             }
@@ -249,7 +249,7 @@
                                             <!-- Nếu chưa có đơn hàng nào -->
                                             <div class="EmptyResult_empty-result luuidol-empty1">
                                                 <div><img src="../image/account/giphy2.gif" alt="empty-cart">
-                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                    <p>Bạn có đơn hàng nào rồi!</p>
                                                 </div>
                                             </div>
 
@@ -258,33 +258,34 @@
                                                 <div class="cac-san-pham">
                                                     <ul>
                                                         <c:forEach var="item" items="${listOrderItem}">
-                                                            <c:if test="${item.state.equals('Đang xử lý')}">
+                                                            <c:if test="${item.getStatus()==0}">
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
-                                                                            <%--                                                                        <div class="img-san-pham">--%>
-                                                                            <%--                                                                            248 x 248--%>
-                                                                            <%--                                                                        </div>--%>
-
                                                                         <div class="noi-dung-san-pham">
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="ten-san-pham">
-                                                                                <a href="product-detail?id=${item.productId}">${item.name}</a>
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
                                                                             </div>
 
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="gia-san-pham">
-                                                                                <fmt:formatNumber value="${item.price}"
-                                                                                                  type="currency"
-                                                                                                  pattern="###,### đ"/>
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
                                                                                     <%--                                                                            10.000 đ/Hộp--%>
                                                                             </div>
-                                                                            <p class="waitXacNhan">${item.state}....</p>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                                            />
+                                                                            <p class="waitXacNhan">Chờ xác nhận....</p>
 
-                                                                            <form action="/html/cancel" method="post">
-                                                                                <input type="hidden" name="orderId"
-                                                                                       value="${item.orderId}">
+                                                                            <form action="<c:url value="/html/cancel"/> "
+                                                                                  method="post">
+                                                                                <input type="hidden" name="purchaseID"
+                                                                                       value="${item.getPurchaseID()}">
                                                                                 <button class="buy-now-product them-san-pham ">
                                                                                     <div class="a-none-fff ">Hủy đơn
                                                                                         hàng
@@ -309,29 +310,29 @@
                                                 <div class="cac-san-pham">
                                                     <ul>
                                                         <c:forEach var="item" items="${listOrderItem}">
-                                                            <c:if test="${item.state.equals('Đang giao')}">
+                                                            <c:if test="${item.getStatus()==1}">
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
-                                                                            <%--                                                                        <div class="img-san-pham">--%>
-                                                                            <%--                                                                            248 x 248--%>
-                                                                            <%--                                                                        </div>--%>
-
                                                                         <div class="noi-dung-san-pham">
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="ten-san-pham">
-                                                                                <a href="product-detail?id=${item.productId}">${item.name}</a>
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
                                                                             </div>
 
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="gia-san-pham">
-                                                                                <fmt:formatNumber value="${item.price}"
-                                                                                                  type="currency"
-                                                                                                  pattern="###,### đ"/>
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
                                                                             </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
                                                                             <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                            <p class="waitXacNhan">${item.state}....</p>
+                                                                            <p class="waitXacNhan">Đang giao....</p>
 
                                                                         </div>
                                                                     </div>
@@ -349,29 +350,30 @@
                                                 <div class="cac-san-pham">
                                                     <ul>
                                                         <c:forEach var="item" items="${listOrderItem}">
-                                                            <c:if test="${item.state.equals('Đã giao')}">
+                                                            <c:if test="${item.getStatus()==2}">
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
-                                                                            <%--                                                                        <div class="img-san-pham">--%>
-                                                                            <%--                                                                            248 x 248--%>
-                                                                            <%--                                                                        </div>--%>
-
                                                                         <div class="noi-dung-san-pham">
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="ten-san-pham">
-                                                                                <a href="product-detail?id=${item.productId}">${item.name}</a>
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
                                                                             </div>
 
                                                                             <div class="khoang-trong"></div>
 
                                                                             <div class="gia-san-pham">
-                                                                                <fmt:formatNumber value="${item.price}"
-                                                                                                  type="currency"
-                                                                                                  pattern="###,### đ"/>
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
                                                                             </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
                                                                             <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                            <p class="waitXacNhan">${item.state}....</p>
+                                                                            <p class="waitXacNhan">Đã giao thành
+                                                                                công</p>
 
                                                                         </div>
                                                                     </div>
@@ -383,40 +385,40 @@
                                             </div>
 
                                             <!-- Nếu hủy đơn hàng -->
-                                            <div class="ReceiveSuccess-result" style="display: none;">
+                                            <div class="Cancel-result" style="display: none;">
                                                 <div class="cac-san-pham">
+                                                    <ul>
+                                                        <c:forEach var="item" items="${listOrderItem}">
+                                                            <c:if test="${item.getStatus()==-1}">
+                                                                <li class="san-pham ">
+                                                                    <div class="link-san-pham">
+                                                                        <div class="noi-dung-san-pham">
+                                                                            <div class="khoang-trong"></div>
 
-                                                    <c:forEach var="item" items="${listOrderItem}">
-                                                        <c:if test="${item.state.equals('Đã hủy')}">
-                                                            <li class="san-pham ">
-                                                                <div class="link-san-pham">
-                                                                        <%--                                                                <div class="img-san-pham">--%>
-                                                                        <%--                                                                    248 x 248--%>
-                                                                        <%--                                                                </div>--%>
+                                                                            <div class="ten-san-pham">
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
+                                                                            </div>
 
-                                                                    <div class="noi-dung-san-pham">
-                                                                        <div class="khoang-trong"></div>
+                                                                            <div class="khoang-trong"></div>
 
-                                                                        <div class="ten-san-pham">
-                                                                            <a href="product-detail?id=${item.productId}">${item.name}</a>
+                                                                            <div class="gia-san-pham">
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
+                                                                            </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
+                                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                                            <p class="waitXacNhan">Đã hủy</p>
+
                                                                         </div>
-
-                                                                        <div class="khoang-trong"></div>
-
-                                                                        <div class="gia-san-pham">
-                                                                            <fmt:formatNumber value="${item.price}"
-                                                                                              type="currency"
-                                                                                              pattern="###,### đ"/>
-                                                                        </div>
-                                                                        <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                        <p class="waitXacNhan">${item.state}....</p>
-
                                                                     </div>
-                                                                </div>
-                                                            </li>
-                                                        </c:if>
-                                                    </c:forEach>
-
+                                                                </li>
+                                                            </c:if>
+                                                        </c:forEach>
+                                                    </ul>
                                                 </div>
                                             </div>
 
@@ -892,13 +894,13 @@
                                     <div class="ListOrderTab_list-order-tab">
                                         <div class="cac-san-pham">
                                             <ul>
-                                                    <%
-                            List<Product> p = (List) request.getAttribute("getBestSelling");
-                        %>
+                                                <%
+                                                    List<Product> p = (List) request.getAttribute("getBestSelling");
+                                                %>
 
-                                                    <%
-                            for (int i = 0 ; i < 2 ; i++) {
-                        %>
+                                                <%
+                                                    for (int i = 0; i < 2; i++) {
+                                                %>
                                                 <li class="san-pham">
                                                     <a href="product-detail?id=<%=p.get(i).getProductID()%>"
                                                        class="link-san-pham">
@@ -938,72 +940,74 @@
 
 
                                                 </li>
+                                                <%
+                                                    }
+                                                %>
+                                                <%--                                                <li class="san-pham">--%>
+                                                <%--                                                    <div class="link-san-pham">--%>
+                                                <%--                                                        <div class="img-san-pham">--%>
+                                                <%--                                                            248 x 248--%>
+                                                <%--                                                        </div>--%>
 
-                                                <li class="san-pham">
-                                                    <div class="link-san-pham">
-                                                        <div class="img-san-pham">
-                                                            248 x 248
-                                                        </div>
+                                                <%--                                                        <div class="noi-dung-san-pham">--%>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                        <div class="noi-dung-san-pham">
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="ten-san-pham">--%>
+                                                <%--                                                                Sản phẩm 2--%>
+                                                <%--                                                            </div>--%>
 
-                                                            <div class="ten-san-pham">
-                                                                Sản phẩm 2
-                                                            </div>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="gia-san-pham">--%>
+                                                <%--                                                                10.000 đ/Hộp--%>
+                                                <%--                                                                <i class="icon-love-product fa-solid fa-heart"></i>--%>
+                                                <%--                                                            </div>--%>
+                                                <%--                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->--%>
+                                                <%--                                                            <button class="them-san-pham">--%>
+                                                <%--                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>--%>
+                                                <%--                                                            </button>--%>
 
-                                                            <div class="gia-san-pham">
-                                                                10.000 đ/Hộp
-                                                                <i class="icon-love-product fa-solid fa-heart"></i>
-                                                            </div>
-                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                            <button class="them-san-pham">
-                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
-                                                            </button>
+                                                <%--                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->--%>
+                                                <%--                                                            <!-- <button class="buy-now-product them-san-pham">--%>
+                                                <%--                                                        <a class="a-none-fff" href="#">Mua ngay</a>--%>
+                                                <%--                                                      </button> -->--%>
 
-                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                            <!-- <button class="buy-now-product them-san-pham">
-                                                        <a class="a-none-fff" href="#">Mua ngay</a>
-                                                      </button> -->
+                                                <%--                                                        </div>--%>
+                                                <%--                                                    </div>--%>
+                                                <%--                                                </li>--%>
 
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                <%--                                                <li class="san-pham">--%>
+                                                <%--                                                    <div class="link-san-pham">--%>
+                                                <%--                                                        <div class="img-san-pham">--%>
+                                                <%--                                                            248 x 248--%>
+                                                <%--                                                        </div>--%>
 
-                                                <li class="san-pham">
-                                                    <div class="link-san-pham">
-                                                        <div class="img-san-pham">
-                                                            248 x 248
-                                                        </div>
+                                                <%--                                                        <div class="noi-dung-san-pham">--%>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                        <div class="noi-dung-san-pham">
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="ten-san-pham">--%>
+                                                <%--                                                                Sản phẩm 3--%>
+                                                <%--                                                            </div>--%>
 
-                                                            <div class="ten-san-pham">
-                                                                Sản phẩm 3
-                                                            </div>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="gia-san-pham">--%>
+                                                <%--                                                                70.000 đ/Chiếc--%>
+                                                <%--                                                                <i class="icon-love-product fa-solid fa-heart"></i>--%>
+                                                <%--                                                            </div>--%>
+                                                <%--                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->--%>
+                                                <%--                                                            <button class="them-san-pham">--%>
+                                                <%--                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>--%>
+                                                <%--                                                            </button>--%>
 
-                                                            <div class="gia-san-pham">
-                                                                70.000 đ/Chiếc
-                                                                <i class="icon-love-product fa-solid fa-heart"></i>
-                                                            </div>
-                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                            <button class="them-san-pham">
-                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
-                                                            </button>
+                                                <%--                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->--%>
+                                                <%--                                                            <!-- <button class="buy-now-product them-san-pham">--%>
+                                                <%--                                                        <a class="a-none-fff" href="#">Mua ngay</a>--%>
+                                                <%--                                                      </button> -->--%>
 
-                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                            <!-- <button class="buy-now-product them-san-pham">
-                                                        <a class="a-none-fff" href="#">Mua ngay</a>
-                                                      </button> -->
-
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                <%--                                                        </div>--%>
+                                                <%--                                                    </div>--%>
+                                                <%--                                                </li>--%>
 
 
                                             </ul>
@@ -1044,73 +1048,73 @@
                             </button>
                         </a>
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thêm mật khẩu -->
-
-            <div id="add-password" style="display: none;">
-                <div class="main-address">
-                    <div class="address-box">
-                        <h2>Thiết lập mật khẩu</h2>
-                        <form action="pass-edit?userId=<%=user.getUserID()%>" method="post">
-                            <div class="user-box">
-                                <input type="password" name="oldpass">
-                                <label>Mật khẩu cũ</label>
-                            </div>
-                            <div class="user-box">
-                                <input type="password" name="newpass1">
-                                <label>Mật khẩu mới</label>
-                            </div>
-                            <div class="user-box">
-                                <input type="password" name="newpass2">
-                                <label>Nhập lại mật khẩu mới</label>
-                            </div>
-
-                            <a href="#">
-                                <button type="submit" style="background: inherit; border: none">
-                                    Lưu
-                                </button>
-                            </a>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
 
+        <!-- Thêm mật khẩu -->
 
-        <jsp:include page="footer.jsp"></jsp:include>
+        <div id="add-password" style="display: none;">
+            <div class="main-address">
+                <div class="address-box">
+                    <h2>Thiết lập mật khẩu</h2>
+                    <form action="pass-edit?userId=<%=user.getUserID()%>" method="post">
+                        <div class="user-box">
+                            <input type="password" name="oldpass">
+                            <label>Mật khẩu cũ</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="newpass1">
+                            <label>Mật khẩu mới</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="newpass2">
+                            <label>Nhập lại mật khẩu mới</label>
+                        </div>
 
-
-    </div>
-
-    <!-- add contact -->
-    <div class="contact-main">
-        <div class="contact-button">
-            <i class="fa-solid fa-phone fa-bounce" style="color: #0f63f5; font-size: 32px;"></i>
-        </div>
-
-        <div class="contact-box">
-            <div class="contact-info">
-                <a href="#" style="text-decoration: none;">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <h2 style="color: #fff">Thông tin liên lạc</h2>
-                    <h2 style="color: #fff">Email:</h2>
-                    <p style="color: #000;">LuuLongPhuoc@gamil.com</p>
-                    <h2 style="color: #fff">Số điện thoại:</h2>
-                    <p style="color: #000;">0162 ngày mai nói tiếp</p>
-                    <h2 style="color: #fff">Địa chỉ:</h2>
-                    <p style="color: #000;">Số 123,Tổ 3, Khu phố 6, Linh Trung, Thủ Đức, TP HCM</p>
-                </a>
+                        <a href="#">
+                            <button type="submit" style="background: inherit; border: none">
+                                Lưu
+                            </button>
+                        </a>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
+
+
+    <jsp:include page="footer.jsp"></jsp:include>
+
+
+</div>
+
+<!-- add contact -->
+<div class="contact-main">
+    <div class="contact-button">
+        <i class="fa-solid fa-phone fa-bounce" style="color: #0f63f5; font-size: 32px;"></i>
+    </div>
+
+    <div class="contact-box">
+        <div class="contact-info">
+            <a href="#" style="text-decoration: none;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <h2 style="color: #fff">Thông tin liên lạc</h2>
+                <h2 style="color: #fff">Email:</h2>
+                <p style="color: #000;">LuuLongPhuoc@gamil.com</p>
+                <h2 style="color: #fff">Số điện thoại:</h2>
+                <p style="color: #000;">0162 ngày mai nói tiếp</p>
+                <h2 style="color: #fff">Địa chỉ:</h2>
+                <p style="color: #000;">Số 123,Tổ 3, Khu phố 6, Linh Trung, Thủ Đức, TP HCM</p>
+            </a>
+        </div>
+
+    </div>
+</div>
 </body>
 
 </html>
@@ -1134,9 +1138,7 @@
             reader.readAsDataURL(selectedPhoto);
         });
     }
-</script>
 
-<script>
     $(document).ready(function () {
 
         // order click
@@ -1212,7 +1214,7 @@
             $(".AreDelivering-result").show();
             $(".ReceiveSuccess-result").hide();
             $(".Cancel-result").hide();
-        })
+        });
 
         $(".luuidol-item4").click(function () {
             $(".luuidol-empty1").hide();
@@ -1221,7 +1223,7 @@
             $(".AreDelivering-result").hide();
             $(".ReceiveSuccess-result").show();
             $(".Cancel-result").hide();
-        })
+        });
 
         $(".luuidol-item5").click(function () {
             $(".luuidol-empty1").hide();
@@ -1230,7 +1232,7 @@
             $(".AreDelivering-result").hide();
             $(".ReceiveSuccess-result").hide();
             $(".Cancel-result").show();
-        })
+        });
 
         // end click item order
 
@@ -1322,7 +1324,7 @@
 
         // end love product
 
-        // hủy đơn hàng 
+        // hủy đơn hàng
 
         $(".buy-now-product").click(function () {
             // $(this).closest('.san-pham').hide();
@@ -1393,9 +1395,267 @@
         $(".contact-info").click(function (e) {
             e.stopPropagation();
         });
-
-
-    });
-
-
+    })
 </script>
+
+
+<%--<script>--%>
+<%--    $(document).ready(function () {--%>
+
+<%--        // order click--%>
+<%--        $(".history").click(function () {--%>
+<%--            $("#one").show();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".voucher").click(function () {--%>
+<%--            $("#two").show();--%>
+<%--            $("#one").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+<%--        $(".desgin").click(function () {--%>
+<%--            $("#three").show();--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".addresser").click(function () {--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").show();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".favourite").click(function () {--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").show();--%>
+<%--        })--%>
+
+<%--        // end order click--%>
+
+<%--        // click item order ------------------------------------------------%>
+
+<%--        $(".luuidol-item1").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").show();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item2").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").show();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item3").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").show();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item4").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").show();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item5").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").show();--%>
+<%--        });--%>
+
+<%--        // end click item order--%>
+
+<%--        // address add--%>
+
+<%--        $(".btn-add-address").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $("#add-address").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('#add-address').length) {--%>
+<%--                $("#add-address").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $("#add-address").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+
+
+<%--        // $(".btn-save-address").click(function () {--%>
+<%--        //     $(".luuidol-empty3").hide();--%>
+<%--        //     $("#add-address").hide();--%>
+<%--        //     // Lấy giá trị từ input--%>
+<%--        //     var fullName = $("#fullName-address").val();--%>
+<%--        //     var phoneAddress = $("#phone-address").val();--%>
+<%--        //     var address = $("#address-address").val();--%>
+<%--        //     var emailAddress = $("#email-address").val();--%>
+<%--        //--%>
+<%--        //     // Hiển thị dữ liệu đã lưu trong một thẻ div--%>
+<%--        //     $(".show-abc").html("<p>Họ Tên: " + fullName + "</p><p>Số Điện Thoại: " + phoneAddress +--%>
+<%--        //         "</p><p>Địa chỉ: " + address + "</p><p> Email: " + emailAddress +--%>
+<%--        //         "</p><button class='edit-button-address'>Chỉnh Sửa</button>");--%>
+<%--        // });--%>
+
+<%--        $(".edit-button-address").click(function () {--%>
+<%--            $("#add-address").show();--%>
+<%--            // Đặt lại giá trị cho input--%>
+<%--            $("#fullName-address").val(fullName);--%>
+<%--            $("#phone-address").val(phoneAddress);--%>
+<%--            $("#address-address").val(address);--%>
+<%--            $("#email-address").val(emailAddress);--%>
+<%--        });--%>
+
+<%--        // end add address--%>
+
+<%--        // password add--%>
+
+<%--        $(".btn-add-password").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $("#add-password").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('#add-password').length) {--%>
+<%--                $("#add-password").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $("#add-password").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+
+<%--        // and add password--%>
+
+
+<%--        // btn-order-item--%>
+
+<%--        $(".ListOrderTab_tab-item").click(function () {--%>
+<%--            $(".ListOrderTab_tab-item").removeClass("btn-click-bottom-blue");--%>
+<%--            $(this).addClass("btn-click-bottom-blue");--%>
+<%--        });--%>
+
+<%--        // end btn-order-item--%>
+
+
+<%--        // love product--%>
+
+<%--        $(".icon-love-product").click(function () {--%>
+<%--            // $(".icon-love-product").removeClass("color-love-click");--%>
+<%--            // $(this).addClass("color-love-click");--%>
+<%--            $(this).closest('.san-pham').hide();--%>
+<%--        });--%>
+
+<%--        $(".icon-nolove-product").click(function () {--%>
+<%--            $(this).addClass("red-color").toggleClass("ccc-color");--%>
+<%--        })--%>
+
+<%--        // end love product--%>
+
+<%--        // hủy đơn hàng --%>
+
+<%--        $(".buy-now-product").click(function () {--%>
+<%--            // $(this).closest('.san-pham').hide();--%>
+<%--            var closestSanpham = $(this).closest('.san-pham');--%>
+<%--            closestSanpham.appendTo('.Cancel-result');--%>
+<%--            $(this).hide();--%>
+<%--        });--%>
+
+<%--        // end hủy đơn hàng--%>
+
+<%--        // Voucher --------------------------%>
+
+<%--        $(".open-code1").click(function () {--%>
+<%--            $("#code-1").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code2").click(function () {--%>
+<%--            $("#code-2").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code3").click(function () {--%>
+<%--            $("#code-3").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code4").click(function () {--%>
+<%--            $("#code-4").toggle();--%>
+<%--        });--%>
+
+<%--        // --------------------%>
+<%--        $(".luuidol-voucher1").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").show();--%>
+<%--            $(".Use-voucher").hide();--%>
+<%--            $(".NoUse-voucher").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-voucher2").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").hide();--%>
+<%--            $(".Use-voucher").show();--%>
+<%--            $(".NoUse-voucher").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-voucher3").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").hide();--%>
+<%--            $(".Use-voucher").hide();--%>
+<%--            $(".NoUse-voucher").show();--%>
+<%--        });--%>
+
+<%--        // end voucher--%>
+
+
+<%--        // contct--%>
+
+
+<%--        $(".contact-button").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $(".contact-info").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('.contact-info').length) {--%>
+<%--                $(".contact-info").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $(".contact-info").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+<%--    })--%>
+<%--    --%>
+<%--</script>--%>

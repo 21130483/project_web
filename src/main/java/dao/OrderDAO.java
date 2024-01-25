@@ -3,6 +3,7 @@ package dao;
 import database.JDBIConnector;
 import model.OrderItem;
 import model.Order;
+import model.Purchases;
 import org.jdbi.v3.core.Jdbi;
 
 import java.util.List;
@@ -20,20 +21,18 @@ public class OrderDAO {
         });
         return invoices;
     }
-    public List<OrderItem> getAllOrderItemById(int userId) {
-        String sql = "SELECT o.userID, o.id as orderId ,p.productID, p.name, p.price, o.shippingFee, o.state , " +
-                "o.createdAt, od.quantity from order_details od JOIN orders o ON od.orderId = o.id " +
-                "JOIN products p ON od.productId = p.productID WHERE userID = ?";
+    public List<Purchases> getAllOrderItemById(int userId) {
+        String sql = "SELECT * FROM purchases WHERE userID = ?";
         return connect.withHandle(handle -> {
             return handle.createQuery(sql)
                     .bind(0, userId)
-                    .mapToBean(OrderItem.class)
+                    .mapToBean(Purchases.class)
                     .list();
         });
     }
 
     public boolean cancel(int orderId) {
-        String sql = "UPDATE orders SET state = 'Đã hủy' WHERE id = ?";
+        String sql = "UPDATE purchases SET STATUS = -1 WHERE purchaseID = ?";
         int result = connect.inTransaction(handle ->
                 handle.createUpdate(sql)
                         .bind(0, orderId).execute());

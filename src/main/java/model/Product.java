@@ -1,10 +1,7 @@
 package model;
 
 import java.io.File;
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -207,12 +204,6 @@ public class Product {
                 '}';
     }
 
-<<<<<<< HEAD
-    public static void main(String[] args) {
-
-    }
-
-=======
 
 
 
@@ -258,5 +249,4 @@ public class Product {
 //
 //    }
 
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 }

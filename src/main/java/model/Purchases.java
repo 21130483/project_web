@@ -1,11 +1,17 @@
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 public class Purchases {
     private int purchaseID;
     private int userID;
     private int productID;
+    private String name;
     private int quantity;
 
     private int price;
@@ -55,6 +61,14 @@ public class Purchases {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
@@ -139,6 +153,7 @@ public class Purchases {
                 "purchaseID=" + purchaseID +
                 ", userID=" + userID +
                 ", productID=" + productID +
+                ", name=" + name +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", status=" + status +

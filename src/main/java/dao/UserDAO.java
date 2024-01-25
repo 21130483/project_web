@@ -114,17 +114,12 @@ package dao;
 
 import database.JDBIConnector;
 import model.User;
-<<<<<<< HEAD
-import org.jdbi.v3.core.Jdbi;
-
-=======
 
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.Handle;
 import Services.Connect;
 
 import java.util.ArrayList;
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -136,14 +131,6 @@ import java.util.Calendar;
 
 
 public class UserDAO {
-<<<<<<< HEAD
-    public static final Jdbi connect = JDBIConnector.getConnect();
-
-    public User checkLogin(String email, String pass) {
-        List<User> users = null;
-        users = connect.withHandle(handle ->
-                handle.createQuery("select * from users").mapToBean(User.class).collect(Collectors.toList()));
-=======
 
     public static final Jdbi connect = JDBIConnector.getConnect();
 
@@ -159,11 +146,6 @@ public class UserDAO {
         return result;
     }
 
-    public static boolean updateUser(int userID, String nameColumn, String value) {
-        boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
-        return check;
-    }
-
     public static List<User> getAllUsers() {
         List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());;
         return users;
@@ -173,7 +155,6 @@ public class UserDAO {
 
 //        List<User> users = null;
         List<User> users = handle.select("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
         for (User user : users) {
             if (user.getEmail().equals(email)) {
                 if (user.getPassword().equals(pass)) {
@@ -184,13 +165,6 @@ public class UserDAO {
         return null;
     }
 
-<<<<<<< HEAD
-    public List<User> getAllUsers() {
-        List<User> users = connect.withHandle(handle -> {
-            return handle.createQuery("SELECT * FROM users").mapToBean(User.class).collect(Collectors.toList());
-        });
-        return users;
-=======
 
     public boolean checkEmailExist(String email) {
         Connection connection = null;
@@ -446,9 +420,8 @@ public class UserDAO {
             Connect.closeConnection(connection);
         }
         return res;
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
     }
-
+//
     public boolean updateUser(int userID, String nameColumn, String value) {
         boolean check = connect.inTransaction(handle -> {
             return handle.createUpdate("UPDATE users SET " + nameColumn + "=? WHERE userID =?").bind(0, nameColumn)
@@ -457,7 +430,6 @@ public class UserDAO {
         return check;
     }
 
-<<<<<<< HEAD
     public boolean updateUser1(User user) {
         boolean check = connect.inTransaction(handle -> {
             return handle.createUpdate("UPDATE users SET fullName = ? , gender = ?, phoneNumbers = ?, dob = ?, email = ? WHERE userID = ?")
@@ -471,7 +443,6 @@ public class UserDAO {
         });
         return check;
     }
-=======
     public int getCount() {
         Connection connection = null;
         try {
@@ -534,15 +505,14 @@ public class UserDAO {
 
     }
 
->>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 
-    public User getUserById(int id) {
-        Optional<User> result = connect.withHandle(handle -> {
-            return handle.createQuery("SELECT * FROM users WHERE userID = ?")
-                    .bind(0, id).mapToBean(User.class).list().stream().findFirst();
-        });
-        return result.orElse(null);
-    }
+//    public User getUserById(int id) {
+//        Optional<User> result = connect.withHandle(handle -> {
+//            return handle.createQuery("SELECT * FROM users WHERE userID = ?")
+//                    .bind(0, id).mapToBean(User.class).list().stream().findFirst();
+//        });
+//        return result.orElse(null);
+//    }
 
     public boolean updatePassword(User user, String newpass1) {
         boolean check = connect.inTransaction(handle -> {
