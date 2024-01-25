@@ -101,7 +101,7 @@
 
 .danh-muc-san-pham .ten-cot {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 400px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -139,7 +139,7 @@
 
 .danh-muc-san-pham .san-pham {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 400px;
     text-align: center;
 }
 

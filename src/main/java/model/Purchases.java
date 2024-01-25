@@ -133,5 +133,20 @@ public class Purchases {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Purchases{" +
+                "purchaseID=" + purchaseID +
+                ", userID=" + userID +
+                ", productID=" + productID +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", status=" + status +
+                ", orderDate=" + orderDate +
+                ", receivedDate=" + receivedDate +
+                ", starNumber=" + starNumber +
+                ", content='" + content + '\'' +
+                ", dateRated=" + dateRated +
+                '}';
+    }
 }

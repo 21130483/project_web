@@ -18,14 +18,13 @@ public class PurchasesDAO {
     }
 
     public static Purchases getPurchaseById(int id) {
-        Purchases result = handle.select("SELECT * FROM purchases WHERE purchaseID = ?").bind(0, id).mapToBean(Purchases.class).findOne().orElse(null);
+        Purchases result = handle.select("SELECT * FROM purchases WHERE purchaseID = ? LIMIT 1").bind(0, id).mapToBean(Purchases.class).findOne().orElse(null);
         return result;
     }
 
     public static int newPurchaseID(){
         int countID = 0;
         Purchases purchases;
-
         do {
             countID++;
             purchases = getPurchaseById(countID);
@@ -38,8 +37,8 @@ public class PurchasesDAO {
         return check;
     }
 
-    public static boolean updatePurchase(int purchaseID, String nameColumn, String value){
-        boolean check = handle.execute("UPDATE purchases SET " + nameColumn + "=? WHERE purchaseID = ?", value, purchaseID) > 0;
+    public static boolean updatePurchase(int purchaseID,int userID,int productID, String nameColumn, String value){
+        boolean check = handle.execute("UPDATE purchases SET " + nameColumn + "=? WHERE purchaseID = ? AND userID = ? AND productID = ?", value, purchaseID,userID,productID) > 0;
         return check;
     }
 
@@ -50,7 +49,8 @@ public class PurchasesDAO {
     }
 
     public static void main(String[] args) {
-        System.out.println(newPurchaseID());
+
+        System.out.println(getPurchaseById(1));
     }
 
 }

@@ -115,7 +115,6 @@ public class AddEditDeleteProduct extends HttpServlet {
 //                os.write(is.read());
 //            }
         }
-        System.out.println("add");
         req.getRequestDispatcher("admin?page=product").forward(req, resp);
     }
 
