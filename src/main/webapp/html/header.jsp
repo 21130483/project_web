@@ -113,8 +113,9 @@
             <li><a href="findProduct?active=category&categoryID=3" class="category-menu">Máy đo huyết áp</a></li>
             <li><a href="findProduct?active=category&categoryID=2" class="category-menu">Máy massage</a></li>
             <li><a href="findProduct?active=category&categoryID=6" class="category-menu">Nhiệt kế</a></li>
+            <li><a href="findProduct?active=category&categoryID=4" class="category-menu">Băng - Gạc y tế</a></li>
             <li><a href="sick.jsp" class="category-menu">Bệnh</a></li>
-            <li><a href="" class="category-menu">Góc sức khỏe</a></li>
+<%--            <li><a href="" class="category-menu">Góc sức khỏe</a></li>--%>
             <li><a href="introduce.jsp" class="category-menu">Giới thiệu</a></li>
         </ul>
     </div>

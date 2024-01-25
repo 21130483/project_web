@@ -23,7 +23,8 @@ public class paymentFilter extends HttpServlet {
             if (cart.getProductChecked().size() != 0){
                 resp.sendRedirect("payment.jsp");
             }else {
-                resp.sendRedirect("index.jsp");
+                req.setAttribute("content","Bạn chưa chọn sản phẩm nào để mua");
+                req.getRequestDispatcher("cart.jsp").forward(req, resp);
             }
         } else {
             resp.sendRedirect("login.jsp");

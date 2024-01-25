@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Lab:war exploded" />
+      <artifact name="Lab:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -12,9 +12,20 @@
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/account.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/paymentFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/paymentFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +83,17 @@
     "Tomcat Server.Tomcat 9.0.81.executor": "Run",
     "Tomcat Server.header.jsp.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "21130440-NguyenThanhLuu",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/phuoc/OneDrive/Máy tính/github/main/project_web",
+    "last_opened_file_path": "C:/Users/phuoc/OneDrive/Máy tính/Thi/project_web",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -101,7 +115,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
     <configuration name="CategoryDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.CategoryDAO" />
       <module name="Lab" />
@@ -180,106 +194,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="20">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <deployment>
-        <artifact name="Lab:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/Lab_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="edfa0162-39bd-4895-87a2-79b4e7a42d61" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="60536" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Lab:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Lab/html/" />
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Lab:war exploded">
+        <artifact name="Lab:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/Lab_war_exploded" />
+            <option name="CONTEXT_PATH" value="/Lab" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="95252531-2843-45f0-89a0-3a0e26aa82b3" />
+        <option name="BASE_DIRECTORY_NAME" value="f541ace6-cba1-410a-a3f0-bb390a6bd803" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -287,7 +213,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59501" />
+        <option name="DEBUG_PORT" value="54184" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -352,7 +278,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Lab:war exploded" />
+          <artifact name="Lab:war" />
         </option>
       </method>
     </configuration>
@@ -451,7 +377,6 @@
       <item itemvalue="Application.OriginDAO" />
       <item itemvalue="Application.PurchasesDAO" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
-      <item itemvalue="Tomcat Server.Tomcat 9" />
     </list>
     <recent_temporary>
       <list>
@@ -507,7 +432,8 @@
       <workItem from="1706090117514" duration="65000" />
       <workItem from="1706153099555" duration="13604000" />
       <workItem from="1706171131584" duration="4038000" />
-      <workItem from="1706179829477" duration="14728000" />
+      <workItem from="1706179829477" duration="7017000" />
+      <workItem from="1706188415182" duration="3570000" />
     </task>
     <servers />
   </component>
@@ -559,6 +485,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>
           <line>9</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/html/EditUser.jsp</url>
+          <line>83</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
