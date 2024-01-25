@@ -1,6 +1,8 @@
 package controller;
 
+import dao.CategoryDAO;
 import dao.ProductDAO;
+import model.Category;
 import model.Product;
 
 import javax.servlet.ServletException;
@@ -14,7 +16,14 @@ import java.util.*;
 @WebServlet("/html/findProduct")
 public class FindProduct extends HttpServlet {
     List<Product> list = new ArrayList<>();
-    private static String textFindProducts;
+    private static String textFindProducts = "";
+
+    private int categoryID = 0;
+
+    private int currentPage;
+
+    private int numberPages;
+
 
     private int currentPage;
 
@@ -28,7 +37,7 @@ public class FindProduct extends HttpServlet {
     //    0 là những sản phẩm liên quan
     //    1 là những sản phẩm mới nhất
     //    2 là những sản phẩm bán chạy
-    int sortedBy = 0;
+    int detail = 0;
 
     //    0 là ko sắp xếp theo giá
     //    1 là giá từ cao đến thấp
@@ -39,11 +48,12 @@ public class FindProduct extends HttpServlet {
     int from = 0;
     int to = 0;
 
+    CategoryDAO categoryDAO = new CategoryDAO();
+    List<Category> categories = categoryDAO.getAllCategory();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String active = req.getParameter("active");
-
-        System.out.println("active " + active);
         switch (active) {
             case "price":
                 if (priceBy == 2) {
@@ -67,6 +77,13 @@ public class FindProduct extends HttpServlet {
                 sortBetween();
                 currentPage = 1;
                 break;
+            case "category":
+                System.out.println("active " + active);
+                categoryID = Integer.parseInt(req.getParameter("categoryID"));
+                listByCategory();
+                countNumberPages();
+                currentPage = 1;
+                break;
             case "page":
                 currentPage = Integer.parseInt(req.getParameter("page"));
                 break;
@@ -76,6 +93,8 @@ public class FindProduct extends HttpServlet {
 
 
         req.setAttribute("textFindProducts", textFindProducts);
+        req.setAttribute("getCategoryID", categoryID);
+        req.setAttribute("getCategories", categories);
         req.setAttribute("getFindProducts", list);
         req.setAttribute("getnumberPages", numberPages);
         req.setAttribute("getcurrentPage", currentPage);
@@ -92,10 +111,14 @@ public class FindProduct extends HttpServlet {
         System.out.println(textFindProducts);
         ProductDAO productDAO = new ProductDAO();
         list = productDAO.getFindProducts(textFindProducts);
+        categoryID = 0;
         priceBy = 0;
+        detail = 0;
         countNumberPages();
         currentPage = 1;
         req.setAttribute("textFindProducts", textFindProducts);
+        req.setAttribute("getCategoryID", categoryID);
+        req.setAttribute("getCategories", categories);
         req.setAttribute("getFindProducts", list);
         req.setAttribute("getnumberPages", numberPages);
         req.setAttribute("getcurrentPage", currentPage);
@@ -103,13 +126,6 @@ public class FindProduct extends HttpServlet {
         req.setAttribute("getDetail", detail);
         req.setAttribute("getFrom", from);
         req.setAttribute("getTo", to);
-        List<Product> products = productDAO.getFindProducts(textFindProducts);
-        for (Product p : products) {
-            System.out.println(p);
-        }
-        req.setAttribute("textFindProducts", textFindProducts);
-        req.setAttribute("getFindProducts", products);
-
         req.getRequestDispatcher("products.jsp").forward(req, resp);
     }
 
@@ -139,13 +155,13 @@ public class FindProduct extends HttpServlet {
                     if (detail == 1) {
                         return o2.getDateAdded().compareTo(o1.getDateAdded());
                     } else {
-                        return o2.getOrderedNumber() - o1.getOrderedNumber();
+                        return o2.getOrderedNumbers() - o1.getOrderedNumbers();
                     }
                 }
             });
         } else {
             ProductDAO productDAO = new ProductDAO();
-            list = productDAO.getFindProducts(textFindProducts);
+            listByCategory();
         }
     }
 
@@ -174,6 +190,15 @@ public class FindProduct extends HttpServlet {
         }
         countNumberPages();
 
+    }
+
+    public void listByCategory() {
+        ProductDAO productDAO = new ProductDAO();
+        if (categoryID != 0) {
+            list = productDAO.getFindProductsCategory(textFindProducts, categoryID);
+        } else {
+            list = productDAO.getFindProducts(textFindProducts);
+        }
     }
 
     public void countNumberPages() {

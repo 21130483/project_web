@@ -939,120 +939,74 @@
 
                                                 </li>
 
-                                                    <%
-                            }
-                            ;
-                        %>
+                                                <li class="san-pham">
+                                                    <div class="link-san-pham">
+                                                        <div class="img-san-pham">
+                                                            248 x 248
+                                                        </div>
 
-                                                <%--                                        <div class="cac-san-pham">--%>
-                                                <%--                                            <ul>--%>
+                                                        <div class="noi-dung-san-pham">
+                                                            <div class="khoang-trong"></div>
 
-                                                <%--&lt;%&ndash;                                                <li class="san-pham ">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    <div class="link-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <div class="img-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <img src="../image/product/1/0.webp">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
+                                                            <div class="ten-san-pham">
+                                                                Sản phẩm 2
+                                                            </div>
 
-                                                <%--&lt;%&ndash;                                                        <div class="noi-dung-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
+                                                            <div class="khoang-trong"></div>
 
-                                                <%--&lt;%&ndash;                                                            <div class="ten-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                Máy đo huyết áp tự động Microlife B3 Basic hỗ trợ đo huyết áp&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
+                                                            <div class="gia-san-pham">
+                                                                10.000 đ/Hộp
+                                                                <i class="icon-love-product fa-solid fa-heart"></i>
+                                                            </div>
+                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                            <button class="them-san-pham">
+                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
+                                                            </button>
 
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
+                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
+                                                            <!-- <button class="buy-now-product them-san-pham">
+                                                        <a class="a-none-fff" href="#">Mua ngay</a>
+                                                      </button> -->
 
-                                                <%--&lt;%&ndash;                                                            <div class="gia-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                20.000 đ/Hộp&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <i class="icon-love-product fa-solid fa-heart"></i>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <form action="cart?id=<%=p.getProductID()%>&active=add&page=index" method="post"&ndash;%&gt;--%>
+                                                        </div>
+                                                    </div>
+                                                </li>
 
-                                                <%--&lt;%&ndash;                                                                  style="width: 100%; height: 100%">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <button type="submit" class="them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                    Thêm vào giỏ hàng&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                </button>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </form>&ndash;%&gt;--%>
+                                                <li class="san-pham">
+                                                    <div class="link-san-pham">
+                                                        <div class="img-san-pham">
+                                                            248 x 248
+                                                        </div>
 
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- <button class="buy-now-product them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <a class="a-none-fff" href="#">Mua ngay</a>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                      </button> -->&ndash;%&gt;--%>
+                                                        <div class="noi-dung-san-pham">
+                                                            <div class="khoang-trong"></div>
 
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                </li>&ndash;%&gt;--%>
+                                                            <div class="ten-san-pham">
+                                                                Sản phẩm 3
+                                                            </div>
 
-                                                <%--&lt;%&ndash;                                                <li class="san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    <div class="link-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <div class="img-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            248 x 248&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
+                                                            <div class="khoang-trong"></div>
 
-                                                <%--&lt;%&ndash;                                                        <div class="noi-dung-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
+                                                            <div class="gia-san-pham">
+                                                                70.000 đ/Chiếc
+                                                                <i class="icon-love-product fa-solid fa-heart"></i>
+                                                            </div>
+                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                            <button class="them-san-pham">
+                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
+                                                            </button>
 
-                                                <%--&lt;%&ndash;                                                            <div class="ten-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                Sản phẩm 2&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
+                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
+                                                            <!-- <button class="buy-now-product them-san-pham">
+                                                        <a class="a-none-fff" href="#">Mua ngay</a>
+                                                      </button> -->
 
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <div class="gia-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                10.000 đ/Hộp&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <i class="icon-love-product fa-solid fa-heart"></i>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <button class="them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </button>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- <button class="buy-now-product them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <a class="a-none-fff" href="#">Mua ngay</a>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                      </button> -->&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                </li>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                <li class="san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    <div class="link-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <div class="img-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            248 x 248&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                        <div class="noi-dung-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <div class="ten-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                Sản phẩm 3&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <div class="khoang-trong"></div>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <div class="gia-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                70.000 đ/Chiếc&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <i class="icon-love-product fa-solid fa-heart"></i>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <button class="them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            </button>&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                            <!-- <button class="buy-now-product them-san-pham">&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                        <a class="a-none-fff" href="#">Mua ngay</a>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                      </button> -->&ndash;%&gt;--%>
-
-                                                <%--&lt;%&ndash;                                                        </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                    </div>&ndash;%&gt;--%>
-                                                <%--&lt;%&ndash;                                                </li>&ndash;%&gt;--%>
+                                                        </div>
+                                                    </div>
+                                                </li>
 
 
-                                                <%--                                            </ul>--%>
-                                                <%--                                        </div>--%>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -1061,33 +1015,34 @@
                     </div>
                 </div>
             </div>
-            <!-- Thêm địa chỉ  -->
-            <div id="add-address" style="display: none;">
-                <div class="main-address">
-                    <div class="address-box">
-                        <h2>Thêm địa chỉ</h2>
-                        <form action="address-controller?active=add" method="post">
-                            <div class="user-box">
-                                <input id="fullName-address" type="text" name="city" required="">
-                                <label for="fullName-address">Tỉnh</label>
-                            </div>
-                            <div class="user-box">
-                                <input id="phone-address" type="text" name="district" required="">
-                                <label for="phone-address">Thành phố</label>
-                            </div>
-                            <div class="user-box">
-                                <input id="address-address" type="text" name="ward" required="">
-                                <label for="address-address">Phường</label>
-                            </div>
-                            <div class="user-box">
-                                <input id="email-address" type="text" name="detail" required="">
-                                <label for="email-address">Chi tiết</label>
-                            </div>
-                            <a href="" class="btn-save-address">
-                                <button type="submit" style="background: inherit;border: none">
-                                    Lưu
-                                </button>
-                            </a>
+        </div>
+        <!-- Thêm địa chỉ  -->
+        <div id="add-address" style="display: none;">
+            <div class="main-address">
+                <div class="address-box">
+                    <h2>Thêm địa chỉ</h2>
+                    <form action="address-controller?active=add" method="post">
+                        <div class="user-box">
+                            <input id="fullName-address" type="text" name="city" required="">
+                            <label for="fullName-address">Tỉnh</label>
+                        </div>
+                        <div class="user-box">
+                            <input id="phone-address" type="text" name="district" required="">
+                            <label for="phone-address">Thành phố</label>
+                        </div>
+                        <div class="user-box">
+                            <input id="address-address" type="text" name="ward" required="">
+                            <label for="address-address">Phường</label>
+                        </div>
+                        <div class="user-box">
+                            <input id="email-address" type="text" name="detail" required="">
+                            <label for="email-address">Chi tiết</label>
+                        </div>
+                        <a href="" class="btn-save-address">
+                            <button type="submit" style="background: inherit;border: none">
+                                Lưu
+                            </button>
+                        </a>
 
                         </form>
                     </div>

@@ -1,7 +1,12 @@
 package model;
 
 import java.io.File;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+>>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
@@ -12,7 +17,7 @@ public class Product {
     private int price;
     private int sale;
     private int quantity;
-    private int orderedNumber;
+    private int orderedNumbers;
     private Date dateAdded;
     private String name;
     private String trademark;
@@ -91,6 +96,41 @@ public class Product {
         return result;
     }
 
+    public String getSaleHaveDots() {
+        String result = "";
+        String priceString = String.valueOf(sale);
+        int dots = priceString.length() - 1 / 3;
+        int remainder = priceString.length() % 3;
+        for (int i = 0; i < priceString.length(); i++) {
+            if (i % 3 == remainder && i != 0) {
+
+                result += ".";
+            }
+            result += priceString.charAt(i);
+
+        }
+        result += " Đồng";
+        return result;
+    }
+
+    public String getRealPriceHaveDots() {
+        String result = "";
+        int realPrice = price + sale;
+        String priceString = String.valueOf(realPrice);
+        int dots = priceString.length() - 1 / 3;
+        int remainder = priceString.length() % 3;
+        for (int i = 0; i < priceString.length(); i++) {
+            if (i % 3 == remainder && i != 0) {
+
+                result += ".";
+            }
+            result += priceString.charAt(i);
+
+        }
+        result += " Đồng";
+        return result;
+    }
+
     public void setPrice(int price) {
         this.price = price;
     }
@@ -111,12 +151,12 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public int getOrderedNumber() {
-        return orderedNumber;
+    public int getOrderedNumbers() {
+        return orderedNumbers;
     }
 
-    public void setOrderedNumber(int orderedNumber) {
-        this.orderedNumber = orderedNumber;
+    public void setOrderedNumbers(int orderedNumbers) {
+        this.orderedNumbers = orderedNumbers;
     }
 
     public Date getDateAdded() {
@@ -159,7 +199,7 @@ public class Product {
                 ", price=" + price +
                 ", sale=" + sale +
                 ", quantity=" + quantity +
-                ", orderedNumber=" + orderedNumber +
+                ", orderedNumbers=" + orderedNumbers +
                 ", dateAdded=" + dateAdded +
                 ", name='" + name + '\'' +
                 ", trademark='" + trademark + '\'' +
@@ -167,8 +207,56 @@ public class Product {
                 '}';
     }
 
+<<<<<<< HEAD
     public static void main(String[] args) {
 
     }
 
+=======
+
+
+
+    public int getNumberImg(String path) {
+        File fileImg = new File(path + "/image/product/" + productID);
+        if (fileImg.exists()) {
+            for (String string : fileImg.list()) {
+                System.out.println(string);
+            }
+            return fileImg.list().length;
+        } else {
+            return 0;
+        }
+    }
+
+    public List<String> getPathImage(String path) {
+        List<String> result = new ArrayList<>();
+        File folderImg = new File(path + "/image/product/" + productID);
+        if (folderImg.exists()) {
+            for (File file : folderImg.listFiles()){
+                result.add("../image/product/"+productID+"/"+file.getName());
+            }
+        }
+        for (String string : result){
+            System.out.println("list :"+string);
+
+        }
+        return result;
+    }
+
+    public String getPathFirstImage(String path) {
+        File folderImg = new File(path + "/image/product/" + productID);
+        String result = "../image/product/"+productID+"/";
+
+        if (folderImg.exists()) {
+            File[] files = folderImg.listFiles();
+            result += files[0].getName();
+        }
+        return result;
+    }
+
+//    public static void main(String[] args) {
+//
+//    }
+
+>>>>>>> 4cba756f1b6d295423927833e57ef2213af37e70
 }

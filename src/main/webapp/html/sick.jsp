@@ -40,43 +40,43 @@
                     <div class="sick-sub-content">
                         <div class="sick-content-main">
                             <div class="sick-body-people">
-                                <img src="../img/sick/body.png" alt="body people">
+                                <img src="../image/sick/body.png" alt="body people">
                                 <p>Hình ảnh chỉ mang tính chất minh họa</p>
                             </div>
 
                             <div class="sick-body-item">
                                 <div class="click-sick-head sick-item ">
-                                    <img src="../img/sick/head-body.svg" alt="đầu">
+                                    <img src="../image/sick/head-body.svg" alt="đầu">
                                     <p>Đầu</p>
                                 </div>
 
                                 <div class="click-sick-neck sick-item ">
-                                    <img src="../img/sick/neck-body.svg" alt="cổ">
+                                    <img src="../image/sick/neck-body.svg" alt="cổ">
                                     <p>Cổ</p>
                                 </div>
 
                                 <div class="click-sick-chest sick-item">
-                                    <img src="../img/sick/chest-body.svg" alt="ngực">
+                                    <img src="../image/sick/chest-body.svg" alt="ngực">
                                     <p>Ngực</p>
                                 </div>
 
                                 <div class="click-sick-belly sick-item">
-                                    <img src="../img/sick/belly-body.svg" alt="bụng">
+                                    <img src="../image/sick/belly-body.svg" alt="bụng">
                                     <p>Bụng</p>
                                 </div>
 
                                 <div class="click-sick-genital sick-item">
-                                    <img src="../img/sick/genital-body.svg" alt="sinh dục">
+                                    <img src="../image/sick/genital-body.svg" alt="sinh dục">
                                     <p>Sinh dục</p>
                                 </div>
 
                                 <div class="click-sick-limbs sick-item">
-                                    <img src="../img/sick/limbs-body.svg" alt="tứ chi">
+                                    <img src="../image/sick/limbs-body.svg" alt="tứ chi">
                                     <p>Tứ chi</p>
                                 </div>
 
                                 <div class="click-sick-skin sick-item">
-                                    <img src="../img/sick/skin-body.svg" alt="da">
+                                    <img src="../image/sick/skin-body.svg" alt="da">
                                     <p>Da</p>
                                 </div>
                             </div>

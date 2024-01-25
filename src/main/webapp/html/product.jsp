@@ -19,6 +19,7 @@
 
     <%
         Product product = (Product) request.getAttribute("productDetail");
+        List<Product> ListProdcutRelated = (List) request.getAttribute("getProductRelated");
     %>
 
     <div class="product-container">
@@ -27,7 +28,9 @@
                 <div class="left-slide">
                     <div class="product-left">
                         <div class="product-left-big-images">
-                            <img id="bigImage" src="../image/product/<%=product.getProductID()%>/0.webp" alt="">
+
+                            <img src="<%=product.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                 alt="">
                         </div>
                         <div class="product-left-small-images" onclick="changeBigImage(event)">
                             <%--                            <img src="../image/product/may-tao-oxi1.jpg" alt="">--%>
@@ -39,84 +42,92 @@
                             <%
 
                                 int numberImg = (int) request.getAttribute("numberImg");
-                                System.out.println(numberImg);
-                                for (int i = 0; i < numberImg; i++) {
+                                for (String path : product.getPathImage(request.getServletContext().getRealPath(""))) {
+
                             %>
 
-                            <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
-<%--=======--%>
-<%--                                for (int i = 0; i < 4; i++) {--%>
-<%--                            %>--%>
-<%--                                <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">--%>
-<%-->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7--%>
+
+                            <img src="<%=path%>" alt="" style="max-width: 100%; max-height: 100%;  height: auto; width: auto">
+
                             <%
                                 }
                             %>
+
                         </div>
                     </div>
                     <div class="product-details">
                         <%--                        <h1 class="product-title">Máy tạo oxy xách tay 5 lít Dynmed POC5</h1>--%>
                         <h1 class="product-title"><%=product.getName()%>
                         </h1>
-                        <div class="product-description">
-                            <span class="title">Mã sản phẩm:</span>
-                            <span class="info">
-                                        <span title="Mã sản phẩm">A2324</span>
-                                    </span>
-                        </div>
+                        <%--                        <div class="product-description">--%>
+                        <%--                            <span class="title">Mã sản phẩm:</span>--%>
+                        <%--                            <span class="info">--%>
+                        <%--                                        <span title="Mã sản phẩm">A2324</span>--%>
+                        <%--                                    </span>--%>
+                        <%--                        </div>--%>
                         <div class="product-description">
                             <span class="title">Thương hiệu:</span>
                             <span class="info">
-                                        <span title="Thương hiệu">Dynmed</span>
+                                        <span title="Thương hiệu"><%=product.getTrademark()%></span>
                                     </span>
                         </div>
                         <div class="product-description">
                             <span class="title">Sản xuất:</span>
                             <span class="info">
-                                        <span title="Sản xuất">Trung Quốc</span>
+                                        <span title="Sản xuất"><%=product.getOriginID()%></span>
                                     </span>
                         </div>
-                        <div class="product-description">
-                            <span class="title">Bảo hành:</span>
-                            <span class="info">
-                                        <span title="Đơn vị tính">24 tháng</span>
-                                    </span>
-                        </div>
+                        <%--                        <div class="product-description">--%>
+                        <%--                            <span class="title">Bảo hành:</span>--%>
+                        <%--                            <span class="info">--%>
+                        <%--                                        <span title="Đơn vị tính">24 tháng</span>--%>
+                        <%--                                    </span>--%>
+                        <%--                        </div>--%>
                         <div class="product-description">
                             <span class="title">Mô tả ngắn: </span>
                             <span class="info-des">
-                                        <span title="Mô tả ngắn">Máy tạo oxy xách tay 5L Dynmed POC5 cung cấp oxy ổn định mỗi phút theo sự thay đổi liên tục của nhịp thở.</span>
+                                        <span title="Mô tả ngắn"><%=product.getContent()%></span>
                                     </span>
                         </div>
 
                         <div class="product-price-box">
                             <div class="row gx-0">
                                 <div class="col-4">
-                                    <h2 class="text-primary-green">25.500.000đ</h2>
-                                    <span class="saving">Tiết kiệm: <span class="text-red">4.500.000đ (giảm 15%)</span></span>
+                                    <h2 class="text-primary-green"
+                                        style="white-space: nowrap"><%=product.getPriceHaveDots()%>
+                                    </h2>
+                                    <span class="saving">Tiết kiệm: <span class="text-red"
+                                                                          style="white-space: nowrap"><%=product.getSaleHaveDots()%></span></span>
                                 </div>
                                 <div class="col-4">
-                                    <span class="origin-price">30.000.000đ</span>
+                                    <span class="origin-price"
+                                          style="white-space: nowrap"><%=product.getRealPriceHaveDots()%></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="quantity mt-3">
-                            <span class="description fw-bold">Số lượng: </span>
-                            <div class="quantity-form">
-                                <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>
-                                <input class="input-quanlity" type="text" value="1" id="quantity">
-                                <button class="btn plus-btn" onclick="increaseQuantity()">+</button>
-                            </div>
-                        </div>
-                        <button class="add-to-cart-btn  mt-3">
-                            <div class="col-2">
-                                <i class="fas fa-shopping-cart cart-icon"></i>
-                            </div>
-                            <div class="col-10">
-                                <span class="fw-bold">Thêm vào giỏ hàng</span><br>
-                            </div>
-                        </button>
+
+                        <form action="cart?id=<%=product.getProductID()%>&active=add&page=product" method="post">
+
+
+                            <%--                            <div class="quantity mt-3">--%>
+                            <%--                                <span class="description fw-bold">Số lượng: </span>--%>
+                            <%--                                <div class="quantity-form">--%>
+                            <%--                                    <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>--%>
+                            <%--                                    <input name="quantity" class="input-quanlity" type="text" value="1" id="quantity">--%>
+                            <%--                                    <button class="btn plus-btn" onclick="increaseQuantity()">+</button>--%>
+                            <%--                                </div>--%>
+                            <%--                            </div>--%>
+                            <button type="submit" class="add-to-cart-btn  mt-3">
+                                <div class="col-2">
+                                    <i class="fas fa-shopping-cart cart-icon"></i>
+                                </div>
+                                <div class="col-10">
+                                    <span class="fw-bold">Thêm vào giỏ hàng</span><br>
+                                </div>
+                            </button>
+
+                        </form>
 
                         <div class="sale-box">
                             <div class="sale-title bg-primary-green">
@@ -140,133 +151,90 @@
                     </div>
 
                     <div class="product-contents mt4">
-                        <button id="show-info-btn" class="btn-info">THÔNG TIN SẢN PHẨM</button>
-                        <button id="show-spec-btn" class="btn-spec">THÔNG SỐ KỸ THUẬT</button>
-                        <button id="show-manual-btn" class="btn-manual">HƯỚNG DẪN SỬ DỤNG</button>
-                        <button id="show-warranty-policy-btn" class="btn-warranty">CHÍNH SÁCH BẢO HÀNH</button>
-                        <div class="description-info">
-                            <h2>Giới thiệu máy tạo oxy xách tay 5 lít Dynmed POC5</h2>
-                            <p>
-                                <strong>Máy tạo oxy xách tay 5L Dynmed POC5</strong>
-                                cung cấp oxy ổn định mỗi phút theo sự thay đổi liên tục của nhịp thở,
-                                mang đến hiệu quả trị liệu tối ưu đối với bệnh nhân mắc các bệnh về đường hô hấp, người
-                                lớn tuổi và
-                                những người được chỉ định cần tiếp nhận oxy bổ sung.
-                            </p>
-                            <p class="images-info">
-                                <img src="../image/product/may-oxi.jpg" alt="">
-                            </p>
-                            <p class="name-images-info">Máy tạo oxy xách tay 5 lít Dynmed POC5</p>
-                            <p>Người dùng có thể tùy chỉnh <strong>3 chế độ</strong> sử dụng gồm chế độ xung, chế độ tần
-                                số không đổi
-                                và chế độ cao nguyên dùng được ở cả độ cao đến 6000m.
-                                Với nồng độ oxy tinh khiết luôn đạt 93% ± 3% và lưu lượng dòng chảy lên đến 5L/phút,
-                                người dùng có thể an tâm trị liệu hiệu quả khi sử dụng
-                                <strong> máy tạo oxy xách tay Dynmed POC5.</strong>
-                            </p>
-                            <p class="images-info">
-                                <img src="../image/product/thong-tin-may-oxi.jpg" alt="">
-                            </p>
-                            <p>
-                                <strong>Máy tạo oxy 5 lít Dynmed POC5 </strong>
-                                còn được thiết kế với các tính năng an toàn nâng cao,
-                                phát báo động khi phát hiện lỗi trong quá trình sử dụng, đảm bảo an toàn cho người dùng.
-                                Màn hình cảm ứng 3,5 inch hiển thị thông số rõ nét, dễ dàng tùy chỉnh và theo dõi.
-                            </p>
-                        </div>
+                        <%--                        <button id="show-info-btn" class="btn-info">THÔNG TIN SẢN PHẨM</button>--%>
+                        <%--                        <button id="show-spec-btn" class="btn-spec">THÔNG SỐ KỸ THUẬT</button>--%>
+                        <%--                        <button id="show-manual-btn" class="btn-manual">HƯỚNG DẪN SỬ DỤNG</button>--%>
+                        <%--                        <button id="show-warranty-policy-btn" class="btn-warranty">CHÍNH SÁCH BẢO HÀNH</button>--%>
+                        <%--                        <div class="description-info">--%>
+                        <%--                            <h2>Giới thiệu máy tạo oxy xách tay 5 lít Dynmed POC5</h2>--%>
+                        <%--                            <p>--%>
+                        <%--                                <strong>Máy tạo oxy xách tay 5L Dynmed POC5</strong>--%>
+                        <%--                                cung cấp oxy ổn định mỗi phút theo sự thay đổi liên tục của nhịp thở,--%>
+                        <%--                                mang đến hiệu quả trị liệu tối ưu đối với bệnh nhân mắc các bệnh về đường hô hấp, người--%>
+                        <%--                                lớn tuổi và--%>
+                        <%--                                những người được chỉ định cần tiếp nhận oxy bổ sung.--%>
+                        <%--                            </p>--%>
+                        <%--                            <p class="images-info">--%>
+                        <%--                                <img src="../image/product/may-oxi.jpg" alt="">--%>
+                        <%--                            </p>--%>
+                        <%--                            <p class="name-images-info">Máy tạo oxy xách tay 5 lít Dynmed POC5</p>--%>
+                        <%--                            <p>Người dùng có thể tùy chỉnh <strong>3 chế độ</strong> sử dụng gồm chế độ xung, chế độ tần--%>
+                        <%--                                số không đổi--%>
+                        <%--                                và chế độ cao nguyên dùng được ở cả độ cao đến 6000m.--%>
+                        <%--                                Với nồng độ oxy tinh khiết luôn đạt 93% ± 3% và lưu lượng dòng chảy lên đến 5L/phút,--%>
+                        <%--                                người dùng có thể an tâm trị liệu hiệu quả khi sử dụng--%>
+                        <%--                                <strong> máy tạo oxy xách tay Dynmed POC5.</strong>--%>
+                        <%--                            </p>--%>
+                        <%--                            <p class="images-info">--%>
+                        <%--                                <img src="../image/product/thong-tin-may-oxi.jpg" alt="">--%>
+                        <%--                            </p>--%>
+                        <%--                            <p>--%>
+                        <%--                                <strong>Máy tạo oxy 5 lít Dynmed POC5 </strong>--%>
+                        <%--                                còn được thiết kế với các tính năng an toàn nâng cao,--%>
+                        <%--                                phát báo động khi phát hiện lỗi trong quá trình sử dụng, đảm bảo an toàn cho người dùng.--%>
+                        <%--                                Màn hình cảm ứng 3,5 inch hiển thị thông số rõ nét, dễ dàng tùy chỉnh và theo dõi.--%>
+                        <%--                            </p>--%>
+                        <%--                        </div>--%>
 
                         <div class="relative-product">
                             <div class="group_title mt-5">
                                 <div class="title-relative">
                                     <a class="title-name" href=" ">Sản phẩm liên quan</a>
                                 </div>
-                                <div class="button-control">
-                                    <div class="btn-green btn-small disabled">
-                                        <i class="fa-solid fa-chevron-left fa-chevron"></i>
-                                    </div>
-                                    <div class="btn-green btn-small">
-                                        <i class="fa-solid fa-chevron-right fa-chevron"></i>
-                                    </div>
-                                </div>
+                                <%--                                <div class="button-control">--%>
+                                <%--                                    <div class="btn-green btn-small disabled">--%>
+                                <%--                                        <i class="fa-solid fa-chevron-left fa-chevron"></i>--%>
+                                <%--                                    </div>--%>
+                                <%--                                    <div class="btn-green btn-small">--%>
+                                <%--                                        <i class="fa-solid fa-chevron-right fa-chevron"></i>--%>
+                                <%--                                    </div>--%>
+                                <%--                                </div>--%>
                             </div>
 
                             <div class="card-deck d-flex mr-child-20">
+                                <%
+                                    for (Product related : ListProdcutRelated) {
+                                %>
                                 <div class="card radius-green">
-                                    <span class="span-sale">Giảm 15%</span>
-                                    <img class="card-img-top" src="../image/product/may-tao-oxi1.jpg" alt="">
+                                    <div style="width: 250px;height: 250px">
+
+                                        <img src="<%=related.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                             alt=""
+                                             style="max-width: 100%;max-height: 100%;width: auto;">
+                                    </div>
+
                                     <div class="card-body">
-                                        <h3 class="card-title">
-                                            <a href="">
-                                                Máy Tạo Oxy Dynmed POC5
+                                        <h3 class="card-title"
+                                            style="width: 226px; /* Đặt chiều rộng tùy ý */ white-space: nowrap; /* Ngăn văn bản xuống dòng */ overflow: hidden; /* Ẩn phần vượt quá độ rộng */text-overflow: ellipsis; ">
+                                            <a href="product-detail?id=<%=related.getProductID()%>"
+                                               style="width: 200px">
+                                                <%=related.getName()%>
                                             </a>
                                         </h3>
                                         <div class="card-text">
                                             <div class="price-box">
-                                                25.500.000đ
+                                                <%=related.getPriceHaveDots()%>
                                                 <span class="price-compare">
-                                                        30.000.000đ
-                                                    </span>
+                                                        <%=related.getRealPriceHaveDots()%>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card radius-green">
-                                    <span class="span-sale">Giảm 15%</span>
-                                    <img class="card-img-top" src="../image/product/may-tao-oxi1.jpg" alt="">
-                                    <div class="card-body">
-                                        <h3 class="card-title">
-                                            <a href="">
-                                                Máy Tạo Oxy Dynmed POC5
-                                            </a>
-                                        </h3>
-                                        <div class="card-text">
-                                            <div class="price-box">
-                                                25.500.000đ
-                                                <span class="price-compare">
-                                                        30.000.000đ
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card radius-green">
-                                    <span class="span-sale">Giảm 15%</span>
-                                    <img class="card-img-top" src="../image/product/may-tao-oxi1.jpg" alt="">
-                                    <div class="card-body">
-                                        <h3 class="card-title">
-                                            <a href="">
-                                                Máy Tạo Oxy Dynmed POC5
-                                            </a>
-                                        </h3>
-                                        <div class="card-text">
-                                            <div class="price-box">
-                                                25.500.000đ
-                                                <span class="price-compare">
-                                                        30.000.000đ
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card radius-green">
-                                    <span class="span-sale">Giảm 15%</span>
-                                    <img class="card-img-top" src="../image/product/may-tao-oxi1.jpg" alt="">
-                                    <div class="card-body">
-                                        <h3 class="card-title">
-                                            <a href="">
-                                                Máy Tạo Oxy Dynmed POC5
-                                            </a>
-                                        </h3>
-                                        <div class="card-text">
-                                            <div class="price-box">
-                                                25.500.000đ
-                                                <span class="price-compare">
-                                                        30.000.000đ
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <%
+                                    }
+                                %>
+
 
                             </div>
 
@@ -349,19 +317,26 @@
     var imageInterval = setInterval(changeImage, 3000); // Thay đổi hình sau mỗi 3 giây
 
     // Hàm giảm số lượng
+    var allowFunctions = true;
+
     function decreaseQuantity() {
-        var quantityInput = document.getElementById("quantity");
-        var currentQuantity = parseInt(quantityInput.value);
-        if (currentQuantity > 1) {
-            quantityInput.value = currentQuantity - 1;
+        // Kiểm tra xem có nên thực hiện chức năng hay không
+        if (allowFunctions) {
+            var quantityInput = document.getElementById("quantity");
+            var currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+            }
         }
     }
 
-    // Hàm tăng số lượng
     function increaseQuantity() {
-        var quantityInput = document.getElementById("quantity");
-        var currentQuantity = parseInt(quantityInput.value);
-        quantityInput.value = currentQuantity + 1;
+        // Kiểm tra xem có nên thực hiện chức năng hay không
+        if (allowFunctions) {
+            var quantityInput = document.getElementById("quantity");
+            var currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+        }
     }
 </script>
 

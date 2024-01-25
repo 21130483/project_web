@@ -108,11 +108,11 @@
 <div class="menu">
     <div class="container">
         <ul class="category-menus">
-            <li><a href="assets/html/cacsanpham.html" class="category-menu">Dụng cụ y tế</a></li>
-            <li><a href="assets/html/cacsanpham.html" class="category-menu">Dụng cụ theo dõi</a></li>
-            <li><a href="assets/html/cacsanpham.html" class="category-menu">Dụng cụ sơ cứu</a></li>
-            <li><a href="assets/html/cacsanpham.html" class="category-menu">Khẩu trang</a></li>
-            <li><a href="assets/html/sick.html" class="category-menu">Bệnh</a></li>
+            <li><a href="findProduct?active=category&categoryID=1" class="category-menu">Khẩu trang</a></li>
+            <li><a href="findProduct?active=category&categoryID=3" class="category-menu">Máy đo huyết áp</a></li>
+            <li><a href="findProduct?active=category&categoryID=2" class="category-menu">Máy massage</a></li>
+            <li><a href="findProduct?active=category&categoryID=6" class="category-menu">Nhiệt kế</a></li>
+            <li><a href="sick.jsp" class="category-menu">Bệnh</a></li>
             <li><a href="" class="category-menu">Góc sức khỏe</a></li>
             <li><a href="introduce.jsp" class="category-menu">Giới thiệu</a></li>
         </ul>

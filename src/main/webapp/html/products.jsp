@@ -1,5 +1,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page import="model.Category" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -42,16 +46,51 @@
 
     <div class="noi-dung">
         <div class="bang-sap-xep">
-            <div class="container" style="display: flex; margin-bottom: 0;padding-bottom: 0;">
+            <div class="container"
+                 style="display: flex; margin-bottom: 0;padding-bottom: 0;justify-content: space-between">
                 <p style="font-size: 18px;">Kết quả tiềm kiếm cho từ khóa
                     "<%=
-<<<<<<< HEAD
                     request.getAttribute("textFindProducts")
-=======
-                        request.getAttribute("textFindProducts")
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
                     %>"
                 </p>
+
+                <form action="findProduct" method="get">
+                    <input value="category" name="active" style="display: none">
+                    <select name="categoryID" style="font-size: 17px">
+                        <option value="0" style="font-size: 17px"
+                                <%
+                                    if (categoryID == 0) {
+                                %>
+                                selected
+                                <%
+                                    }
+                                %>
+                        >Mặc định
+                        </option>
+                        <%
+                            for (Category c : categories) {
+                        %>
+                        <option value="<%=c.getCategoryID()%>" style="font-size: 17px"
+                                <%
+                                    if (c.getCategoryID() == categoryID) {
+                                %>
+                                selected
+                                <%
+                                    }
+                                %>
+                        >
+                            <%=c.getName()%>
+                        </option>
+                        <%
+                            }
+                        %>
+                    </select>
+
+                    <button type="submit"
+                            style="width: 100px;height: 27px; font-size: 16px;border: none;background-color: #305BD4;color: white;border-radius: 10px;">
+                        Áp dụng
+                    </button>
+                </form>
             </div>
             <div class="container">
                 <div class="sap-xep-theo">
@@ -205,8 +244,7 @@
                         <%
                             if
                             (getFindProducts != null) {
-                                for
-                                (int i = 0 + ((currentPage - 1) * 20); i < 20 * currentPage; i++) {
+                                for (int i = 0 + ((currentPage - 1) * 20); i < 20 * currentPage; i++) {
 
                                     if (getFindProducts.size() <= i) {
                                         break;
@@ -217,8 +255,9 @@
                         <li class="san-pham">
                             <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
+
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                         alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">

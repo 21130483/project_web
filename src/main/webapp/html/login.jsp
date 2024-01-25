@@ -12,6 +12,7 @@
     <title>Login</title>
 </head>
 <body>
+<% String err = (String) request.getAttribute("err") == null ? "" : (String) request.getAttribute("err"); %>
 <div class="section">
     <div class="form-container">
         <form method="post" action="login">

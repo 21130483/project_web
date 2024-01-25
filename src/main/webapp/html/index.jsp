@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -49,7 +50,7 @@
                             <a href="">
                                 <div class="box">
                                     <!-- <span>1302 x 300</span> -->
-                                    <img src="../image/index/thiet-bi-yte.jpg" alt="">
+                                    <img src="../image/index/trang2.jpg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -58,7 +59,7 @@
                             <a href="">
                                 <div class="box">
                                     <!-- <span>1302 x 300</span> -->
-                                    <img src="../image/index/thiet-bi-yte.jpg" alt="">
+                                    <img src="../image/index/trang3.png" alt="">
                                 </div>
                             </a>
                         </div>
@@ -126,74 +127,82 @@
 
                 <div class="cac-category">
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=1" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/khẩutrang.jpg"
+                                     style="max-width:100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Khẩu trang</span>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=6" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/nhiệt%20kế.jpg"
+                                     style="max-width: 100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Nhiệt kế</span>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=2" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/máy%20massage%20y%20tế.jpg"
+                                     style="max-width:100%;max-height: 120%;height: auto;width: auto;">
                             </div>
-                            <span>Máy đo đường huyết</span>
+                            <span>Máy massage</span>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=4" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/băng%20y%20tế.webp"
+                                     style="max-width:130%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Băng y tế</span>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=9" class="button">
                             <div class="circle">
-
+                                <img src="../image/index/dụng%20cụ%20xét%20nghiệm.jpg"
+                                     style="max-width:160%;max-height: 100%;height: auto;width: auto;">
                             </div>
-                            <span>Nước xịt khuẩn</span>
+                            <span>dụng cụ xét nghiệm</span>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
+                        <a href="findProduct?active=category&categoryID=10" class="button">
                             <div class="circle">
+                                <img src="../image/index/găng%20tay%20y%20tế.jpg"
+                                     style="max-width:100%;max-height: 100%;height: auto;width: auto;">
+                            </div>
+                            <span>Găng tay y tế</span>
+                        </a>
+                    </div>
 
+                    <div class="box">
+                        <a href="findProduct?active=category&categoryID=3" class="button">
+                            <div class="circle">
+                                <img src="../image/index/máy%20đo%20huyết%20áp.webp"
+                                     style="max-width:150%;max-height: 100%;height: auto;width: auto;">
+                            </div>
+                            <span>Máy đo huyết áp</span>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <a href="findProduct?active=category&categoryID=5" class="button">
+                            <div class="circle">
+                                <img src="../image/index/Bông%20y%20tế.jpg"
+                                     style="max-width:100%;max-height: 100%;height: auto;width: auto;">
                             </div>
                             <span>Bông y tế</span>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
-                            <div class="circle">
-
-                            </div>
-                            <span>Dụng cụ vệ sinh mũi</span>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="assets/html/cacsanpham.html" class="button">
-                            <div class="circle">
-
-                            </div>
-                            <span>Máy massage</span>
                         </a>
                     </div>
                 </div>
@@ -221,7 +230,7 @@
                             <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
                                     <!-- 248 x 248 -->
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
@@ -422,10 +431,10 @@
                             for (Product p : productsBestFaceMask) {
                         %>
                         <li class="san-pham">
-                            <a href="product.jsp" class="link-san-pham">
+                            <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
                                     <!-- 248 x 248 -->
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
@@ -442,9 +451,14 @@
                                         <%=p.getPriceHaveDots()%>
                                     </div>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                                    <form action="cart?id=<%=p.getProductID()%>&active=add&page=index" method="post"
+
+                                          style="width: 100%; height: 100%">
+                                        <button type="submit" class="them-san-pham">
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                    </form>
+
 
                                 </div>
                             </a>
@@ -619,10 +633,10 @@
                             for (Product p : newProduct) {
                         %>
                         <li class="san-pham">
-                            <a href="product.jsp" class="link-san-pham">
+                            <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
-                                    <!-- 248 x 248 -->
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="">
+
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
@@ -639,9 +653,14 @@
                                         <%=p.getPriceHaveDots()%>
                                     </div>
 
-                                    <button class="them-san-pham">
-                                        Thêm vào giỏ hàng
-                                    </button>
+                                    <form action="cart?id=<%=p.getProductID()%>&active=add&page=index" method="post"
+
+                                          style="width: 100%; height: 100%">
+                                        <button type="submit" class="them-san-pham">
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                    </form>
+
 
                                 </div>
                             </a>
