@@ -164,6 +164,15 @@ public class Product {
         this.dateAdded = dateAdded;
     }
 
+    public int numberImg(String path) {
+        File fileImg = new File(path);
+        if (fileImg.exists()) {
+
+            return fileImg.list().length;
+        } else {
+            return 0;
+        }
+    }
 
     @Override
     public boolean equals(Object o) {

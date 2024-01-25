@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -19,11 +21,11 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+    <%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"--%>
+    <%--          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">--%>
+    <%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"--%>
+    <%--            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"--%>
+    <%--            crossorigin="anonymous"></script>--%>
 </head>
 
 <body>
@@ -32,6 +34,44 @@
 <div class="page">
     <%
         User user = (User) session.getAttribute("user");
+    %>
+    <%@ page import="model.Account" %>
+    <%@ page import="model.Order" %>
+    <%@ page import="java.util.List" %>
+    <%@ page import="model.Product" %>
+    <%
+        Account acInfo = (Account) request.getSession().getAttribute("accountInfo");
+        String status = request.getParameter("status");
+        String field = request.getParameter("field");
+        Object ordersObject = request.getSession().getAttribute("orders");
+        List<Order> orders = null;
+        if (ordersObject != null) {
+            orders = (List<Order>) ordersObject;
+        }
+        if (field == null)
+            field = "";
+        String note = "";
+        if (status != null) {
+            switch (status) {
+                case "success":
+                    note = "Cập nhật thông tin thành công";
+                    break;
+                case "failed":
+                    note = "Cập nhật thông tin không thành công";
+                    break;
+                case "failed-0":
+                    note = "Lỗi thông tin nhập vào";
+                    break;
+                case "failed-1":
+                    note = "Thông tin không khớp";
+                    break;
+                default:
+                    note = "Có lỗi";
+                    break;
+            }
+        } else {
+            note = "";
+        }
     %>
 
 
@@ -75,7 +115,21 @@
                                 <div class="Account-head" style="background: rgb(170, 124, 13);">
                                     <div class="AvtAndName">
                                         <i class="imgAvtName fa-regular fa-user"></i>
+                                        <%
+                                            if (user.getRole() == false) {
+                                        %>
                                         <div class="fullName">Khach Hang</div>
+                                        <%
+                                            }
+                                        %>
+                                        <%
+                                            if (user.getRole() == true) {
+                                        %>
+                                        <div class="fullName">Admin</div>
+                                        <%
+                                            }
+                                        %>
+
                                     </div>
 
                                 </div>
@@ -118,13 +172,9 @@
                                                 <h3 class="AccountMenu-menu-label">Sản phẩm yêu thích</h3>
                                             </li>
                                         </div>
-
                                         <%
-
-                                            if (user != null || user.getRole()) {
+                                            if (user.getRole() == true) {
                                         %>
-
-
                                         <a href="admin?page=product" style="text-decoration: none;color: #112950">
                                             <div class="favourites">
                                                 <li class="list">
@@ -133,12 +183,9 @@
                                                 </li>
                                             </div>
                                         </a>
-
                                         <%
                                             }
                                         %>
-
-
                                     </ul>
                                     <div class="AccountMenu_support">
                                         <div class="list">
@@ -175,14 +222,7 @@
                                         <div class="ListOrderTab_tab">
                                             <div class="ListOrderTab_tab-item luuidol-item1">
                                                 <button
-                                                        class="ListOrderTab_tab-name ">Chờ xác
-                                                    nhận
-                                                </button>
-                                            </div>
-                                            <div class="ListOrderTab_tab-item luuidol-item2">
-                                                <button
-                                                        class="ListOrderTab_tab-name">Đang
-                                                    đóng gói
+                                                        class="ListOrderTab_tab-name ">Đang xử lý
                                                 </button>
                                             </div>
                                             <div class="ListOrderTab_tab-item luuidol-item3">
@@ -208,126 +248,60 @@
                                         <div class="ListOrderTab_tab-content">
                                             <!-- Nếu chưa có đơn hàng nào -->
                                             <div class="EmptyResult_empty-result luuidol-empty1">
-                                                <div><img src="../img/account/giphy2.gif" alt="empty-cart">
-                                                    <p>Bạn chưa có đơn hàng nào rồi!</p>
+                                                <div><img src="../image/account/giphy2.gif" alt="empty-cart">
+                                                    <p>Bạn có đơn hàng nào rồi!</p>
                                                 </div>
                                             </div>
 
-                                            <!-- Nếu đã có đơn hàng đang chờ xác nhận -->
+                                            <!-- Nếu đã có đơn hàng đang xử lý -->
                                             <div class="Confirmation-result" style="display: none;">
                                                 <div class="cac-san-pham">
                                                     <ul>
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
+                                                        <c:forEach var="item" items="${listOrderItem}">
+                                                            <c:if test="${item.getStatus()==0}">
+                                                                <li class="san-pham ">
+                                                                    <div class="link-san-pham">
+                                                                        <div class="noi-dung-san-pham">
+                                                                            <div class="khoang-trong"></div>
 
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
+                                                                            <div class="ten-san-pham">
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
+                                                                            </div>
 
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
+                                                                            <div class="khoang-trong"></div>
+
+                                                                            <div class="gia-san-pham">
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
+                                                                                    <%--                                                                            10.000 đ/Hộp--%>
+                                                                            </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                                            />
+                                                                            <p class="waitXacNhan">Chờ xác nhận....</p>
+
+                                                                            <form action="<c:url value="/html/cancel"/> "
+                                                                                  method="post">
+                                                                                <input type="hidden" name="purchaseID"
+                                                                                       value="${item.getPurchaseID()}">
+                                                                                <button class="buy-now-product them-san-pham ">
+                                                                                    <div class="a-none-fff ">Hủy đơn
+                                                                                        hàng
+                                                                                    </div>
+                                                                                </button>
+                                                                            </form>
+
+                                                                        </div>
                                                                     </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-                                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                    <p class="waitXacNhan">Đang chờ xác nhận....</p>
-
-                                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                                    <button class="buy-now-product them-san-pham ">
-                                                                        <div class="a-none-fff ">Hủy đơn hàng</div>
-                                                                    </button>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
-
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
-                                                                    </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-                                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                    <p class="waitXacNhan">Đang chờ xác nhận....</p>
-
-                                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                                    <button class="buy-now-product them-san-pham ">
-                                                                        <div class="a-none-fff ">Hủy đơn hàng</div>
-                                                                    </button>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
+                                                                </li>
+                                                            </c:if>
+                                                        </c:forEach>
 
                                                     </ul>
                                                 </div>
 
-                                            </div>
-
-                                            <!-- Nếu đơn hàng đang đóng gói -->
-                                            <div class="Packing-result" style="display: none;">
-                                                <div class="cac-san-pham">
-                                                    <ul>
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
-
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
-                                                                    </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-                                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                    <p class="waitXacNhan">Đơn hàng đang được đóng
-                                                                        gói</p>
-
-                                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                                    <button class="buy-now-product them-san-pham ">
-                                                                        <div class="a-none-fff ">Hủy đơn hàng</div>
-                                                                    </button>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
                                             </div>
 
                                             <!-- Nếu đơn hàng đang giao -->
@@ -335,37 +309,36 @@
                                             <div class="AreDelivering-result" style="display: none;">
                                                 <div class="cac-san-pham">
                                                     <ul>
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
+                                                        <c:forEach var="item" items="${listOrderItem}">
+                                                            <c:if test="${item.getStatus()==1}">
+                                                                <li class="san-pham ">
+                                                                    <div class="link-san-pham">
+                                                                        <div class="noi-dung-san-pham">
+                                                                            <div class="khoang-trong"></div>
 
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
+                                                                            <div class="ten-san-pham">
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
+                                                                            </div>
 
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
+                                                                            <div class="khoang-trong"></div>
+
+                                                                            <div class="gia-san-pham">
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
+                                                                            </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
+                                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                                            <p class="waitXacNhan">Đang giao....</p>
+
+                                                                        </div>
                                                                     </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-                                                                    <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                                    <p class="waitXacNhan">Đơn hàng đang giao</p>
-
-                                                                    <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                                    <p class="waitXacNhan">Vui lòng để ý điện thoại
-                                                                        trong vài ngày tới</p>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
+                                                                </li>
+                                                            </c:if>
+                                                        </c:forEach>
 
                                                     </ul>
                                                 </div>
@@ -376,121 +349,77 @@
                                             <div class="ReceiveSuccess-result" style="display: none;">
                                                 <div class="cac-san-pham">
                                                     <ul>
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
+                                                        <c:forEach var="item" items="${listOrderItem}">
+                                                            <c:if test="${item.getStatus()==2}">
+                                                                <li class="san-pham ">
+                                                                    <div class="link-san-pham">
+                                                                        <div class="noi-dung-san-pham">
+                                                                            <div class="khoang-trong"></div>
 
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
+                                                                            <div class="ten-san-pham">
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
+                                                                            </div>
 
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
+                                                                            <div class="khoang-trong"></div>
+
+                                                                            <div class="gia-san-pham">
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
+                                                                            </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
+                                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                                            <p class="waitXacNhan">Đã giao thành
+                                                                                công</p>
+
+                                                                        </div>
                                                                     </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
-
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
-                                                                    </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
-
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
-                                                                    </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="san-pham ">
-                                                            <div class="link-san-pham">
-                                                                <div class="img-san-pham">
-                                                                    248 x 248
-                                                                </div>
-
-                                                                <div class="noi-dung-san-pham">
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="ten-san-pham">
-                                                                        Gel bảo vệ da chiết xuất hoàng cầm Baifem K
-                                                                        (15g)
-                                                                    </div>
-
-                                                                    <div class="khoang-trong"></div>
-
-                                                                    <div class="gia-san-pham">
-                                                                        10.000 đ/Hộp
-                                                                        <i
-                                                                                class="icon-nolove-product fa-solid fa-heart"></i>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
+                                                                </li>
+                                                            </c:if>
+                                                        </c:forEach>
                                                     </ul>
                                                 </div>
                                             </div>
 
                                             <!-- Nếu hủy đơn hàng -->
-                                            <div class="cac-san-pham">
+                                            <div class="Cancel-result" style="display: none;">
+                                                <div class="cac-san-pham">
+                                                    <ul>
+                                                        <c:forEach var="item" items="${listOrderItem}">
+                                                            <c:if test="${item.getStatus()==-1}">
+                                                                <li class="san-pham ">
+                                                                    <div class="link-san-pham">
+                                                                        <div class="noi-dung-san-pham">
+                                                                            <div class="khoang-trong"></div>
 
-                                                <ul class="Cancel-result">
+                                                                            <div class="ten-san-pham">
+                                                                                <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
+                                                                            </div>
 
-                                                </ul>
+                                                                            <div class="khoang-trong"></div>
 
+                                                                            <div class="gia-san-pham">
+                                                                                <fmt:formatNumber
+                                                                                        value="${item.getPrice()}"
+                                                                                        type="currency"
+                                                                                        pattern="###,### đ"/>
+                                                                            </div>
+                                                                            <fmt:formatDate value="${item.getOrderDate()}"
+                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
+                                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
+                                                                            <p class="waitXacNhan">Đã hủy</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </c:if>
+                                                        </c:forEach>
+                                                    </ul>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -537,7 +466,7 @@
                                         <div class="ListOrderTab_tab-content">
                                             <!-- Nếu chưa có mã giảm giá -->
                                             <div class="EmptyResult_empty-result luuidol-empty2">
-                                                <div><img src="../img/account/giphy2.gif" alt="empty-cart">
+                                                <div><img src="../image/account/giphy2.gif" alt="empty-cart">
                                                     <p>Bạn chưa có mã giảm giá nào</p>
                                                 </div>
                                             </div>
@@ -603,74 +532,74 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="Voucher-item pd-right-28">
-                                                            <div class="list-voucher">
-                                                                <div class="brand">
-                                                                    <h2>
-                                                                        VOUCHER
-                                                                    </h2>
-                                                                </div>
-                                                                <div class="discount peter-river">
-                                                                    15%
-                                                                    <div class="type">
-                                                                        off
-                                                                    </div>
-                                                                </div>
-                                                                <div class="descr">
-                                                                    <strong>
-                                                                        Phiếu giảm giá 15% *.
-                                                                    </strong>
-                                                                    Cho tất cả các đơn hàng.
-                                                                </div>
-                                                                <div class="ends">
-                                                                    <small>
-                                                                        * Hạn sử dụng đến hết 19/01/2024.
-                                                                    </small>
-                                                                </div>
-                                                                <div class="coupon midnight-blue">
-                                                                    <a href="#code-3" class="open-code3">Hiện mã
-                                                                        code</a>
-                                                                    <div id="code-3" class="collapse code"
-                                                                         style="display: none;">
-                                                                        L2P15
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Voucher-item pd-right-28">
-                                                            <div class="list-voucher">
-                                                                <div class="brand">
-                                                                    <h2>
-                                                                        VOUCHER
-                                                                    </h2>
-                                                                </div>
-                                                                <div class="discount amethyst">
-                                                                    25%
-                                                                    <div class="type">
-                                                                        off
-                                                                    </div>
-                                                                </div>
-                                                                <div class="descr">
-                                                                    <strong>
-                                                                        Phiếu giảm giá 25%*.
-                                                                    </strong>
-                                                                    Áp dụng cho đơn hàng 200K trở lên.
-                                                                </div>
-                                                                <div class="ends">
-                                                                    <small>
-                                                                        * Hạn sử dụng đến 11/11/2024.
-                                                                    </small>
-                                                                </div>
-                                                                <div class="coupon midnight-blue">
-                                                                    <a href="#code-4" class="open-code4">Hiện mã
-                                                                        code</a>
-                                                                    <div id="code-4" class="collapse code"
-                                                                         style="display: none;">
-                                                                        L2P25
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <%--                                                        <div class="Voucher-item pd-right-28">--%>
+                                                        <%--                                                            <div class="list-voucher">--%>
+                                                        <%--                                                                <div class="brand">--%>
+                                                        <%--                                                                    <h2>--%>
+                                                        <%--                                                                        VOUCHER--%>
+                                                        <%--                                                                    </h2>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="discount peter-river">--%>
+                                                        <%--                                                                    15%--%>
+                                                        <%--                                                                    <div class="type">--%>
+                                                        <%--                                                                        off--%>
+                                                        <%--                                                                    </div>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="descr">--%>
+                                                        <%--                                                                    <strong>--%>
+                                                        <%--                                                                        Phiếu giảm giá 15% *.--%>
+                                                        <%--                                                                    </strong>--%>
+                                                        <%--                                                                    Cho tất cả các đơn hàng.--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="ends">--%>
+                                                        <%--                                                                    <small>--%>
+                                                        <%--                                                                        * Hạn sử dụng đến hết 19/01/2024.--%>
+                                                        <%--                                                                    </small>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="coupon midnight-blue">--%>
+                                                        <%--                                                                    <a href="#code-3" class="open-code3">Hiện mã--%>
+                                                        <%--                                                                        code</a>--%>
+                                                        <%--                                                                    <div id="code-3" class="collapse code"--%>
+                                                        <%--                                                                         style="display: none;">--%>
+                                                        <%--                                                                        L2P15--%>
+                                                        <%--                                                                    </div>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                            </div>--%>
+                                                        <%--                                                        </div>--%>
+                                                        <%--                                                        <div class="Voucher-item pd-right-28">--%>
+                                                        <%--                                                            <div class="list-voucher">--%>
+                                                        <%--                                                                <div class="brand">--%>
+                                                        <%--                                                                    <h2>--%>
+                                                        <%--                                                                        VOUCHER--%>
+                                                        <%--                                                                    </h2>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="discount amethyst">--%>
+                                                        <%--                                                                    25%--%>
+                                                        <%--                                                                    <div class="type">--%>
+                                                        <%--                                                                        off--%>
+                                                        <%--                                                                    </div>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="descr">--%>
+                                                        <%--                                                                    <strong>--%>
+                                                        <%--                                                                        Phiếu giảm giá 25%*.--%>
+                                                        <%--                                                                    </strong>--%>
+                                                        <%--                                                                    Áp dụng cho đơn hàng 200K trở lên.--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="ends">--%>
+                                                        <%--                                                                    <small>--%>
+                                                        <%--                                                                        * Hạn sử dụng đến 11/11/2024.--%>
+                                                        <%--                                                                    </small>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="coupon midnight-blue">--%>
+                                                        <%--                                                                    <a href="#code-4" class="open-code4">Hiện mã--%>
+                                                        <%--                                                                        code</a>--%>
+                                                        <%--                                                                    <div id="code-4" class="collapse code"--%>
+                                                        <%--                                                                         style="display: none;">--%>
+                                                        <%--                                                                        L2P25--%>
+                                                        <%--                                                                    </div>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                            </div>--%>
+                                                        <%--                                                        </div>--%>
                                                     </div>
                                                 </div>
                                             </section>
@@ -736,22 +665,49 @@
                                                                 <div class="brand">
                                                                     <h2>VOUCHER</h2>
                                                                 </div>
-                                                                <div class="discount alizarin">40%
-                                                                    <div class="type">off</div>
+                                                                <div class="discount emerald">
+                                                                    50%
+                                                                    <div class="type">
+                                                                        off
+                                                                    </div>
                                                                 </div>
                                                                 <div class="descr">
-                                                                    <strong>Phiếu giảm giá 40%*.</strong>
-                                                                    Cho tất cả các đơn hàng.
+                                                                    <strong>
+                                                                        Phiếu giảm giá 50%*.
+                                                                    </strong>
+                                                                    Áp dụng cho đơn hàng 100K trở lên.
                                                                 </div>
                                                                 <div class="ends">
-                                                                    <small>* Hết hạn.</small>
+                                                                    <small>
+                                                                        * Đã hết hạn
+                                                                    </small>
                                                                 </div>
                                                                 <div class="coupon midnight-blue">
-                                                                    <a href="#code-1" class="open-code">Đã hết
-                                                                        hạn</a>
+                                                                    <a href="#code-2" class="open-code2">Đã hết hạn</a>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <%--                                                        <div class="Voucher-item pd-right-28">--%>
+                                                        <%--                                                            <div class="list-voucher">--%>
+                                                        <%--                                                                <div class="brand">--%>
+                                                        <%--                                                                    <h2>VOUCHER</h2>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="discount alizarin">50%--%>
+                                                        <%--                                                                    <div class="type">off</div>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="descr">--%>
+                                                        <%--                                                                    <strong>Phiếu giảm giá 50%*.</strong>--%>
+                                                        <%--                                                                    Cho tất cả các đơn hàng.--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="ends">--%>
+                                                        <%--                                                                    <small>* Hết hạn.</small>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                                <div class="coupon midnight-blue">--%>
+                                                        <%--                                                                    <a href="#code-1" class="open-code">Đã hết--%>
+                                                        <%--                                                                        hạn</a>--%>
+                                                        <%--                                                                </div>--%>
+                                                        <%--                                                            </div>--%>
+                                                        <%--                                                        </div>--%>
                                                     </div>
                                                 </div>
                                             </section>
@@ -776,7 +732,7 @@
                             </div>
                             <div class="Desktop_big-box">
                                 <div class="AccountDetails_profile">
-                                    <form action="user-edit?active=info" method="post">
+                                    <form action="user-edit?userId=<%=user.getUserID()%>" method="post">
                                         <div class="AccountDetails_info">
                                             <div class="AccountDetails_avatar">
                                                 <div class="AccountDetails_photo-upload" style="display: grid;">
@@ -793,7 +749,8 @@
                                         <div class="AccountDetails_detail">
                                             <div>
                                                 <div class="InputTextField_input-text-field">
-                                                    <label>Họ và tên<span>*</span></label>
+                                                    <label><i class="fa-solid fa-check-double"></i>Họ và
+                                                        tên<span>*</span></label>
                                                     <div class="InputTextField_input-group">
                                                         <input name="full_name" maxlength="150" type="text"
                                                                placeholder="Vui lòng nhập họ và tên"
@@ -802,8 +759,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="AccountDetails_gender"><label>Giới tính</label>
-                                                <div class="d-flex">
+                                            <div class="AccountDetails_gender"><label style="font-size: 20px">Giới
+                                                tính</label>
+                                                <div class="d-flex" style="border-bottom: 1px solid #e5e5e5;">
 
                                                     <div>Nam</div>
                                                     <input type="radio" name="gender" value="nam"
@@ -834,27 +792,32 @@
 
                                                 </div>
                                             </div>
-                                            <div class="DateField_date-field AccountDetails_birthday">
-                                                <label>Ngày tháng năm sinh <span>*</span></label>
+                                            <div class="DateField_date-field AccountDetails_birthday"
+                                                 style="padding-bottom: 10px; border-bottom: 1px solid #e5e5e5">
+                                                <label><i class="fa-solid fa-check-double"></i>Ngày tháng năm sinh
+                                                    <span>*</span></label>
                                                 <input type="date" name="date" value="<%=user.getDobString()%>" style="    width: 136px;
                                                     height: 40px;
                                                     font-size: 16px;
                                                     border-radius: 16px;
-                                                    margin-top: 8px;
+                                                    margin-top: 16px;
+                                                    margin-left: 132px;
                                                     padding-left: 8px;">
 
                                             </div>
-                                            <div class="InputTextField_input-text-field"><label>Số điện
+                                            <div class="InputTextField_input-text-field"><label><i
+                                                    class="fa-solid fa-check-double"></i>Số điện
                                                 thoại</label>
                                                 <div class="InputTextField_input-group">
                                                     <input name="phone_number" type="text" class=""
-                                                           value="<%=user.getPhoneNumbers()%>"
+                                                           value="0<%=user.getPhoneNumbers()%>"
                                                            placeholder="Vui lòng nhập số điện thoại">
                                                 </div>
                                             </div>
                                             <div class="AccountDetails_email">
                                                 <div class="InputTextField_input-text-field">
-                                                    <label>Email<span>*</span></label>
+                                                    <label style="padding-top: 20px"><i
+                                                            class="fa-solid fa-check-double"></i>Email<span>*</span></label>
                                                     <div class="InputTextField_input-group"><input name="email"
                                                                                                    maxlength="255"
                                                                                                    type="email"
@@ -899,9 +862,9 @@
                                         <div class="ListOrderTab_tab-content">
                                             <div class="EmptyResult_empty-result luuidol-empty3"
                                                  style="display: grid;">
-<%--                                                <div><img src="../img/account/giphy2.gif" alt="empty-cart">--%>
-<%--                                                    <p>Bạn chưa thêm địa chỉ</p>--%>
-<%--                                                </div>--%>
+                                                <div><img src="../image/account/giphy2.gif" alt="empty-cart">
+                                                    <p>Bạn chưa thêm địa chỉ</p>
+                                                </div>
                                                 <button class="btn-add-address"
                                                         style="width: 400px; height: 50px; background-color: blue; color: #fff; border-radius: 32px; margin-top: 16px;">
                                                     Thêm địa chỉ nhận hàng
@@ -929,107 +892,122 @@
                             <div class="ListOrder_list-order">
                                 <div class="ListOrder_order-body">
                                     <div class="ListOrderTab_list-order-tab">
-
                                         <div class="cac-san-pham">
                                             <ul>
-                                                <li class="san-pham ">
-                                                    <div class="link-san-pham">
-                                                        <div class="img-san-pham">
-                                                            248 x 248
-                                                        </div>
+                                                <%
+                                                    List<Product> p = (List) request.getAttribute("getBestSelling");
+                                                %>
 
-                                                        <div class="noi-dung-san-pham">
-                                                            <div class="khoang-trong"></div>
-
-                                                            <div class="ten-san-pham">
-                                                                Gel bảo vệ da chiết xuất hoàng cầm Baifem K (15g)
-                                                            </div>
-
-                                                            <div class="khoang-trong"></div>
-
-                                                            <div class="gia-san-pham">
-                                                                10.000 đ/Hộp
-                                                                <i class="icon-love-product fa-solid fa-heart"></i>
-                                                            </div>
-                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                            <button class="them-san-pham">
-                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
-                                                            </button>
-
-                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                            <!-- <button class="buy-now-product them-san-pham">
-                                                        <a class="a-none-fff" href="#">Mua ngay</a>
-                                                      </button> -->
-
-                                                        </div>
-                                                    </div>
-                                                </li>
-
+                                                <%
+                                                    for (int i = 0; i < 2; i++) {
+                                                %>
                                                 <li class="san-pham">
-                                                    <div class="link-san-pham">
+                                                    <a href="product-detail?id=<%=p.get(i).getProductID()%>"
+                                                       class="link-san-pham">
                                                         <div class="img-san-pham">
-                                                            248 x 248
+                                                            <!-- 248 x 248 -->
+                                                            <img src="../image/product/<%=p.get(i).getProductID()%>/0.webp"
+                                                                 alt="" style="width: 248px">
                                                         </div>
 
                                                         <div class="noi-dung-san-pham">
                                                             <div class="khoang-trong"></div>
 
-                                                            <div class="ten-san-pham">
-                                                                Sản phẩm 2
+                                                            <div class="ten-san-pham"
+                                                                 style="max-height: 50px; max-width: 224px;overflow: hidden; text-overflow: ellipsis">
+                                                                <%=p.get(i).getName()%>
                                                             </div>
 
                                                             <div class="khoang-trong"></div>
 
                                                             <div class="gia-san-pham">
-                                                                10.000 đ/Hộp
-                                                                <i class="icon-love-product fa-solid fa-heart"></i>
+                                                                <%=p.get(i).getPriceHaveDots()%>
+
                                                             </div>
-                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                            <button class="them-san-pham">
-                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
-                                                            </button>
 
-                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                            <!-- <button class="buy-now-product them-san-pham">
-                                                        <a class="a-none-fff" href="#">Mua ngay</a>
-                                                      </button> -->
+                                                            <form action="cart?id=<%=p.get(i).getProductID()%>&active=add&page=index"
+                                                                  method="post"
 
+                                                                  style="width: 100%; height: 100%">
+                                                                <button type="submit" class="them-san-pham">
+                                                                    Thêm vào giỏ hàng
+                                                                </button>
+                                                            </form>
                                                         </div>
-                                                    </div>
+                                                    </a>
+                                                    <i class="icon-love-product fa-solid fa-heart"
+                                                       style="position: absolute; top:390px"></i>
+
+
                                                 </li>
+                                                <%
+                                                    }
+                                                %>
+                                                <%--                                                <li class="san-pham">--%>
+                                                <%--                                                    <div class="link-san-pham">--%>
+                                                <%--                                                        <div class="img-san-pham">--%>
+                                                <%--                                                            248 x 248--%>
+                                                <%--                                                        </div>--%>
 
-                                                <li class="san-pham">
-                                                    <div class="link-san-pham">
-                                                        <div class="img-san-pham">
-                                                            248 x 248
-                                                        </div>
+                                                <%--                                                        <div class="noi-dung-san-pham">--%>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                        <div class="noi-dung-san-pham">
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="ten-san-pham">--%>
+                                                <%--                                                                Sản phẩm 2--%>
+                                                <%--                                                            </div>--%>
 
-                                                            <div class="ten-san-pham">
-                                                                Sản phẩm 3
-                                                            </div>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
 
-                                                            <div class="khoang-trong"></div>
+                                                <%--                                                            <div class="gia-san-pham">--%>
+                                                <%--                                                                10.000 đ/Hộp--%>
+                                                <%--                                                                <i class="icon-love-product fa-solid fa-heart"></i>--%>
+                                                <%--                                                            </div>--%>
+                                                <%--                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->--%>
+                                                <%--                                                            <button class="them-san-pham">--%>
+                                                <%--                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>--%>
+                                                <%--                                                            </button>--%>
 
-                                                            <div class="gia-san-pham">
-                                                                70.000 đ/Chiếc
-                                                                <i class="icon-love-product fa-solid fa-heart"></i>
-                                                            </div>
-                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->
-                                                            <button class="them-san-pham">
-                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>
-                                                            </button>
+                                                <%--                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->--%>
+                                                <%--                                                            <!-- <button class="buy-now-product them-san-pham">--%>
+                                                <%--                                                        <a class="a-none-fff" href="#">Mua ngay</a>--%>
+                                                <%--                                                      </button> -->--%>
 
-                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->
-                                                            <!-- <button class="buy-now-product them-san-pham">
-                                                        <a class="a-none-fff" href="#">Mua ngay</a>
-                                                      </button> -->
+                                                <%--                                                        </div>--%>
+                                                <%--                                                    </div>--%>
+                                                <%--                                                </li>--%>
 
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                <%--                                                <li class="san-pham">--%>
+                                                <%--                                                    <div class="link-san-pham">--%>
+                                                <%--                                                        <div class="img-san-pham">--%>
+                                                <%--                                                            248 x 248--%>
+                                                <%--                                                        </div>--%>
+
+                                                <%--                                                        <div class="noi-dung-san-pham">--%>
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
+
+                                                <%--                                                            <div class="ten-san-pham">--%>
+                                                <%--                                                                Sản phẩm 3--%>
+                                                <%--                                                            </div>--%>
+
+                                                <%--                                                            <div class="khoang-trong"></div>--%>
+
+                                                <%--                                                            <div class="gia-san-pham">--%>
+                                                <%--                                                                70.000 đ/Chiếc--%>
+                                                <%--                                                                <i class="icon-love-product fa-solid fa-heart"></i>--%>
+                                                <%--                                                            </div>--%>
+                                                <%--                                                            <!-- Khi ấn vào di chuyển đến giỏ hàng -->--%>
+                                                <%--                                                            <button class="them-san-pham">--%>
+                                                <%--                                                                <a class="a-none-fff" href="#">Thêm vào giỏ hàng</a>--%>
+                                                <%--                                                            </button>--%>
+
+                                                <%--                                                            <!-- Khi ấn vào sẽ di chuyển đến phần thanh toán -->--%>
+                                                <%--                                                            <!-- <button class="buy-now-product them-san-pham">--%>
+                                                <%--                                                        <a class="a-none-fff" href="#">Mua ngay</a>--%>
+                                                <%--                                                      </button> -->--%>
+
+                                                <%--                                                        </div>--%>
+                                                <%--                                                    </div>--%>
+                                                <%--                                                </li>--%>
 
 
                                             </ul>
@@ -1081,17 +1059,17 @@
             <div class="main-address">
                 <div class="address-box">
                     <h2>Thiết lập mật khẩu</h2>
-                    <form action="user-edit?active=pass" method="post">
+                    <form action="pass-edit?userId=<%=user.getUserID()%>" method="post">
                         <div class="user-box">
-                            <input type="password" name="oldpass" required="">
+                            <input type="password" name="oldpass">
                             <label>Mật khẩu cũ</label>
                         </div>
                         <div class="user-box">
-                            <input type="password" name="newpass1" required="">
+                            <input type="password" name="newpass1">
                             <label>Mật khẩu mới</label>
                         </div>
                         <div class="user-box">
-                            <input type="password" name="newpass2" required="">
+                            <input type="password" name="newpass2">
                             <label>Nhập lại mật khẩu mới</label>
                         </div>
 
@@ -1125,12 +1103,12 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <h2>Thông tin liên lạc</h2>
-                <h2>Email:</h2>
+                <h2 style="color: #fff">Thông tin liên lạc</h2>
+                <h2 style="color: #fff">Email:</h2>
                 <p style="color: #000;">LuuLongPhuoc@gamil.com</p>
-                <h2>Số điện thoại:</h2>
+                <h2 style="color: #fff">Số điện thoại:</h2>
                 <p style="color: #000;">0162 ngày mai nói tiếp</p>
-                <h2>Địa chỉ:</h2>
+                <h2 style="color: #fff">Địa chỉ:</h2>
                 <p style="color: #000;">Số 123,Tổ 3, Khu phố 6, Linh Trung, Thủ Đức, TP HCM</p>
             </a>
         </div>
@@ -1160,9 +1138,7 @@
             reader.readAsDataURL(selectedPhoto);
         });
     }
-</script>
 
-<script>
     $(document).ready(function () {
 
         // order click
@@ -1238,7 +1214,7 @@
             $(".AreDelivering-result").show();
             $(".ReceiveSuccess-result").hide();
             $(".Cancel-result").hide();
-        })
+        });
 
         $(".luuidol-item4").click(function () {
             $(".luuidol-empty1").hide();
@@ -1247,7 +1223,7 @@
             $(".AreDelivering-result").hide();
             $(".ReceiveSuccess-result").show();
             $(".Cancel-result").hide();
-        })
+        });
 
         $(".luuidol-item5").click(function () {
             $(".luuidol-empty1").hide();
@@ -1256,7 +1232,7 @@
             $(".AreDelivering-result").hide();
             $(".ReceiveSuccess-result").hide();
             $(".Cancel-result").show();
-        })
+        });
 
         // end click item order
 
@@ -1348,7 +1324,7 @@
 
         // end love product
 
-        // hủy đơn hàng 
+        // hủy đơn hàng
 
         $(".buy-now-product").click(function () {
             // $(this).closest('.san-pham').hide();
@@ -1419,9 +1395,267 @@
         $(".contact-info").click(function (e) {
             e.stopPropagation();
         });
-
-
-    });
-
-
+    })
 </script>
+
+
+<%--<script>--%>
+<%--    $(document).ready(function () {--%>
+
+<%--        // order click--%>
+<%--        $(".history").click(function () {--%>
+<%--            $("#one").show();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".voucher").click(function () {--%>
+<%--            $("#two").show();--%>
+<%--            $("#one").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+<%--        $(".desgin").click(function () {--%>
+<%--            $("#three").show();--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".addresser").click(function () {--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").show();--%>
+<%--            $("#five").hide();--%>
+<%--        });--%>
+
+
+<%--        $(".favourite").click(function () {--%>
+<%--            $("#one").hide();--%>
+<%--            $("#two").hide();--%>
+<%--            $("#three").hide();--%>
+<%--            $("#four").hide();--%>
+<%--            $("#five").show();--%>
+<%--        })--%>
+
+<%--        // end order click--%>
+
+<%--        // click item order ------------------------------------------------%>
+
+<%--        $(".luuidol-item1").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").show();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item2").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").show();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item3").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").show();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item4").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").show();--%>
+<%--            $(".Cancel-result").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-item5").click(function () {--%>
+<%--            $(".luuidol-empty1").hide();--%>
+<%--            $(".Confirmation-result").hide();--%>
+<%--            $(".Packing-result").hide();--%>
+<%--            $(".AreDelivering-result").hide();--%>
+<%--            $(".ReceiveSuccess-result").hide();--%>
+<%--            $(".Cancel-result").show();--%>
+<%--        });--%>
+
+<%--        // end click item order--%>
+
+<%--        // address add--%>
+
+<%--        $(".btn-add-address").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $("#add-address").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('#add-address').length) {--%>
+<%--                $("#add-address").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $("#add-address").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+
+
+<%--        // $(".btn-save-address").click(function () {--%>
+<%--        //     $(".luuidol-empty3").hide();--%>
+<%--        //     $("#add-address").hide();--%>
+<%--        //     // Lấy giá trị từ input--%>
+<%--        //     var fullName = $("#fullName-address").val();--%>
+<%--        //     var phoneAddress = $("#phone-address").val();--%>
+<%--        //     var address = $("#address-address").val();--%>
+<%--        //     var emailAddress = $("#email-address").val();--%>
+<%--        //--%>
+<%--        //     // Hiển thị dữ liệu đã lưu trong một thẻ div--%>
+<%--        //     $(".show-abc").html("<p>Họ Tên: " + fullName + "</p><p>Số Điện Thoại: " + phoneAddress +--%>
+<%--        //         "</p><p>Địa chỉ: " + address + "</p><p> Email: " + emailAddress +--%>
+<%--        //         "</p><button class='edit-button-address'>Chỉnh Sửa</button>");--%>
+<%--        // });--%>
+
+<%--        $(".edit-button-address").click(function () {--%>
+<%--            $("#add-address").show();--%>
+<%--            // Đặt lại giá trị cho input--%>
+<%--            $("#fullName-address").val(fullName);--%>
+<%--            $("#phone-address").val(phoneAddress);--%>
+<%--            $("#address-address").val(address);--%>
+<%--            $("#email-address").val(emailAddress);--%>
+<%--        });--%>
+
+<%--        // end add address--%>
+
+<%--        // password add--%>
+
+<%--        $(".btn-add-password").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $("#add-password").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('#add-password').length) {--%>
+<%--                $("#add-password").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $("#add-password").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+
+<%--        // and add password--%>
+
+
+<%--        // btn-order-item--%>
+
+<%--        $(".ListOrderTab_tab-item").click(function () {--%>
+<%--            $(".ListOrderTab_tab-item").removeClass("btn-click-bottom-blue");--%>
+<%--            $(this).addClass("btn-click-bottom-blue");--%>
+<%--        });--%>
+
+<%--        // end btn-order-item--%>
+
+
+<%--        // love product--%>
+
+<%--        $(".icon-love-product").click(function () {--%>
+<%--            // $(".icon-love-product").removeClass("color-love-click");--%>
+<%--            // $(this).addClass("color-love-click");--%>
+<%--            $(this).closest('.san-pham').hide();--%>
+<%--        });--%>
+
+<%--        $(".icon-nolove-product").click(function () {--%>
+<%--            $(this).addClass("red-color").toggleClass("ccc-color");--%>
+<%--        })--%>
+
+<%--        // end love product--%>
+
+<%--        // hủy đơn hàng --%>
+
+<%--        $(".buy-now-product").click(function () {--%>
+<%--            // $(this).closest('.san-pham').hide();--%>
+<%--            var closestSanpham = $(this).closest('.san-pham');--%>
+<%--            closestSanpham.appendTo('.Cancel-result');--%>
+<%--            $(this).hide();--%>
+<%--        });--%>
+
+<%--        // end hủy đơn hàng--%>
+
+<%--        // Voucher --------------------------%>
+
+<%--        $(".open-code1").click(function () {--%>
+<%--            $("#code-1").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code2").click(function () {--%>
+<%--            $("#code-2").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code3").click(function () {--%>
+<%--            $("#code-3").toggle();--%>
+<%--        });--%>
+
+<%--        $(".open-code4").click(function () {--%>
+<%--            $("#code-4").toggle();--%>
+<%--        });--%>
+
+<%--        // --------------------%>
+<%--        $(".luuidol-voucher1").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").show();--%>
+<%--            $(".Use-voucher").hide();--%>
+<%--            $(".NoUse-voucher").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-voucher2").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").hide();--%>
+<%--            $(".Use-voucher").show();--%>
+<%--            $(".NoUse-voucher").hide();--%>
+<%--        });--%>
+
+<%--        $(".luuidol-voucher3").click(function () {--%>
+<%--            $(".luuidol-empty2").hide();--%>
+<%--            $(".Have-voucher").hide();--%>
+<%--            $(".Use-voucher").hide();--%>
+<%--            $(".NoUse-voucher").show();--%>
+<%--        });--%>
+
+<%--        // end voucher--%>
+
+
+<%--        // contct--%>
+
+
+<%--        $(".contact-button").click(function (e) {--%>
+<%--            e.stopPropagation(); // khi click vào body - phần này thì nó sẽ ẩn đi--%>
+<%--            $(".contact-info").toggle();--%>
+<%--        });--%>
+
+<%--        $(document).click(function (e) {--%>
+<%--            if (!$(e.target).closest('.contact-info').length) {--%>
+<%--                $(".contact-info").hide();--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--        $(".contact-info").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+<%--    })--%>
+<%--    --%>
+<%--</script>--%>

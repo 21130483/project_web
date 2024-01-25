@@ -86,7 +86,7 @@ html {
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
-    border: thin solid gray;
+    border: thin solid ;
 }
 
 .react-date-picker__inputGroup {
@@ -352,8 +352,8 @@ html {
     padding: 24px;
     box-sizing: border-box;
     /* overflow: hidden; */
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
+    /*height: -webkit-fit-content;*/
+    /*height: -moz-fit-content;*/
     height: fit-content;
     min-height: 300px;
 }
@@ -424,20 +424,20 @@ html {
     position: relative;
 }
 
-.InputTextField_input-text-field .InputTextField_input-group input, .InputTextField_input-text-field .InputTextField_input-group textarea {
-    outline: none;
-    box-sizing: border-box;
-    background-color: transparent;
-    padding: 9px 0;
-    border: none;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid #e5e5e5;
-    font-size: .938rem;
-    line-height: 18px;
-    width: 100%;
-    border-radius: 0;
-    font-family: inherit;
-}
+/*.InputTextField_input-text-field .InputTextField_input-group input, .InputTextField_input-text-field .InputTextField_input-group textarea {*/
+/*    outline: none;*/
+/*    box-sizing: border-box;*/
+/*    background-color: transparent;*/
+/*    padding: 9px 0;*/
+/*    border: none;*/
+/*    border-top: 1px solid transparent;*/
+/*    border-bottom: 1px solid #e5e5e5;*/
+/*    font-size: 20px;*/
+/*    line-height: 18px;*/
+/*    width: 100%;*/
+/*    border-radius: 0;*/
+/*    font-family: inherit;*/
+/*}*/
 
 .AccountDetails_gender {
     margin-top: 32px;
@@ -452,10 +452,12 @@ html {
 
 .AccountDetails_gender>div {
     margin-top: 10px;
+   padding-left: 132px;
 }
 
 .AccountDetails_gender>div>div:not(:last-child) {
     margin-right: 60px;
+    font-size: 20px;
 }
 
 .AccountDetails_gender>div>div {
@@ -522,7 +524,7 @@ html {
 
 
 .DateField_date-field label {
-    font-size: .75rem;
+    font-size: 20px;
     line-height: 18px;
 }
 
@@ -582,7 +584,7 @@ svg:not(:root) {
     border: none;
     border-top: 1px solid transparent;
     border-bottom: 1px solid #e5e5e5;
-    font-size: .938rem;
+    font-size: 20px;
     line-height: 18px;
     width: 100%;
     border-radius: 0;
@@ -614,17 +616,17 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-.Button_button__primary {
-    background-color: var(--pmc-color-primary);
-    color: #fff;
-    border: 1px solid var(--pmc-color-primary);
-}
+/*.Button_button__primary {*/
+/*    background-color: var(--pmc-color-primary);*/
+/*    color: #fff;*/
+/*    border: 1px solid var(--pmc-color-primary);*/
+/*}*/
 
-.Button_button__primary {
-    background-color: var(--pmc-color-primary);
-    color: #fff;
-    border: 1px solid var(--pmc-color-primary);
-}
+/*.Button_button__primary {*/
+/*    background-color: var(--pmc-color-primary);*/
+/*    color: #fff;*/
+/*    border: 1px solid var(--pmc-color-primary);*/
+/*}*/
 
 .Button_button {
     cursor: pointer;
@@ -635,11 +637,11 @@ svg:not(:root) {
     border-radius: 0.75rem;
 }
 
-.Button_button__primary {
-    background-color: var(--pmc-color-primary);
-    color: #fff;
-    border: 1px solid var(--pmc-color-primary);
-}
+/*.Button_button__primary {*/
+/*    background-color: var(--pmc-color-primary);*/
+/*    color: #fff;*/
+/*    border: 1px solid var(--pmc-color-primary);*/
+/*}*/
 
 .Button_button {
     cursor: pointer;
@@ -772,6 +774,7 @@ svg:not(:root) {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+      margin-top: 70px;
   }
 
   
@@ -1124,13 +1127,18 @@ svg:not(:root) {
   
   }
   
+  .noi-dung-san-pham .ten-san-pham a{
+      text-decoration: none;
+      font-size: 16px;
+  }
   .noi-dung-san-pham .ten-san-pham{
     font-size: 16px;
     display: flex;
     text-align: left;
     color: #112950;
+      margin-top: -30px;
   }
-  
+
   .noi-dung-san-pham .gia-san-pham{
     display: flex;
     font-size: 16px;

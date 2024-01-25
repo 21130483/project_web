@@ -35,28 +35,12 @@
 
     <%
         List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
-
-        int categoryID = (int) request.getAttribute("getCategoryID");
-        List<Category> categories = (List) request.getAttribute("getCategories");
         int currentPage = (int) request.getAttribute("getcurrentPage");
         int numberPages = (int) request.getAttribute("getnumberPages");
         int priceBy = (int) request.getAttribute("getpriceBy");
         int detail = (int) request.getAttribute("getDetail");
         int from = (int) request.getAttribute("getFrom");
         int to = (int) request.getAttribute("getTo");
-//        if (detail != 0) {
-//            Collections.sort(getFindProducts, new Comparator<Product>() {
-//                @Override
-//                public int compare(Product o1, Product o2) {
-//                    if (detail == 1) {
-//                        return o2.getDateAdded().compareTo(o1.getDateAdded());
-//                    } else {
-//                        return o2.getOrderedNumber() - o1.getOrderedNumber();
-//                    }
-//                }
-//            });
-//
-//        }
     %>
 
 

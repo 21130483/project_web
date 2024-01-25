@@ -1,4 +1,5 @@
 <%@ page import="model.Product" %>
+<%@ page import="java.io.File" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>

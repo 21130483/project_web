@@ -1,7 +1,11 @@
 package controller;
 
 import dao.AddressDAO;
+import dao.OrderDAO;
+import dao.PurchasesDAO;
 import model.Address;
+import model.OrderItem;
+import model.Purchases;
 import model.User;
 
 import javax.servlet.FilterChain;
@@ -32,19 +36,39 @@ import java.util.List;
 //}
 @WebServlet("/html/account")
 public class AccountFilter extends HttpServlet {
+    PurchasesDAO purchasesDAO = new PurchasesDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
-        if (user!=null){
+        List<Purchases> listOrderItem = purchasesDAO.getAllPurchases(user.getUserID());
+        if (user != null) {
             AddressDAO addressDAO = new AddressDAO();
             List<Address> addresses = addressDAO.getAddressByUserId(user.getUserID());
-            req.setAttribute("addresses",addresses);
+            req.setAttribute("listOrderItem", listOrderItem);
+            req.setAttribute("addresses", addresses);
             req.getRequestDispatcher("account.jsp").forward(req, resp);
-        }else{
+        } else {
             resp.sendRedirect("login.jsp");
         }
-
     }
+
 }
+//@WebServlet("/html/account")
+//public class AccountFilter extends HttpServlet {
+//
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        HttpSession session = req.getSession();
+//        User user = (User) session.getAttribute("user");
+//        if (user!=null){
+//            AddressDAO addressDAO = new AddressDAO();
+//            List<Address> addresses = addressDAO.getAddressByUserId(user.getUserID());
+//            req.setAttribute("addresses",addresses);
+//            req.getRequestDispatcher("/html/account.jsp").forward(req, resp);
+//        }else{
+//            resp.sendRedirect("login.jsp");
+//        }
+//    }
+//}

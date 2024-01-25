@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="model.User" %>
 <%@ page import="model.Cart" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -88,7 +89,7 @@
                         </div>
                         <% User user = (User) session.getAttribute("user");%>
                         <% if (user != null) {%>
-                        <a href="account" class="link-button">
+                        <a href="<c:url value="/html/account"/> " class="link-button">
                             <span class="span-text"><%=user.getFullName()%></span>
                         </a>
                         <% } else {%>

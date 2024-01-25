@@ -1,7 +1,9 @@
 package controller;
 
+import dao.PurchasesDAO;
 import dao.UserDAO;
 import model.User;
+import util.HttpUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,58 +18,27 @@ import java.text.SimpleDateFormat;
 
 @WebServlet("/html/user-edit")
 public class UserEdit extends HttpServlet {
+    PurchasesDAO purchasesDAO = new PurchasesDAO();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        User user = (User) session.getAttribute("user");
-        String active = req.getParameter("active");
+//        HttpSession session = req.getSession();
+//        User user = (User) req.getSession().getAttribute("user");
         UserDAO userDAO = new UserDAO();
-        switch (active) {
-            case "info":
+        String userId = req.getParameter("userId");
+        User user = userDAO.getUserById(Integer.parseInt(userId));
                 String fullName = req.getParameter("full_name");
                 String gender = req.getParameter("gender");
-                System.out.println(gender);
                 String dobString = req.getParameter("date");
                 String phone = req.getParameter("phone_number");
                 String email = req.getParameter("email");
-
-                if (!user.getFullName().equals(fullName)) {
-                    userDAO.updateUser(user.getUserID(), "fullName", fullName);
-                }
-                if (!user.getGender().equals(gender)) {
-                    userDAO.updateUser(user.getUserID(), "gender", gender);
-                }
-
-                if (!user.getDobString().equals(dobString)) {
-                    userDAO.updateUser(user.getUserID(), "dob", dobString);
-                }
-
-
-                if (user.getPhoneNumbers() != Integer.parseInt(phone)) {
-                    userDAO.updateUser(user.getUserID(), "phoneNumbers", phone);
-                }
-                if (email.contains("@") && !user.getEmail().equals(email)) {
-                    userDAO.updateUser(user.getUserID(), "email", email);
-                }
-
-                break;
-
-            case "pass":
-                System.out.println("thay doi pass");
-                String oldpass = req.getParameter("oldpass");
-                String newpass1 = req.getParameter("newpass1");
-                String newpass2 = req.getParameter("newpass2");
-
-                if (user.getPassword().equals(oldpass) && newpass1.equals(newpass2)) {
-                    userDAO.updateUser(user.getUserID(), "password", newpass1);
-                }
-
-
-                break;
-            default:
-                System.out.println("sai cau lenh");
-        }
-        session.setAttribute("user", userDAO.getUserById(user.getUserID()));
+                user.setFullName(fullName);
+                user.setGender(gender);
+                user.setDob(Date.valueOf(dobString));
+                user.setPhoneNumbers(Integer.parseInt(phone));
+                user.setEmail(email);
+                userDAO.updateUser1(user);
+        req.setAttribute("listOrderItem", purchasesDAO.getAllPurchases(user.getUserID()));
+        req.getSession().setAttribute("user", user);
         req.getRequestDispatcher("account.jsp").forward(req, resp);
     }
 }
