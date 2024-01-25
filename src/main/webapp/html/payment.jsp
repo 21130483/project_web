@@ -52,12 +52,8 @@
                             <li class="san-pham-muon-mua">
                                 <div class="input-img-ten-san-pham">
                                     <div class="img-san-pham">
-                                        <%
-                                            File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + p.getProductID());
-                                            File[] files = fileImg.listFiles();
-                                            String name = files[0].getName();
-                                        %>
-                                        <img src="../image/product/<%=p.getProductID()%>/<%=name%>" alt=""
+
+                                        <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt=""
                                              style="max-width: 100%;max-height: 100%;height: auto;width: auto;">
                                     </div>
 

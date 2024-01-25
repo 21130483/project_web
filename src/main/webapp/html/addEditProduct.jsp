@@ -93,7 +93,7 @@
             <div class="button-them-huy">
                 <button type="submit" style="background-color: inherit;border: none; height: auto; width: auto" >
                     <div class="them">
-                        Cập nhật
+                        Thêm
                     </div>
                 </button>
 

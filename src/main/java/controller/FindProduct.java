@@ -71,13 +71,7 @@ public class FindProduct extends HttpServlet {
             case "category":
                 System.out.println("active " + active);
                 categoryID = Integer.parseInt(req.getParameter("categoryID"));
-                ProductDAO productDAO = new ProductDAO();
-                if (categoryID != 0) {
-                    list = productDAO.getFindProductsCategory(textFindProducts, categoryID);
-                } else {
-                    list = productDAO.getFindProducts(textFindProducts);
-                }
-
+                listByCategory();
                 countNumberPages();
                 currentPage = 1;
                 break;
@@ -110,6 +104,7 @@ public class FindProduct extends HttpServlet {
         list = productDAO.getFindProducts(textFindProducts);
         categoryID = 0;
         priceBy = 0;
+        detail = 0;
         countNumberPages();
         currentPage = 1;
         req.setAttribute("textFindProducts", textFindProducts);
@@ -151,13 +146,13 @@ public class FindProduct extends HttpServlet {
                     if (detail == 1) {
                         return o2.getDateAdded().compareTo(o1.getDateAdded());
                     } else {
-                        return o2.getOrderedNumber() - o1.getOrderedNumber();
+                        return o2.getOrderedNumbers() - o1.getOrderedNumbers();
                     }
                 }
             });
         } else {
             ProductDAO productDAO = new ProductDAO();
-            list = productDAO.getFindProducts(textFindProducts);
+            listByCategory();
         }
     }
 
@@ -186,6 +181,15 @@ public class FindProduct extends HttpServlet {
         }
         countNumberPages();
 
+    }
+
+    public void listByCategory() {
+        ProductDAO productDAO = new ProductDAO();
+        if (categoryID != 0) {
+            list = productDAO.getFindProductsCategory(textFindProducts, categoryID);
+        } else {
+            list = productDAO.getFindProducts(textFindProducts);
+        }
     }
 
     public void countNumberPages() {

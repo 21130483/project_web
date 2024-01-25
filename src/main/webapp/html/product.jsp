@@ -1,5 +1,4 @@
 <%@ page import="model.Product" %>
-<%@ page import="java.io.File" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -28,12 +27,9 @@
                 <div class="left-slide">
                     <div class="product-left">
                         <div class="product-left-big-images">
-                            <%
-                                File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + productm.getProductID());
-                                File[] files = fileImg.listFiles();
-                                String name = files[0].getName();
-                            %>
-                            <img src="../image/product/<%=product.getProductID()%>/<%=name%>" alt="">
+
+                            <img src="<%=product.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                 alt="">
                         </div>
                         <div class="product-left-small-images" onclick="changeBigImage(event)">
                             <%--                            <img src="../image/product/may-tao-oxi1.jpg" alt="">--%>
@@ -45,18 +41,17 @@
                             <%
 
                                 int numberImg = (int) request.getAttribute("numberImg");
-                                for (int i = 0; i < numberImg; i++) {
+                                for (String path : product.getPathImage(request.getServletContext().getRealPath(""))) {
+
                             %>
 
-                            <%
-                                File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + p.getProductID());
-                                File[] files = fileImg.listFiles();
-                                String name = files[0].getName();
-                            %>
-                            <img src="../image/product/<%=product.getProductID()%>/<%=name%>" alt="">
+
+                            <img src="<%=path%>" alt="" style="max-width: 100%; max-height: 100%;  height: auto; width: auto">
+
                             <%
                                 }
                             %>
+
                         </div>
                     </div>
                     <div class="product-details">
@@ -211,12 +206,9 @@
                                 %>
                                 <div class="card radius-green">
                                     <div style="width: 250px;height: 250px">
-                                        <%
-                                            File fileImgRelated = new File(request.getServletContext().getRealPath("") + "/image/product/" + related.getProductID());
-                                            File[] filesRelated = fileImgRelated.listFiles();
-                                            String nameRelated = filesRelated[0].getName();
-                                        %>
-                                        <img src="../image/product/<%=related.getProductID()%>/<%=nameRelated%>" alt=""
+
+                                        <img src="<%=related.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                             alt=""
                                              style="max-width: 100%;max-height: 100%;width: auto;">
                                     </div>
 

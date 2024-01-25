@@ -1,3 +1,5 @@
+<%@ page import="dao.CategoryDAO" %>
+<%@ page import="model.Category" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -17,57 +19,88 @@
             <p>Thông tin phiếu giảm giá</p>
         </div>
 
-        <div class="dien-thong-tin">
-            <div class="box">
-                Id phiếu giảm giá
-                <input type="text">
-                Phiếu giảm giá
-                <input type="text">
-                Khuyến mãi
-                <input type="text">
-                Số lượng
-                <input type="text">
+
+        <%
+            CategoryDAO categoryDAO = new CategoryDAO();
+            String active = request.getParameter("active");
+            if (active.equals("add")) {
+
+
+        %>
+        <form action="category?active=add" method="post">
+
+            <div class="dien-thong-tin">
+                <div class="box">
+                    Id loại sản phẩm
+                    <input name="id" type="text" value="<%=categoryDAO.getIdNewCategory()%>" readonly>
+
+                </div>
+
+
+                <div class="box">
+                    Tên loại sản phẩm
+                    <input name="name" type="text">
+                </div>
+
+
             </div>
 
 
-            <div class="box">
-                Điều kiện
-                <input type="text">
-                Dành cho
-                <select>
-                    <option value="">Sản phẩm</option>
-                    <option value="">Phí vận chuyển</option>
-                </select>
-                Ngày hết hạn
-                <input type="date">
+            <div class="button-them-huy">
+                <button type="submit" style="background-color: inherit;border: none; height: auto; width: auto" >
+                    <div class="them">
+                        Thêm
+                    </div>
+                </button>
+
+                <a href="admin?page=voucher">
+                    <div class="huy">
+                        Hủy
+                    </div>
+                </a>
+            </div>
+        </form>
+        <%
+        } else {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Category category = categoryDAO.getCategoryById(id);
+        %>
+        <form action="category?active=edit" method="post">
+
+            <div class="dien-thong-tin">
+                <div class="box">
+                    Id loại sản phẩm
+                    <input name="id" type="text" value="<%=category.getCategoryID()%>" readonly>
+
+                </div>
+
+
+                <div class="box">
+                    Tên loại sản phẩm
+                    <input name="name" value="<%=category.getName()%>" type="text">
+                </div>
+
+
             </div>
 
 
-        </div>
+            <div class="button-them-huy">
+                <button type="submit" style="background-color: inherit;border: none; height: auto; width: auto" >
+                    <div class="them">
+                        Cập nhật
+                    </div>
+                </button>
 
-        <div class="hinh-anh">
-            Hình ảnh
-            <input type="file">
-        </div>
-
-        <div class="chi-tiet">
-            Chi tiết
-            <textarea></textarea>
-        </div>
-
-        <div class="button-them-huy">
-            <a href="quanlyvoucher.html">
-                <div class="them">
-                    Thêm phiếu giảm giá
-                </div>
-            </a>
-
-            <a href="quanlyvoucher.html">
-                <div class="huy">
-                    Hủy
-                </div>
-            </a>
-        </div>
+                <a href="admin?page=voucher">
+                    <div class="huy">
+                        Hủy
+                    </div>
+                </a>
+            </div>
+        </form>
+        <%
+            }
+        %>
     </div>
 </div>
 </body>

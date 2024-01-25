@@ -52,7 +52,7 @@ public class AddEditDeleteProduct extends HttpServlet {
                 break;
             case "delete":
                 int deleteProductID = Integer.parseInt(req.getParameter("id"));
-//                product
+                productDAO.deleteProduct(deleteProductID);
                 req.getRequestDispatcher("admin?page=product").forward(req, resp);
                 break;
             default:

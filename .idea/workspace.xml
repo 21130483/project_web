@@ -10,8 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FindProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/managerVouchers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/managerVouchers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerVouchers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +55,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -249,11 +271,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CategoryDAO" />
+        <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.PurchasesDAO" />
         <item itemvalue="Application.UserDAO" />
-        <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.OriginDAO" />
-        <item itemvalue="Application.CategoryDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -300,6 +322,7 @@
       <workItem from="1705992528781" duration="2040000" />
       <workItem from="1706001925661" duration="101000" />
       <workItem from="1706090117514" duration="65000" />
+      <workItem from="1706153099555" duration="8035000" />
     </task>
     <servers />
   </component>
@@ -331,8 +354,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/model/Product.java</url>
-          <line>203</line>
-          <properties class="model.Product" method="main">
+          <line>238</line>
+          <properties class="model.Product">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

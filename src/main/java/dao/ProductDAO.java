@@ -84,6 +84,11 @@ public class ProductDAO {
         return check;
     }
 
+    public static boolean deleteProduct(int id) {
+        boolean check = handle.execute("DELETE FROM products WHERE productID = ?",id) > 0;
+        return check;
+    }
+
     public static int getNewProductID() {
         int countID = 0;
         Product product;
@@ -93,6 +98,12 @@ public class ProductDAO {
             product = getProductById(countID);
         } while (product != null);
         return countID;
+    }
+
+    public int countProductByCategory(int categoryID){
+        List<Product> result = new ArrayList<>();
+        result = handle.select("SELECT * FROM products WHERE categoryID = ? ").bind(0,categoryID).mapToBean(Product.class).collect(Collectors.toList());
+        return result.size();
     }
 
     public static void main(String[] args) {

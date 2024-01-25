@@ -21,7 +21,7 @@ public class ProductDetailController extends HttpServlet {
         Product product = productDAO.getProductById(productID);
         List<Product> relateToProduct = productDAO.getRelateProduct(product,4);
         String path = req.getServletContext().getRealPath("");
-        int numberImg = product.numberImg(path+"image/product/"+product.getProductID());
+        int numberImg = product.getNumberImg(path);
         req.setAttribute("productDetail",product);
         req.setAttribute("getProductRelated",relateToProduct);
         req.setAttribute("numberImg",numberImg);
@@ -36,7 +36,7 @@ public class ProductDetailController extends HttpServlet {
         Product product = productDAO.getProductById(productID);
         List<Product> relateToProduct = productDAO.getRelateProduct(product,4);
         String path = req.getServletContext().getRealPath("");
-        int numberImg = product.numberImg(path+"image/product/"+product.getProductID());
+        int numberImg = product.getNumberImg(path);
         req.setAttribute("productDetail",product);
         req.setAttribute("getProductRelated",relateToProduct);
         req.setAttribute("numberImg",numberImg);

@@ -46,7 +46,7 @@
             <li class="button-muc-luc">
                 <a href="admin?page=voucher">
                     <div class="a">
-                        Quản lý phiếu giảm giá
+                        Quản lý loại sản phẩm
                     </div>
                 </a>
             </li>

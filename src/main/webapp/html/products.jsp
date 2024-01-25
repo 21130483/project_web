@@ -2,6 +2,8 @@
 <%@ page import="model.Product" %>
 <%@ page import="model.Category" %>
 <%@ page import="java.io.File" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -33,6 +35,7 @@
 
     <%
         List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
+
         int categoryID = (int) request.getAttribute("getCategoryID");
         List<Category> categories = (List) request.getAttribute("getCategories");
         int currentPage = (int) request.getAttribute("getcurrentPage");
@@ -41,6 +44,19 @@
         int detail = (int) request.getAttribute("getDetail");
         int from = (int) request.getAttribute("getFrom");
         int to = (int) request.getAttribute("getTo");
+//        if (detail != 0) {
+//            Collections.sort(getFindProducts, new Comparator<Product>() {
+//                @Override
+//                public int compare(Product o1, Product o2) {
+//                    if (detail == 1) {
+//                        return o2.getDateAdded().compareTo(o1.getDateAdded());
+//                    } else {
+//                        return o2.getOrderedNumber() - o1.getOrderedNumber();
+//                    }
+//                }
+//            });
+//
+//        }
     %>
 
 
@@ -244,8 +260,7 @@
                         <%
                             if
                             (getFindProducts != null) {
-                                for
-                                (int i = 0 + ((currentPage - 1) * 20); i < 20 * currentPage; i++) {
+                                for (int i = 0 + ((currentPage - 1) * 20); i < 20 * currentPage; i++) {
 
                                     if (getFindProducts.size() <= i) {
                                         break;
@@ -256,12 +271,9 @@
                         <li class="san-pham">
                             <a href="product-detail?id=<%=p.getProductID()%>" class="link-san-pham">
                                 <div class="img-san-pham">
-                                    <%
-                                        File fileImg = new File(request.getServletContext().getRealPath("") + "/image/product/" + p.getProductID());
-                                        File[] files = fileImg.listFiles();
-                                        String name = files[0].getName();
-                                    %>
-                                    <img src="../image/product/<%=p.getProductID()%>/<%=name%>" alt="">
+
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                         alt="">
                                 </div>
 
                                 <div class="noi-dung-san-pham">
