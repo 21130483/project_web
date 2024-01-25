@@ -10,15 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ManagerBill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/EditUser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/managerBills.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/managerBills.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerBills.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Enum" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -259,10 +257,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserDAO" />
         <item itemvalue="Application.PurchasesDAO" />
         <item itemvalue="Application.CategoryDAO" />
         <item itemvalue="Application.ProductDAO" />
-        <item itemvalue="Application.UserDAO" />
         <item itemvalue="Application.OriginDAO" />
       </list>
     </recent_temporary>
@@ -310,7 +308,7 @@
       <workItem from="1705992528781" duration="2040000" />
       <workItem from="1706001925661" duration="101000" />
       <workItem from="1706090117514" duration="65000" />
-      <workItem from="1706153099555" duration="11343000" />
+      <workItem from="1706153099555" duration="13604000" />
     </task>
     <servers />
   </component>

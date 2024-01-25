@@ -123,8 +123,11 @@
                             <%=role%>
                         </p>
                         <div class="sua-block">
-                            <button class="sua">Sửa</button>
-                            <button class="block">Block</button>
+                            <a href="edituser?id=<%=u.getUserID()%>">
+                                <button class="sua">Sửa</button>
+                            </a>
+
+<%--                            <button class="block">Block</button>--%>
                         </div>
                     </div>
 

@@ -33,7 +33,7 @@ public class UserDAO {
         return result;
     }
 
-    public boolean updateUser(int userID, String nameColumn, String value) {
+    public static boolean updateUser(int userID, String nameColumn, String value) {
         boolean check = handle.execute("UPDATE users SET " + nameColumn + "=? WHERE userID =?", value, userID) > 0;
         return check;
     }
@@ -371,11 +371,14 @@ public class UserDAO {
 //        User user = checkLogin("phuoc@gmail.com","123");
 //        User user = getUserById(1);
 //        System.out.println(user);
-        List<User> users = getAllUsers();
-        for (User user : users) {
-            System.out.println(user);
-        }
+//        List<User> users = getAllUsers();
+//        for (User user : users) {
+//            System.out.println(user);
+//        }
+//        System.out.println(updateUser(1,"role", String.valueOf(true)));
+
     }
+
 
 }
 

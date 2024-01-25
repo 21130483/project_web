@@ -75,7 +75,7 @@ public class Purchases {
         } else if (status == 1) {
             return "đang giao";
         } else if (status == 2) {
-            return "giao thành công";
+            return "thành công";
 
         }else{
             return "Hủy đơn hàng";
