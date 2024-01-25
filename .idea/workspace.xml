@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Enum" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -37,6 +40,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -47,6 +53,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.AddressDAO.executor&quot;: &quot;Run&quot;,
     &quot;Application.CategoryDAO.executor&quot;: &quot;Run&quot;,
     &quot;Application.OriginDAO.executor&quot;: &quot;Run&quot;,
@@ -60,7 +67,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 9.0.81.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.header.jsp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;21130483-NguyenHuuPhuoc&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/phuoc/OneDrive/Máy tính/github/main/project_web&quot;,
@@ -76,6 +83,13 @@
       <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\css" />
       <recent name="C:\Users\phuoc\OneDrive\Máy tính\github\person\project_web\src\main\webapp\js" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.81">
     <configuration name="CategoryDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -104,19 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Product" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.Product" />
-      <module name="Lab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.ProductDAO" />
       <module name="Lab" />
@@ -132,6 +133,19 @@
     </configuration>
     <configuration name="PurchasesDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.PurchasesDAO" />
+      <module name="Lab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.UserDAO" />
       <module name="Lab" />
       <extension name="coverage">
         <pattern>
@@ -232,20 +246,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UserDAO" />
       <item itemvalue="Application.CategoryDAO" />
       <item itemvalue="Application.OriginDAO" />
       <item itemvalue="Application.PurchasesDAO" />
-      <item itemvalue="Application.Product" />
       <item itemvalue="Application.ProductDAO" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.81" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserDAO" />
+        <item itemvalue="Application.PurchasesDAO" />
+        <item itemvalue="Application.CategoryDAO" />
         <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.OriginDAO" />
-        <item itemvalue="Application.CategoryDAO" />
-        <item itemvalue="Application.PurchasesDAO" />
-        <item itemvalue="Application.Product" />
       </list>
     </recent_temporary>
   </component>
@@ -280,6 +294,10 @@
       <workItem from="1705956246863" duration="10133000" />
       <workItem from="1705970202607" duration="272000" />
       <workItem from="1705971643721" duration="8957000" />
+      <workItem from="1705990648638" duration="10076000" />
+      <workItem from="1706000957144" duration="1300000" />
+      <workItem from="1706090104610" duration="10000" />
+      <workItem from="1706091493931" duration="56000" />
       <workItem from="1705984666987" duration="255000" />
       <workItem from="1705985266290" duration="1139000" />
       <workItem from="1705989988189" duration="338000" />
@@ -288,6 +306,8 @@
       <workItem from="1705992528781" duration="2040000" />
       <workItem from="1706001925661" duration="101000" />
       <workItem from="1706090117514" duration="65000" />
+      <workItem from="1706153099555" duration="13604000" />
+      <workItem from="1706171131584" duration="4038000" />
     </task>
     <servers />
   </component>
@@ -319,12 +339,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/model/Product.java</url>
-          <line>203</line>
-          <properties class="model.Product" method="main">
+          <line>238</line>
+          <properties class="model.Product">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/PurchasesDAO.java</url>
+          <line>50</line>
+          <properties class="dao.PurchasesDAO" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java</url>

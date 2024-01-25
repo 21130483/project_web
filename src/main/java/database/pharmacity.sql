@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+
 INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dob`, `gender`, `role`, `access`) VALUES
 	(1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'true', 'true'),
 	(2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'true', 'true');
@@ -27,15 +28,14 @@ INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, 
 CREATE TABLE IF NOT EXISTS `category` (
   `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-
   PRIMARY KEY (`categoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(1, 'Khẩu trang y tế'),
 	(2, 'Máy massage'),
-	(3, 'Máy đo huyết áp'),
-	(4, 'Băng y tế'),
+	(3, 'Máy đo huyết áp'),	
+	(4, 'Băng - Gạc y tế'),
 	(5, 'Bông y tế'),
 	(6, 'Nhiệt kế'),
 	(7, 'Máy, que thử đường huyết'),
@@ -44,11 +44,10 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 	(10, 'Găng tay'),
 	(11, 'Máy xông mũi họng'),
 	(12, 'Máy xông khí'),
-	(13, 'Máy đo SpO2'),
-	(14, 'Máy xông mũi họng'),
-	(15, 'Máy xông khí'),
-	(16, 'Máy đo SpO2'),
-	(999, 'loại');
+	(13, 'Đèn Y Khoa'),
+	(14, 'Máy đo SpO2'),
+	(15,'Test covid');
+--	(999, 'loại');
 
 
 
@@ -56,7 +55,6 @@ INSERT INTO `category` (`categoryID`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `origin` (
   `originID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-
   PRIMARY KEY (`originID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -71,7 +69,8 @@ INSERT INTO `origin` (`originID`, `name`) VALUES
 	(8, 'Nhật bản'),
 	(9, 'Thái Lan'),
 	(10, 'Ấn Độ'),
-	(999, 'quốc gia');
+	(11, 'Pháp');
+--	(999, 'quốc gia');
 
 
 
@@ -160,8 +159,33 @@ INSERT INTO `products` (`productID`, `categoryID`, `originID`, `quantity`, `date
 	(49, 3, 3, 999, '2023-02-17', 765000, 1000, 90, 'Máy đo huyết áp bắp tay tự động Microlife BP 3NZ1-1P, hỗ trợ tầm soát nhịp tim', 'Microlife', 'Máy đo huyết áp bắp tay tự động Microlife BP 3NZ1-1P là thiết bị đo huyết áp thế hệ mới của Microlife được tích hợp công nghệ đo PAD, AFIB và MAM giúp đưa ra kết quả chính xác và tin cậy, cảnh báo sớm về chứng tăng huyết áp và rung nhĩ, hai nguyên nhân chính dẫn đến đột quỵ não.'),
 	(50, 3, 3, 999, '2023-02-17', 100000, 1000, 90, 'Máy đo huyết áp điện tử cổ tay tự động Microlife W3 Comfort, hỗ trợ tầm soát nhịp tim', 'Microlife', 'Máy đo huyết áp bắp tay MICROLIFE W3 Comfort là sản phẩm thế hệ mới của thương hiệu Microlife đến từ Thụy Sĩ. Máy đo huyết áp hoàn toàn tự động với thiết kế siêu mỏng nhẹ, được trang bị công nghệ IMT độc đáo, cải tiến cách đo huyết áp truyền thống, mang lại trải nghiệm đo huyết áp thoải mái, dễ chịu, cùng kết quả nhanh chóng và chính xác.'),
 
-	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
-	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
+
+	(71, 12, 5, 999, '2023-02-17', 100000, 1000, 90, 'Dụng cụ xét nghiệm nhanh COVID-19 COVICHEK COVID-19 Ag Test Kit (Hộp 5 bộ kit)', 'WIZCHEM', 'COVICHEK COVID-19 Ag Kit là dụng cụ y tế chẩn đoán in vitro dùng để chẩn đoán COVID-19 bằng cách kiểm tra định tính kháng nguyên SARS-CoV-2 ở những bệnh nhân có các triệu chứng nhiễm trùng đường hô hấp thông qua phân tích sắc ký miễn dịch.'),
+	(72, 12, 2, 999, '2023-02-17', 45000, 1000, 90, 'Bộ xét nghiệm nhanh kháng nguyên SARS-CoV-2 SureScreen Diagnostics Covid-19 Test Kit', 'SureScreen Diagnostics', 'SARS-CoV-2 Antigen Rapid Test Cassette là xét nghiệm miễn dịch sắc ký nhanh để phát hiện định tính sự hiện diện kháng nguyên SARS-CoV-2 trong mẫu tăm bông ngoáy mũi của các cá nhân nghi ngờ nhiễm COVID-19 trong 7 ngày đầu tiên kể từ khi có triệu chứng.  '),
+	(73, 12, 5, 999, '2023-02-17', 30000, 1000, 90, 'Dụng cụ xét nghiệm nhanh COVID-19 Flowflex Test Kit (Hộp 25 bộ kit)', 'Flowflex', 'Flowflex SARS-CoV-2 Antigen Rapid Test giúp phát hiện nhanh kháng nguyên SARS-CoV-2 trong mẫu ngoáy dịch tỵ hầu của người nghi ngờ mắc COVID-19 trong vòng 7 ngày đầu tiên kể từ khi xuất hiện triệu chứng, sản phẩm cũng có thể xét nghiệm các mẫu bệnh phẩm của người không có triệu chứng. Sản phẩm dễ sử dụng, độ chính xác cao, có kết quả chỉ sau 15 - 30 phút và đã được Bộ Y tế cấp phép nhập khẩu theo giấy phép số 5895/BYT-TB-CT.'),
+	(74, 12, 5, 999, '2023-02-17', 99000, 1000, 90, 'Bộ xét nghiệm nhanh RAPIDFOR Sars-CoV-2 Rapid Antigen Test (Hộp 1 Test)', 'Rapid Antigen', 'Bộ xét nghiệm nhanh RAPIDFOR Sars-CoV-2 Rapid Antigen Test (Hộp 1 Test) là bộ test nhanh kháng nguyên Sars Cov-2 chỉ trong vòng 15 phút. Dụng cụ có độ nhạy và độ đặc hiệu cao vào giai đoạn đầu nhiễm, gọn nhẹ, giảm tối đa gây cảm giác đau cho người sử dụng.'),
+	(75, 12, 1, 999, '2023-02-17', 77000, 1000, 90, 'Thuốc Molnupiravir Stella 400mg hỗ trợ điều trị covid-19', 'STELLA', 'Thuốc Molnupiravir 400mg là sản phẩm của Công ty TNHH Liên doanh Stellapharm có thành phần hoạt chất chính là Molnupiravir. Thuốc dùng chỉ định điều trị Covid-19 mức độ nhẹ đến trung bình ở người trưởng thành dương tính với xét nghiệm chẩn đoán SARS-CoV-2 và có ít nhất một yếu tố nguy cơ làm tiến triển bệnh nặng.'),
+	(76, 12, 2, 999, '2023-02-17', 64000, 1000, 90, 'Bộ kit test nước bọt Covid-19 Antigen Rapid độ nhạy lên đến 96%, độ đặc hiệu 99% (20 kit)', 'WUHAN EASYDIAGNOSIS BIOMEDICINE CO.,LTD', 'Kit test nước bọt Covid-19 Antigen Rapid Ediagnosis được sử dụng để phát hiện định tính kháng nguyên của Coronavirus (SARS-CoV-2) trong mẫu nước bọt từ những người nghi nhiễm Covid-19 nhanh chóng chỉ trong vòng 15 phút. Thiết bị kit test covid bằng nước bọt có độ hiệu quả cao cho giai đoạn đầu nhiễm Covid-19 với độ nhạy lên đến 96%, độ đặc hiệu 99%.'),
+	(77, 12, 3, 999, '2023-02-17', 45000, 1000, 90, 'Bộ kit test nhanh Covid Toda Coronadiag Ag độ nhạy lên tới 98,6%, độ đặc hiệu 100% (20 kit)', 'TODA PHARMA', 'Kit Test Covid Toda - Pháp - Khay Thử Xét Nghiệm Kháng Nguyên Sars Cov-2 được sản xuất tại Pháp theo tiêu chuẩn Châu Âu CE, ISO 1348, là bộ phát hiện kháng nguyên COVID-19 nhanh chóng chỉ trong 15 phút. Dụng cụ có độ nhạy lên tới 98,6%, độ đặc hiệu 100% và được Bộ Y Tế cấp phép, kiểm định chất lượng tại Viện kiểm định quốc gia vắc xin và sinh phẩm y tế.'),
+	(78, 12, 2, 999, '2023-02-17', 45000, 1000, 90, 'Bộ kit test nhanh Humasis Covid-19 Ag Test độ nhạy và độ đặc hiệu cao (25 bộ)', 'HUMASIS CO., LTD', 'Humasis Covid-19 Ag Test - Thiết Bị Chẩn Đoán In Vitro Xét Nghiệm Vi Rút Sars-Cov-2 là bộ phát hiện kháng nguyên COVID-19 nhanh chóng chỉ trong vòng 15 phút. Thiết bị kit test nhanh Humasis có độ nhạy và độ đặc hiệu cao vào giai đoạn đầu nhiễm, thiết kế gọn nhẹ, giảm tối đa cảm giác đau cho người sử dụng.'),
+	(79, 12, 6, 999, '2023-02-17', 87000, 1000, 90, 'Kit test nhanh Covid-19 Rapid Test Ag 2019-nCoV túi 20 bộ', 'ProGnosis Biotech S.A.', 'Kit test nhanh Covid-19 Rapid Test Ag 2019-nCoV là một sản phẩm kiểm tra nhanh chẩn đoán bệnh Covid-19 bằng phương pháp xét nghiệm kháng nguyên. Sản phẩm này được sản xuất bởi công ty ProGnosis Biotech, Hy Lạp và sử dụng cho các mẫu bệnh phẩm từ mũi, có độ nhạy và độ đặc hiệu cao.'),
+	(80, 12, 1, 999, '2023-02-17', 78000, 1000, 90, 'Kit test nhanh Covid-19 TrueLine AG Rapid Test hộp 25 bộ', 'Trueline', 'Kit test nhanh Covid-19 TrueLine AG Rapid Test là một trong những thiết bị, dụng cụ y tế giúp kiểm tra nhanh chẩn đoán bệnh Covid-19 bằng phương pháp xét nghiệm kháng nguyên. Sản phẩm này có thể giúp phát hiện sớm vi-rút SARS-CoV-2 đối với các mẫu bệnh phẩm từ mũi.'),
+
+	
+  (91, 4, 1, 999, '2023-02-17', 30000, 1000, 90, 'Băng thun y tế 2 móc Bảo Thạch (0.075m x 3m) ', 'Bảo Thạch ', 'Băng thun y tế 2 móc Bảo Thạch được làm từ sợi polyester và cao su thiên nhiên cùng độ co dãn cao, từ 180% đến 200% so với kích thước ban đầu, dùng để nén ép, cầm máu, cố định khớp, giữ vật liệu cầm máu tại chỗ không bị xê dịch.'),
+  (92, 4, 9, 999, '2023-02-17', 45000, 1000, 90, 'Gạc Urgo Optiskin (10cm x 7cm) hộp 50 miếng', 'Urgo Healthcare Products', 'Gạc Urgo Optiskin (10cm x 7cm) sử dụng để bao phủ lên tất cả các vết thương ngoài da (vết khâu, vết trầy xước), hoặc các loại dụng cụ (que dò, ống dẫn...). Do Optiskin cho phép bệnh nhân có thể tắm rửa, vệ sinh nên băng đặc biệt phù hợp cho các liệu pháp tắm ngâm hay nói chung nhanh chóng bắt đầu lại các hoạt động sau phẫu thuật.'),
+  (93, 4, 9, 999, '2023-02-17', 15000, 1000, 90, 'Gạc lưới UrgoTul AG/Sliver hộp 16 miếng (10cm x 12cm)', 'Urgo Healthcare Products', 'Bạc có hoạt tính kháng khuẩn phổ rộng bao gồm các vi khuẩn gram âm và gram dương và một số loại nấm. Đặc biệt nó có tác dụng đối với tụ cầu (Staphylococcus aureus), tụ cầu kháng Methicilline (MRSA), liên cầu (Streptococcus pyogens) và trực khuẩn mủ xanh là những vi khuẩn gây ra hầu hết các nhiễm khuẩn vết thương. Trên in vitro cho thấy băng này có hoạt tính kháng khuẩn trong 7 ngày. Hoạt tính kháng khuẩn của băng cũng góp phần làm giảm mùi khó chịu của vết thương.'),
+  (94, 4, 9, 999, '2023-02-17', 20000, 1000, 90, 'Gạc Urgo Optiskin hộp 50 miếng (5.3 x 8cm)', 'Urgo Healthcare Products', 'Gạc Urgo Optiskin (5.3 x 8cm) sử dụng để bao phủ lên tất cả các vết thương ngoài da (vết khâu: vết trầy xước), hoặc các loại dụng cụ (que dò, ống dẫn...). Do Optiskin cho phép bệnh nhân có thể tắm rửa vệ sinh nên băng đặc biệt phù hợp cho các liệu pháp tắm ngâm hay nói chung nhanh chóng bắt đầu lại các hoạt động sau phẫu thuật.'),
+  (95, 4, 1, 999, '2023-02-17', 20000, 1000, 90, 'Băng rốn Đông FA 3 con nai cho bé hộp 3 miếng', 'Công ty TNHH Trang Thiết Bị Y Tế Đông Pha', 'Bảo vệ vùng rốn và giữ ấm cho bé và đắp các vết thương.'),
+  (96, 4, 1, 999, '2023-02-17', 49000, 1000, 90, 'Gạc rơ lưỡi thảo dược Ích Nhi hộp 30 gói', 'Dược mỹ phẩm Quang Xanh', 'Vệ sinh hàng ngày làm sạch nướu, lưỡi, răng miệng cho trẻ từ sơ sinh trở lên.Giúp phòng ngừa những vấn đề về răng miệng (nấm miệng, tưa lưỡi, viêm nướu,...), giúp nướu khỏe trong thời kỳ trẻ mọc răng, giúp ngừa sâu răng.'),
+  (97, 4, 11, 999, '2023-02-17', 40000, 1000, 90, 'Gạc Urgo Compresses Stériles Non Tissées hộp 10 miếng (10cm x 10cm)', 'Urgo Healthcare Products', 'Gạc Urgo Compresses Stériles Non Tissées (10cm x 10cm) được chỉ định để băng bó, làm sạch vết thương.'),
+  (98, 4, 11, 999, '2023-02-17', 30000, 1000, 90, 'Gạc lưới UrgoTul Ag/Silver hộp 10 miếng (5cm x 5cm)', 'Urgo Healthcare Products', 'UrgoTul Ag/Silver được dùng tại chỗ cho các vết thương có nguy cơ hoặc dấu hiệu nhiễm khuẩn tại chỗ: các vết thương mãn tính (các vết loét ở chân, các vết loét do tỳ đè) và các vết thương cấp tính (các vết bỏng có độ sâu vừa phải, các vết mài mòn da, các vết thương do chấn thương, các vết thương do phẫu thuật...).'),
+  (99, 4, 1, 999, '2023-02-17', 18000, 1000, 90, 'Băng cuộn y tế Bảo Thạch túi 5 cuộn (0.09m x 2m)', 'Bảo Thạch', 'Băng cuộn y tế Bảo Thạch được làm từ 100% sợi cotton, gạc trắng và sạch. Khả năng thấm hút của bông gòn y tế Bảo Thạch cao và nhanh. Mịn màng, mềm mại, không gây kích ứng da.'),
+  (100, 4, 1, 999, '2023-02-17', 12000, 1000, 90, 'Gạc y tế Bảo Thạch túi 10 miếng (5cm x 6.5cm x 12 lớp)', 'Bảo Thạch', 'Gạc phẫu thuật được sử dụng rộng rãi trong phòng mổ của bệnh viện. Thích hợp cho các vết thương lớn, khả năng thấm hút nhanh máu và dịch tiết từ vết thương. Được sử dụng cho các vết rạch, vết cắt dài trong quá trình phẫu thuật.');
+  
+
+--	(998, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ'),
+--	(999, 4, 1, 999, '2023-02-17', 27000, 1000, 90, 'Băng  ', 'CÔNG TY ', 'm phân phối dành cho thị trườ');	
 
 
 
@@ -205,6 +229,7 @@ CREATE TABLE IF NOT EXISTS `purchases` (
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   `orderDate` date NOT NULL,
   `status` int NOT NULL,
   `receivedDate` date,
@@ -260,4 +285,4 @@ CREATE TABLE IF NOT EXISTS `verify` (
   PRIMARY KEY (`userID`),
   KEY `userID` (`userID`), 
   CONSTRAINT `verify_fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=UTF8MB4_UNICODE_CI;

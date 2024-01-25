@@ -1,5 +1,4 @@
 <%@ page import="model.Product" %>
-<%@ page import="java.io.File" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -28,7 +27,9 @@
                 <div class="left-slide">
                     <div class="product-left">
                         <div class="product-left-big-images">
-                            <img id="bigImage" src="../image/product/<%=product.getProductID()%>/0.webp" alt="">
+
+                            <img src="<%=product.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                 alt="">
                         </div>
                         <div class="product-left-small-images" onclick="changeBigImage(event)">
                             <%--                            <img src="../image/product/may-tao-oxi1.jpg" alt="">--%>
@@ -40,13 +41,17 @@
                             <%
 
                                 int numberImg = (int) request.getAttribute("numberImg");
-                                for (int i = 0; i < numberImg; i++) {
+                                for (String path : product.getPathImage(request.getServletContext().getRealPath(""))) {
+
                             %>
 
-                            <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
+
+                            <img src="<%=path%>" alt="" style="max-width: 100%; max-height: 100%;  height: auto; width: auto">
+
                             <%
                                 }
                             %>
+
                         </div>
                     </div>
                     <div class="product-details">
@@ -104,14 +109,14 @@
                         <form action="cart?id=<%=product.getProductID()%>&active=add&page=product" method="post">
 
 
-<%--                            <div class="quantity mt-3">--%>
-<%--                                <span class="description fw-bold">Số lượng: </span>--%>
-<%--                                <div class="quantity-form">--%>
-<%--                                    <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>--%>
-<%--                                    <input name="quantity" class="input-quanlity" type="text" value="1" id="quantity">--%>
-<%--                                    <button class="btn plus-btn" onclick="increaseQuantity()">+</button>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
+                            <%--                            <div class="quantity mt-3">--%>
+                            <%--                                <span class="description fw-bold">Số lượng: </span>--%>
+                            <%--                                <div class="quantity-form">--%>
+                            <%--                                    <button class="btn minus-btn" onclick="decreaseQuantity()">-</button>--%>
+                            <%--                                    <input name="quantity" class="input-quanlity" type="text" value="1" id="quantity">--%>
+                            <%--                                    <button class="btn plus-btn" onclick="increaseQuantity()">+</button>--%>
+                            <%--                                </div>--%>
+                            <%--                            </div>--%>
                             <button type="submit" class="add-to-cart-btn  mt-3">
                                 <div class="col-2">
                                     <i class="fas fa-shopping-cart cart-icon"></i>
@@ -201,8 +206,9 @@
                                 %>
                                 <div class="card radius-green">
                                     <div style="width: 250px;height: 250px">
-                                        <img class="card-img-top"
-                                             src="../image/product/<%=related.getProductID()%>/0.webp" alt=""
+
+                                        <img src="<%=related.getPathFirstImage(request.getServletContext().getRealPath(""))%>"
+                                             alt=""
                                              style="max-width: 100%;max-height: 100%;width: auto;">
                                     </div>
 

@@ -8,11 +8,13 @@ public class Purchases {
     private int productID;
     private int quantity;
 
+    private int price;
+
     //-1 là hủy đơn hàng
     //0 là chờ xác nhận
     //1 là đang giao
     //2 là giao thành công
-    private String status;
+    int status;
     private Date orderDate;
     private Date receivedDate;
     private int starNumber;
@@ -20,6 +22,15 @@ public class Purchases {
     private Date dateRated;
 
     public Purchases() {
+    }
+
+
+    public int getPurchaseID() {
+        return purchaseID;
+    }
+
+    public void setPurchaseID(int purchaseID) {
+        this.purchaseID = purchaseID;
     }
 
     public int getUserID() {
@@ -46,11 +57,32 @@ public class Purchases {
         this.quantity = quantity;
     }
 
-    public String getStatus() {
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public String getStatusString() {
+        if (status == 0) {
+            return "chờ xác nhận";
+        } else if (status == 1) {
+            return "đang giao";
+        } else if (status == 2) {
+            return "thành công";
+
+        }else{
+            return "Hủy đơn hàng";
+        }
+    }
+
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -101,5 +133,20 @@ public class Purchases {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Purchases{" +
+                "purchaseID=" + purchaseID +
+                ", userID=" + userID +
+                ", productID=" + productID +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", status=" + status +
+                ", orderDate=" + orderDate +
+                ", receivedDate=" + receivedDate +
+                ", starNumber=" + starNumber +
+                ", content='" + content + '\'' +
+                ", dateRated=" + dateRated +
+                '}';
+    }
 }

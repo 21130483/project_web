@@ -12,6 +12,7 @@
     <title>Login</title>
 </head>
 <body>
+<% String err = (String) request.getAttribute("err") == null ? "" : (String) request.getAttribute("err"); %>
 <div class="section">
     <div class="form-container">
         <form method="post" action="login">
@@ -23,9 +24,9 @@
                 </a>
             </div>
             <div class="form-group">
-                <input type="email" name="email" value="phuoc@gmail.com" class="form-style placeholder="Email hoặc tên đăng nhập"
-                       id="logemail"
-                       autocomplete="off">
+                <input type="email" name="email" value="admin@gmail.com" class="form-style" placeholder=" Email hoặc tên đăng nhập"
+                id="logemail"
+                autocomplete="off">
                 <i class="input-icon fa-regular fa-envelope"></i>
             </div>
             <div class="form-group">

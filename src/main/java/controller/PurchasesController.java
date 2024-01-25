@@ -23,9 +23,10 @@ public class PurchasesController extends HttpServlet {
         User user = (User) session.getAttribute("user");
         PurchasesDAO purchasesDAO = new PurchasesDAO();
         ProductDAO productDAO = new ProductDAO();
-        for (Product p : cart.listProductBuy()){
-            purchasesDAO.addPurchase(p.getProductID(), user.getUserID(),cart.getCart().get(p));
-            productDAO.updateProduct(p.getProductID(),"quantity", String.valueOf(p.getQuantity()-1));
+        int newPurchaseId = purchasesDAO.newPurchaseID();
+        for (Product p : cart.listProductBuy()) {
+            purchasesDAO.addPurchase(newPurchaseId,p.getProductID(), user.getUserID(), cart.getCart().get(p), p.getPrice()*cart.getCart().get(p));
+            productDAO.updateProduct(p.getProductID(), "quantity", String.valueOf(p.getQuantity() - 1));
         }
         cart.deletedProdcutBuyFromCart();
         session.setAttribute("cart", cart);

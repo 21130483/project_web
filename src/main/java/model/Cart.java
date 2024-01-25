@@ -87,7 +87,7 @@ public class Cart {
         int result = 0;
         for (Product product : cart.keySet()) {
             if (productChecked.contains(product.getProductID())) {
-                result += product.getPrice()*cart.get(product);
+                result += product.getPrice() * cart.get(product);
             }
 
         }
@@ -132,7 +132,7 @@ public class Cart {
         int result = 0;
         for (Product product : cart.keySet()) {
             if (productChecked.contains(product.getProductID())) {
-                result += product.getSale()*cart.get(product);
+                result += product.getSale() * cart.get(product);
             }
         }
         return result;
@@ -187,12 +187,9 @@ public class Cart {
         return result;
     }
 
+
+
     public void deletedProdcutBuyFromCart() {
-//        for (Product p : cart.keySet()) {
-//            if (productChecked.contains(p.getProductID())) {
-//                cart.remove(p);
-//            }
-//        }
         Iterator<Product> iterator = cart.keySet().iterator();
         while (iterator.hasNext()) {
             Product p = iterator.next();

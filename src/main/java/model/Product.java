@@ -1,7 +1,9 @@
 package model;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
@@ -12,7 +14,7 @@ public class Product {
     private int price;
     private int sale;
     private int quantity;
-    private int orderedNumber;
+    private int orderedNumbers;
     private Date dateAdded;
     private String name;
     private String trademark;
@@ -90,6 +92,7 @@ public class Product {
         result += " Đồng";
         return result;
     }
+
     public String getSaleHaveDots() {
         String result = "";
         String priceString = String.valueOf(sale);
@@ -145,12 +148,12 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public int getOrderedNumber() {
-        return orderedNumber;
+    public int getOrderedNumbers() {
+        return orderedNumbers;
     }
 
-    public void setOrderedNumber(int orderedNumber) {
-        this.orderedNumber = orderedNumber;
+    public void setOrderedNumbers(int orderedNumbers) {
+        this.orderedNumbers = orderedNumbers;
     }
 
     public Date getDateAdded() {
@@ -161,15 +164,6 @@ public class Product {
         this.dateAdded = dateAdded;
     }
 
-    public int numberImg(String path) {
-        File fileImg = new File(path);
-        if (fileImg.exists()) {
-
-            return fileImg.list().length;
-        } else {
-            return 0;
-        }
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -193,7 +187,7 @@ public class Product {
                 ", price=" + price +
                 ", sale=" + sale +
                 ", quantity=" + quantity +
-                ", orderedNumber=" + orderedNumber +
+                ", orderedNumbers=" + orderedNumbers +
                 ", dateAdded=" + dateAdded +
                 ", name='" + name + '\'' +
                 ", trademark='" + trademark + '\'' +
@@ -201,8 +195,49 @@ public class Product {
                 '}';
     }
 
-    public static void main(String[] args) {
 
+
+
+    public int getNumberImg(String path) {
+        File fileImg = new File(path + "/image/product/" + productID);
+        if (fileImg.exists()) {
+            for (String string : fileImg.list()) {
+                System.out.println(string);
+            }
+            return fileImg.list().length;
+        } else {
+            return 0;
+        }
     }
+
+    public List<String> getPathImage(String path) {
+        List<String> result = new ArrayList<>();
+        File folderImg = new File(path + "/image/product/" + productID);
+        if (folderImg.exists()) {
+            for (File file : folderImg.listFiles()){
+                result.add("../image/product/"+productID+"/"+file.getName());
+            }
+        }
+        for (String string : result){
+            System.out.println("list :"+string);
+
+        }
+        return result;
+    }
+
+    public String getPathFirstImage(String path) {
+        File folderImg = new File(path + "/image/product/" + productID);
+        String result = "../image/product/"+productID+"/";
+
+        if (folderImg.exists()) {
+            File[] files = folderImg.listFiles();
+            result += files[0].getName();
+        }
+        return result;
+    }
+
+//    public static void main(String[] args) {
+//
+//    }
 
 }

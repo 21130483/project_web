@@ -1,5 +1,6 @@
 <%@ page import="model.Cart" %>
 <%@ page import="model.Product" %>
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -51,10 +52,9 @@
                             <li class="san-pham-muon-mua">
                                 <div class="input-img-ten-san-pham">
                                     <div class="img-san-pham">
-                                        <img src="../image/product/<%=p.getProductID()%>/0.webp" alt="" style="max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    width: auto;">
+
+                                        <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt=""
+                                             style="max-width: 100%;max-height: 100%;height: auto;width: auto;">
                                     </div>
 
                                     <div class="ten-san-pham">
@@ -104,7 +104,7 @@
 
                         <div class="addressDetail">
                             Phường Nguyễn Thái Bình, Quận 1, Hồ Chí Minh
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Địa chỉ cụ thể"></textarea>
+                            <textarea name="" id="1" cols="30" rows="10" placeholder="Địa chỉ cụ thể"></textarea>
                         </div>
 
                         <div class="title">
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="ghi-chu">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Thêm ghi chú"></textarea>
+                            <textarea name="" id="2" cols="30" rows="10" placeholder="Thêm ghi chú"></textarea>
                         </div>
 
                     </div>

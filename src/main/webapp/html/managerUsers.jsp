@@ -28,7 +28,7 @@
             </li>
 
             <li class="button-muc-luc">
-                <a href="admin?page=user" >
+                <a href="admin?page=user">
                     <div class="a" style="background-color: #007bff;">
                         Quản lý thành viên
                     </div>
@@ -46,7 +46,7 @@
             <li class="button-muc-luc">
                 <a href="admin?page=voucher">
                     <div class="a">
-                        Quản lý phiếu giảm giá
+                        Quản lý loại sản phẩm
                     </div>
                 </a>
             </li>
@@ -93,33 +93,49 @@
 
             <ul>
                 <%
-                    List<User> users = (List) request.getAttribute("getAllProducts");
+                    List<User> users = (List) request.getAttribute("getAllUsers");
                 %>
 
                 <%
-                    for (User u : users) {
+                    if (users != null) {
+                        for (User u : users) {
                 %>
 
                 <li class="box-thanh-vien">
                     <div class="thanh-vien">
-                        <p><%=u.getUserID()%></p>
-                        <p><%=u.getEmail()%></p>
-                        <p><%=u.getFullName()%></p>
-                        <p><%=u.getPhoneNumbers()%></p>
-                        <p><%=u.getRole()%></p>
+                        <p><%=u.getUserID()%>
+                        </p>
+                        <p><%=u.getEmail()%>
+                        </p>
+                        <p><%=u.getFullName()%>
+                        </p>
+                        <p><%=u.getPhoneNumbers()%>
+                        </p>
+                        <p>
+                            <%
+                                String role;
+                                if (u.getRole()) {
+                                    role = "Admin";
+                                } else {
+                                    role = "Khách hàng";
+                                }
+                            %>
+                            <%=role%>
+                        </p>
                         <div class="sua-block">
-                            <button class="sua">Sửa</button>
-                            <button class="block">Block</button>
+                            <a href="edituser?id=<%=u.getUserID()%>">
+                                <button class="sua">Sửa</button>
+                            </a>
+
+<%--                            <button class="block">Block</button>--%>
                         </div>
                     </div>
 
                 </li>
                 <%
+                        }
                     }
                 %>
-
-
-
 
 
             </ul>

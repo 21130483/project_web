@@ -1,5 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Product" %>
+<%@ page import="dao.OriginDAO" %>
+<%@ page import="dao.CategoryDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -50,7 +52,7 @@
             <li class="button-muc-luc">
                 <a href="admin?page=voucher">
                     <div class="a">
-                        Quản lý phiếu giảm giá
+                        Quản lý loại sản phẩm
                     </div>
                 </a>
             </li>
@@ -97,6 +99,8 @@
 
                     <%
                         List<Product> list = (List) request.getAttribute("getAllProducts");
+                        OriginDAO originDAO = new OriginDAO();
+                        CategoryDAO categoryDAO = new CategoryDAO();
                     %>
 
                     <%
@@ -109,11 +113,12 @@
                             <p style="overflow: hidden; text-overflow: ellipsis;  white-space: nowrap;">
                                 <%=p.getName()%>
                             </p>
-                            <p><%=p.getCategoryID()%>
+                            <p><%=categoryDAO.getCategoryById(p.getCategoryID()).getName()%>
                             </p>
                             <p><%=p.getDateAdded()%>
                             </p>
-                            <p><%=p.getOriginID()%>
+                            <p>
+                                <%=originDAO.getOriginById(p.getOriginID()).getName()%>
                             </p>
                             <!-- <p>11/1/2023</p> -->
                             <div class="sua-xoa">

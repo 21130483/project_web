@@ -1,5 +1,6 @@
 <%@ page import="model.Cart" %>
 <%@ page import="model.Product" %>
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -43,15 +44,15 @@
                             <div class="input-text">
                                 <div class="box-input">
 
-                                        <input type="checkbox" class="input" id="checkedAll" data-hrf="index.jsp"
-                                            <%
+                                    <input type="checkbox" class="input" id="checkedAll" data-hrf="index.jsp"
+                                        <%
                                             if (cart!=null && cart.cartEqualChecked()){
                                         %>
-                                               checked
-                                            <%
+                                           checked
+                                        <%
                                             }
                                         %>
-                                        >
+                                    >
                                 </div>
 
                                 <div style="display: flex; align-items: center; font-size: 20px;">Chọn tất cả</div>
@@ -84,7 +85,8 @@
                         <li class="san-pham-muon-mua">
                             <div class="input-img-ten-san-pham">
                                 <div class="box-input">
-                                    <input type="checkbox" class="input checked" data-href="buy-product?active=normal&id=<%=p.getProductID()%>"
+                                    <input type="checkbox" class="input checked"
+                                           data-href="buy-product?active=normal&id=<%=p.getProductID()%>"
                                            value="<%=p.getProductID()%>"
                                         <%
                                             if (cart.getProductChecked().contains(p.getProductID())){
@@ -97,7 +99,8 @@
                                 </div>
 
                                 <div class="img-san-pham">
-                                    <img src="../image/product/<%=p.getProductID()%>/0.webp" alt=""
+
+                                    <img src="<%=p.getPathFirstImage(request.getServletContext().getRealPath(""))%>" alt=""
                                          style="    max-width: 100%; max-height: 100%; height: auto; width: auto;">
                                 </div>
 
@@ -251,8 +254,8 @@
         var checkboxes = document.querySelectorAll('.checked');
 
         // Thêm sự kiện change cho tất cả các ô kiểm
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
                 // Kiểm tra trạng thái checked của checkbox
                 var redirectHref = checkbox.getAttribute('data-href');
                 if (checkbox.checked) {
@@ -267,7 +270,7 @@
 
 
         var myCheckbox = document.getElementById('checkedAll');
-        myCheckbox.addEventListener('change', function() {
+        myCheckbox.addEventListener('change', function () {
             // Kiểm tra trạng thái checked của checkbox
             if (myCheckbox.checked) {
                 // alert('Checkbox is checked!');

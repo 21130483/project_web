@@ -32,15 +32,15 @@
             if (active.equals("add")) {
                 int productIdAdd = (int) request.getAttribute("idAdd");
         %>
-        <form action="add-edit-delete?active=add" method="post">
+        <form action="add-edit-delete?active=add" method="post" enctype="multipart/form-data">
             <div class="dien-thong-tin">
                 <div class="box">
                     Id sản phẩm
                     <input name="id" type="text" value="<%=productIdAdd%>" readonly>
                     Tên sản phẩm
-                    <input name="name" type="text">
+                    <input name="name" type="text" required>
                     Nhà sản xuất
-                    <input name="trademark" type="text">
+                    <input name="trademark" type="text" required>
                     Xuất sứ
                     <select name="categoryID">
                         <%
@@ -70,11 +70,11 @@
 
                     </select>
                     Giá bán
-                    <input name="price" type="number">
+                    <input name="price" type="number"  required>
                     Số lượng
-                    <input name="quantity" type="number">
+                    <input name="quantity" type="number" required>
                     Giảm giá
-                    <input name="sale" type="number">
+                    <input name="sale" type="number" required>
                 </div>
 
 
@@ -82,18 +82,18 @@
 
             <div class="hinh-anh">
                 Hình ảnh
-                <input name="images" type="file" accept="image/*" formenctype="multipart/form-data" multiple>
+                <input name="images[]" type="file" accept="image/*" multiple  required>
             </div>
 
             <div class="chi-tiet">
                 Chi tiết
-                <textarea name="content"></textarea>
+                <textarea name="content"  required></textarea>
             </div>
 
             <div class="button-them-huy">
-                <button type="submit" style="background-color: inherit;border: none; height: auto; width: auto" >
+                <button type="submit" style="background-color: inherit;border: none; height: auto; width: auto">
                     <div class="them">
-                        Cập nhật
+                        Thêm
                     </div>
                 </button>
 
@@ -111,15 +111,15 @@
         } else if (active.equals("edit")) {
             Product p = (Product) request.getAttribute("productEdit");
         %>
-        <form action="add-edit-delete?active=edit" method="post">
+        <form action="add-edit-delete?active=edit" method="post" enctype="multipart/form-data">
             <div class="dien-thong-tin">
                 <div class="box">
                     Id sản phẩm
                     <input name="id" type="text" value="<%=p.getProductID()%>" readonly>
                     Tên sản phẩm
-                    <input name="name" type="text" value="<%=p.getName()%>">
+                    <input name="name" type="text" value="<%=p.getName()%>"  required>
                     Nhà sản xuất
-                    <input name="trademark" type="text" value="<%=p.getTrademark()%>">
+                    <input name="trademark" type="text" value="<%=p.getTrademark()%>"  required>
                     Xuất sứ
                     <select name="categoryID">
                         <%
@@ -157,11 +157,11 @@
 
                     </select>
                     Giá bán
-                    <input name="price" type="number" value="<%=p.getPrice()%>">
+                    <input name="price" type="number" value="<%=p.getPrice()%>"  required>
                     Số lượng
-                    <input name="quantity" type="number" value="<%=p.getQuantity()%>">
+                    <input name="quantity" type="number" value="<%=p.getQuantity()%>" required>
                     Giảm giá
-                    <input name="sale" type="number" value="<%=p.getSale()%>">
+                    <input name="sale" type="number" value="<%=p.getSale()%>" required>
                 </div>
 
 
@@ -169,12 +169,13 @@
 
             <div class="hinh-anh">
                 Hình ảnh
-                <input name="images" type="file" accept="image/*" formenctype="multipart/form-data" multiple>
+                <input name="images" id="fileInput" type="file" accept="image/*" multiple>
+                <span id="fileLabel" style="font-size: 20px">đã chọn <%=p.getNumberImg(request.getServletContext().getRealPath(""))%> ảnh</span>
             </div>
 
             <div class="chi-tiet">
                 Chi tiết
-                <textarea name="content"><%=p.getContent()%>
+                <textarea name="content"  required><%=p.getContent()%>
             </textarea>
             </div>
 
@@ -193,6 +194,22 @@
                 <!-- <button class="them">Thêm sản phẩm</button>
                 <button class="huy">Hủy</button> -->
             </div>
+            <script>
+                document.getElementById('fileInput').addEventListener('change', function() {
+                    var fileInput = this;
+                    var fileLabel = document.getElementById('fileLabel');
+
+                    if (fileInput.files.length > 0) {
+                        // Nếu có ít nhất một file được chọn
+                        var fileName = fileInput.files.length;
+                        fileLabel.innerHTML = "đã chọn "+ fileName +" ảnh";
+                    } else {
+
+                        // Nếu không có file nào được chọn
+                        fileLabel.innerHTML = "đã chọn <%=p.getNumberImg(request.getServletContext().getRealPath(""))%> ảnh";
+                    }
+                });
+            </script>
         </form>
         <%
 
@@ -254,5 +271,6 @@
         <%--        </div>--%>
     </div>
 </div>
+
 </body>
 </html>
