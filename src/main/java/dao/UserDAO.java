@@ -424,7 +424,7 @@ public class UserDAO {
 //
     public boolean updateUser(int userID, String nameColumn, String value) {
         boolean check = connect.inTransaction(handle -> {
-            return handle.createUpdate("UPDATE users SET " + nameColumn + "=? WHERE userID =?").bind(0, nameColumn)
+            return handle.createUpdate("UPDATE users SET " + nameColumn + "=? WHERE userID =?").bind(0, value)
                     .bind(1, userID).execute() > 0;
         });
         return check;

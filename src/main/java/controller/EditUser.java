@@ -27,11 +27,12 @@ public class EditUser extends HttpServlet {
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(id);
         if (user.getRole()!=role){
-            System.out.println(userDAO.updateUser(id,"role", String.valueOf(role)));
+            System.out.println(role);
+            userDAO.updateUser(id,"role", String.valueOf(role));
 
         }
         if (user.getAccess()!=access){
-            System.out.println(userDAO.updateUser(id,"access", String.valueOf(access)));
+            userDAO.updateUser(id,"access", String.valueOf(access));
         }
         req.getRequestDispatcher("admin?page=user").forward(req,resp);
 

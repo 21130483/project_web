@@ -22,15 +22,22 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String email = req.getParameter("email")==null?"":(String) req.getParameter("email");
-        String pass = req.getParameter("pass")==null?"":(String) req.getParameter("pass");
+        String email = req.getParameter("email") == null ? "" : (String) req.getParameter("email");
+        String pass = req.getParameter("pass") == null ? "" : (String) req.getParameter("pass");
         UserDAO userDAO = new UserDAO();
-        User user = userDAO.checkLogin(email,pass);
-        if (user != null){
-            HttpSession session =req.getSession();
-            session.setAttribute("user",user);
-            resp.sendRedirect("index.jsp");
-        }else {
+        User user = userDAO.checkLogin(email, pass);
+        if (user != null) {
+            if (user.getAccess()) {
+                HttpSession session = req.getSession();
+                session.setAttribute("user", user);
+                resp.sendRedirect("index.jsp");
+            }else{
+                req.setAttribute("content","Tài khoản của bạn đã bị cấm");
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
+            }
+
+        } else {
+            req.setAttribute("content","Sai tài khoản hoặc mật khẩu");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }

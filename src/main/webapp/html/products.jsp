@@ -35,6 +35,8 @@
 
     <%
         List<Product> getFindProducts = (List) request.getAttribute("getFindProducts");
+        int categoryID = (int) request.getAttribute("getCategoryID");
+        List<Category> categories = (List) request.getAttribute("getCategories");
         int currentPage = (int) request.getAttribute("getcurrentPage");
         int numberPages = (int) request.getAttribute("getnumberPages");
         int priceBy = (int) request.getAttribute("getpriceBy");
@@ -268,7 +270,7 @@
                                         <%=p.getName()%>
                                     </div>
 
-                                    <div class="khoang-trong"></div>
+                                        <div class="khoang-trong"></div>
 
                                     <div class="gia-san-pham">
                                         <%=p.getPriceHaveDots()%>

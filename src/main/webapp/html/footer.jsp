@@ -29,7 +29,7 @@
     <div class="container">
         <div class="gioi-thieu-cty">
             <span class="title">Về Pharmacity</span>
-            <a href="assets/html/gioi-thieu.html">
+            <a href="introduce.jsp">
                 <p>Giới thiệu</p>
             </a>
             <a href="">

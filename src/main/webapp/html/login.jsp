@@ -23,6 +23,17 @@
                     <h2 class="form-title"><span>Đăng nhập</span></h2>
                 </a>
             </div>
+            <div>
+                <%
+                    String content = (String) request.getAttribute("content");
+                    if (content != null) {
+                %>
+                <p style="color: red"><%=content%></p>
+                <%
+                    }
+                %>
+
+            </div>
             <div class="form-group">
                 <input type="email" name="email" value="" class="form-style" placeholder="Email hoặc tên đăng nhập"
                        id="logemail"

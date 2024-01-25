@@ -225,7 +225,16 @@
                         <p class="cost"><%=cart.getTotalPricesHaveDots()%>
                         </p>
                     </div>
-
+                    <%
+                        String content = (String) request.getAttribute("content");
+                        if (content!=null){
+                    %>
+                    <div>
+                        <p style="color: red"><%=content%></p>
+                    </div>
+                    <%
+                        }
+                    %>
                     <a href="payment">
                         <button class="mua-hang">Mua hàng</button>
                     </a>
