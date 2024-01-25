@@ -53,6 +53,7 @@ public class AddEditDeleteProduct extends HttpServlet {
             case "delete":
                 int deleteProductID = Integer.parseInt(req.getParameter("id"));
                 productDAO.deleteProduct(deleteProductID);
+                deleteImageProduct(req.getServletContext().getRealPath("")+"/image/product/"+deleteProductID);
                 req.getRequestDispatcher("admin?page=product").forward(req, resp);
                 break;
             default:
@@ -72,8 +73,7 @@ public class AddEditDeleteProduct extends HttpServlet {
         int quantity = Integer.parseInt(req.getParameter("quantity"));
         int sale = Integer.parseInt(req.getParameter("sale"));
         String content = req.getParameter("content");
-
-//        Collection<Part> parts = req.getParts();
+        Collection<Part> parts = req.getParts();
         if (active.equals("edit")) {
             Product editProduct = productDAO.getProductById(id);
             if (!editProduct.getName().equals(name)) {
@@ -100,39 +100,51 @@ public class AddEditDeleteProduct extends HttpServlet {
             if (!(editProduct.getSale() == sale)) {
                 productDAO.updateProduct(id, "sale", String.valueOf(sale));
             }
+            if (parts != null) {
+
+            }
         } else if (active.equals("add")) {
             productDAO.addProduct(id, name, trademark, content, categoryID, originID, quantity, price, sale);
             String pathFolder = req.getServletContext().getRealPath("") + "/image/product/" + id;
-//            File folder = new File(pathFolder);
-//            if (!folder.exists()) {
-//                folder.mkdir();
-//            }
-//            int count = 0;
-//            for (Part part : parts) {
-//                String fileName = extractFileName(part);
-//                InputStream is = part.getInputStream();
-//                OutputStream os = new FileOutputStream(new File(pathFolder+"/"+count+".jpg"));
-//                os.write(is.read());
-//            }
+            File folder = new File(pathFolder);
+            if (!folder.exists()) {
+                folder.mkdir();
+            }
+            int count = 0;
+            for (Part part : parts) {
+                if (part.getSubmittedFileName()!=null) {
+                    System.out.println(part.getSubmittedFileName());
+                    String path = req.getServletContext().getRealPath("") + "/image/product/" + id + "/" + count + ".jpg";
+                    part.write(path);
+                    count++;
+                }
+            }
         }
         req.getRequestDispatcher("admin?page=product").forward(req, resp);
     }
 
-    private String extractFileName(Part part) {
-        String contentDisposition = part.getHeader("content-disposition");
-        String[] items = contentDisposition.split(";");
-        for (String item : items) {
-            if (item.trim().startsWith("filename")) {
-                return item.substring(item.indexOf("=") + 2, item.length() - 1);
-            }
-        }
-        return "";
-    }
 
-    private void saveImageDataToDatabase(String productName, String description, String fileName) {
-        // Thực hiện lưu thông tin về ảnh vào cơ sở dữ liệu
-        // Ví dụ: sử dụng JDBC để thêm thông tin vào bảng sản phẩm trong cơ sở dữ liệu
-        // ...
+
+
+
+    public boolean deleteImageProduct(String path) {
+        File file = new File(path);
+        System.out.println(file.getAbsoluteFile());
+        if (file.exists()) {
+            if (file.isDirectory()) {
+                if (file.listFiles().length > 0) {
+                    for (File fileChild : file.listFiles()) {
+                        deleteImageProduct(path + "/" + fileChild.getName());
+                    }
+                }
+                file.delete();
+            } else if (file.isFile()) {
+                file.delete();
+            }
+
+            return true;
+        }
+        return false;
     }
 
 }

@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/EditUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/EditUser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/managerUsers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AddEditDeleteProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/addEditVoucher.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,6 +307,7 @@
       <workItem from="1706001925661" duration="101000" />
       <workItem from="1706090117514" duration="65000" />
       <workItem from="1706153099555" duration="13604000" />
+      <workItem from="1706171131584" duration="4038000" />
     </task>
     <servers />
   </component>

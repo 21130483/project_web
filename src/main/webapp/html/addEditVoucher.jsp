@@ -37,7 +37,7 @@
                 </div>
 
 
-                <div class="box">
+                <div class="box" required>
                     Tên loại sản phẩm
                     <input name="name" type="text">
                 </div>
@@ -75,7 +75,7 @@
                 </div>
 
 
-                <div class="box">
+                <div class="box"  required>
                     Tên loại sản phẩm
                     <input name="name" value="<%=category.getName()%>" type="text">
                 </div>
