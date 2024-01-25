@@ -262,7 +262,16 @@
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
                                                                         <div class="noi-dung-san-pham">
-                                                                            <div class="khoang-trong"></div>
+                                                                            <c:forEach var="p" items="${getAllProduct}">
+                                                                                <c:if test="${item.getProductID() == p.getProductID()}">
+                                                                                    <div class="img-san-pham">
+                                                                                        <!-- 248 x 248 -->
+                                                                                        <img src="${p.getPathFirstImage1()}"
+                                                                                             alt="">
+                                                                                    </div>
+                                                                                </c:if>
+                                                                            </c:forEach>
+                                                                            <div class="khoang-trong" style="margin-top: 280px; margin-right: 20px;">
 
                                                                             <div class="ten-san-pham">
                                                                                 <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
@@ -277,9 +286,10 @@
                                                                                         pattern="###,### đ"/>
                                                                                     <%--                                                                            10.000 đ/Hộp--%>
                                                                             </div>
-                                                                            <fmt:formatDate value="${item.getOrderDate()}"
-                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
-                                                                                            />
+                                                                            <fmt:formatDate
+                                                                                    value="${item.getOrderDate()}"
+                                                                                    pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            />
                                                                             <p class="waitXacNhan">Chờ xác nhận....</p>
 
                                                                             <form action="<c:url value="/html/cancel"/> "
@@ -292,6 +302,7 @@
                                                                                     </div>
                                                                                 </button>
                                                                             </form>
+                                                                            </div>
 
                                                                         </div>
                                                                     </div>
@@ -314,7 +325,16 @@
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
                                                                         <div class="noi-dung-san-pham">
-                                                                            <div class="khoang-trong"></div>
+                                                                            <c:forEach var="p" items="${getAllProduct}">
+                                                                                <c:if test="${item.getProductID() == p.getProductID()}">
+                                                                                    <div class="img-san-pham">
+                                                                                        <!-- 248 x 248 -->
+                                                                                        <img src="${p.getPathFirstImage1()}"
+                                                                                             alt="">
+                                                                                    </div>
+                                                                                </c:if>
+                                                                            </c:forEach>
+                                                                            <div class="khoang-trong" style="margin-top: 280px; margin-right: 20px;">
 
                                                                             <div class="ten-san-pham">
                                                                                 <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
@@ -328,11 +348,13 @@
                                                                                         type="currency"
                                                                                         pattern="###,### đ"/>
                                                                             </div>
-                                                                            <fmt:formatDate value="${item.getOrderDate()}"
-                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            <fmt:formatDate
+                                                                                    value="${item.getOrderDate()}"
+                                                                                    pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
                                                                             />
                                                                             <!-- Khi ấn vào di chuyển đến giỏ hàng -->
                                                                             <p class="waitXacNhan">Đang giao....</p>
+                                                                            </div>
 
                                                                         </div>
                                                                     </div>
@@ -354,7 +376,16 @@
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
                                                                         <div class="noi-dung-san-pham">
-                                                                            <div class="khoang-trong"></div>
+                                                                            <c:forEach var="p" items="${getAllProduct}">
+                                                                                <c:if test="${item.getProductID() == p.getProductID()}">
+                                                                                    <div class="img-san-pham">
+                                                                                        <!-- 248 x 248 -->
+                                                                                        <img src="${p.getPathFirstImage1()}"
+                                                                                             alt="">
+                                                                                    </div>
+                                                                                </c:if>
+                                                                            </c:forEach>
+                                                                            <div class="khoang-trong" style="margin-top: 280px; margin-right: 20px;">
 
                                                                             <div class="ten-san-pham">
                                                                                 <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
@@ -368,12 +399,14 @@
                                                                                         type="currency"
                                                                                         pattern="###,### đ"/>
                                                                             </div>
-                                                                            <fmt:formatDate value="${item.getOrderDate()}"
-                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            <fmt:formatDate
+                                                                                    value="${item.getOrderDate()}"
+                                                                                    pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
                                                                             />
                                                                             <!-- Khi ấn vào di chuyển đến giỏ hàng -->
                                                                             <p class="waitXacNhan">Đã giao thành
                                                                                 công</p>
+                                                                            </div>
 
                                                                         </div>
                                                                     </div>
@@ -393,7 +426,16 @@
                                                                 <li class="san-pham ">
                                                                     <div class="link-san-pham">
                                                                         <div class="noi-dung-san-pham">
-                                                                            <div class="khoang-trong"></div>
+                                                                            <c:forEach var="p" items="${getAllProduct}">
+                                                                                <c:if test="${item.getProductID() == p.getProductID()}">
+                                                                                    <div class="img-san-pham">
+                                                                                        <!-- 248 x 248 -->
+                                                                                        <img src="${p.getPathFirstImage1()}"
+                                                                                             alt="">
+                                                                                    </div>
+                                                                                </c:if>
+                                                                            </c:forEach>
+                                                                            <div class="khoang-trong" style="margin-top: 280px; margin-right: 20px;">
 
                                                                             <div class="ten-san-pham">
                                                                                 <a href="product-detail?id=${item.getProductID()}">${item.getName()}</a>
@@ -407,11 +449,13 @@
                                                                                         type="currency"
                                                                                         pattern="###,### đ"/>
                                                                             </div>
-                                                                            <fmt:formatDate value="${item.getOrderDate()}"
-                                                                                            pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
+                                                                            <fmt:formatDate
+                                                                                    value="${item.getOrderDate()}"
+                                                                                    pattern=" 'Ngày' dd 'tháng' MM 'năm' yyyy"
                                                                             />
                                                                             <!-- Khi ấn vào di chuyển đến giỏ hàng -->
                                                                             <p class="waitXacNhan">Đã hủy</p>
+                                                                            </div>
 
                                                                         </div>
                                                                     </div>

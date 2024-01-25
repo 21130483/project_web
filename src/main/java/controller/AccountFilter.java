@@ -2,11 +2,9 @@ package controller;
 
 import dao.AddressDAO;
 import dao.OrderDAO;
+import dao.ProductDAO;
 import dao.PurchasesDAO;
-import model.Address;
-import model.OrderItem;
-import model.Purchases;
-import model.User;
+import model.*;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -43,6 +41,9 @@ public class AccountFilter extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
         List<Purchases> listOrderItem = purchasesDAO.getAllPurchases(user.getUserID());
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> products = productDAO.getAllProduct();
+        req.setAttribute("getAllProduct", products);
         if (user != null) {
             AddressDAO addressDAO = new AddressDAO();
             List<Address> addresses = addressDAO.getAddressByUserId(user.getUserID());

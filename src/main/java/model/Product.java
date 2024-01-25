@@ -244,6 +244,16 @@ public class Product {
         }
         return result;
     }
+    public String getPathFirstImage1() {
+        File folderImg = new File( "D:/project_web/target/Lab/image/product/" + productID);
+        String result = "../image/product/"+productID+"/";
+
+        if (folderImg.exists()) {
+            File[] files = folderImg.listFiles();
+            result += files[0].getName();
+        }
+        return result;
+    }
 
 //    public static void main(String[] args) {
 //
