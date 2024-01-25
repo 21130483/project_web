@@ -1,7 +1,7 @@
 package controller;
 
 import dao.UserDAO;
-import nhom28.User;
+import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

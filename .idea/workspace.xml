@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Lab:war" />
+      <artifact name="Lab:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,9 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3010d-4336-4e0c-b001-77a24319c339" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CancelOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/pharmacity.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nhom28/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InvoiceItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "21130440-NguyenThanhLuu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;21130440-NguyenThanhLuu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project_web\src\main\webapp\image\account" />
@@ -61,6 +70,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
+      <recent name="dao" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9">
@@ -120,14 +130,14 @@
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Lab:war">
+        <artifact name="Lab:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Lab_war" />
+            <option name="CONTEXT_PATH" value="/Lab_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c4e4173e-0526-4cbe-890a-740b88dbc08a" />
+        <option name="BASE_DIRECTORY_NAME" value="95252531-2843-45f0-89a0-3a0e26aa82b3" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -135,7 +145,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64971" />
+        <option name="DEBUG_PORT" value="59501" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -200,7 +210,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Lab:war" />
+          <artifact name="Lab:war exploded" />
         </option>
       </method>
     </configuration>
@@ -311,7 +321,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6d8695f-b206-4c55-b210-64066ed7c219" name="Changes" comment="" />
+      <changelist id="b2f3010d-4336-4e0c-b001-77a24319c339" name="Changes" comment="" />
       <created>1705318896414</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -335,6 +345,7 @@
       <workItem from="1705750085053" duration="5958000" />
       <workItem from="1705840608597" duration="172000" />
       <workItem from="1705893591244" duration="9705000" />
+      <workItem from="1706162543980" duration="5169000" />
     </task>
     <servers />
   </component>

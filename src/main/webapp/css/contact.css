@@ -133,4 +133,8 @@ body {
     100% {
         bottom: 100%;
     }
+h2 {
+    color: #fff;
+}
+
 }

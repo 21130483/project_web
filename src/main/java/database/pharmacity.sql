@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `users`
 INSERT INTO `users` (`userID`, `email`, `phoneNumbers`, `fullName`, `password`, `dob`, `gender`, `role`, `access`)
 VALUES (1, 'phuoc@gmail.com', '0986216717', 'Nguyễn Hữu Phước', '123', '2003-02-17', 'nam', 'true', 'true'),
        (2, 'admin@gmail.com', '0986216717', 'admin', 'admin', '2003-02-17', 'nam', 'true', 'true'),
-       (3, 'luu@gmail.com', '0866456543', 'Lưu', '111', '2003-01-29', 'nam', 'false', 'true');
+       (3, 'luu@gmail.com', '0866456543', 'Lưu', '111', '2003-01-19', 'nam', 'false', 'true');
 
 
 CREATE TABLE IF NOT EXISTS `category`

@@ -1,9 +1,6 @@
 <%@ page import="model.Product" %>
-<<<<<<< HEAD
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.List" %>
-=======
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -40,7 +37,6 @@
                             <%--                            <img src="../image/product/may-tao-oxi3.jpg" alt="">--%>
 
                             <%
-<<<<<<< HEAD
 
                                 int numberImg = (int) request.getAttribute("numberImg");
                                 System.out.println(numberImg);
@@ -48,11 +44,11 @@
                             %>
 
                             <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
-=======
-                                for (int i = 0; i < 4; i++) {
-                            %>
-                                <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">
->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7
+<%--=======--%>
+<%--                                for (int i = 0; i < 4; i++) {--%>
+<%--                            %>--%>
+<%--                                <img src="../image/product/<%=product.getProductID()%>/<%=i%>.webp" alt="">--%>
+<%-->>>>>>> 2c5e5229516305c35db6499b6fed0cbe53d556a7--%>
                             <%
                                 }
                             %>
